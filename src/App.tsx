@@ -1,12 +1,18 @@
-import ServiceSection from './components/ServiceSection/ServiceSection';
+// App.tsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./layouts/layout";
+import HomePage from "./pages/HomePage";
 
-function App() {
+const App = () => {
   return (
-    <div>
-      {/* các section khác */}
-      <ServiceSection />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<HomePage />} />
+          {/* Thêm các page khác ở đây nếu có */}
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
 export default App;
