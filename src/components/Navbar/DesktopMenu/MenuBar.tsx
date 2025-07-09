@@ -9,6 +9,7 @@ import ProductServiceDropdown from "./ProductServiceDropdown";
 
 interface MenuBarProps {
   scrolled: boolean;
+  className?: string; // ✅ thêm dòng này
 }
 const MenuBar = ({ scrolled }: MenuBarProps) => {
   const [showSearch, setShowSearch] = useState(false);

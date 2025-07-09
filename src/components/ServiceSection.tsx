@@ -66,7 +66,7 @@ export default function ServiceSection() {
             <img
               src={service.image}
               alt={service.title}
-              className="self-center self-start aspect-square w-[280px] md:w-[300px] object-cover rounded-md shadow-lg"
+              className="self-start aspect-square w-[280px] md:w-[300px] object-cover rounded-md shadow-lg"
             />
 
             {/* Content */}

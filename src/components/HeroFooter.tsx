@@ -3,7 +3,7 @@ import backgroundImage from "../assets/images/BannerFooter.jpg";
 import chatIcon from "../assets/images/Message.png";
 import arrowIcon from "../assets/images/Arrow.png";
 
-export default function HeroBanner() {
+export default function HeroFooter() {
   return (
     <section className="relative w-full h-[500px] overflow-hidden">
       {/* Ảnh nền */}

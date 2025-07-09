@@ -3,17 +3,19 @@ import CommitSection from "../components/CommitSection";
 import HeroFooter from "../components/HeroFooter";
 import ProductSection from "../components/ProductSection";
 import ServiceSection from "../components/ServiceSection";
-import Navbar from "../components/Navbar/Navbar"
+import HeroBanner from "../components/HeroBanner";
+import Footer from "../components/Footer/Footer";
+
 const HomePage = () => {
   return (
     <div>
-      <Navbar />
+      <HeroBanner />
       <AboutSection />
       <ProductSection />
       <ServiceSection />
       <CommitSection />
       <HeroFooter />
-      
+      <Footer />
     </div>
   );
 };
