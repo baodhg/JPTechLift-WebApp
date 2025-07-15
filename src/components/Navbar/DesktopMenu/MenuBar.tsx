@@ -17,8 +17,16 @@ const MenuBar = ({ scrolled, onSearchOpen, showSearch }: MenuBarProps) => {
 
   return (
     <>
-      <div className={`${styles.menuWrapper} ${scrolled ? styles.menuBarScrolled : ""}`}>
-        <div className={`${styles.menuBar} ${scrolled ? styles.menuBarScrolled : ""}`}>
+      <div
+        className={`${styles.menuWrapper} ${
+          scrolled ? styles.menuBarScrolled : ""
+        }`}
+      >
+        <div
+          className={`${styles.menuBar} ${
+            scrolled ? styles.menuBarScrolled : ""
+          }`}
+        >
           {/* Thanh điều hướng */}
           <div className={styles.menuBar__left}>
             <ul className={styles.menuBar__list}>
@@ -26,11 +34,17 @@ const MenuBar = ({ scrolled, onSearchOpen, showSearch }: MenuBarProps) => {
                 <div className={styles.dropdownWrapper}>
                   <a
                     className="transition duration-200 hover:brightness-200 hover:scale-105"
-                    onClick={() => setActiveDropdown(activeDropdown === "product" ? null : "product")}
+                    onClick={() =>
+                      setActiveDropdown(
+                        activeDropdown === "product" ? null : "product"
+                      )
+                    }
                   >
                     SẢN PHẨM & DỊCH VỤ
                   </a>
-                  {!showSearch && activeDropdown === "product" && <ProductServiceDropdown type="product" />}
+                  {!showSearch && activeDropdown === "product" && (
+                    <ProductServiceDropdown type="product" />
+                  )}
                 </div>
               </li>
               <li>/</li>
@@ -38,11 +52,17 @@ const MenuBar = ({ scrolled, onSearchOpen, showSearch }: MenuBarProps) => {
                 <div className={styles.dropdownWrapper}>
                   <a
                     className="transition duration-200 hover:brightness-200 hover:scale-105"
-                    onClick={() => setActiveDropdown(activeDropdown === "about" ? null : "about")}
+                    onClick={() =>
+                      setActiveDropdown(
+                        activeDropdown === "about" ? null : "about"
+                      )
+                    }
                   >
                     CÔNG TY CHÚNG TÔI
                   </a>
-                  {!showSearch && activeDropdown === "about" && <ProductServiceDropdown type="about" />}
+                  {!showSearch && activeDropdown === "about" && (
+                    <ProductServiceDropdown type="about" />
+                  )}
                 </div>
               </li>
               <li>/</li>
@@ -50,30 +70,53 @@ const MenuBar = ({ scrolled, onSearchOpen, showSearch }: MenuBarProps) => {
                 <div className={styles.dropdownWrapper}>
                   <a
                     className="transition duration-200 hover:brightness-200 hover:scale-105"
-                    onClick={() => setActiveDropdown(activeDropdown === "contact" ? null : "contact")}
+                    onClick={() =>
+                      setActiveDropdown(
+                        activeDropdown === "contact" ? null : "contact"
+                      )
+                    }
                   >
                     LIÊN HỆ
                   </a>
-                  {!showSearch && activeDropdown === "contact" && <ProductServiceDropdown type="contact" />}
+                  {!showSearch && activeDropdown === "contact" && (
+                    <ProductServiceDropdown type="contact" />
+                  )}
                 </div>
               </li>
               <li>/</li>
               <li>
-                <a className="transition duration-200 hover:brightness-200 hover:scale-105" href="#">
+                <a
+                  className="transition duration-200 hover:brightness-200 hover:scale-105"
+                  onClick={() =>
+                    setActiveDropdown(activeDropdown === "news" ? null : "news")
+                  }
+                >
                   TIN TỨC
                 </a>
+                {!showSearch && activeDropdown === "news" && (
+                  <ProductServiceDropdown type="news" />
+                )}
               </li>
             </ul>
           </div>
           {/* Icon mạng xã hội + tìm kiếm */}
           <div className={styles.menuBar__icons}>
-            <a href="#" className="transition duration-200 hover:brightness-200 hover:scale-105">
+            <a
+              href="#"
+              className="transition duration-200 hover:brightness-200 hover:scale-105"
+            >
               <img src={facebook} alt="facebook" />
             </a>
-            <a href="#" className="transition duration-200 hover:brightness-200 hover:scale-105">
+            <a
+              href="#"
+              className="transition duration-200 hover:brightness-200 hover:scale-105"
+            >
               <img src={linkendin} alt="linkendin" />
             </a>
-            <a href="#" className="transition duration-200 hover:brightness-200 hover:scale-105">
+            <a
+              href="#"
+              className="transition duration-200 hover:brightness-200 hover:scale-105"
+            >
               <img src={tiktok} alt="tiktok" />
             </a>
             <div className={styles.menuBar__search}>

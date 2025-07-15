@@ -2,8 +2,20 @@ import styles from "../../../styles/components/Navbar/DesktopNavbar/DesktopNav.m
 import { Link } from "react-router-dom";
 import { productSlugMap } from "../../../constants/productSlugMap"; // ánh xạ chuẩn
 import type { ProductTitle } from "../../../constants/productSlugMap";
+
+const aboutLinks: Record<string, string> = {
+  "VỀ CHÚNG TÔI": "/ve-chung-toi",
+  "BAN LÃNH ĐẠO": "/ban-lanh-dao",
+  "NGUYÊN TẮC": "/nguyen-tac",
+  "QUY TRÌNH DỰ ÁN": "/quy-trinh-du-an",
+};
+
+const newsLinks: Record<string, string> = {
+  BLOG: "/blog",
+  "TIN TỨC": "/tin-tuc",
+};
 interface DropdownContentProps {
-  type: "product" | "about" | "contact";
+  type: "product" | "about" | "contact" | "news";
 }
 
 const ProductServiceDropdown = ({ type }: DropdownContentProps) => {
@@ -26,32 +38,39 @@ const ProductServiceDropdown = ({ type }: DropdownContentProps) => {
     ],
     about: {
       title: "GIỚI THIỆU",
-      items: ["Tầm nhìn sứ mệnh", "Đội ngũ chuyên gia", "Câu chuyện thương hiệu"],
+      items: ["VỀ CHÚNG TÔI", "BAN LÃNH ĐẠO", "NGUYÊN TẮC", "QUY TRÌNH DỰ ÁN"],
     },
     contact: {
-      title: "LIÊN HỆ",
+      title: "LIÊN HỆ CHÍNH",
       items: ["Hotline", "Email", "Chi nhánh"],
+    },
+    news: {
+      title: "NHÓM TIN TỨC",
+      items: ["BLOG", "TIN TỨC"],
     },
   };
 
-  function toSlug(text: string): string {
-    return text
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "");
-  }
+  const getLink = (item: string, group: string): string => {
+    if (group === "DỊCH VỤ") {
+      return "/dich-vu";
+    }
 
-  const getLink = (item: string): string => {
     if (type === "product") {
       const slug = productSlugMap[item as ProductTitle];
       return slug ? `/products/${slug}` : "#";
     }
 
-    if (type === "about" || type === "contact") return "#";
+    if (type === "about") {
+      return aboutLinks[item.toUpperCase()] || "/ve-chung-toi";
+    }
+    if (type === "contact") {
+      return "/lien-he";
+    }
 
-    return `/service/${toSlug(item)}`;
+    if (type === "news") {
+      return newsLinks[item.toUpperCase()] || "/tin-tuc";
+    }
+    return "#";
   };
 
   const data = content[type];
@@ -65,7 +84,7 @@ const ProductServiceDropdown = ({ type }: DropdownContentProps) => {
             <ul>
               {col.items.map((item, i) => (
                 <li key={i}>
-                  <Link to={getLink(item)}>{item}</Link>
+                  <Link to={getLink(item, col.title)}>{item}</Link>
                 </li>
               ))}
             </ul>
@@ -76,7 +95,9 @@ const ProductServiceDropdown = ({ type }: DropdownContentProps) => {
           <h4>{data.title}</h4>
           <ul>
             {data.items.map((item, i) => (
-              <li key={i}>{item}</li>
+              <li key={i}>
+                <Link to={getLink(item, data.title)}>{item}</Link>
+              </li>
             ))}
           </ul>
         </div>

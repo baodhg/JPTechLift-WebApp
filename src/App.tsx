@@ -8,6 +8,9 @@ import LeaderPage from "./pages/LeaderPage";
 
 import ProductTemplatePage from "./pages/Products/ProductTemplate";
 import ServiceTemplatePage from "./pages/Services/ServiceTemplatePage";
+import AboutUsPage from "./pages/AboutUsPage";
+import BlogPage from "./pages/BlogPage";
+import ContactJPTechLiftFormPage from "./pages/ContactPage";
 
 const App = () => {
   return (
@@ -17,13 +20,13 @@ const App = () => {
           <Route path="/" element={<HomePage />} />               {/* Trang chủ */}
           <Route path="/quy-trinh-du-an" element={<StandardPage />} />   {/* Trang tiêu chuẩn */}
           <Route path="/nguyen-tac" element={<PrinciplePage />} />   {/* Trang nguyên tắc */}
-          <Route path="/ban-lanh-dao" element={<LeaderPage />} />   {/* Trang nguyên tắc */}
-
+          <Route path="/ban-lanh-dao" element={<LeaderPage />} />   {/* Trang ban lãnh đạo */}
+          <Route path="/ve-chung-toi" element={<AboutUsPage />} />   {/* Trang về chúng tôi */}
+          <Route path="/blog" element={<BlogPage />} />   {/* Trang blog */}
+          <Route path="/lien-he" element={<ContactJPTechLiftFormPage />} />   {/* Trang liên hệ */}
+          <Route path="/dich-vu" element={<ServiceTemplatePage />} />   {/* Trang liên hệ */}
             {/* PRODUCT: chỉ còn 1 route động */}
-        <Route path="/products/:productId" element={<ProductTemplatePage />} />
-
-        {/* SERVICE: cũng chỉ 1 route động */}
-        <Route path="/service/:serviceId" element={<ServiceTemplatePage />} />
+        <Route path="/products/:productId" element={<ProductTemplatePage />} />       
         </Route>
       </Routes>
     </BrowserRouter>

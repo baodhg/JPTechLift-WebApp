@@ -1,12 +1,12 @@
 // Danh sách ánh xạ rõ ràng giữa tên hiển thị và slug URL
 export const productSlugMap = {
-  "THANG MÁY GIA ĐÌNH": "home-lift",
-  "THANG MÁY TẢI KHÁCH": "passenger-elevator",
-  "THANG TRƯỢT & THANG CUỐN": "escalator",
-  "THANG TẢI HÀNG": "freight-lift",
-  "THANG TẢI THỰC PHẨM": "food-lift",
-  "THANG MÁY BỆNH VIỆN": "hospital-lift",
-  "THANG MÁY QUAN SÁT": "panorama-lift", // nếu chưa có thì ghi placeholder
+  "THANG MÁY GIA ĐÌNH": "thang-may-gia-dinh",
+  "THANG MÁY TẢI KHÁCH": "thang-may-hanh-khach",
+  "THANG TRƯỢT & THANG CUỐN": "thang-truot-thang-cuon",
+  "THANG TẢI HÀNG": "thang-tai-hang",
+  "THANG TẢI THỰC PHẨM": "thang-tai-thuc-pham",
+  "THANG MÁY BỆNH VIỆN": "thang-may-benh-vien",
+  "THANG MÁY QUAN SÁT": "thang-may-quan-sat", // nếu chưa có thì ghi placeholder
 } as const;
 
 export type ProductTitle = keyof typeof productSlugMap;

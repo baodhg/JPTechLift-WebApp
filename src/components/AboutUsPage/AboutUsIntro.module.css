@@ -1,0 +1,46 @@
+.introSection {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  padding: 40px 32px 32px 32px;
+  font-family: Arial, sans-serif;
+}
+.heading {
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #1e88e5;
+  letter-spacing: 2px;
+}
+.content {
+  color: #222;
+  font-size: 1.07rem;
+  line-height: 1.7;
+}
+.greeting {
+  text-align: center;
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+  color: #1976d2;
+}
+.slogan {
+  font-weight: 500;
+  text-align: center;
+  margin: 28px 0 12px 0;
+  color: #1565c0;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+.signature {
+  margin-top: 32px;
+  text-align: right;
+  color: #555;
+}
+.director {
+  font-weight: bold;
+  color: #1e88e5;
+  letter-spacing: 1px;
+}

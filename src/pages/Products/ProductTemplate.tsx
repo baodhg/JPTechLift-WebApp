@@ -3,8 +3,6 @@ import { useState } from "react";
 import { productData } from "../../data/ProductData";
 import type { ProductId } from "../../data/ProductData";
 
-import styles from "../../styles/pages/ProductsPage/ProductIntro.module.scss";
-
 // Import các component con
 import ContentTableSection from "../../components/Product/ContentTableSection";
 import DetailSection from "../../components/Product/DetailSection";
@@ -41,7 +39,7 @@ export default function ProductTemplatePage() {
   return (
     <div>
       <NavBar />
-      <div className={styles.container}>
+      <div>
         <Introduction
           title={product.intro.title}
           description={product.intro.description}
@@ -49,7 +47,10 @@ export default function ProductTemplatePage() {
           imageUrl={product.intro.heroImage}
         />
         {product.contentTable && (
-          <ContentTableSection data={product.contentTable} imageUrl="/assets/images/home-lift/hero.jpg" />
+          <ContentTableSection
+            data={product.contentTable}
+            imageUrl="/assets/images/home-lift/hero.jpg"
+          />
         )}
 
         {product.detailInfo && product.galleryImages && (
@@ -63,9 +64,14 @@ export default function ProductTemplatePage() {
         {product.dimensions && <DimensionSection data={product.dimensions} />}
         <RealGallerySection images={product.realGalleryImages ?? []} />
         {product.installationSteps && product.installationImage && (
-          <InstallationSection steps={product.installationSteps} image={product.installationImage} />
+          <InstallationSection
+            steps={product.installationSteps}
+            image={product.installationImage}
+          />
         )}
-        {product.blueprint && <BlueprintSection blueprint={product.blueprint} />}
+        {product.blueprint && (
+          <BlueprintSection blueprint={product.blueprint} />
+        )}
 
         {/* Modal thẩm mỹ cabin */}
         {product.aestheticsOptions && (
