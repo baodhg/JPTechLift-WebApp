@@ -1,0 +1,180 @@
+/* ===================================
+   🎨 DESIGN TOKENS & VARIABLES
+   =================================== */
+:root {
+  // Colors
+  --color-main: #041e42;
+  --color-red: #d64344;
+  --color-yellow: #cba052;
+  --color-white: #ffffff;
+  --color-gray: #bfbfbf;
+  --color-gray1: #ced4da;
+  // Typography
+  --font-main: "Nunito Sans", sans-serif;
+  --font-title: "Inter", sans-serif;
+  // Spacing
+  --spacing-xs: 6px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+
+  // Sizes
+  --logo-height: 76px;
+  --icon-size: 24px;
+  --icon-size-sm: 20px;
+  --menu-height: 65px;
+  --border-radius: 10px;
+  --border-radius-sm: 8px;
+  --border-radius-pill: 30px;
+
+  // Shadows
+  --shadow-light: 0 2px 2px 2px rgba(0, 0, 0, 0.25);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-heavy: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  // Transitions
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+}
+
+.realGallerySection {
+  width: 100%;
+  padding: 60px 20px;
+  background-color: var(--color-white);
+}
+
+.heading {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #041e42;
+  margin-bottom: 40px;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-yellow);
+    margin: 12px auto 0;
+  }
+}
+
+.wrapper {
+  max-width: 1280px; // ✅ Giới hạn chiều rộng tổng thể
+  margin: 0 auto;
+  display: flex;
+  gap: 32px;
+  align-items: stretch; // ✅ ép 2 cột bằng chiều cao
+  flex-wrap: nowrap;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  flex: 1;
+  height: auto;
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  // Ảnh 1: cao hơn
+  img:nth-child(1) {
+    height: 280px;
+  }
+
+  // Ảnh 2: đứng chuẩn
+  img:nth-child(2) {
+    height: 280px;
+  }
+
+  // Ảnh 3: vuông nhỏ
+  img:nth-child(3) {
+    height: 180px;
+  }
+
+  // Ảnh 4: vuông nhỏ
+  img:nth-child(4) {
+    height: 180px;
+  }
+
+  // Ảnh 5: ngang dài, chiếm 2 cột
+  img:nth-child(5) {
+    grid-column: span 2;
+    height: 180px;
+    object-fit: cover;
+  }
+}
+.textBox {
+  flex: 1;
+  background-color: #041e42;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 28px;
+  h3 {
+    font-family: var(--font-title);
+    font-size: 32px;
+    background-color: #cba052;
+    color: white;
+    padding: 22px 28px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+
+  p {
+    padding: 0 28px;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    padding: 0 28px;
+    margin-top: auto; // ✅ Đẩy xuống đáy textBox
+    gap: 10px;
+    transition: all var(--transition-medium);
+    text-transform: uppercase;
+    button {
+      padding: 12px 16px;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      background-color: white;
+      transition: all var(--transition-medium);
+      color: var(--color-main);
+
+      &:hover {
+        background-color: #eee;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-medium);
+      }
+      &:active {
+        transform: translateY(0);
+      }
+      &:nth-child(2) {
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }
+}

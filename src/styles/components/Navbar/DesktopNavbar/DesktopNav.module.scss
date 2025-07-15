@@ -1,0 +1,383 @@
+/* ===================================
+   🎨 DESIGN TOKENS & VARIABLES
+   =================================== */
+:root {
+  // Colors
+  --color-main: #041e42;
+  --color-red: #d64344;
+  --color-yellow: #cba052;
+  --color-white: #ffffff;
+  --color-gray: #bfbfbf;
+
+  // Typography
+  --font-main: "Nunito Sans", sans-serif;
+
+  // Spacing
+  --spacing-xs: 6px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+
+  // Sizes
+  --logo-height: 76px;
+  --icon-size: 24px;
+  --icon-size-sm: 20px;
+  --menu-height: 65px;
+  --border-radius: 10px;
+  --border-radius-sm: 8px;
+  --border-radius-pill: 30px;
+
+  // Shadows
+  --shadow-light: 0 2px 2px 2px rgba(0, 0, 0, 0.25);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-heavy: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  // Transitions
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+
+  // Z-Index Scale
+  --z-dropdown: 9999;
+  --z-search: 2000;
+  --z-menu-scrolled: 3000;
+}
+
+/* ===================================
+   🎬 ANIMATIONS & KEYFRAMES
+   =================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================================
+   🔧 BASE LAYOUT & WRAPPER
+   =================================== */
+.desktopMenu {
+  font-family: var(--font-main);
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ===================================
+   🏠 TOP BAR COMPONENT
+   =================================== */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-xl);
+  background-color: var(--color-white);
+
+  // Logo Section
+  &__logo {
+    img {
+      height: var(--logo-height);
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  // Info Section
+  &__info {
+    display: flex;
+    gap: var(--spacing-xl);
+    align-items: center;
+    font-size: 19px;
+    color: var(--color-main);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+  }
+
+  // Language Selector
+  &__lang {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) 9px;
+    background: var(--color-white);
+    border-radius: var(--border-radius-pill);
+    box-shadow: var(--shadow-light);
+  }
+
+  // Icons
+  &__icon {
+    height: var(--icon-size);
+    width: auto;
+    object-fit: contain;
+
+    &_sc {
+      height: 10px;
+      transform: rotate(180deg);
+      transition: var(--transition-medium);
+
+      &:hover {
+        transform: rotate(0deg);
+        filter: brightness(1.2);
+      }
+    }
+
+    &_flag {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  // Contact Section
+  &__contactIcon {
+    display: flex;
+    gap: var(--spacing-xs);
+    cursor: pointer;
+    font-size: 19px;
+
+    span {
+      position: relative;
+      color: var(--color-main);
+      padding-bottom: 2px;
+      transition: color var(--transition-medium);
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        background-color: var(--color-red);
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: left;
+        opacity: 0;
+        transition: transform var(--transition-medium), opacity var(--transition-medium);
+      }
+    }
+
+    &:hover span::after {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+
+    img {
+      width: 26px;
+      height: 22px;
+    }
+  }
+}
+
+/* ===================================
+   🧩 MENU BAR COMPONENT
+   =================================== */
+.searchWrapper {
+  position: relative;
+  width: 100%;
+  top: 0.5px;
+  background-color: var(--color-main);
+  padding: var(--spacing-xl) 0;
+}
+
+.menuWrapper {
+  transition: all 0.4s ease-in-out;
+  transform: scale(1);
+  background-color: transparent;
+  position: relative;
+  z-index: 1000;
+
+  // Scrolled State
+  &.menuBarScrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+    z-index: var(--z-menu-scrolled);
+    transform: translateY(0px);
+    box-shadow: var(--shadow-heavy);
+  }
+}
+
+.menuBar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--menu-height);
+  background-color: var(--color-main);
+  padding: 0 2%;
+  overflow: visible; // Quan trọng cho dropdown
+  transition: transform 2s ease, background-color 2s ease, box-shadow 2s ease, padding 2s ease;
+  border-bottom: 2px solid var(--color-gray);
+  &.menuBarScrolled {
+    border-radius: 0;
+  }
+
+  // Navigation List
+  &__list {
+    display: flex;
+    gap: var(--spacing-xl);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      position: relative;
+      color: var(--color-gray);
+      font-weight: 500;
+    }
+
+    a {
+      position: relative;
+      color: var(--color-gray);
+      text-decoration: none;
+      padding-bottom: 4px;
+      font-size: 18px;
+      font-weight: 600;
+      transition: color var(--transition-medium);
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        background-color: var(--color-red);
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: left;
+        opacity: 0;
+        transition: transform var(--transition-medium), opacity var(--transition-medium);
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+    }
+  }
+
+  // Social Icons
+  &__icons {
+    display: flex;
+    align-items: center;
+
+    a {
+      display: inline-block;
+      padding: 0 var(--spacing-sm);
+      transition: var(--transition-medium);
+
+      &:hover {
+        filter: brightness(1.2);
+        transform: scale(1.1);
+      }
+
+      img {
+        width: var(--icon-size-sm);
+        height: var(--icon-size-sm);
+        object-fit: contain;
+      }
+    }
+  }
+
+  // Search Section
+  &__search {
+    display: flex;
+    align-items: center;
+    margin-left: var(--spacing-lg);
+    padding-left: var(--spacing-lg);
+    border-left: 2px solid var(--color-gray);
+  }
+}
+
+/* ===================================
+   📋 DROPDOWN COMPONENT
+   =================================== */
+.dropdownWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  display: flex;
+  background-color: var(--color-white);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  box-shadow: var(--shadow-medium);
+  z-index: var(--z-dropdown);
+  overflow: hidden;
+  animation: fadeIn var(--transition-fast);
+  min-width: 280px;
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    min-width: 290px;
+
+    h4 {
+      background-color: var(--color-yellow);
+      color: white;
+      padding: 10px var(--spacing-lg);
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        padding: 10px var(--spacing-lg);
+        color: var(--color-main);
+        font-size: 16px;
+        border-bottom: 1px solid #eee;
+        transition: all var(--transition-fast);
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--color-main);
+          color: white;
+        }
+
+        a {
+          color: inherit;
+          font-weight: bold;
+          text-decoration: none;
+          display: block;
+          width: 100%;
+
+          &:hover {
+            color: inherit;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ===================================
+   📱 RESPONSIVE HANDLING
+   =================================== */
+@media (max-width: 1280px) {
+  .searchPanel {
+    left: 20px;
+    right: 20px;
+    max-width: calc(100% - 40px);
+  }
+}

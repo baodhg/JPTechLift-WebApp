@@ -3,52 +3,63 @@ import facebook from "../../../assets/images/header/Facebook_Icon.png";
 import tiktok from "../../../assets/images/header/TikTok_Icon.png";
 import linkendin from "../../../assets/images/header/Linkedin_Icon.png";
 import search from "../../../assets/images/header/Search_Icon.png";
-import styles from "./DesktopNav.module.scss";
-import Search from "./Search";
+import styles from "../../../styles/components/Navbar/DesktopNavbar/DesktopNav.module.scss";
+
 import ProductServiceDropdown from "./ProductServiceDropdown";
 
 interface MenuBarProps {
   scrolled: boolean;
-  className?: string; // ✅ thêm dòng này
+  onSearchOpen: () => void;
+  showSearch: boolean;
 }
-const MenuBar = ({ scrolled }: MenuBarProps) => {
-  const [showSearch, setShowSearch] = useState(false);
+const MenuBar = ({ scrolled, onSearchOpen, showSearch }: MenuBarProps) => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   return (
     <>
       <div className={`${styles.menuWrapper} ${scrolled ? styles.menuBarScrolled : ""}`}>
-        <div className={styles.menuBar}>
+        <div className={`${styles.menuBar} ${scrolled ? styles.menuBarScrolled : ""}`}>
           {/* Thanh điều hướng */}
           <div className={styles.menuBar__left}>
             <ul className={styles.menuBar__list}>
               <li className={styles.menuItem}>
                 <div className={styles.dropdownWrapper}>
-                  <a onClick={() => setActiveDropdown(activeDropdown === "product" ? null : "product")}>
+                  <a
+                    className="transition duration-200 hover:brightness-200 hover:scale-105"
+                    onClick={() => setActiveDropdown(activeDropdown === "product" ? null : "product")}
+                  >
                     SẢN PHẨM & DỊCH VỤ
                   </a>
-                  {activeDropdown === "product" && <ProductServiceDropdown type="product" />}
+                  {!showSearch && activeDropdown === "product" && <ProductServiceDropdown type="product" />}
                 </div>
               </li>
               <li>/</li>
               <li className={styles.menuItem}>
                 <div className={styles.dropdownWrapper}>
-                  <a onClick={() => setActiveDropdown(activeDropdown === "about" ? null : "about")}>
+                  <a
+                    className="transition duration-200 hover:brightness-200 hover:scale-105"
+                    onClick={() => setActiveDropdown(activeDropdown === "about" ? null : "about")}
+                  >
                     CÔNG TY CHÚNG TÔI
                   </a>
-                  {activeDropdown === "about" && <ProductServiceDropdown type="about" />}
+                  {!showSearch && activeDropdown === "about" && <ProductServiceDropdown type="about" />}
                 </div>
               </li>
               <li>/</li>
               <li className={styles.menuItem}>
                 <div className={styles.dropdownWrapper}>
-                  <a onClick={() => setActiveDropdown(activeDropdown === "contact" ? null : "contact")}>LIÊN HỆ</a>
-                  {activeDropdown === "contact" && <ProductServiceDropdown type="contact" />}
+                  <a
+                    className="transition duration-200 hover:brightness-200 hover:scale-105"
+                    onClick={() => setActiveDropdown(activeDropdown === "contact" ? null : "contact")}
+                  >
+                    LIÊN HỆ
+                  </a>
+                  {!showSearch && activeDropdown === "contact" && <ProductServiceDropdown type="contact" />}
                 </div>
               </li>
               <li>/</li>
               <li>
-                <a href="#" className="hover: transition-colors">
+                <a className="transition duration-200 hover:brightness-200 hover:scale-105" href="#">
                   TIN TỨC
                 </a>
               </li>
@@ -66,23 +77,13 @@ const MenuBar = ({ scrolled }: MenuBarProps) => {
               <img src={tiktok} alt="tiktok" />
             </a>
             <div className={styles.menuBar__search}>
-              <a
-                href="#"
-                className={`${styles.searchIcon} transition duration-200 hover:brightness-200 hover:scale-105`}
-                onClick={() => setShowSearch(true)}
-              >
+              <a onClick={onSearchOpen}>
                 <img src={search} alt="search" />
               </a>
             </div>
           </div>
         </div>
       </div>
-      {/* Panel tìm kiếm nằm bên dưới */}
-      {showSearch && (
-        <div className={styles.searchWrapper}>
-          <Search onClose={() => setShowSearch(false)} />
-        </div>
-      )}
     </>
   );
 };

@@ -3,7 +3,7 @@ import phone from "../../../assets/images/header/Phone_Icon.jpg";
 import email from "../../../assets/images/header/Email_Icon.jpg";
 import flag from "../../../assets/images/header/Flag_Icon.jpg";
 import polygon from "../../../assets/images/header/Polygon 1.jpg";
-import styles from "./DesktopNav.module.scss";
+import styles from "../../../styles/components/Navbar/DesktopNavbar/DesktopNav.module.scss";
 
 const TopBar = () => {
   return (

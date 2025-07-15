@@ -1,0 +1,78 @@
+// 🌈 Root Color
+:root {
+  --color-main: #041e42;
+  --color-red: #d64344;
+  --color-yellow: #cba052;
+  --color-white: #ffffff;
+  --color-gray: #bfbfbf;
+  --font-main: "Nunito Sans", sans-serif;
+}
+.footer {
+  font-family: var(--font-main);
+  background: var(--color-white);
+  color: #000;
+  padding-bottom: 24px;
+  font-size: 14px;
+  line-height: 1.6;
+  border-top: 1px solid var(--color-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
+
+.top {
+  background-color: var(--color-main);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    width: 160px;
+    height: auto;
+  }
+
+  .socials {
+    display: flex;
+    gap: 12px;
+
+    a img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.contact {
+  font-size: 14px;
+  padding: 0 26px;
+  p {
+    margin-bottom: 12px;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+}
+
+.bottom {
+  text-align: center;
+  font-size: 12px;
+  color: #333;
+
+  .links {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+
+    a {
+      text-decoration: underline;
+      color: #000;
+    }
+  }
+}

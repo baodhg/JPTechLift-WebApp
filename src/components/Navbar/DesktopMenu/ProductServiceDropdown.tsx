@@ -1,23 +1,17 @@
-import styles from "./DesktopNav.module.scss";
+import styles from "../../../styles/components/Navbar/DesktopNavbar/DesktopNav.module.scss";
 import { Link } from "react-router-dom";
-
+import { productSlugMap } from "../../../constants/productSlugMap"; // ánh xạ chuẩn
+import type { ProductTitle } from "../../../constants/productSlugMap";
 interface DropdownContentProps {
   type: "product" | "about" | "contact";
 }
+
 const ProductServiceDropdown = ({ type }: DropdownContentProps) => {
   const content = {
     product: [
       {
         title: "SẢN PHẨM",
-        items: [
-          "THANG MÁY GIA ĐÌNH",
-          "THANG MÁY TẢI KHÁCH",
-          "THANG TRƯỢT & THANG CUỐN",
-          "THANG TẢI HÀNG",
-          "THANG TẢI THỰC PHẨM",
-          "THANG MÁY BỆNH VIỆN",
-          "THANG MÁY QUAN SÁT",
-        ],
+        items: Object.keys(productSlugMap) as ProductTitle[], // chỉ dùng key hợp lệ
       },
       {
         title: "DỊCH VỤ",
@@ -40,23 +34,28 @@ const ProductServiceDropdown = ({ type }: DropdownContentProps) => {
     },
   };
 
-  const pageRoutes: Record<string, string> = {
-    "THANG MÁY GIA ĐÌNH": "/product/home-lift",
-    "THANG MÁY TẢI KHÁCH": "/product/passenger-elevator",
-    "THANG TRƯỢT & THANG CUỐN": "/product/escalator",
-    "THANG TẢI HÀNG": "/product/freight-lift",
-    "THANG TẢI THỰC PHẨM": "/product/food-lift",
-    "THANG MÁY BỆNH VIỆN": "/product/hospital-lift",
-    "THANG MÁY QUAN SÁT": "/product/panorama-lift",
+  function toSlug(text: string): string {
+    return text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
 
-    "TƯ VẤN - THIẾT KẾ": "/service/consulting",
-    "BẢO TRÌ": "/service/maintenance",
-    "LẮP ĐẶT - VẬN HÀNH": "/service/installation",
-    "CẢI TẠO - SỬA CHỮA": "/service/upgrade",
-    "VẬT TƯ - PHỤ KIỆN THANG MÁY": "/service/accessories",
+  const getLink = (item: string): string => {
+    if (type === "product") {
+      const slug = productSlugMap[item as ProductTitle];
+      return slug ? `/products/${slug}` : "#";
+    }
+
+    if (type === "about" || type === "contact") return "#";
+
+    return `/service/${toSlug(item)}`;
   };
 
   const data = content[type];
+
   return (
     <div className={styles.dropdown}>
       {Array.isArray(data) ? (
@@ -66,7 +65,7 @@ const ProductServiceDropdown = ({ type }: DropdownContentProps) => {
             <ul>
               {col.items.map((item, i) => (
                 <li key={i}>
-                  <Link to={pageRoutes[item] || "#"}>{item}</Link>
+                  <Link to={getLink(item)}>{item}</Link>
                 </li>
               ))}
             </ul>
@@ -77,7 +76,7 @@ const ProductServiceDropdown = ({ type }: DropdownContentProps) => {
           <h4>{data.title}</h4>
           <ul>
             {data.items.map((item, i) => (
-              <li key={i}>{item}</li> // bạn có thể sửa thành Link sau
+              <li key={i}>{item}</li>
             ))}
           </ul>
         </div>

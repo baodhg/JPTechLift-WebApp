@@ -1,16 +1,11 @@
 import DesktopMenu from "./DesktopMenu/DesktopMenu";
-import MobileMenu from "./MobieMenu/MobileMenu";
-const MenuBar = () => {
-  return (
-    <>
-      <div className="hidden md:block">
-        <DesktopMenu />
-      </div>
-      <div>
-        <MobileMenu />
-      </div>
-    </>
-  );
+import MobileMenu from "./MobileMenu/MobileMenu";
+import { useMediaQuery } from "react-responsive";
+
+const NavBar = () => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
+  return isMobile ? <MobileMenu /> : <DesktopMenu />;
 };
 
-export default MenuBar;
+export default NavBar;

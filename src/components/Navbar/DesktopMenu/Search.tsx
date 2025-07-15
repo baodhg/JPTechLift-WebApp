@@ -1,13 +1,14 @@
-import styles from "./Search.module.scss";
+import styles from "../../../styles/components/Navbar/DesktopNavbar/Search.module.scss";
 import searchIcon from "../../../assets/images/header/Search_Icon.png";
 
 interface SearchProps {
   onClose: () => void;
+  scrolled: boolean;
 }
 
-const Search = ({ onClose }: SearchProps) => {
+const Search = ({ onClose, scrolled }: SearchProps) => {
   return (
-    <div className={styles.searchPanel}>
+    <div className={`${styles.searchPanel} ${scrolled ? styles.searchScrolled : ""}`}>
       <div className={styles.searchPanel__header}>
         <h4>TÌM KIẾM</h4>
         <button onClick={onClose}>ĐÓNG ✕</button>

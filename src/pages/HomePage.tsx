@@ -1,9 +1,9 @@
-import AboutSection from "../components/AboutSection";
-import CommitSection from "../components/CommitSection";
-import HeroFooter from "../components/HeroFooter";
-import ProductSection from "../components/ProductSection";
-import ServiceSection from "../components/ServiceSection";
-import HeroBanner from "../components/HeroBanner";
+import AboutSection from "../components/HomePage/AboutSection";
+import CommitSection from "../components/HomePage/CommitSection";
+import HeroFooter from "../components/Footer/HeroFooter";
+import ProductSection from "../components/HomePage/ProductSection";
+import ServiceSection from "../components/HomePage/ServiceSection";
+import HeroBanner from "../components/HomePage/HeroBanner";
 import Footer from "../components/Footer/Footer";
 
 const HomePage = () => {

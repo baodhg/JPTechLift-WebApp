@@ -1,0 +1,296 @@
+/* ===================================
+   🌈 ROOT VARIABLES
+   =================================== */
+:root {
+  --color-main: #041e42;
+  --color-red: #d64344;
+  --color-yellow: #cba052;
+  --color-white: #ffffff;
+  --color-gray: #bfbfbf;
+  --font-main: "Nunito Sans", sans-serif;
+}
+
+/* ===================================
+   🔧 GLOBAL STYLES
+   =================================== */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; // Ngăn tràn ngang
+}
+
+/* ===================================
+   🔶 HOTLINE BAR (Mobile Only)
+   =================================== */
+.hotlineBar {
+  font-family: var(--font-main);
+  background-color: var(--color-yellow);
+  color: var(--color-white);
+  text-align: center;
+  font-size: 14px;
+  padding: 6px 0;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+/* ===================================
+   🔵 HEADER BAR (Mobile Only)
+   =================================== */
+.headerBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-main);
+  padding: 10px 16px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  .logo {
+    height: 52px;
+    flex-shrink: 0;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin-left: 16px;
+    min-width: 0; // Ngăn tràn nếu search dài
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; // đẩy icon về phải
+    flex: 1; // cho nó co giãn vừa phải trong khối cha
+
+    a {
+      display: inline-block;
+      padding: 10px 8px;
+      transition: 0.3s ease;
+
+      &:hover {
+        filter: brightness(1.2);
+        transform: scale(1.1);
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  &__socialIcons {
+    display: flex;
+    gap: 8px;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0s ease, visibility 2s ease;
+    &.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &__searchIcon {
+    padding-left: 10px;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+
+    &:hover {
+      filter: brightness(200%);
+    }
+  }
+
+  .menuBtn {
+    font-size: 26px;
+    margin-left: 20px;
+    width: 32px;
+    font-weight: bold; // làm đậm
+    line-height: 1; // tránh bị lệch
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-gray);
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--color-white);
+    }
+  }
+}
+
+@media (max-width: 478px) {
+  .headerBar__socialIcons a img {
+    width: 24px !important;
+    height: 24px !important;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
+  .headerBar__icons {
+    flex-wrap: nowrap; // tránh wrap icon gây co
+    min-width: 100px; // tránh khung cha co lại
+  }
+}
+
+/* ===================================
+   🔍 SEARCH FORM SECTION
+   =================================== */
+.headerBar__searchForm {
+  flex: 1; // ✅ cho phép tự giãn tối đa bên phải
+  max-width: 100%; // ✅ không vượt quá khung
+  display: none;
+  padding: 8px 0;
+  border-radius: 30px;
+  transition: opacity 0.1s ease, visibility 0.1s ease;
+
+  &.show {
+    display: flex;
+    background-color: white;
+    margin-left: 8px;
+
+    input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 6px;
+      padding-left: 20px;
+      font-size: 14px;
+      border-radius: 20px;
+      cursor: pointer;
+
+      &::placeholder {
+        color: #aaa;
+        font-style: italic;
+        padding-top: 2px;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+/* Search Helper Elements */
+.iconDivider {
+  height: 32px;
+  width: 1.5px;
+  background-color: var(--color-gray);
+  margin-left: 5%;
+}
+
+.searchToggleBtn {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.searchBtn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+
+  img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ===================================
+   🍔 MENU PANEL (Mobile Dropdown)
+   =================================== */
+.menuPanel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-height: 0; // mặc định ẩn
+  overflow: hidden;
+  opacity: 0; // mờ hoàn toàn khi ẩn
+  visibility: hidden; // tránh tab focus nhảy vào
+  background: white;
+  z-index: 1000;
+  transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+
+  &__open {
+    max-height: 70vh; // cho phép mở tràn cả màn hình
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.menuInner {
+  position: relative;
+  padding: 10px 16px 16px; // padding-top 60px để chừa logo
+}
+
+.menuList {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-yellow);
+
+    a {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 10px;
+      margin-right: 10px;
+      color: var(--color-main);
+      font-weight: 500;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease; // Thêm chuyển màu chữ
+    }
+
+    svg,
+    span:last-child {
+      color: var(--color-yellow);
+      transform: translateX(4px);
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      background-color: #052b67; // đậm hơn khi hover
+
+      a {
+        color: var(--color-white);
+      }
+
+      svg {
+        color: #cba052; // màu mũi tên
+        transition: all 0.3s ease;
+        transform: translateX(-6px); // mũi tên trượt nhẹ sang phải
+      }
+    }
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-main);
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--color-red);
+  }
+}
