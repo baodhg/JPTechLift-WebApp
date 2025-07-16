@@ -8,6 +8,24 @@ import tiktok from "../../../assets/images/header/TikTok_Icon.png";
 import linkendin from "../../../assets/images/header/Linkedin_Icon.png";
 import search from "../../../assets/images/header/Search_Icon.png";
 
+const productLinks = [
+  { label: "THANG MÁY GIA ĐÌNH", path: "/products/thang-may-gia-dinh" },
+  { label: "THANG MÁY DÂN DỤNG", path: "/products/thang-may-hanh-khach" },
+  { label: "THANG MÁY CHỞ HÀNG", path: "/products/thang-tai-hang" },
+  { label: "THANG MÁY QUAN SÁT", path: "/products/thang-may-quan-sat" },
+  { label: "THANG MÁY BỆNH VIỆN", path: "/products/thang-may-benh-vien" },
+  { label: "THANG MÁY THỰC PHẨM", path: "/products/thang-tai-thuc-pham" },
+  { label: "THANG CUỐN", path: "/products/thang-truot-thang-cuon" },
+];
+
+const serviceLinks = [
+  { label: "TƯ VẤN – THIẾT KẾ", path: "/dich-vu#tu-van-thiet-ke" },
+  { label: "BẢO TRÌ", path: "/dich-vu#bao-tri" },
+  { label: "LẮP ĐẶT – VẬN HÀNH", path: "/dich-vu#lap-dat-van-hanh" },
+  { label: "CẢI TẠO – SỬA CHỮA", path: "/dich-vu#cai-tao" },
+  { label: "VẬT TƯ – PHỤ KIỆN THANG MÁY", path: "/dich-vu#vat-tu-phu-kien" },
+];
+
 const aboutLinks = [
   { label: "VỀ CHÚNG TÔI", path: "/ve-chung-toi" },
   { label: "BAN LÃNH ĐẠO", path: "/ban-lanh-dao" },
@@ -19,8 +37,9 @@ const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [menuLevel, setMenuLevel] = useState<
-    "main" | "product_service" | "product" | "about"
+    "main" | "product_service" | "product" | "about" | "service"
   >("main");
+
   const closeMenu = () => {
     setIsOpen(false);
     setMenuLevel("main");
@@ -150,38 +169,68 @@ const MobileMenu = () => {
             </ul>
           )}
 
+          {menuLevel === "product_service" && (
+            <ul className={styles.menuList}>
+              {/* Nút quay lại */}
+              <li onClick={() => setMenuLevel("main")}>
+                <a>
+                  <span>⬅ Quay lại</span>
+                </a>
+              </li>
+
+              {/* SẢN PHẨM */}
+              <li onClick={() => setMenuLevel("product")}>
+                <a>
+                  <span>SẢN PHẨM</span> <span>+</span>
+                </a>
+              </li>
+
+              {/* DỊCH VỤ */}
+              <li onClick={() => setMenuLevel("service")}>
+                <a>
+                  <span>DỊCH VỤ</span> <span>+</span>
+                </a>
+              </li>
+            </ul>
+          )}
+
+          {menuLevel === "service" && (
+            <ul className={styles.menuList}>
+              {/* Quay lại */}
+              <li onClick={() => setMenuLevel("product_service")}>
+                <a>
+                  <span>⬅ Quay lại</span>
+                </a>
+              </li>
+
+              {/* Danh sách dịch vụ */}
+              {serviceLinks.map((item, i) => (
+                <li key={i}>
+                  <Link to={item.path} onClick={closeMenu}>
+                    <span>{item.label}</span> <span>→</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+
           {menuLevel === "product" && (
             <ul className={styles.menuList}>
-              <li>
-                <Link to="/products/home-lift" onClick={closeMenu}>
-                  <span>THANG MÁY GIA ĐÌNH</span> <span>→</span>
-                </Link>
+              {/* Nút quay lại */}
+              <li onClick={() => setMenuLevel("product_service")}>
+                <a>
+                  <span>⬅ Quay lại</span>
+                </a>
               </li>
-              <li>
-                <Link to="/products/passenger-elevator" onClick={closeMenu}>
-                  <span>THANG MÁY DÂN DỤNG</span> <span>→</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/products/freight-lift" onClick={closeMenu}>
-                  <span>THANG MÁY CHỞ HÀNG</span> <span>→</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/products/panorama-lift" onClick={closeMenu}>
-                  <span>THANG MÁY QUAN SÁT</span> <span>→</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/products/hospital-lift" onClick={closeMenu}>
-                  <span>THANG MÁY BỆNH VIỆN</span> <span>→</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/products/food-lift" onClick={closeMenu}>
-                  <span>THANG MÁY THỰC PHẨM</span> <span>→</span>
-                </Link>
-              </li>
+
+              {/* Danh sách sản phẩm */}
+              {productLinks.map((item, i) => (
+                <li key={i}>
+                  <Link to={item.path} onClick={closeMenu}>
+                    <span>{item.label}</span> <span>→</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           )}
         </div>
