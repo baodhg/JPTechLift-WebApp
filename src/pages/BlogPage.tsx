@@ -7,7 +7,7 @@ import Footer from "../components/Footer/DesktopFooter/DesktopFooter";
 const BlogPage = () => {
   return (
     <div>
-      <HeaderWithBanner banner={BlogBanner} title="LỒN AN" />
+      <HeaderWithBanner banner={BlogBanner} title="BLOG CHÚNG TÔI" />
       <BlogPageComp />
       <Footer />
     </div>
