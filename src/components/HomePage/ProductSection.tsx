@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import product1 from "../../assets/images/product1.jpg";
 import product2 from "../../assets/images/product2.jpg";
 import product3 from "../../assets/images/product3.jpg";
@@ -15,6 +16,7 @@ import logo from "../../assets/images/logo-noname.png";
 
 interface Product {
   title: string;
+  slug: string;
   desc: string;
   image: string;
 }
@@ -22,31 +24,37 @@ interface Product {
 const products: Product[] = [
   {
     title: "Thang Máy Gia Đình",
+    slug: "thang-may-gia-dinh",
     desc: "Giúp di chuyển dễ dàng, tiện lợi và đầy phong cách trong chính ngôi nhà của bạn.",
     image: product1,
   },
   {
     title: "Thang Máy Dân Dụng",
+    slug: "thang-may-hanh-khach",
     desc: "Thiết kế sang trọng, vận hành êm ái và hiệu quả phù hợp văn phòng và trung tâm thương mại.",
     image: product2,
   },
   {
     title: "Thang Máy Chở Hàng",
+    slug: "thang-tai-hang",
     desc: "Bền bỉ và tải trọng lớn, vận chuyển hàng hóa nặng trong kho bãi, nhà máy và khu công nghiệp.",
     image: product3,
   },
   {
     title: "Thang Máy Quan Sát",
+    slug: "thang-may-quan-sat",
     desc: "Thiết kế kính toàn cảnh, mang đến tầm nhìn ấn tượng và vẻ đẹp kiến trúc nổi bật.",
     image: product4,
   },
   {
     title: "Thang Máy Bệnh Viện",
+    slug: "thang-may-benh-vien",
     desc: "Thiết kế chuyên biệt cho bệnh viện và cơ sở y tế – đủ không gian cho băng ca và thiết bị cấp cứu.",
     image: product5,
   },
   {
     title: "Thang Tải Thực Phẩm",
+    slug: "thang-tai-thuc-pham",
     desc: "Nhỏ gọn, sạch sẽ – tối ưu vận chuyển đồ ăn trong nhà hàng, khách sạn, bếp công nghiệp.",
     image: product6,
   },
@@ -92,12 +100,18 @@ export default function ProductSection() {
 
               {/* Buttons */}
               <div className="w-[90%] grid grid-cols-2 gap-2 mt-2">
-                <button className="mr-2 py-3 px-6 bg-[#041E42] text-white font-inter font-semibold rounded-md transition-colors whitespace-nowrap border border-[#041E42] hover:bg-white hover:text-[#041E42]">
+                <Link
+                  to="/lien-he"
+                  className="mr-2 py-3 px-6 bg-[#041E42] text-white font-inter font-semibold rounded-md transition-colors whitespace-nowrap border border-[#041E42] hover:bg-white hover:text-[#041E42] text-center flex items-center justify-center"
+                >
                   LIÊN HỆ
-                </button>
-                <button className="w-[122%] py-4 bg-[#041E42] text-white font-inter font-semibold rounded-md transition-colors whitespace-nowrap border border-[#041E42] hover:bg-white hover:text-[#041E42]">
+                </Link>
+                <Link
+                  to={`/products/${p.slug}`}
+                  className="w-[122%] py-4 bg-[#041E42] text-white font-inter font-semibold rounded-md transition-colors whitespace-nowrap border border-[#041E42] hover:bg-white hover:text-[#041E42] text-center flex items-center justify-center"
+                >
                   TÌM HIỂU THÊM
-                </button>
+                </Link>
               </div>
             </div>
           </div>
