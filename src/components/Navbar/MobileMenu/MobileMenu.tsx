@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../../../styles/components/Navbar/MobieNavbar/MobileMenu.module.scss";
 import { ChevronRight } from "lucide-react";
-import logo from "../../../assets/images/header/Logo_White_Removebackground.png";
+import Logo from "../../Logo/Logo";
 import facebook from "../../../assets/images/header/Facebook_Icon.png";
 import tiktok from "../../../assets/images/header/TikTok_Icon.png";
 import linkendin from "../../../assets/images/header/Linkedin_Icon.png";
@@ -22,7 +22,7 @@ const MobileMenu = () => {
       {/* Thanh xanh: logo + nút toggle */}
       <div className={styles.headerBar}>
         {/* Logo bên trái */}
-        <img src={logo} alt="Logo" className={styles.logo} />
+        <Logo variant="white" className={styles.logo} />
         {/* Khối phải: social + search + toggle */}
         <div className={styles.headerBar__right}>
           <div className={styles.headerBar__icons}>
@@ -102,22 +102,35 @@ const MobileMenu = () => {
           {menuLevel === "product" && (
             <ul className={styles.menuList}>
               <li onClick={() => navigate("/products/home-lift")}>
-                <a><span>THANG MÁY GIA ĐÌNH</span> <span>→</span></a>{" "}
+                <a>
+                  <span>THANG MÁY GIA ĐÌNH</span> <span>→</span>
+                </a>{" "}
               </li>
               <li onClick={() => navigate("/products/passenger-elevator")}>
-                <a><span>THANG MÁY DÂN DỤNG</span> <span>→</span></a>{" "}
+                <a>
+                  <span>THANG MÁY DÂN DỤNG</span> <span>→</span>
+                </a>{" "}
               </li>
               <li onClick={() => navigate("/products/freight-lift")}>
-                <a> <span>THANG MÁY CHỞ HÀNG</span> <span>→</span></a>
+                <a>
+                  {" "}
+                  <span>THANG MÁY CHỞ HÀNG</span> <span>→</span>
+                </a>
               </li>
               <li onClick={() => navigate("/products/panorama-lift")}>
-                <a><span>THANG MÁY QUAN SÁT</span> <span>→</span></a>{" "}
+                <a>
+                  <span>THANG MÁY QUAN SÁT</span> <span>→</span>
+                </a>{" "}
               </li>
               <li onClick={() => navigate("/products/hospital-lift")}>
-                <a><span>THANG MÁY BỆNH VIỆN</span> <span>→</span></a>{" "}
+                <a>
+                  <span>THANG MÁY BỆNH VIỆN</span> <span>→</span>
+                </a>{" "}
               </li>
               <li onClick={() => navigate("/products/food-lift")}>
-                <a><span>THANG MÁY THỰC PHẨM</span> <span>→</span></a>{" "}
+                <a>
+                  <span>THANG MÁY THỰC PHẨM</span> <span>→</span>
+                </a>{" "}
               </li>
             </ul>
           )}

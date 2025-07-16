@@ -1,17 +1,16 @@
-import banner from "../assets/images/Banner-img.jpg"
-
-import ContactJPTechLiftForm from "../components/ContactForm/ContactJPTechLiftForm";
-import Footer from "../components/Footer/DesktopFooter/DesktopFooter";
+import ContactJPTechLiftForm from "../components/ContactForm/ContactForm";
 import HeaderWithBanner from "../components/HomePage/HeaderWithBanner";
+import banner from "../assets/images/Banner-img.jpg";
+import Footer from "../components/Footer/DesktopFooter/DesktopFooter";
 
 const ContactJPTechLiftFormPage = () => {
   return (
     <div>
-    <HeaderWithBanner banner={banner} title="LIÊN HỆ NGAY" />
+      <HeaderWithBanner banner={banner} title="LIÊN HỆ" />
       <ContactJPTechLiftForm />
       <Footer />
     </div>
   );
 };
 
-export default ContactJPTechLiftFormPage; 
+export default ContactJPTechLiftFormPage;

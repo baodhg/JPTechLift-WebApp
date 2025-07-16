@@ -34,8 +34,8 @@ export default function RealGallerySection({ images }: Props) {
           </p>
 
           <div className={styles.buttons}>
-            <button>Ảnh thực tế</button>
-            <button>Xem thêm trong mục tin tức & blog</button>
+            <button>ẢNH THỰC TẾ</button>
+            <button>XEM THÊM TẠI MỤC TIN TỨC & BLOG</button>
           </div>
         </div>
       </div>

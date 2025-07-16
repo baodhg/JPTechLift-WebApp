@@ -112,12 +112,14 @@
     }
 
     h4 {
+      font-family: var(--font-title);
       font-size: 22px;
-      font-weight: 600;
+      font-weight: 500;
       margin-bottom: 12px;
     }
 
     .linkBtn {
+      font-family: var(--font-main);
       display: inline-block;
       width: 100%;
       font-size: 16px;
@@ -125,7 +127,7 @@
       background-color: var(--color-main);
       color: #fff;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 600;
       transition: background-color 0.3s ease;
 
       &:hover {

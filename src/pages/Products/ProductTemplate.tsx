@@ -4,16 +4,16 @@ import { productData } from "../../data/ProductData";
 import type { ProductId } from "../../data/ProductData";
 
 // Import các component con
-import ContentTableSection from "../../components/Product/ContentTableSection";
-import DetailSection from "../../components/Product/DetailSection";
-import DimensionSection from "../../components/Product/DimensionSection";
-import InstallationSection from "../../components/Product/InstallationSection";
-import BlueprintSection from "../../components/Product/BlueprintSection";
-import AestheticsModal from "../../components/Product/AestheticsModal";
-import Introduction from "../../components/Product/Introduction";
+import ContentTableSection from "../../components/ProductPage/ContentTableSection";
+import DetailSection from "../../components/ProductPage/DetailSection";
+import DimensionSection from "../../components/ProductPage/DimensionSection";
+import InstallationSection from "../../components/ProductPage/InstallationSection";
+import BlueprintSection from "../../components/ProductPage/BlueprintSection";
+import AestheticsModal from "../../components/ProductPage/AestheticsModal";
+import Introduction from "../../components/ProductPage/Introduction";
 import NavBar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-import RealGallerySection from "../../components/Product/RealGallerySection";
+import RealGallerySection from "../../components/ProductPage/RealGallerySection";
 
 // ✅ Hàm kiểm tra productId có nằm trong keys hay không
 function isValidProductId(id: string): id is ProductId {

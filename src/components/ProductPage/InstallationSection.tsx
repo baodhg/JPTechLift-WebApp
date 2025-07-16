@@ -21,7 +21,6 @@ export default function InstallationSection({ steps, image }: Props) {
   return (
     <section id="installation" className={styles.installationSection}>
       <h2 className={styles.title}>Quy trình lắp đặt</h2>
-
       <div className={styles.container}>
         <div className={styles.contentArea}>
           <div className={styles.contentBox}>

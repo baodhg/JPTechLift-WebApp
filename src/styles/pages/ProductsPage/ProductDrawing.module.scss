@@ -46,6 +46,7 @@
   text-align: center;
   font-size: 28px;
   width: 100%;
+  font-weight: 500;
   font-family: var(--font-title);
   margin-bottom: 24px;
   color: var(--color-main); // ✅ CHỈNH Ở ĐÂY
@@ -150,8 +151,8 @@
       width: 400px;
       padding: 12px 24px;
       font-family: var(--font-main);
-      font-size: 13px;
-      font-weight: 700;
+      font-size: 14px;
+      font-weight: 600;
       border-radius: var(--border-radius-sm);
       border: none;
       cursor: pointer;

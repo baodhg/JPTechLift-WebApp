@@ -1,5 +1,5 @@
 import styles from "../../../styles/components/Footer/MobileFooter/MobileFooter.module.scss";
-import logo from "../../../assets/images/header/Logo_White_Removebackground.png";
+import Logo from "../../Logo/Logo";
 import facebook from "../../../assets/images/header/Facebook_2_Icon.png";
 import instagram from "../../../assets/images/header/Instagram_Icon.png";
 import youtube from "../../../assets/images/header/Youtube-Icon.png";
@@ -11,7 +11,7 @@ export default function MobileFooter() {
     <footer className={styles.footer}>
       {/* Logo + MXH nền xanh đậm */}
       <div className={styles.top}>
-        <img src={logo} alt="JP TECHLIFT" className={styles.logo} />
+        <Logo variant="white" className={styles.logo} />
         <div className={styles.socials}>
           <a href="#">
             <img src={facebook} alt="facebook" />

@@ -1,4 +1,4 @@
-import logo from "../../../assets/images/header/Logo_RemoveBackground.png";
+import Logo from "../../Logo/Logo";
 import phone from "../../../assets/images/header/Phone_Icon.jpg";
 import email from "../../../assets/images/header/Email_Icon.jpg";
 import flag from "../../../assets/images/header/Flag_Icon.jpg";
@@ -10,7 +10,7 @@ const TopBar = () => {
     <div className={styles.topBar}>
       {/* Logo */}
       <div className={styles.topBar__logo}>
-        <img src={logo} alt="Logo" className="" />
+        <Logo />
       </div>
       {/* Info + ngôn ngữ */}
       <div className={styles.topBar__info}>

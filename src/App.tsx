@@ -1,16 +1,18 @@
 // App.tsx
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./layouts/layout";
-import HomePage from "./pages/HomePage";         
+import HomePage from "./pages/HomePage";
 import StandardPage from "./pages/StandardPage";
 import PrinciplePage from "./pages/PrinciplePage";
 import LeaderPage from "./pages/LeaderPage";
 
 import ProductTemplatePage from "./pages/Products/ProductTemplate";
 import ServiceTemplatePage from "./pages/Services/ServiceTemplatePage";
+import NewsPage from "./pages/News/NewsPage";
 import AboutUsPage from "./pages/AboutUsPage";
 import BlogPage from "./pages/BlogPage";
 import ContactJPTechLiftFormPage from "./pages/ContactPage";
+
 
 const App = () => {
   return (
@@ -20,7 +22,8 @@ const App = () => {
           <Route path="/" element={<HomePage />} />               {/* Trang chủ */}
           <Route path="/quy-trinh-du-an" element={<StandardPage />} />   {/* Trang tiêu chuẩn */}
           <Route path="/nguyen-tac" element={<PrinciplePage />} />   {/* Trang nguyên tắc */}
-          <Route path="/ban-lanh-dao" element={<LeaderPage />} />   {/* Trang ban lãnh đạo */}
+          <Route path="/ban-lanh-dao" element={<LeaderPage />} />   {/* Trang nguyên tắc */}
+          <Route path="/tin-tuc" element={<NewsPage />} />   {/* Trang tin tức */}
           <Route path="/ve-chung-toi" element={<AboutUsPage />} />   {/* Trang về chúng tôi */}
           <Route path="/blog" element={<BlogPage />} />   {/* Trang blog */}
           <Route path="/lien-he" element={<ContactJPTechLiftFormPage />} />   {/* Trang liên hệ */}

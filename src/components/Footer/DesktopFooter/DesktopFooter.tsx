@@ -1,5 +1,5 @@
 import styles from "../../../styles/components/Footer/DesktopFooter/DesktopFooter.module.scss";
-import logo from "../../../assets/images/header/Logo_White_Removebackground.png"; // chỉnh lại theo bạn
+import Logo from "../../Logo/Logo";
 import facebook from "../../../assets/images/header/Facebook_2_Icon.png";
 import tiktok from "../../../assets/images/header/TikTok_Icon_2.png";
 import linkendin from "../../../assets/images/header/Linkedin_2_Icon.png";
@@ -15,7 +15,7 @@ export default function Footer() {
       <div className={styles.content}>
         {/* Logo + MXH */}
         <div className={styles.column}>
-          <img src={logo} alt="JP TECHLIFT" className={styles.logo} />
+          <Logo variant="white" className={styles.logo} />
           <div className={styles.socials}>
             <a href="#" className={styles.iconLink}>
               <img src={facebook} alt="facebook" />
