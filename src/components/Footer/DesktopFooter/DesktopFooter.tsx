@@ -17,19 +17,44 @@ export default function Footer() {
         <div className={styles.column}>
           <Logo variant="white" className={styles.logo} />
           <div className={styles.socials}>
-            <a href="#" className={styles.iconLink}>
+            <a
+              href="https://www.facebook.com/profile.php?id=61573816036604"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.iconLink}
+            >
               <img src={facebook} alt="facebook" />
             </a>
-            <a href="#" className={styles.iconLink}>
+            <a
+              href="https://www.instagram.com/jptechlift/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.iconLink}
+            >
               <img src={instagram} alt="instagram" />
             </a>
-            <a href="#" className={styles.iconLink}>
+            <a
+              href="https://www.youtube.com/@jptechlift"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.iconLink}
+            >
               <img src={youtube} alt="youtube" />
             </a>
-            <a href="#" className={styles.iconLink}>
+            <a
+              href="https://www.linkedin.com/in/mayinpixels"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.iconLink}
+            >
               <img src={linkendin} alt="linkendin" />
             </a>
-            <a href="#" className={styles.iconLink}>
+            <a
+              href="https://www.tiktok.com/@jptechlift"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.iconLink}
+            >
               <img src={tiktok} alt="tiktok" />
             </a>
           </div>

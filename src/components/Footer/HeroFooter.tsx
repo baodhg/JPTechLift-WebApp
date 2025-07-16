@@ -1,7 +1,5 @@
 // HeroBanner.tsx
 import backgroundImage from "../../assets/images/BannerFooter.jpg";
-import chatIcon from "../../assets/images/Message.png";
-import arrowIcon from "../../assets/images/Arrow.png";
 
 export default function HeroFooter() {
   return (
@@ -25,17 +23,6 @@ export default function HeroFooter() {
           <br />
           CHO BẠN
         </h3>
-      </div>
-
-
-      {/* Nút tròn nổi góc phải dưới */}
-      <div className="absolute bottom-6 right-6 flex gap-4 z-30">
-        <button className="w-10 h-10 rounded-full border border-[#041E42] bg-white text-[#041E42] flex items-center justify-center shadow-md">
-          <img src={chatIcon} alt="Chat Icon" className="w-5 h-5" />
-        </button>
-        <button className="w-10 h-10 rounded-full border border-[#041E42] bg-white text-[#041E42] flex items-center justify-center shadow-md">
-          <img src={arrowIcon} alt="Arrow Icon" className="w-5 h-5" />
-        </button>
       </div>
     </section>
   );

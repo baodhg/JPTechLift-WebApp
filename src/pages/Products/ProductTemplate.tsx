@@ -14,7 +14,7 @@ import Introduction from "../../components/ProductPage/Introduction";
 import NavBar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import RealGallerySection from "../../components/ProductPage/RealGallerySection";
-
+import FadeInSection from "../../styles/components/common/FadeInSection";
 // ✅ Hàm kiểm tra productId có nằm trong keys hay không
 function isValidProductId(id: string): id is ProductId {
   return id in productData;
@@ -40,37 +40,47 @@ export default function ProductTemplatePage() {
     <div>
       <NavBar />
       <div>
-        <Introduction
-          title={product.intro.title}
-          description={product.intro.description}
-          introduction={product.intro.introduction}
-          imageUrl={product.intro.heroImage}
-        />
-        {product.contentTable && (
-          <ContentTableSection
-            data={product.contentTable}
-            imageUrl="/assets/images/home-lift/hero.jpg"
+        <FadeInSection>
+          <Introduction
+            title={product.intro.title}
+            description={product.intro.description}
+            introduction={product.intro.introduction}
+            imageUrl={product.intro.heroImage}
           />
+        </FadeInSection>
+        {product.contentTable && (
+          <FadeInSection>
+            <ContentTableSection data={product.contentTable} imageUrl="/assets/images/home-lift/hero.jpg" />
+          </FadeInSection>
         )}
 
         {product.detailInfo && product.galleryImages && (
-          <DetailSection
-            data={product.detailInfo}
-            images={product.galleryImages}
-            onOpenAesthetics={() => setAestheticsOpen(true)}
-          />
+          <FadeInSection>
+            <DetailSection
+              data={product.detailInfo}
+              images={product.galleryImages}
+              onOpenAesthetics={() => setAestheticsOpen(true)}
+            />
+          </FadeInSection>
         )}
 
-        {product.dimensions && <DimensionSection data={product.dimensions} />}
-        <RealGallerySection images={product.realGalleryImages ?? []} />
+        {product.dimensions && (
+          <FadeInSection>
+            <DimensionSection data={product.dimensions} />
+          </FadeInSection>
+        )}
+        <FadeInSection>
+          <RealGallerySection images={product.realGalleryImages ?? []} />
+        </FadeInSection>
         {product.installationSteps && product.installationImage && (
-          <InstallationSection
-            steps={product.installationSteps}
-            image={product.installationImage}
-          />
+          <FadeInSection>
+            <InstallationSection steps={product.installationSteps} image={product.installationImage} />
+          </FadeInSection>
         )}
         {product.blueprint && (
-          <BlueprintSection blueprint={product.blueprint} />
+          <FadeInSection>
+            <BlueprintSection blueprint={product.blueprint} />
+          </FadeInSection>
         )}
 
         {/* Modal thẩm mỹ cabin */}

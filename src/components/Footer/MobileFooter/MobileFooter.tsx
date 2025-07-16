@@ -13,19 +13,19 @@ export default function MobileFooter() {
       <div className={styles.top}>
         <Logo variant="white" className={styles.logo} />
         <div className={styles.socials}>
-          <a href="#">
+          <a href="https://www.facebook.com/profile.php?id=61573816036604" target="_blank" rel="noopener noreferrer">
             <img src={facebook} alt="facebook" />
           </a>
-          <a href="#">
+          <a href="https://www.instagram.com/jptechlift/" target="_blank" rel="noopener noreferrer">
             <img src={instagram} alt="instagram" />
           </a>
-          <a href="#">
+          <a href="https://www.youtube.com/@jptechlift" target="_blank" rel="noopener noreferrer">
             <img src={youtube} alt="youtube" />
           </a>
-          <a href="#">
+          <a href="https://www.linkedin.com/in/mayinpixels" target="_blank" rel="noopener noreferrer">
             <img src={linkedin} alt="linkedin" />
           </a>
-          <a href="#">
+          <a href="https://www.tiktok.com/@jptechlift" target="_blank" rel="noopener noreferrer">
             <img src={tiktok} alt="tiktok" />
           </a>
         </div>
