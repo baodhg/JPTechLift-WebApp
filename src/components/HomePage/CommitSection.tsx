@@ -55,7 +55,7 @@ export default function CommitSection() {
 
         {/* Chữ nằm giữa ảnh */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <h3 className="font-inter text-[36px] md:text-[48px] font-black text-[#041E42] drop-shadow-md tracking-wide uppercase text-center">
+          <h3 className="font-inter text-[36px] md:text-[48px] font-black text-[#041E42] drop-shadow-md tracking-wide uppercase text-center px-4 md:px-0">
             Luôn luôn là dịch vụ tốt nhất
           </h3>
         </div>

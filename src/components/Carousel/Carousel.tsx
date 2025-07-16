@@ -64,7 +64,7 @@ export default function Carousel({
             />
 
             {/* Overlay content */}
-            <div className="relative z-10 text-center mt-3 text-white max-w-2xl px-4">
+            <div className="relative z-10 text-center text-white max-w-2xl px-4">
               {slide.title && (
                 <h2
                   className="whitespace-nowrap text-2xl md:text-4xl font-bold mb-5 drop-shadow"
@@ -94,13 +94,13 @@ export default function Carousel({
       {/* Controls */}
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-4 z-20 transform -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 text-white transition"
+        className="absolute top-[47%] left-4 z-20 transform -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 text-white transition"
       >
         ❮
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-4 z-20 transform -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 text-white transition"
+        className="absolute top-[47%] right-4 z-20 transform -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 text-white transition"
       >
         ❯
       </button>
