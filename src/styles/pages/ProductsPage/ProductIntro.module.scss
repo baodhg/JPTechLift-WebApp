@@ -58,7 +58,9 @@
   flex-direction: column;
   justify-content: flex-start;
   padding: 60px 40px;
-
+  @media (max-width: 768px) {
+    border-left: 2px solid var(--color-gray);
+  }
   .title {
     width: 50%;
     font-family: var(--font-title);

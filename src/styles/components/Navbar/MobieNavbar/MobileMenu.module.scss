@@ -54,6 +54,10 @@ body {
     flex-shrink: 0;
   }
 
+  .logoHidden {
+    display: none;
+  }
+
   &__right {
     display: flex;
     align-items: center;
@@ -89,10 +93,16 @@ body {
 
   &__socialIcons {
     display: flex;
+    flex: 1;
+    justify-content: space-evenly;
     gap: 8px;
     opacity: 1;
     visibility: visible;
     transition: opacity 0s ease, visibility 2s ease;
+    a {
+      flex: 1;
+      text-align: center;
+    }
     &.hidden {
       opacity: 0;
       visibility: hidden;
@@ -131,15 +141,16 @@ body {
 
 @media (max-width: 478px) {
   .headerBar__socialIcons a img {
-    width: 24px !important;
-    height: 24px !important;
+    width: 30px !important;
+    height: 30px !important;
     flex-shrink: 0;
     object-fit: contain;
   }
 
   .headerBar__icons {
     flex-wrap: nowrap; // tránh wrap icon gây co
-    min-width: 100px; // tránh khung cha co lại
+    min-width: 120px; // tránh khung cha co lại
+    width: 100%;
   }
 }
 
@@ -214,12 +225,13 @@ body {
    🍔 MENU PANEL (Mobile Dropdown)
    =================================== */
 .menuPanel {
-  position: absolute;
+  position: fixed;
+  top: 105px;
   left: 0;
   right: 0;
   width: 100%;
   max-height: 0; // mặc định ẩn
-  overflow: hidden;
+  overflow-y: auto;
   opacity: 0; // mờ hoàn toàn khi ẩn
   visibility: hidden; // tránh tab focus nhảy vào
   background: white;
@@ -227,7 +239,7 @@ body {
   transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
 
   &__open {
-    max-height: 70vh; // cho phép mở tràn cả màn hình
+    max-height: calc(50vh - var(--menu-height)); // cho phép mở tràn cả màn hình
     opacity: 1;
     visibility: visible;
   }

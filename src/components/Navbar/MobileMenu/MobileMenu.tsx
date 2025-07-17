@@ -54,7 +54,10 @@ const MobileMenu = () => {
       {/* Thanh xanh: logo + nút toggle */}
       <div className={styles.headerBar}>
         {/* Logo bên trái */}
-        <Logo variant="white" className={styles.logo} />
+        <Logo
+          variant="white"
+          className={`${styles.logo} ${showSearch ? styles.logoHidden : ""}`}
+        />
         {/* Khối phải: social + search + toggle */}
         <div className={styles.headerBar__right}>
           <div className={styles.headerBar__icons}>

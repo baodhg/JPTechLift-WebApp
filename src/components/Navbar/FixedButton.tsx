@@ -17,7 +17,7 @@ const FixedButtons = () => {
         onClick={() => navigate("/lien-he")}
         className="w-10 h-10 md:w-14 md:h-14 rounded-full border border-[#041E42] bg-white text-[#041E42] flex items-center justify-center shadow-md"
         animate={{ rotate: [0, -10, 10, -10, 10, 0] }}
-        transition={{ repeat: Infinity, repeatDelay: 3, duration: 0.5 }}
+        transition={{ repeat: Infinity, repeatDelay: 9, duration: 3 }}
         whileHover={{ scale: 1.1 }}
       >
         <motion.img

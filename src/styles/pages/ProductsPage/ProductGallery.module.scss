@@ -263,9 +263,10 @@
 
 .buttonsWrapper {
   display: flex;
+  align-items: center;
   flex-direction: column;
+  text-align: center;
   gap: 16px;
-  justify-content: center;
 
   @media (min-width: 640px) {
     flex-direction: row;
@@ -300,12 +301,6 @@
       transform: translateY(0);
     }
   }
-}
-
-// Additional styles for blueprint section
-.blueprintSection {
-  padding: 50px 20px;
-  background-color: #f7f7f7;
 }
 
 .title {
