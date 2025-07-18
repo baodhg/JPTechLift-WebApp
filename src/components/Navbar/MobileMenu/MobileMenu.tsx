@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import styles from "../../../styles/components/Navbar/MobieNavbar/MobileMenu.module.scss";
 import { ChevronRight } from "lucide-react";
 import Logo from "../../Logo/Logo";
-import facebook from "../../../assets/images/header/Facebook_Icon.png";
-import tiktok from "../../../assets/images/header/TikTok_Icon.png";
-import linkendin from "../../../assets/images/header/Linkedin_Icon.png";
-import search from "../../../assets/images/header/Search_Icon.png";
+import facebook from "../../../assets/images/header/Facebook_Icon_3.png";
+import tiktok from "../../../assets/images/header/TikTok_Icon_3.png";
+import linkendin from "../../../assets/images/header/Linkedin_Icon_3.png";
+import search from "../../../assets/images/header/Search_Icon_2.png";
+import XIcon from "../../../assets/images/header/X_Icon.png";
+import youtube from "../../../assets/images/header/Youtube_Icon_3.png";
+import backIcon from "../../../assets/images/header/Back_Icon.png";
 
 const productLinks = [
   { label: "THANG MÁY GIA ĐÌNH", path: "/products/thang-may-gia-dinh" },
@@ -36,9 +39,7 @@ const aboutLinks = [
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-  const [menuLevel, setMenuLevel] = useState<
-    "main" | "product_service" | "product" | "about" | "service"
-  >("main");
+  const [menuLevel, setMenuLevel] = useState<"main" | "product_service" | "product" | "about" | "service">("main");
 
   const closeMenu = () => {
     setIsOpen(false);
@@ -54,86 +55,30 @@ const MobileMenu = () => {
       {/* Thanh xanh: logo + nút toggle */}
       <div className={styles.headerBar}>
         {/* Logo bên trái */}
-        <Logo
-          variant="white"
-          className={`${styles.logo} ${showSearch ? styles.logoHidden : ""}`}
-        />
+        <Logo variant="white" className={`${styles.logo} ${showSearch ? styles.logoHidden : ""}`} />
         {/* Khối phải: social + search + toggle */}
         <div className={styles.headerBar__right}>
           <div className={styles.headerBar__icons}>
-            <div
-              className={`${styles.headerBar__socialIcons} ${
-                showSearch ? styles.hidden : ""
-              }`}
-            >
-              <a
-                href="https://www.facebook.com/profile.php?id=61573816036604"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition duration-200 hover:brightness-200 hover:scale-105"
-              >
-                <img src={facebook} alt="facebook" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/mayinpixels"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition duration-200 hover:brightness-200 hover:scale-105"
-              >
-                <img src={linkendin} alt="linkendin" />
-              </a>
-              <a
-                href="https://www.tiktok.com/@jptechlift"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition duration-200 hover:brightness-200 hover:scale-105"
-              >
-                <img src={tiktok} alt="tiktok" />
-              </a>
-            </div>
-
             {/*Thanh search */}
-            <form
-              className={`${styles.headerBar__searchForm} ${
-                showSearch ? styles.show : ""
-              }`}
-            >
-              <input
-                type="text"
-                placeholder="Tìm kiếm..."
-                className={styles.searchInput}
-              />
+            <form className={`${styles.headerBar__searchForm} ${showSearch ? styles.show : ""}`}>
+              <input type="text" placeholder="Tìm kiếm..." className={styles.searchInput} />
               <button type="submit" className={styles.searchBtn}></button>
             </form>
             {/* Icon Search luôn hiển thị để bấm */}
-            <button
-              className={styles.searchToggleBtn}
-              onClick={() => setShowSearch(!showSearch)}
-            >
+            <button className={styles.searchToggleBtn} onClick={() => setShowSearch(!showSearch)}>
               {" "}
-              <img
-                src={search}
-                alt="search"
-                className={styles.headerBar__searchIcon}
-              />
+              <img src={search} alt="search" className={styles.headerBar__searchIcon} />
             </button>
             <div className={styles.iconDivider}></div>
             {/* Hamburger */}
-            <button
-              className={styles.menuBtn}
-              onClick={() => setIsOpen(!isOpen)}
-            >
+            <button className={styles.menuBtn} onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? "✕" : "☰"}
             </button>
           </div>
         </div>
       </div>
       {/* Menu trượt xuống */}
-      <div
-        className={`${styles.menuPanel} ${
-          isOpen ? styles.menuPanel__open : ""
-        }`}
-      >
+      <div className={`${styles.menuPanel} ${isOpen ? styles.menuPanel__open : ""}`}>
         <div className={styles.menuInner}>
           {menuLevel === "main" && (
             <ul className={styles.menuList}>
@@ -177,7 +122,9 @@ const MobileMenu = () => {
               {/* Nút quay lại */}
               <li onClick={() => setMenuLevel("main")}>
                 <a>
-                  <span>⬅ Quay lại</span>
+                  <span className={styles.backIconWrapper}>
+                    <img src={backIcon} alt="back" className={styles.backIcon} /> <p>QUAY LẠI</p>
+                  </span>
                 </a>
               </li>
 
@@ -202,7 +149,10 @@ const MobileMenu = () => {
               {/* Quay lại */}
               <li onClick={() => setMenuLevel("product_service")}>
                 <a>
-                  <span>⬅ Quay lại</span>
+                  <span className={styles.backIconWrapper}>
+                    <img src={backIcon} alt="back" className={styles.backIcon} />
+                    <p>QUAY LẠI</p>
+                  </span>
                 </a>
               </li>
 
@@ -222,7 +172,10 @@ const MobileMenu = () => {
               {/* Nút quay lại */}
               <li onClick={() => setMenuLevel("product_service")}>
                 <a>
-                  <span>⬅ Quay lại</span>
+                  <span className={styles.backIconWrapper}>
+                    <img src={backIcon} alt="back" className={styles.backIcon} />
+                    <p>QUAY LẠI</p>
+                  </span>
                 </a>
               </li>
 
@@ -237,6 +190,50 @@ const MobileMenu = () => {
             </ul>
           )}
         </div>
+        {isOpen && (
+          <div className={styles.menuPanel__socials}>
+            <a
+              href="https://www.facebook.com/profile.php?id=61573816036604"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition duration-200 hover:brightness-200 hover:scale-105"
+            >
+              <img src={facebook} alt="facebook" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mayinpixels"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition duration-200 hover:brightness-200 hover:scale-105"
+            >
+              <img src={linkendin} alt="linkendin" />
+            </a>
+            <a
+              href="https://www.tiktok.com/@jptechlift"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition duration-200 hover:brightness-200 hover:scale-105"
+            >
+              <img src={tiktok} alt="tiktok" />
+            </a>
+            <a
+              href="https://x.com/JPTechLift"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition duration-200 hover:brightness-200 hover:scale-105"
+            >
+              <img src={XIcon} alt="X" />
+            </a>
+            <a
+              href=" https://www.youtube.com/@jptechlift"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition duration-200 hover:brightness-200 hover:scale-105"
+            >
+              <img src={youtube} alt="youtube" />
+            </a>
+          </div>
+        )}
       </div>
     </>
   );

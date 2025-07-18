@@ -1,9 +1,8 @@
 /* ===================================
-   🌈 ROOT VARIABLES
+   🌈 ROOT VARIABLES (nên đặt ở global)
    =================================== */
 :root {
   --color-main: #041e42;
-  --color-red: #d64344;
   --color-yellow: #cba052;
   --color-white: #ffffff;
   --color-gray: #bfbfbf;
@@ -11,19 +10,19 @@
 }
 
 /* ===================================
-   🔧 GLOBAL STYLES
+   🔧 RESET & BASE
    =================================== */
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; // Ngăn tràn ngang
+  overflow-x: hidden;
+  font-family: var(--font-main);
 }
 
 /* ===================================
-   🔶 HOTLINE BAR (Mobile Only)
+   🔶 HOTLINE BAR
    =================================== */
 .hotlineBar {
-  font-family: var(--font-main);
   background-color: var(--color-yellow);
   color: var(--color-white);
   text-align: center;
@@ -36,218 +35,160 @@ body {
 }
 
 /* ===================================
-   🔵 HEADER BAR (Mobile Only)
+   🔵 HEADER BAR (Mobile)
    =================================== */
 .headerBar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   background-color: var(--color-main);
   padding: 10px 0px;
   border-bottom: 1px solid var(--color-gray);
+
   @media (min-width: 768px) {
     display: none;
   }
 
   .logo {
     height: 52px;
-    flex-shrink: 0;
   }
-
   .logoHidden {
-    display: none;
+    display: flex;
   }
 
   &__right {
     display: flex;
     align-items: center;
     flex: 1;
-    margin-left: 16px;
-    min-width: 0; // Ngăn tràn nếu search dài
+    justify-content: flex-end;
+    gap: 8px;
+    position: relative;
   }
 
   &__icons {
     display: flex;
     align-items: center;
-    justify-content: flex-end; // đẩy icon về phải
-    flex: 1; // cho nó co giãn vừa phải trong khối cha
-
-    a {
-      display: inline-block;
-      padding: 10px 8px;
-      transition: 0.3s ease;
-
-      &:hover {
-        filter: brightness(1.2);
-        transform: scale(1.1);
-      }
-
-      img {
-        width: 20px;
-        height: 20px;
-        object-fit: contain;
-        flex-shrink: 0;
-      }
-    }
-  }
-
-  &__socialIcons {
-    display: flex;
-    flex: 1;
-    justify-content: space-evenly;
     gap: 8px;
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0s ease, visibility 2s ease;
-    a {
-      flex: 1;
-      text-align: center;
+  }
+
+  &__searchForm {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    display: none;
+    z-index: 999;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--color-gray);
+    min-width: 240px;
+    max-width: 90vw;
+    align-items: center;
+    gap: 8px;
+
+    &.show {
+      display: flex;
     }
-    &.hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
-  }
-
-  &__searchIcon {
-    padding-left: 10px;
-    cursor: pointer;
-    transition: filter 0.3s ease;
-
-    &:hover {
-      filter: brightness(200%);
-    }
-  }
-
-  .menuBtn {
-    font-size: 26px;
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 32px;
-    font-weight: bold; // làm đậm
-    line-height: 1; // tránh bị lệch
-    flex-shrink: 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--color-gray);
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: var(--color-white);
-    }
-  }
-}
-
-@media (max-width: 478px) {
-  .headerBar__socialIcons a img {
-    width: 30px !important;
-    height: 30px !important;
-    flex-shrink: 0;
-    object-fit: contain;
-  }
-
-  .headerBar__icons {
-    flex-wrap: nowrap; // tránh wrap icon gây co
-    min-width: 120px; // tránh khung cha co lại
-    width: 100%;
-  }
-}
-
-/* ===================================
-   🔍 SEARCH FORM SECTION
-   =================================== */
-.headerBar__searchForm {
-  flex: 1; // ✅ cho phép tự giãn tối đa bên phải
-  max-width: 100%; // ✅ không vượt quá khung
-  display: none;
-  padding: 8px 0;
-  border-radius: 30px;
-  transition: opacity 0.1s ease, visibility 0.1s ease;
-
-  &.show {
-    display: flex;
-    background-color: white;
-    margin-left: 8px;
 
     input {
       flex: 1;
       border: none;
       outline: none;
-      padding: 6px;
-      padding-left: 20px;
       font-size: 14px;
-      border-radius: 20px;
-      cursor: pointer;
+      background: transparent;
 
       &::placeholder {
-        color: #aaa;
+        color: #888;
         font-style: italic;
-        padding-top: 2px;
+      }
+    }
+
+    .searchBtn {
+      background-color: var(--color-main);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: #063076;
       }
     }
   }
 
-  @media (min-width: 768px) {
-    display: none;
+  &__searchIcon {
+    width: 28px;
+    height: 28px;
   }
 }
 
-/* Search Helper Elements */
+.searchToggleBtn,
+.menuBtn {
+  background: none;
+  margin-right: 20px;
+  margin-left: 10px;
+  border: none;
+  color: var(--color-gray);
+  font-size: 24px;
+  cursor: pointer;
+}
+
 .iconDivider {
-  height: 32px;
-  width: 1.5px;
+  width: 1px;
+  height: 28px;
   background-color: var(--color-gray);
-  margin-left: 5%;
-}
-
-.searchToggleBtn {
-  flex-shrink: 0;
-  background: none;
-  border: none;
-  margin-left: 8px;
-  cursor: pointer;
-}
-
-.searchBtn {
-  background: none;
-  border: none;
-  padding: 4px;
-  cursor: pointer;
-
-  img {
-    width: 18px;
-    height: 18px;
-  }
 }
 
 /* ===================================
-   🍔 MENU PANEL (Mobile Dropdown)
+   🍔 DROPDOWN MENU PANEL
    =================================== */
 .menuPanel {
   position: fixed;
   top: 105px;
   left: 0;
   right: 0;
-  width: 100%;
-  max-height: 0; // mặc định ẩn
-  overflow-y: auto;
-  opacity: 0; // mờ hoàn toàn khi ẩn
-  visibility: hidden; // tránh tab focus nhảy vào
   background: white;
-  z-index: 1000;
-  transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 900;
 
   &__open {
-    max-height: calc(50vh - var(--menu-height)); // cho phép mở tràn cả màn hình
+    max-height: calc(100vh - 105px);
     opacity: 1;
     visibility: visible;
+  }
+
+  &__socials {
+    background-color: var(--color-main);
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+    padding: 24px 18px;
+
+    a img {
+      width: 22px;
+      height: 24px;
+      transition: 0.2s ease;
+      &:hover {
+        transform: scale(1.1);
+        filter: brightness(1.2);
+      }
+    }
   }
 }
 
 .menuInner {
-  position: relative;
-  padding: 10px 16px 16px; // padding-top 60px để chừa logo
+  padding: 8px 16px;
 }
 
 .menuList {
@@ -255,55 +196,41 @@ body {
   padding: 0;
 
   li {
-    padding: 16px 0;
+    padding: 14px 0;
     border-bottom: 1px solid var(--color-yellow);
 
     a {
       display: flex;
       justify-content: space-between;
-      margin-left: 10px;
-      margin-right: 10px;
+      align-items: center;
+      text-decoration: none;
       color: var(--color-main);
       font-weight: 500;
-      text-decoration: none;
-      transition: background-color 0.3s ease, color 0.3s ease; // Thêm chuyển màu chữ
-    }
+      transition: 0.3s;
 
-    svg,
-    span:last-child {
-      color: var(--color-yellow);
-      transform: translateX(4px);
-      transition: all 0.3s ease;
-    }
-
-    &:hover {
-      background-color: #052b67; // đậm hơn khi hover
-
-      a {
-        color: var(--color-white);
-      }
-
-      svg {
-        color: #cba052; // màu mũi tên
-        transition: all 0.3s ease;
-        transform: translateX(-6px); // mũi tên trượt nhẹ sang phải
+      &:hover {
+        color: var(--color-yellow);
       }
     }
   }
 }
 
-.closeBtn {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  font-size: 22px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--color-main);
-  transition: color 0.3s ease;
+.backIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  vertical-align: middle;
+  span {
+    display: flex;
+  }
+}
 
-  &:hover {
-    color: var(--color-red);
+.backIconWrapper {
+  display: flex;
+  align-items: center;
+  img {
+    margin-right: 10px;
+    width: 20px;
+    height: 13px;
   }
 }

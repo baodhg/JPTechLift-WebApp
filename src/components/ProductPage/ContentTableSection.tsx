@@ -34,38 +34,28 @@ const quickThumbnails = [
   },
 ];
 
-
 export default function ContentTableSection({ data, imageUrl }: Props) {
   return (
-    <section id="overview" className={styles.contentTable}>
-      <div className={styles.container}>
-        <div className={styles.textContent}>
-          <h2 className={styles.title}>{data.title}</h2>
-          <div className={styles.titleLine}></div>
-          <div className={styles.links}>
-            {data.quickLinks.map((item, index) => (
-              <a key={index} href={`#${item.targetId}`} className={styles.link}>
-                {item.label}
-              </a>
-            ))}
-          </div>
+    <section id="overview" className={styles["content-table"]}>
+      <div className={styles["content-table__container"]}>
+        <div className={styles["content-table__text-content"]}>
+          <h2 className={styles["content-table__title"]}>{data.title}</h2>        
         </div>
 
-        <div className={styles.imageWrapper}>
+        <div className={styles["content-table__image-wrapper"]}>
           <img src={imageUrl} alt="Ảnh minh họa sản phẩm" className={styles.image} />
         </div>
-        <div className={styles.quickGrid}>
-  {quickThumbnails.map((item, index) => (
-    <div key={index} className={styles.quickItem}>
-      <img src={item.image} alt={item.label} className={styles.thumb} />
-      <h4>{item.label}</h4>
-      <a href={`#${item.targetId}`} className={styles.linkBtn}>
-        TÌM HIỂU THÊM
-      </a>
-    </div>
-  ))}
-</div>
-
+        <div className={styles["content-table__grid"]}>
+          {quickThumbnails.map((item, index) => (
+            <div key={index} className={styles["content-table__item"]}>
+              <img src={item.image} alt={item.label} className={styles["content-table__thumb"]} />
+              <h4>{item.label}</h4>
+              <a href={`#${item.targetId}`} className={styles["content-table__link-btn"]}>
+                TÌM HIỂU THÊM
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

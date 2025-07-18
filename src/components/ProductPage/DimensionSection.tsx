@@ -39,7 +39,7 @@ const DimensionSection = memo(({ data, className }: Props) => {
   }
 
   return (
-    <div className={`${styles.container} ${styles.specGrid}`}>
+    <div id="size-price" className={`${styles.container} ${styles.specGrid}`}>
       <h2 className={styles.heading}>Kích thước và giá lắp đặt</h2>
       <section className={styles.dimensionSection}>
         <h2 className={styles.title}>Kích thước thang máy</h2>
