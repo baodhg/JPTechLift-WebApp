@@ -40,7 +40,7 @@ const ArticleGrid = () => {
       {/* Articles Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         {articles.map((article, index) => (
-          <div key={index} className="border border-gray-300 bg-white">
+          <div key={index} className="border border-gray-300 bg-white max-w-[350px] w-full mx-auto">
             {/* Image Placeholder */}
             <div className="bg-gray-200 h-48 flex items-center justify-center">
               <div className="border-2 border-dashed border-gray-400 w-12 h-12 flex items-center justify-center">

@@ -10,7 +10,7 @@ export default function HeroSection() {
       <div>
         <NavBar />
       </div>
-      <Carousel slides={slides} autoSlide autoSlideInterval={7000} transitionEffect="fade" />
+      <Carousel slides={slides} autoSlide autoSlideInterval={5000} transitionEffect="fade" />
     </header>
   );
 }
