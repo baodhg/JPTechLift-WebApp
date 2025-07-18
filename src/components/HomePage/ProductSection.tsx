@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import product1 from "../../assets/images/product1.jpg";
-import product2 from "../../assets/images/product2.jpg";
-import product3 from "../../assets/images/product3.jpg";
-import product4 from "../../assets/images/product4.jpg";
+import product2 from "../../assets/images/product2.png";
+import product3 from "../../assets/images/product3.png";
+import product4 from "../../assets/images/product4.png";
 import product5 from "../../assets/images/product5.jpg";
 import product6 from "../../assets/images/product6.jpg";
 import logo from "../../assets/images/logo-noname.png";
