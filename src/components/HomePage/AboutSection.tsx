@@ -19,12 +19,12 @@ export default function AboutSection() {
   return (
     <section className="w-full bg-white py-16 px-6 md:px-20 text-center">
       {/* Heading */}
-      <h2 className="font-inter font-medium text-[36px] uppercase text-center mb-[30px]">
+      <h2 className="hidden md:block font-inter font-medium text-[36px] uppercase text-center mb-[30px] ">
         VỀ CHÚNG TÔI
       </h2>
 
       {/* Horizontal accent line */}
-      <span className="block w-16 h-1 bg-[#CBA052] mx-auto mb-20 rounded" />
+      <span className="hidden md:block w-16 h-1 bg-[#CBA052] mx-auto mb-20 rounded" />
 
       {/* Sub‑tagline */}
       <p className="font-nunito text-3lg text-xl font-bold mb-6">

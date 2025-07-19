@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import product1 from "../../assets/images/product1.jpg";
+import product1 from "../../assets/images/product1.png";
 import product2 from "../../assets/images/product2.png";
 import product3 from "../../assets/images/product3.png";
 import product4 from "../../assets/images/product4.png";
-import product5 from "../../assets/images/product5.jpg";
-import product6 from "../../assets/images/product6.jpg";
+import product5 from "../../assets/images/product5.png";
+import product6 from "../../assets/images/product6.png";
 import logo from "../../assets/images/logo-noname.png";
 /**
  * ProductSection
@@ -76,13 +76,13 @@ export default function ProductSection() {
         {products.map((p, i) => (
           <div
             key={i}
-            className="w-[300px] flex flex-col items-center border-2 border-[#041E42] rounded-2xl shadow-lg overflow-hidden"
+            className="w-[300px] flex flex-col items-center border-1 border-[#041E42] rounded-xl shadow-2xl overflow-hidden"
           >
             {/* Image */}
             <img
               src={p.image}
               alt={p.title}
-              className="w-[95%] mt-2 object-cover"
+              className="w-[98%] mt-2 object-cover"
             />
 
             {/* Content */}
