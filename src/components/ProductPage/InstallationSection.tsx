@@ -1,3 +1,7 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import styles from "../../styles/pages/ProductsPage/ProductProcess.module.scss";
 
 interface Step {
@@ -13,19 +17,27 @@ interface Stage {
 
 interface Props {
   steps: Stage[];
-  image: string; // thêm prop ảnh minh họa duy nhất
+  image: string;
 }
 
 export default function InstallationSection({ steps, image }: Props) {
-  // ✅ chỉ dùng ảnh minh họa duy nhất từ giai đoạn đầu tiên
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true, easing: "ease-in-out" });
+  }, []);
+
   return (
     <section id="installation" className={styles.installationSection}>
-      <h2 className={styles.title}>Quy trình lắp đặt</h2>
+      <h2 className={styles.title} data-aos="fade-up">Quy trình lắp đặt</h2>
       <div className={styles.container}>
-        <div className={styles.contentArea}>
+        <div className={styles.contentArea} data-aos="fade-left">
           <div className={styles.contentBox}>
             {steps.map((stage, index) => (
-              <div key={index} className={styles.stage}>
+              <div
+                key={index}
+                className={styles.stage}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
                 <div className={styles.textContent}>
                   <h3 className={styles.stageTitle}>{stage.stage}</h3>
                   <p className={styles.description}>{stage.description}</p>
@@ -44,8 +56,12 @@ export default function InstallationSection({ steps, image }: Props) {
           </div>
         </div>
 
-        <div className={styles.imageWrapper}>
-          <img src={image} alt="Ảnh minh họa quy trình lắp đặt" className={styles.image} />
+        <div className={styles.imageWrapper} data-aos="fade-right">
+          <img
+            src={image}
+            alt="Ảnh minh họa quy trình lắp đặt"
+            className={styles.image}
+          />
         </div>
       </div>
     </section>

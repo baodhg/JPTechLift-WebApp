@@ -1,3 +1,7 @@
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import styles from './AboutUsReasons.module.css';
 
 const reasons = [
@@ -20,12 +24,24 @@ const reasons = [
 ];
 
 export default function AboutUsReasons() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   return (
     <section className={styles.reasonsSection}>
-      <h3 className={styles.heading}>Lý do chúng tôi là đối tác phù hợp với nhu cầu của bạn.</h3>
+      <h3 className={styles.heading} data-aos="fade-up">
+        Lý do chúng tôi là đối tác phù hợp với nhu cầu của bạn.
+      </h3>
+
       <div className={styles.cardsGrid}>
         {reasons.map((r, idx) => (
-          <div className={styles.card} key={idx}>
+          <div
+            className={styles.card}
+            key={idx}
+            data-aos="zoom-in"
+            data-aos-delay={idx * 150}
+          >
             <div className={styles.stars}>★★★★★</div>
             <h5>{r.title}</h5>
             <p>{r.desc}</p>

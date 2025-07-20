@@ -1,135 +1,142 @@
 .blogWrap {
-    max-width: 1200px;
-    margin: 36px auto 0 auto;
-    padding: 26px 0 60px 0;
-    background: #fff;
-    border-radius: 10px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .title {
-    text-align: center;
-    font-weight: bold;
-    font-size: 2rem;
-    letter-spacing: 2px;
-    color: #00345d;
-    margin-bottom: 25px;
-  }
-  
-  .toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 18px;
-    padding: 0 8px;
-  }
-  
-  .select {
-    margin-left: 7px;
-    padding: 4px 10px;
-    border-radius: 5px;
-    border: 1px solid #cfd8dc;
-  }
-  
-  .toolbarBtn {
-    background: #f3f3f7;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.2rem;
-    width: 36px;
-    height: 34px;
-    margin: 0 6px;
-    color: #115688;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .toolbarBtn:hover {
-    background: #e3eefd;
-  }
-  
-  .pageNum {
-    min-width: 110px;
-    display: inline-block;
-    color: #333;
-    font-size: 1rem;
-    font-weight: 500;
-    text-align: center;
-  }
-  
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(310px,1fr));
-    gap: 22px 20px;
-    padding: 0 5px;
-  }
-  
-  .card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px #f2f4f6;
-    padding: 19px 17px 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .thumb {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 13px;
-  }
-  
-  .card h3 {
-    margin: 9px 0 7px 0;
-    font-size: 1.02rem;
-    font-weight: bold;
-    color: #00345d;
-  }
-  
-  .card p {
-    margin: 0 0 13px 0;
-    color: #464646;
-    font-size: 0.99rem;
-    line-height: 1.52;
-  }
-  
-  .readMore {
-    background: #1976d2;
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: auto;
-    padding: 7px 19px;
-    font-size: 0.93rem;
-    letter-spacing: 1px;
-    transition: background 0.18s;
-  }
-  .readMore:hover { background: #00345d; }
-  
-  .pagination {
-    text-align: center;
-    margin: 40px 0 0 0;
-  }
-  .pagination button {
-    width: 32px;
-    height: 32px;
-    margin: 0 5px;
-    border-radius: 6px;
-    border: 1.5px solid #e4e6eb;
-    background: #fff;
-    color: #1976d2;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.12s;
-  }
-  .pagination .active {
-    background: #1976d2;
-    color: #fff;
-    border-color: #1976d2;
-  }
-  .pagination button:hover:not(.active) {
-    background: #e3eefd;
-  }
-  
+  max-width: 1200px;
+  margin: 36px auto 0 auto;
+  padding: 26px 0 60px 0;
+  background: #f8fafc;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #00264d;
+  margin-bottom: 25px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  padding: 0 8px;
+}
+
+.select {
+  margin-left: 7px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  border: 1px solid #b0bec5;
+  background-color: #ffffff;
+  color: #00264d;
+}
+
+.toolbarBtn {
+  background: #f1f6fb;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  width: 36px;
+  height: 34px;
+  margin: 0 6px;
+  color: #00264d;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.toolbarBtn:hover {
+  background: #e3eefd;
+}
+
+.pageNum {
+  min-width: 110px;
+  display: inline-block;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 22px 20px;
+  padding: 0 5px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 38, 77, 0.06);
+  padding: 19px 17px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.thumb {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 13px;
+}
+
+.card h3 {
+  margin: 9px 0 7px 0;
+  font-size: 1.02rem;
+  font-weight: bold;
+  color: #00264d;
+}
+
+.card p {
+  margin: 0 0 13px 0;
+  color: #464646;
+  font-size: 0.99rem;
+  line-height: 1.52;
+}
+
+.readMore {
+  background: #1976d2;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: auto;
+  padding: 7px 19px;
+  font-size: 0.93rem;
+  letter-spacing: 1px;
+  transition: background 0.18s;
+}
+.readMore:hover {
+  background: #00264d;
+}
+
+.pagination {
+  text-align: center;
+  margin: 40px 0 0 0;
+}
+.pagination button {
+  width: 32px;
+  height: 32px;
+  margin: 0 5px;
+  border-radius: 6px;
+  border: 1.5px solid #cfd8dc;
+  background: #ffffff;
+  color: #1976d2;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.12s;
+}
+.pagination .active {
+  background: #1976d2;
+  color: #fff;
+  border-color: #1976d2;
+}
+.pagination button:hover:not(.active) {
+  background: #e3eefd;
+}

@@ -1,44 +1,93 @@
+.sectionWrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure container of banner is positioned relatively */
 .banner {
   position: relative;
   width: 100%;
-  margin-bottom: 2.5rem;
+  height: 350px;
+  overflow: hidden;
 }
+
+/* Make sure the image fully fills the container */
 .bannerImg {
   width: 100%;
-  max-height: 350px;
+  height: 100%;
   object-fit: cover;
+  display: block;
 }
+
+/* Centered Text Overlay */
 .bannerText {
   position: absolute;
   top: 50%;
-  width: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
+  max-width: 900px;
+  width: 100%;
+  padding: 0 1.5rem;
+  text-align: center;
   color: #fff;
   font-size: 2rem;
-  text-align: center;
-  text-shadow: 0 0 10px #000;
   font-weight: 600;
-  letter-spacing: 1px;
-  padding: 0 1rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+  z-index: 2;
+  box-sizing: border-box;
 }
+
+
+.banner:hover .bannerImg {
+  transform: scale(1.02);
+}
+
+
+
+@media (max-width: 768px) {
+  .bannerText {
+    font-size: 1.4rem;
+    padding: 0 1.25rem;
+  }
+}
+
+
+/* Vision - Mission - Values grid */
 .vmvGrid {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  flex-wrap: wrap;
-  text-align: center;
   margin: 2.5rem 0 1.5rem 0;
+  text-align: center;
+  padding: 0 1rem;
 }
-.vmvGrid > div {
-  background: #f7f7f7;
-  border-radius: 8px;
-  padding: 1.5rem 1rem;
+
+.vmvItem {
+  flex: 1;
   min-width: 220px;
   max-width: 350px;
-  flex: 1;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  transition: transform 0.3s ease;
 }
-.vmvGrid h4 {
+
+.vmvItem:hover {
+  transform: translateY(-5px);
+}
+
+.vmvItem h4 {
   margin-bottom: 0.5rem;
-  color: #1e88e5;
+  color: #1e88e5; /* Màu chủ đạo */
+  font-size: 1.25rem;
+}
+
+.vmvItem p {
+  color: #444;
+  line-height: 1.6;
+  font-size: 1rem;
 }

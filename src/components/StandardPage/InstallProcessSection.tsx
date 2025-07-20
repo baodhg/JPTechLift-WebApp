@@ -1,24 +1,36 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import phase1 from "../../assets/images/phase1.jpg";
 
 export default function InstallProcessSection() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
+
   return (
     <section className="bg-white py-16 px-4 md:px-20 text-[#041E42] font-nunito">
       {/* Tiêu đề */}
-      <h2 className="text-center text-[36px] md:text-[36px] font-bold font-inter mb-10">
+      <h2 className="text-center text-[36px] md:text-[36px] font-bold font-inter mb-10" data-aos="fade-up">
         Thi công lắp đặt thang máy
       </h2>
 
       {/* Horizontal Border */}
-      <div className="w-[60px] h-1 bg-[#CBA052] mx-auto mb-20 rounded-[2px]" />
+      <div className="w-[60px] h-1 bg-[#CBA052] mx-auto mb-20 rounded-[2px]" data-aos="zoom-in" />
 
       {/* Đoạn giới thiệu */}
-      <p className="max-w-[1200px] text-lg leading-relaxed md:mx-auto mx-10 mb-4 text-center">
+      <p className="max-w-[1200px] text-lg leading-relaxed md:mx-auto mx-10 mb-4 text-center" data-aos="fade-up" data-aos-delay="100">
         JP TECHLIFT khởi đầu hành trình với lựa chọn chiến lược: tập trung vào
         lĩnh vực thi công và lắp đặt thang máy. Thành tựu lớn nhất của chúng tôi
         là xây dựng được đội ngũ kỹ sư và kỹ thuật viên tay nghề cao, tận tâm,
         đủ năng lực thi công nhiều công trình, với đa dạng dòng thang máy.
       </p>
-      <p className="max-w-[1200px] text-lg leading-relaxed md:mx-auto mx-10 mb-12 text-center">
+      <p className="max-w-[1200px] text-lg leading-relaxed md:mx-auto mx-10 mb-12 text-center" data-aos="fade-up" data-aos-delay="200">
         Chúng tôi hiểu rõng lắp đặt là khâu then chốt ảnh hưởng trực tiếp đến
         chất lượng và an toàn hành động thang máy, vì vậy JP TECHLIFT kiểm soát
         chặt chẽ từng chi tiết kỹ thuật, đảm bảo mỗi công trình bàn giao đều
@@ -28,10 +40,8 @@ export default function InstallProcessSection() {
       {/* Các bước */}
       <div className="space-y-5 mx-20">
         {/* Bước 1 */}
-        <h3 className="font-bold text-xl md:text-2xl">
-          1. Tiếp nhận công trình:
-        </h3>
-        <div className="flex flex-col md:flex-row items-start gap-6">
+        <h3 className="font-bold text-xl md:text-2xl" data-aos="fade-right">1. Tiếp nhận công trình:</h3>
+        <div className="flex flex-col md:flex-row items-start gap-6" data-aos="fade-up">
           <img
             src={phase1}
             alt="Tiếp nhận công trình"
@@ -62,50 +72,26 @@ export default function InstallProcessSection() {
         </div>
 
         {/* Bước 2 */}
-        <div>
-          <h3 className="font-bold text-xl md:text-2xl mb-2">
-            2. Tiến hành lắp đặt:
-          </h3>
+        <div data-aos="fade-up" data-aos-delay="100">
+          <h3 className="font-bold text-xl md:text-2xl mb-2">2. Tiến hành lắp đặt:</h3>
           <p className="text-lg leading-relaxed">
             Giai đoạn này được thực hiện nghiêm ngặt theo quy chuẩn kỹ thuật của
             JP TechLift:
             <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li className="leading-relaxed">
-                Đảm bảo an toàn tại các tầng, lắp đặt hệ gián giáo, vận chuyển
-                các thiết bị vào bối rải như: rail cabin, rail đối trọng,
-                channel, máy kéo, khung cabin, và tủ điều khiển.
-              </li>
-              <li className="leading-relaxed">Tiến hành lắp sản thao tác nhằm đám bảo an toàn thi công.</li>
-              <li className="leading-relaxed">
-                Lắp đặt bộ khung đỏ không có đốt vỏ tốc đừm bảo an toàn cho quá
-                trình vận hành thang máy.
-              </li>
-              <li className="leading-relaxed">
-                Lắp thanh làp rắp hỗ thông phòng máy bao gồm: máy kéo, điện đi
-                và các tầm toàn bao che phòng.
-              </li>
-              <li className="leading-relaxed">
-                Tiếp tục lắp bỏ đối trọng, cabin và hệ thống cáp tại điểm kết
-                giữa khung đỏ và cabin mốt cách chuẩn xác.
-              </li>
-              <li className="leading-relaxed">
-                Thực hiện đồng thời các thép chống cáp theo yêu cầu kỹ thuật.
-              </li>
-              <li className="leading-relaxed">
-                Lắp cabin tạm, dẫn đi đồng dây để đối xây dựng đế thi công vách
-                ngăn giữa tầng và thang.
-              </li>
-              <li className="leading-relaxed">
-                Vệ sinh toàn bộ hố thang và lặp đặt cabin, nóc cabin và các vách
-                xung quanh. Sau cùng, vận hành thang thử để kiểm tra độ chính
-                xác.
-              </li>
+              <li>Đảm bảo an toàn tại các tầng, lắp đặt hệ gián giáo...</li>
+              <li>Tiến hành lắp sản thao tác nhằm đảm bảo an toàn thi công.</li>
+              <li>Lắp đặt bộ khung đỏ không có đốt vỏ tốc độ...</li>
+              <li>Lắp thanh lắp ráp hệ thống phòng máy...</li>
+              <li>Tiếp tục lắp bộ đối trọng, cabin và hệ thống cáp...</li>
+              <li>Thực hiện đồng thời các thép chống cáp theo yêu cầu kỹ thuật.</li>
+              <li>Lắp cabin tạm, dẫn dây để hỗ trợ xây dựng...</li>
+              <li>Vệ sinh toàn bộ hố thang và lắp đặt cabin, nóc cabin...</li>
             </ul>
           </p>
         </div>
 
         {/* Bước 3 */}
-        <div className="mt-10">
+        <div className="mt-10" data-aos="fade-up" data-aos-delay="200">
           <h3 className="font-bold text-xl md:text-2xl mb-2">
             3. Kiểm tra chất lượng và bàn giao công trình:
           </h3>

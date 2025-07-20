@@ -64,13 +64,20 @@ export default function Carousel({
             />
 
             {/* Overlay content */}
-            <div className="relative z-10 text-center text-white max-w-2xl px-4">
+            <div className="relative z-10 text-center text-white max-w-8xl px-4">
               {slide.title && (
-                <h2
-                  className="whitespace-nowrap text-2xl md:text-4xl font-bold mb-5 drop-shadow"
+                <h1
+                  style={{
+                    fontFamily: "grifo_mmedium",
+                    fontSize: "50px",
+                    lineHeight: "50px",
+                    margin: "0px 0px 30px",
+                    textAlign: "center",
+                  }}
+                  className="font-grifo text-white text-[36px] md:text-[68px] font-black tracking-wide text-center drop-shadow-[3px_4px_4px_rgba(0,0,0,2)] leading-tight"
                 >
                   {slide.title}
-                </h2>
+                </h1>
               )}
               {slide.description && (
                 <p className="text-sm md:text-lg mt-4 mb-4 drop-shadow">
@@ -90,20 +97,6 @@ export default function Carousel({
           </div>
         ))}
       </div>
-
-      {/* Controls */}
-      <button
-        onClick={prevSlide}
-        className="absolute top-[47%] left-4 z-20 transform -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 text-white transition"
-      >
-        ❮
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute top-[47%] right-4 z-20 transform -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 text-white transition"
-      >
-        ❯
-      </button>
 
       {/* Indicators */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">

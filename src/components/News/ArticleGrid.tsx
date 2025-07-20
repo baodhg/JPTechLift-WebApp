@@ -1,12 +1,20 @@
+import { useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import backgroundImage from "../../assets/images/BannerFooter.jpg";
 
 const ArticleGrid = () => {
-  // Sample data for 9 articles
+  // AOS init
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true });
+  }, []);
+
+  // Sample data
   const articles = Array(9).fill({
     title: 'TP.HCM',
     content: 'Content 1',
-    image: backgroundImage //test
+    image: backgroundImage
   });
 
   return (
@@ -40,7 +48,12 @@ const ArticleGrid = () => {
       {/* Articles Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         {articles.map((article, index) => (
-          <div key={index} className="border border-gray-300 bg-white max-w-[350px] w-full mx-auto">
+          <div
+            key={index}
+            className="border border-gray-300 bg-white max-w-[350px] w-full mx-auto"
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+          >
             {/* Image Placeholder */}
             <div className="bg-gray-200 h-48 flex items-center justify-center">
               <div className="border-2 border-dashed border-gray-400 w-12 h-12 flex items-center justify-center">

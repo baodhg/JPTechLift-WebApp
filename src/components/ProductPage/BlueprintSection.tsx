@@ -1,3 +1,7 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import styles from "../../styles/pages/ProductsPage/ProductDrawing.module.scss";
 
 interface Props {
@@ -11,13 +15,21 @@ interface Props {
 }
 
 export default function BlueprintSection({ blueprint }: Props) {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });
+  }, []);
+
   return (
     <div className={styles.blueprintWrapper}>
       <h2 className={styles.title}>Bản vẽ kỹ thuật</h2>
       <section id="blueprint" className={styles.blueprintSection}>
-        <div className={styles.content}>
+        <div className={styles.content} data-aos="fade-up">
           <div className={styles.imageWrapper}>
-            <img src={blueprint.image} alt="Bản vẽ kỹ thuật" className={styles.image} />
+            <img
+              src={blueprint.image}
+              alt="Bản vẽ kỹ thuật"
+              className={styles.image}
+            />
           </div>
           <div className={styles.info}>
             {blueprint.description.map((line, idx) => (
@@ -37,7 +49,9 @@ export default function BlueprintSection({ blueprint }: Props) {
               <strong>{blueprint.heightNote}</strong>
             </p>
             <div className={styles.buttonGroup}>
-              <button className={styles.primaryButton}>LIÊN HỆ TRỰC TIẾP ĐỂ BIẾT THÊM THÔNG TIN</button>
+              <button className={styles.primaryButton}>
+                LIÊN HỆ TRỰC TIẾP ĐỂ BIẾT THÊM THÔNG TIN
+              </button>
               <button className={styles.secondaryButton}>KHO ẢNH</button>
             </div>
           </div>
