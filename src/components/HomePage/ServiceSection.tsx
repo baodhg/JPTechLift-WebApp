@@ -3,6 +3,10 @@ import service2 from "../../assets/images/service2.jpg";
 import service3 from "../../assets/images/service3.jpg";
 import service4 from "../../assets/images/service4.jpg";
 
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 interface Service {
   title: string;
   description: string[];
@@ -45,45 +49,77 @@ const services: Service[] = [
 ];
 
 export default function ServiceSection() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
   return (
     <section className="bg-white py-16 px-4">
       {/* Title */}
-      <h1 className="font-inter font-medium text-[36px] uppercase text-center mb-[30px]">
+      <h1
+        className="font-inter font-medium text-[36px] uppercase text-center mb-[30px]"
+        data-aos="fade-up"
+      >
         DỊCH VỤ THANG MÁY
       </h1>
 
       {/* Horizontal Border */}
-      <div className="w-[60px] h-1 bg-[#CBA052] mx-auto mb-20 rounded-[2px]" />
+      <div
+        className="w-[60px] h-1 bg-[#CBA052] mx-auto mb-20 rounded-[2px]"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      />
 
       {/* Service cards */}
-      <div className="space-y-12">
+      {/* Danh sách dịch vụ */}
+      <div className="space-y-14">
         {services.map((service, idx) => (
           <div
             key={idx}
-            className="mx-auto max-w-[1200px] flex flex-col md:flex-row gap-6 rounded-lg py-6 px-6 md:px-10"
+            data-aos="fade-up"
+            data-aos-delay={idx * 100}
+            className="mx-auto max-w-[1200px] flex flex-col md:flex-row items-center md:items-start gap-8 bg-[#F9F9F9] rounded-xl shadow-md p-6 md:p-10 transition-transform hover:scale-[1.01]"
           >
-            {/* Image */}
+            {/* Ảnh dịch vụ */}
             <img
               src={service.image}
               alt={service.title}
-              className="self-start aspect-square w-[280px] md:w-[300px] object-cover rounded-md shadow-lg"
+              className="w-full max-w-[280px] md:max-w-[300px] object-cover rounded-lg shadow-sm border border-gray-200"
             />
 
-            {/* Content */}
-            <div className="flex-1 md:pl-6 mx-5">
-              <h3 className="font-inter font-semibold md:text-[30px] text-[28px] uppercase mt-2 mb-3 text-left">
+            {/* Nội dung */}
+            <div className="flex-1">
+              <h3 className="font-inter text-[26px] md:text-[30px] font-bold uppercase text-[#041E42] mb-4">
                 {service.title}
               </h3>
+
               {service.description.map((para, i) => (
                 <p
                   key={i}
-                  className="font-nunito text-black-600 md:text-[20px] text-[18px] leading-[1.7] text-black-700 mb-3"
+                  className="font-nunito text-base md:text-lg text-[#333] leading-relaxed mb-3"
                 >
                   {para}
                 </p>
               ))}
-              <button className="inline-block border border-black py-2 px-3 text-[20px] mt-3 transition-colors duration-300 hover:bg-[#041E42] hover:text-white">
+
+              <button className="group mt-4 inline-flex items-center gap-2 border border-[#041E42] px-4 py-2 text-[#041E42] font-semibold hover:bg-[#041E42] hover:text-white transition-colors duration-300">
                 XEM THÊM
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
               </button>
             </div>
           </div>
