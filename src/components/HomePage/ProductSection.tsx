@@ -76,7 +76,7 @@ export default function ProductSection() {
     <section className=" px-4 pb-24 overflow-hidden bg-texture-bg bg-texture-pattern bg-[length:8px_8px]">
       {/* Heading */}
       <h2
-        className="font-inter font-semibold md:font-medium md:text-[36px] text-[30px] uppercase text-center mb-5 md:mb-10 text-[#041E42] md:text-black"
+        className="mt-6 font-inter font-semibold md:font-medium md:text-[36px] text-[30px] uppercase text-center mb-5 md:mb-10 text-[#041E42] md:text-black"
         data-aos="fade-up"
       >
         SẢN PHẨM
