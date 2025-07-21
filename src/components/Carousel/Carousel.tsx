@@ -26,8 +26,6 @@ export default function Carousel({
 
   const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
 
-    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-
   useEffect(() => {
     if (!autoSlide) return;
     const interval = setInterval(() => {
