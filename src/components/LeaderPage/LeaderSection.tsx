@@ -13,11 +13,11 @@ export default function LeaderSection() {
   }, []);
 
   return (
-    <section className="bg-white py-10 px-4 md:px-12 lg:px-24">
+    <section className="bg-white px-4 pt-10 lg:px-24">
       {/* Tiêu đề */}
-      <section className="text-[#041E42] w-full bg-white py-6 px-6 md:px-20 text-center md:pb-24">
+      <section className="text-[#041E42] w-full bg-white px-6 md:px-20 text-center md:pb-24">
       <h2
-        className="hidden md:block md:mt-14 font-inter font-bold text-[36px] uppercase text-center mb-[30px]"
+        className=" md:mt-8 font-inter font-bold text-[36px] uppercase text-center mb-[30px]"
         data-aos="fade-up"
       >
         BAN LÃNH ĐẠO CỦA CHÚNG TÔI
@@ -25,7 +25,7 @@ export default function LeaderSection() {
 
       {/* Horizontal accent line */}
       <span
-        className="hidden md:block w-16 h-1 bg-[#CBA052] mx-auto mb-10 md:mb-20 rounded"
+        className="block w-16 h-1 bg-[#CBA052] mx-auto mb-10 md:mb-20 rounded"
         data-aos="fade-up"
         data-aos-delay="100"
       />
