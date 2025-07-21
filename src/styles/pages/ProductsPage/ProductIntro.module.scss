@@ -1,67 +1,31 @@
-/* ===================================
-   🎨 DESIGN TOKENS & VARIABLES
-   =================================== */
-:root {
-  // Colors
-  --color-main: #041e42;
-  --color-red: #d64344;
-  --color-yellow: #cba052;
-  --color-white: #ffffff;
-  --color-gray: #bfbfbf;
-  --color-gray1: #ced4da;
-  // Typography
-  --font-main: "Nunito Sans", sans-serif;
-  --font-title: "Inter", sans-serif;
-  // Spacing
-  --spacing-xs: 6px;
-  --spacing-sm: 8px;
-  --spacing-md: 12px;
-  --spacing-lg: 16px;
-  --spacing-xl: 24px;
+@use "../../base/variables";
 
-  // Sizes
-  --logo-height: 76px;
-  --icon-size: 24px;
-  --icon-size-sm: 20px;
-  --menu-height: 65px;
-  --border-radius: 10px;
-  --border-radius-sm: 8px;
-  --border-radius-pill: 30px;
-
-  // Shadows
-  --shadow-light: 0 2px 2px 2px rgba(0, 0, 0, 0.25);
-  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
-  --shadow-heavy: 0 2px 10px rgba(0, 0, 0, 0.1);
-
-  // Transitions
-  --transition-fast: 0.2s ease;
-  --transition-medium: 0.3s ease;
-}
-
-.introSection {
+.product-intro {
   background-color: var(--color-main); // nền xanh đậm
   color: var(--color-white);
-}
 
-.container {
-  font-family: var(--font-main);
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  align-items: stretch;
-}
-
-.textBox {
-  flex: 1 1 45%;
-  border-right: 2px solid var(--color-gray);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 60px 40px;
-  @media (max-width: 768px) {
-    border-left: 2px solid var(--color-gray);
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    align-items: stretch;
+    font-family: var(--font-main);
   }
-  .title {
+
+  &__text {
+    flex: 1 1 45%;
+    border-right: 2px solid var(--color-gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 60px 40px;
+
+    @media (max-width: 768px) {
+      border-left: 2px solid var(--color-gray);
+    }
+  }
+
+  &__title {
     width: 50%;
     font-family: var(--font-title);
     font-size: 62px;
@@ -70,23 +34,26 @@
     margin-bottom: 16px;
     text-transform: none;
     border-bottom: 2px solid var(--color-gray);
+
     span {
-      color: #cba052; // chữ "gia đình" màu vàng
+      color: var(--color-yellow);
       font-weight: 800;
     }
   }
 
-  .description {
+  &__description {
     width: 76%;
     font-size: 20px;
     font-weight: 300;
     line-height: 1.6;
     color: var(--color-gray1);
+
     strong {
       font-weight: 700;
     }
   }
-  .introduction {
+
+  &__intro {
     width: 76%;
     padding-top: 40px;
     font-size: 20px;
@@ -94,59 +61,60 @@
     color: var(--color-gray1);
     line-height: 1.6;
   }
-}
 
-.imageWrapper {
-  flex: 1 1 35%;
-  width: 100%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .image {
+  &__image-wrapper {
+    flex: 1 1 35%;
     width: 100%;
     height: auto;
+    align-items: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   }
-}
 
-/* Landscape mobile */
-@media (max-width: 768px) and (orientation: landscape) {
-  .container {
-    flex-direction: row;
-  }
+  // Landscape mobile
+  @media (max-width: 768px) and (orientation: landscape) {
+    &__container {
+      flex-direction: row;
+    }
 
-  .textBox {
-    flex: 1 1 55%;
-    border-right: 2px solid var(--color-gray);
-    border-bottom: none;
-    padding: 20px 15px;
-    text-align: left;
-    order: 1;
+    &__text {
+      flex: 1 1 55%;
+      border-right: 2px solid var(--color-gray);
+      border-bottom: none;
+      padding: 20px 15px;
+      text-align: left;
+      order: 1;
+    }
 
-    .title {
+    &__title {
       font-size: 24px;
       text-align: left;
       width: 90%;
     }
 
-    .description,
-    .introduction {
+    &__description,
+    &__intro {
       width: 90%;
       font-size: 14px;
       text-align: left;
     }
 
-    .introduction {
+    &__intro {
       padding-top: 15px;
     }
-  }
 
-  .imageWrapper {
-    flex: 1 1 45%;
-    padding: 15px;
-    order: 2;
+    &__image-wrapper {
+      flex: 1 1 45%;
+      padding: 15px;
+      order: 2;
+    }
   }
 }

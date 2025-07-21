@@ -1,13 +1,4 @@
-/* ===================================
-   🌈 ROOT VARIABLES (nên đặt ở global)
-   =================================== */
-:root {
-  --color-main: #041e42;
-  --color-yellow: #cba052;
-  --color-white: #ffffff;
-  --color-gray: #bfbfbf;
-  --font-main: "Nunito Sans", sans-serif;
-}
+@use "../../../base/variables";
 
 /* ===================================
    🔧 RESET & BASE
@@ -17,141 +8,216 @@ body {
   padding: 0;
   overflow-x: hidden;
   font-family: var(--font-main);
+  padding-top: 111px;
+
+  @media (min-width: 768px) {
+    padding-top: 0;
+  }
+}
+
+/* ===================================
+   📱 MOBILE NAVBAR CONTAINER
+   =================================== */
+.mobile-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
 
 /* ===================================
    🔶 HOTLINE BAR
    =================================== */
-.hotlineBar {
+.mobile-navbar__hotline {
   background-color: var(--color-yellow);
   color: var(--color-white);
   text-align: center;
   font-size: 14px;
   padding: 6px 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  @media (min-width: 768px) {
-    display: none;
+  a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
 /* ===================================
    🔵 HEADER BAR (Mobile)
    =================================== */
-.headerBar {
+.mobile-navbar__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--color-main);
   padding: 10px 0px;
   border-bottom: 1px solid var(--color-gray);
+}
 
-  @media (min-width: 768px) {
-    display: none;
-  }
+.mobile-navbar__logo {
+  padding-left: 16px;
+  height: 52px;
+  transition: opacity 0.3s ease;
 
-  .logo {
-    height: 52px;
-  }
-  .logoHidden {
-    display: flex;
-  }
-
-  &__right {
-    display: flex;
-    align-items: center;
-    flex: 1;
-    justify-content: flex-end;
-    gap: 8px;
-    position: relative;
-  }
-
-  &__icons {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  &__searchForm {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    display: none;
-    z-index: 999;
-    background: white;
-    padding: 8px 12px;
-    border-radius: 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border: 1px solid var(--color-gray);
-    min-width: 240px;
-    max-width: 90vw;
-    align-items: center;
-    gap: 8px;
-
-    &.show {
-      display: flex;
-    }
-
-    input {
-      flex: 1;
-      border: none;
-      outline: none;
-      font-size: 14px;
-      background: transparent;
-
-      &::placeholder {
-        color: #888;
-        font-style: italic;
-      }
-    }
-
-    .searchBtn {
-      background-color: var(--color-main);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 28px;
-      height: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-
-      &:hover {
-        background-color: #063076;
-      }
-    }
-  }
-
-  &__searchIcon {
-    width: 28px;
-    height: 28px;
+  &--hidden {
+    opacity: 0;
   }
 }
 
-.searchToggleBtn,
-.menuBtn {
+.mobile-navbar__controls {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+  gap: 8px;
+  position: relative;
+}
+
+.mobile-navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===================================
+   🔍 SEARCH FUNCTIONALITY
+   =================================== */
+.mobile-navbar__search {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  display: none;
+  z-index: 999;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--color-gray);
+  min-width: 240px;
+  max-width: 90vw;
+  align-items: center;
+  gap: 8px;
+
+  &--visible {
+    display: flex;
+  }
+}
+
+.mobile-navbar__search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+
+  &::placeholder {
+    color: #888;
+    font-style: italic;
+  }
+}
+
+.mobile-navbar__search-button {
+  background-color: var(--color-main);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #063076;
+  }
+}
+
+.mobile-navbar__search-toggle {
   background: none;
-  margin-right: 20px;
+  margin-right: 0px;
   margin-left: 10px;
   border: none;
   color: var(--color-gray);
   font-size: 24px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.iconDivider {
+.mobile-navbar__search-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.mobile-navbar__divider {
   width: 1px;
   height: 28px;
+  margin-left: 10px;
   background-color: var(--color-gray);
 }
 
 /* ===================================
-   🍔 DROPDOWN MENU PANEL
+   🍔 HAMBURGER MENU TOGGLE
    =================================== */
-.menuPanel {
+.mobile-navbar__menu-toggle {
+  width: 32px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1000;
+  margin-left: 10px;
+  margin-right: 15px;
+  span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-gray);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+  &--active {
+    span:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+  }
+}
+
+/* ===================================
+   📂 DROPDOWN MENU PANEL
+   =================================== */
+.menu {
   position: fixed;
-  top: 105px;
+  top: 111px;
   left: 0;
   right: 0;
   background: white;
@@ -162,75 +228,142 @@ body {
   transition: all 0.3s ease;
   z-index: 900;
 
-  &__open {
-    max-height: calc(100vh - 105px);
+  &--open {
+    max-height: calc(100vh - 111px);
     opacity: 1;
     visibility: visible;
   }
-
-  &__socials {
-    background-color: var(--color-main);
-    display: flex;
-    justify-content: start;
-    gap: 20px;
-    padding: 24px 18px;
-
-    a img {
-      width: 22px;
-      height: 24px;
-      transition: 0.2s ease;
-      &:hover {
-        transform: scale(1.1);
-        filter: brightness(1.2);
-      }
-    }
-  }
 }
 
-.menuInner {
+.menu__content {
   padding: 8px 16px;
 }
 
-.menuList {
+.menu__list {
   list-style: none;
   padding: 0;
+  margin: 0;
+}
 
-  li {
+.menu__item {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-yellow);
+
+  &--back {
     padding: 14px 0;
     border-bottom: 1px solid var(--color-yellow);
-
-    a {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      text-decoration: none;
-      color: var(--color-main);
-      font-weight: 500;
-      transition: 0.3s;
-
-      &:hover {
-        color: var(--color-yellow);
-      }
-    }
   }
 }
 
-.backIcon {
-  width: 20px;
-  height: 20px;
-  margin-right: 6px;
-  vertical-align: middle;
-  span {
-    display: flex;
+.menu__link,
+.menu__button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-main);
+  font-weight: 500;
+  transition: 0.3s;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+
+  &:hover {
+    color: var(--color-yellow);
   }
 }
 
-.backIconWrapper {
+.menu__back-content {
   display: flex;
   align-items: center;
-  img {
-    margin-right: 10px;
-    width: 20px;
-    height: 13px;
+}
+
+.menu__back-icon {
+  margin-right: 10px;
+  width: 20px;
+  height: 13px;
+}
+
+/* ===================================
+   📱 SOCIAL LINKS
+   =================================== */
+.menu__socials {
+  background-color: var(--color-main);
+  display: flex;
+  justify-content: start;
+  gap: 30px;
+  padding: 24px 18px;
+}
+
+.menu__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
+}
+
+.menu__social-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* ===================================
+   📱 OVERLAY
+   =================================== */
+.mobile-navbar__overlay {
+  position: fixed;
+  top: 111px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 899;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===================================
+   ♿ ACCESSIBILITY
+   =================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===================================
+   📱 RESPONSIVE ADJUSTMENTS
+   =================================== */
+@media (max-width: 320px) {
+  .mobile-navbar__search {
+    min-width: 200px;
+    right: 8px;
+  }
+
+  .menu__socials {
+    gap: 20px;
+    padding: 20px 16px;
   }
 }

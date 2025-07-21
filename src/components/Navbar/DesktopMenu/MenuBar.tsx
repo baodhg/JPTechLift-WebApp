@@ -2,7 +2,7 @@ import { useState } from "react";
 import facebook from "../../../assets/images/header/Facebook_Icon.png";
 import tiktok from "../../../assets/images/header/TikTok_Icon.png";
 import linkendin from "../../../assets/images/header/Linkedin_Icon.png";
-import search from "../../../assets/images/header/Search_Icon.png";
+import search from "../../../assets/images/header/Search_Icon_2.png";
 import styles from "../../../styles/components/Navbar/DesktopNavbar/DesktopNav.module.scss";
 
 import ProductServiceDropdown from "./ProductServiceDropdown";
@@ -95,11 +95,11 @@ const MenuBar = ({ scrolled, onSearchOpen, showSearch }: MenuBarProps) => {
             >
               <img src={tiktok} alt="tiktok" />
             </a>
-            <div className={styles.menuBar__search}>
+            <button onClick={onSearchOpen}>
               <a onClick={onSearchOpen}>
                 <img src={search} alt="search" />
               </a>
-            </div>
+            </button>
           </div>
         </div>
       </div>

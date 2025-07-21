@@ -1,0 +1,143 @@
+@use "../../base/variables";
+
+.searchPanel {
+  position: fixed;
+  z-index: var(--z-search);
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 165px;
+  transition: top 0.3s ease;
+  background-color: var(--color-main);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  box-shadow: var(--shadow-medium);
+
+  // 🟨 mobile xử lý toàn màn hình
+  @media (max-width: 768px) {
+    top: 0;
+    height: 100vh;
+    max-width: 100%;
+    border-radius: 0;
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+  &.searchPanelScrolled {
+    top: 65px; // ✅ sẽ ghi đè chính xác vì nằm cùng selector gốc
+  }
+
+  &__box {
+    width: 100%;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    padding: 24px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    h4 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    button {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #fff;
+    }
+  }
+
+  &__form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+
+    input {
+      flex: 1;
+      padding: 10px 16px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      @media (max-width: 768px) {
+        font-size: 18px;
+        padding: 16px;
+      }
+      &:focus {
+        border-color: #fff;
+      }
+    }
+  }
+
+  &__categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+
+    button {
+      padding: 6px 12px;
+      border: 1px solid #fff;
+      border-radius: 999px;
+      background: none;
+      font-size: 14px;
+      cursor: pointer;
+      color: #fff;
+
+      &.active,
+      &:hover {
+        background-color: #fff;
+        color: var(--color-main);
+      }
+    }
+  }
+
+  &__section {
+    margin-bottom: 16px;
+
+    h5 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #fff;
+
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+
+      li {
+        margin-bottom: 6px;
+
+        a,
+        button {
+          background: none;
+          border: none;
+          font-size: 15px;
+          color: #fff;
+          cursor: pointer;
+          padding: 4px 0;
+          text-align: left;
+          width: 100%;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

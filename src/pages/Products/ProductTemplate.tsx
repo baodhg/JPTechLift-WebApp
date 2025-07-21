@@ -15,7 +15,7 @@ import NavBar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import RealGallerySection from "../../components/ProductPage/RealGallerySection";
 import FadeInSection from "../../styles/components/common/FadeInSection";
-// ✅ Hàm kiểm tra productId có nằm trong keys hay không
+// Hàm kiểm tra productId có nằm trong keys hay không
 function isValidProductId(id: string): id is ProductId {
   return id in productData;
 }
@@ -23,10 +23,10 @@ function isValidProductId(id: string): id is ProductId {
 export default function ProductTemplatePage() {
   const { productId } = useParams();
 
-  // ✅ State điều khiển mở/đóng modal
+  // State điều khiển mở/đóng modal
   const [isAestheticsOpen, setAestheticsOpen] = useState(false);
 
-  // ✅ Nếu không có productId hợp lệ
+  // Nếu không có productId hợp lệ
   console.log("productId:", productId); // 👈 thêm dòng này
 
   if (!productId || !isValidProductId(productId)) {

@@ -181,14 +181,6 @@
 /* ===================================
    🧩 MENU BAR COMPONENT
    =================================== */
-.searchWrapper {
-  position: relative;
-  width: 100%;
-  top: 0.5px;
-  background-color: var(--color-main);
-  padding: var(--spacing-xl) 0;
-}
-
 .menuWrapper {
   transition: all 0.4s ease-in-out;
   transform: scale(1);
@@ -216,7 +208,7 @@
   align-items: center;
   height: var(--menu-height);
   background-color: var(--color-main);
-  padding: 0 2%;
+  padding: 2%;
   overflow: visible; // Quan trọng cho dropdown
   transition: transform 2s ease, background-color 2s ease, box-shadow 2s ease, padding 2s ease;
   border-bottom: 2px solid var(--color-gray);
@@ -273,6 +265,24 @@
     display: flex;
     align-items: center;
 
+    button {
+      display: flex;
+      align-items: center;
+      margin-left: 30px;
+      padding-left: 35px;
+      border-left: 2px solid var(--color-gray);
+      a {
+        display: inline-block;
+      padding: 0 var(--spacing-sm);
+      transition: var(--transition-medium);
+        img {
+          width: 24px;
+          height: 24px;
+          object-fit: contain;
+        }
+      }
+    }
+
     a {
       display: inline-block;
       padding: 0 var(--spacing-sm);
@@ -289,15 +299,6 @@
         object-fit: contain;
       }
     }
-  }
-
-  // Search Section
-  &__search {
-    display: flex;
-    align-items: center;
-    margin-left: var(--spacing-lg);
-    padding-left: var(--spacing-lg);
-    border-left: 2px solid var(--color-gray);
   }
 }
 

@@ -38,7 +38,7 @@ const products: Product[] = [
     image: product2,
   },
   {
-    title: "Thang Máy Chở Hàng",
+    title: "Thang Máy Tải Hàng",
     slug: "thang-tai-hang",
     desc: "Bền bỉ và tải trọng lớn, vận chuyển hàng hóa nặng trong kho bãi, nhà máy và khu công nghiệp.",
     image: product3,
@@ -73,10 +73,10 @@ export default function ProductSection() {
   }, []);
 
   return (
-    <section className="bg-white px-4 pb-24">
+    <section className=" px-4 pb-24 overflow-hidden bg-texture-bg bg-texture-pattern bg-[length:8px_8px]">
       {/* Heading */}
       <h2
-        className="font-inter font-medium text-[36px] uppercase text-center mb-10"
+        className="font-inter font-semibold md:font-medium md:text-[36px] text-[30px] uppercase text-center mb-5 md:mb-10 text-[#041E42] md:text-black"
         data-aos="fade-up"
       >
         SẢN PHẨM
@@ -84,7 +84,7 @@ export default function ProductSection() {
 
       {/* Horizontal Border */}
       <div
-        className="w-[60px] h-1 bg-[#CBA052] mx-auto mb-20 rounded-[2px]"
+        className="w-[60px] h-1 bg-[#CBA052] mx-auto mb-10 md:mb-20 rounded-[2px]"
         data-aos="fade-up"
         data-aos-delay="100"
       />
@@ -96,7 +96,7 @@ export default function ProductSection() {
             key={i}
             data-aos="fade-up"
             data-aos-delay={i * 100}
-            className="w-[300px] flex flex-col items-center border-1 border-[#041E42] rounded-2xl shadow-2xl overflow-hidden"
+            className="w-[300px] flex flex-col items-center border-1 border-[#041E42] rounded-2xl shadow-2xl overflow-hidden bg-white"
           >
             {/* Image */}
             <img

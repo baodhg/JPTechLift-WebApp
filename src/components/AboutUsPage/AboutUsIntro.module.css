@@ -1,46 +1,132 @@
 .introSection {
   max-width: 700px;
-  margin: 40px auto;
+  margin: 56px auto 56px auto;
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-  padding: 40px 32px 32px 32px;
-  font-family: Arial, sans-serif;
+  padding: 40px 24px 56px 24px;
+  font-family: 'Inter', 'Nunito Sans', Arial, sans-serif;
+  border-radius: 0;
+  box-shadow: none;
 }
 .heading {
   text-align: center;
-  font-size: 2.1rem;
-  font-weight: bold;
-  margin-bottom: 24px;
-  color: #1e88e5;
-  letter-spacing: 2px;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #183153;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  margin: 0 auto 8px auto;
+  display: block;
+}
+.headingUnderline {
+  display: block;
+  margin: 16px auto 0 auto;
+  width: 60px;
+  height: 4px;
+  background: #cba052;
+  border-radius: 2px;
 }
 .content {
-  color: #222;
-  font-size: 1.07rem;
+  color: #183153;
+  font-size: 1.04rem;
   line-height: 1.7;
+  text-align: center;
+  margin-top: 24px;
 }
 .greeting {
-  text-align: center;
-  font-size: 1.05rem;
-  margin-bottom: 18px;
-  color: #1976d2;
+  font-size: 1.08rem;
+  margin-bottom: 24px;
+  color: #183153;
+}
+.content p {
+  margin-bottom: 24px;
 }
 .slogan {
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
-  margin: 28px 0 12px 0;
-  color: #1565c0;
-  font-size: 1.1rem;
+  margin: 36px 0 36px 0;
+  color: #183153;
+  font-size: 1.13rem;
   letter-spacing: 1px;
 }
 .signature {
-  margin-top: 32px;
+  margin-top: 48px;
   text-align: right;
-  color: #555;
+  color: #183153;
+  font-size: 1rem;
+  line-height: 2.1;
+  width: 100%;
+  display: block;
+}
+.signatureInner {
+  display: inline-block;
+  text-align: center;
+}
+.signature p {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.giamdoc {
+  font-weight: 600;
+  font-size: 1.08rem;
+  margin-bottom: 10px;
 }
 .director {
-  font-weight: bold;
-  color: #1e88e5;
+  font-weight: 700;
+  color: #183153;
   letter-spacing: 1px;
+  margin-top: 10px;
+  font-size: 1.13rem;
+}
+@media (max-width: 768px) {
+  .introSection {
+    max-width: 98vw;
+    padding: 24px 8px 32px 8px;
+    margin: 24px auto 32px auto;
+  }
+  .heading {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+  .headingUnderline {
+    width: 40px;
+    height: 3px;
+    margin-top: 10px;
+  }
+  .content {
+    font-size: 0.97rem;
+    margin-top: 10px;
+  }
+  .greeting {
+    font-size: 1rem;
+    margin-bottom: 14px;
+  }
+  .content p {
+    margin-bottom: 14px;
+  }
+  .slogan {
+    font-size: 1rem;
+    margin: 18px 0 18px 0;
+  }
+  .signature {
+    font-size: 0.97rem;
+    margin-top: 28px;
+    line-height: 2.1;
+    text-align: right;
+  }
+  .signatureInner {
+    display: inline-block;
+    text-align: center;
+  }
+  .signature p {
+    text-align: center;
+  }
+  .giamdoc {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  .director {
+    font-size: 1rem;
+    margin-top: 6px;
+  }
 }

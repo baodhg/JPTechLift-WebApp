@@ -24,7 +24,7 @@ const INSTALLATION_FACTORS = [
 ] as const;
 
 const DimensionSection = memo(({ data, className }: Props) => {
-  const containerClass = className ? `${styles.container} ${className}` : styles.container;
+ const containerClass = className ? `${styles["product-specs"]} ${className}` : styles["product-specs"];
 
   const handleDetailsClick = useCallback(() => {
     console.log("Xem chi tiết về thẩm mỹ cho thang máy");
@@ -39,26 +39,12 @@ const DimensionSection = memo(({ data, className }: Props) => {
   }
 
   return (
-    <div
-      id="size-price"
-      className={`${styles.container} ${styles.specGrid}`}
-      data-aos="fade-up"
-      data-aos-duration="800"
-    >
-      <h2 className={styles.heading} data-aos="zoom-in" data-aos-duration="600">
-        Kích thước và giá lắp đặt
-      </h2>
-
-      {/* Kích thước */}
-      <section
-        className={styles.dimensionSection}
-        data-aos="fade-up"
-        data-aos-delay="100"
-        data-aos-duration="800"
-      >
-        <h2 className={styles.title}>Kích thước thang máy</h2>
-        <div className={styles.tableWrapper}>
-          <table className={styles.table}>
+     <div className={`${styles["product-specs"]} ${styles["product-specs__grid"]}`}>
+      <h2 className={styles["product-specs__heading"]}>Kích thước và giá lắp đặt</h2>
+      <section className={styles["product-specs__dimension-section"]}>
+        <h2 className={styles["product-specs__title"]}>Kích thước thang máy</h2>
+        <div className={styles["product-specs__table-wrapper"]}>
+          <table className={styles["product-specs__table"]}>
             <thead>
               <tr>
                 <th>SỐ NGƯỜI</th>
@@ -79,31 +65,16 @@ const DimensionSection = memo(({ data, className }: Props) => {
         </div>
       </section>
 
-      {/* Giá lắp đặt */}
-      <section
-        className={styles.installationSection}
-        data-aos="fade-up"
-        data-aos-delay="200"
-        data-aos-duration="800"
-      >
-        <h2 className={styles.title}>Giá lắp đặt</h2>
-        <div className={styles.content}>
-          <p className={styles.subtitle}>
-            Trên thực tế, giá thang máy gia đình thay đổi phụ thuộc vào nhiều yếu tố:
-          </p>
-          <ul data-aos="fade-up" data-aos-delay="300" data-aos-duration="700">
+       <section className={styles["product-specs__installation-section"]}>
+        <h2 className={styles["product-specs__title"]}>Giá lắp đặt</h2>
+        <div className={styles["product-specs__content"]}>
+          <p className={styles["product-specs__subtitle"]}>Trên thực tế, giá thang máy gia đình thay đổi phụ thuộc vào nhiều yếu tố:</p>
+          <ul>
             {INSTALLATION_FACTORS.map((factor, index) => (
               <li key={index}>{factor}</li>
             ))}
           </ul>
-          <button
-            className={styles.button}
-            onClick={handleDetailsClick}
-            type="button"
-            data-aos="zoom-in"
-            data-aos-delay="400"
-            data-aos-duration="600"
-          >
+         <button className={styles["product-specs__button"]} onClick={handleDetailsClick} type="button">
             XEM CHI TIẾT VỀ THẨM MỸ CHO THANG MÁY
           </button>
         </div>

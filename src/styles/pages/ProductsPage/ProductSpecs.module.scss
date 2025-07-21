@@ -1,278 +1,238 @@
-/* ===================================
-   🎨 DESIGN TOKENS & VARIABLES
-   =================================== */
-:root {
-  // Colors
-  --color-main: #041e42;
-  --color-red: #d64344;
-  --color-yellow: #cba052;
-  --color-white: #ffffff;
-  --color-gray: #bfbfbf;
-
-  // Typography
-  --font-main: "Nunito Sans", sans-serif;
-  --font-title: "Inter", sans-serif;
-  // Spacing
-  --spacing-xs: 6px;
-  --spacing-sm: 8px;
-  --spacing-md: 12px;
-  --spacing-lg: 16px;
-  --spacing-xl: 24px;
-
-  // Sizes
-  --logo-height: 76px;
-  --icon-size: 24px;
-  --icon-size-sm: 20px;
-  --menu-height: 65px;
-  --border-radius: 10px;
-  --border-radius-sm: 8px;
-  --border-radius-pill: 30px;
-
-  // Shadows
-  --shadow-light: 0 2px 2px 2px rgba(0, 0, 0, 0.25);
-  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
-  --shadow-heavy: 0 2px 10px rgba(0, 0, 0, 0.1);
-
-  // Transitions
-  --transition-fast: 0.2s ease;
-  --transition-medium: 0.3s ease;
-}
+@use "../../base/variables";
 
 /* Container chính */
-.container {
+.product-specs {
   width: 100%;
   margin: 0 auto;
+  padding: 0px 0px;
 
-  padding: 40px 0px;
-}
-
-/* Header chung */
-.heading {
-  font-family: var(--font-title);
-  font-weight: 500;
-  grid-column: span 2; // ✅ nằm full hàng trong grid
-  text-align: center;
-  font-size: 28px;
-  color: #041e42;
-  margin-bottom: 40px;
-
-  &::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--color-yellow);
-    margin: 12px auto 0;
-  }
-
-  @media (max-width: 768px) {
-    grid-column: span 1; // ✅ mobile chỉ 1 cột
-  }
-}
-
-/* Layout 2 cột */
-.specGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 0 16px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
-
-.gridLayout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
-
-/* Phần bảng kích thước */
-.dimensionSection {
-  background-color: #ffffff;
-  padding: 30px;
-  flex: 1;
-  width: 100%;
-  max-width: 560px;
-  margin: 0 auto;
-
-  .title {
+  &__heading {
     font-family: var(--font-title);
-    font-size: 24px;
-    font-weight: 700;
+    font-weight: 500;
+    grid-column: span 2; // ✅ nằm full hàng trong grid
+    text-align: center;
+    font-size: 28px;
     color: #041e42;
-    margin-bottom: 20px;
-    position: relative;
+    margin-bottom: 10px;
+      margin-top: 60px;
 
     &::after {
       content: "";
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 50px;
-      height: 2px;
-      background-color: #cba052;
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: var(--color-yellow);
+      margin: 12px auto 0;
+    }
+
+    @media (max-width: 768px) {
+      grid-column: span 1; // ✅ mobile chỉ 1 cột
     }
   }
-}
 
-.tableWrapper {
-  overflow-x: auto;
-}
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 16px;
 
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #ffffff;
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
 
-  th {
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
+  /* Phần bảng kích thước */
+  &__dimension-section {
+    background-color: #ffffff;
+    padding: 30px;
+    flex: 1;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+
+    .product-specs__title {
+      font-family: var(--font-title);
+      font-size: 24px;
+      font-weight: 700;
+      color: #041e42;
+      margin-bottom: 20px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background-color: #cba052;
+      }
+    }
+  }
+
+  &__table-wrapper {
+    overflow-x: auto;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+
+    th {
+      background-color: #041e42;
+      color: #ffffff;
+      padding: 25px 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      border: 1px solid var(--color-gray);
+    }
+
+    td {
+      padding: 25px 20px;
+      text-align: center;
+      font-weight: 500;
+      font-size: 15px;
+      border: 1px solid var(--color-gray);
+      color: #333;
+
+      &:first-child {
+        font-weight: 700;
+        color: black;
+      }
+    }
+
+    tbody tr:hover {
+      background-color: #f8f9fa;
+    }
+  }
+
+  /* Phần giá lắp đặt */
+  &__installation-section {
     background-color: #041e42;
     color: #ffffff;
-    padding: 25px 20px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    border: 1px solid var(--color-gray);
-  }
+    padding: 30px;
+    flex: 1;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
 
-  td {
-    padding: 25px 20px;
-    text-align: center;
-    font-weight: 500;
-    font-size: 15px;
-    border: 1px solid var(--color-gray);
-    color: #333;
-
-    &:first-child {
+    .product-specs__title {
+      font-size: 24px;
       font-weight: 700;
-      color: black;
+      margin-bottom: 20px;
+      color: #ffffff;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -8px; // Thêm dòng này
+        left: 0; // Thêm dòng này
+        width: 50px;
+        height: 2px;
+        background-color: var(--color-white);
+      }
     }
-  }
 
-  tbody tr:hover {
-    background-color: #f8f9fa;
-  }
-}
-
-/* Phần giá lắp đặt */
-.installationSection {
-  background-color: #041e42;
-  color: #ffffff;
-  padding: 30px;
-  flex: 1;
-  width: 100%;
-  max-width: 560px;
-  margin: 0 auto;
-  .title {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #ffffff;
-    position: relative;
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -8px; // Thêm dòng này
-      left: 0; // Thêm dòng này
-      width: 50px;
-      height: 2px;
-      background-color: var(--color-white);
+    .product-specs__subtitle {
+      font-size: 16px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      color: #ffffff;
     }
-  }
 
-  .subtitle {
-    font-size: 16px;
-    margin-bottom: 20px;
-    line-height: 1.6;
-    color: #ffffff;
-  }
+    .product-specs__content {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 30px;
 
-  .content {
-    ul {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 30px;
+        li {
+          position: relative;
+          margin-bottom: 12px;
+          padding-left: 20px;
+          line-height: 1.6;
+          font-size: 14px;
 
-      li {
-        position: relative;
-        margin-bottom: 12px;
-        padding-left: 20px;
-        line-height: 1.6;
+          &::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #cba052;
+            font-weight: bold;
+            font-size: 16px;
+          }
+        }
+      }
+
+      .product-specs__button {
+        background-color: #ffffff;
+        color: #041e42;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        font-weight: 600;
         font-size: 14px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
 
-        &::before {
-          content: "•";
-          position: absolute;
-          left: 0;
-          color: #cba052;
-          font-weight: bold;
-          font-size: 16px;
+        &:hover {
+          background-color: #cba052;
+          color: #ffffff;
+          transform: translateY(-2px);
+        }
+
+        &:active {
+          transform: translateY(0);
         }
       }
     }
+  }
 
-    .button {
-      background-color: #ffffff;
-      color: #041e42;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 14px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+  /* Responsive */
+  @media (max-width: 768px) {
+    .product-specs {
+      padding: 20px 15px;
 
-      &:hover {
-        background-color: #cba052;
-        color: #ffffff;
-        transform: translateY(-2px);
+      &__dimension-section,
+      &__installation-section {
+        padding: 20px;
+        max-width: none;
+      }
+      &__table {
+        th,
+        td {
+          padding: 10px 15px;
+          font-size: 13px;
+        }
       }
 
-      &:active {
-        transform: translateY(0);
-      }
-    }
-  }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .container {
-    padding: 20px 15px;
-  }
-
-  .dimensionSection,
-  .installationSection {
-    padding: 20px;
-    max-width: none;
-  }
-
-  .table {
-    th,
-    td {
-      padding: 10px 15px;
-      font-size: 13px;
-    }
-  }
-
-  .installationSection {
-    .content {
-      .button {
-        width: 100%;
-        padding: 15px;
-        font-size: 13px;
+      &__installation-section {
+        .product-specs__content {
+          .product-specs__button {
+            width: 100%;
+            padding: 15px;
+            font-size: 13px;
+          }
+        }
       }
     }
   }

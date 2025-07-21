@@ -1,7 +1,7 @@
 import MenuBar from "./MenuBar";
 import TopBar from "./TopBar";
 import styles from "../../../styles/components/Navbar/DesktopNavbar/DesktopNav.module.scss";
-import Search from "./Search";
+import AdvancedSearch from "../AdvancedSearch";
 import { useEffect, useState } from "react";
 const DesktopMenu = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -21,11 +21,7 @@ const DesktopMenu = () => {
         </div>
       )}
       <MenuBar scrolled={scrolled} onSearchOpen={() => setShowSearch(true)} showSearch={showSearch} />
-      {showSearch && (
-        <div className={styles.searchOverlay}>
-          <Search onClose={() => setShowSearch(false)} scrolled={scrolled} />
-        </div>
-      )}
+      <AdvancedSearch isOpen={showSearch} setIsOpen={setShowSearch} scrolled={scrolled} />
     </div>
   );
 };

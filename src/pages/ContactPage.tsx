@@ -1,7 +1,7 @@
 import ContactJPTechLiftForm from "../components/ContactForm/ContactForm";
 import HeaderWithBanner from "../components/HomePage/HeaderWithBanner";
 import banner from "../assets/images/Banner-img.jpg";
-import Footer from "../components/Footer/DesktopFooter/DesktopFooter";
+import Footer from "../components/Footer/Footer";
 
 const ContactJPTechLiftFormPage = () => {
   return (

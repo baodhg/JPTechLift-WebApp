@@ -1,7 +1,7 @@
 import HeaderWithBanner from "../../components/HomePage/HeaderWithBanner";
 import ElevatorServices from "../../components/ServicePage/ServicePage";
 import banner from "../../assets/images/Banner-img.jpg"
-import Footer from "../../components/Footer/DesktopFooter/DesktopFooter";
+import Footer from "../../components/Footer/Footer";
 const ServicesPage = () => {
   return (
     <div>

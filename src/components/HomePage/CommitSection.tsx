@@ -47,10 +47,10 @@ export default function CommitSection() {
   }, []);
 
   return (
-    <section className="bg-white py-16 px-4">
+    <section className="overflow-hidden bg-texture-bg bg-texture-pattern bg-[length:8px_8px] py-16 px-4">
       {/* Title */}
       <h1
-        className="font-inter font-medium text-[36px] uppercase text-center mb-[30px]"
+        className="text-[#041E42] md:text-black font-inter font-bold md:font-medium text-[30px] md:text-[36px] uppercase text-center mb-5 md:mb-10"
         data-aos="zoom-in-up"
       >
         CAM KẾT
@@ -58,7 +58,7 @@ export default function CommitSection() {
 
       {/* Horizontal Border */}
       <div
-        className="w-[60px] h-1 bg-[#CBA052] mx-auto mb-20 rounded-[2px]"
+        className="w-[60px] h-1 bg-[#CBA052] mx-auto mb-10 md:mb-20 rounded-[2px]"
         data-aos="zoom-in-up"
         data-aos-delay="100"
       />

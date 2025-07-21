@@ -6,6 +6,7 @@ import WorldMap from "../../assets/images/WorldMap.png";
 import AboutUs1 from "../../assets/images/AboutUs1.jpg";
 import AboutUs2 from "../../assets/images/AboutUs2.jpg";
 import AboutUs3 from "../../assets/images/AboutUs3.jpg";
+import pattern from "../../assets/images/pattern.png";
 
 export default function AboutSection() {
   useEffect(() => {
@@ -16,7 +17,14 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section className="w-full bg-white py-6 px-6 md:px-20 text-center md:pb-24">
+    <section className="relative w-full py-6 px-6 md:px-20 text-center md:pb-24 overflow-hidden bg-texture-bg bg-texture-pattern bg-[length:8px_8px]">
+      {/* Pattern bên trái ở desktop – ngang hàng tiêu đề */}
+      <img
+        src={pattern}
+        alt="pattern"
+        className="ml-20 hidden md:block w-[200px] opacity-40 rotate-180 absolute top-10 left-0"
+      />
+      {/* Nội dung section */}
       <h2
         className="hidden md:block md:mt-14 font-inter font-medium text-[36px] uppercase text-center mb-[30px]"
         data-aos="fade-up"
@@ -41,16 +49,17 @@ export default function AboutSection() {
         kiến trúc, vun đắp giá trị trường tồn.
       </p>
 
-      <div className="mb-10" data-aos="fade-up" data-aos-delay="300">
+      <div className="mb-10 relative" data-aos="fade-up" data-aos-delay="300">
         <img
           src={WorldMap}
           alt="Bản đồ thế giới"
-          className="max-w-[1200px] w-full h-auto mx-auto"
+          className="max-w-[1200px] w-full h-auto mx-auto 
+               drop-shadow-[6px_6px_0px_rgba(203,160,82,0.6)]"
         />
       </div>
 
       <p
-        className="text-left md:text-center font-nunito max-w-[1000px] text-xl mx-auto text-gray-700 leading-relaxed mb-10"
+        className="text-left md:text-center font-nunito max-w-[1000px] text-xl mx-auto text-gray-700 leading-relaxed mb-8"
         data-aos="fade-up"
         data-aos-delay="400"
       >
@@ -60,16 +69,49 @@ export default function AboutSection() {
       </p>
 
       <div
-        className="w-full flex justify-start md:justify-center mb-16"
+        className="relative w-full flex flex-col md:flex-row justify-start md:justify-center items-center mb-16"
         data-aos="fade-up"
         data-aos-delay="500"
       >
+        {/* --- Mobile: Button + pattern hàng ngang --- */}
+        <div className="flex md:hidden w-full flex-row justify-between items-center h-12">
+          {/* Nút bên trái */}
+          <Link
+            to="/ve-chung-toi"
+            className="w-[140px] h-full py-2 px-4 bg-[#041E42] text-white font-inter font-semibold transition-all border border-[#041E42] hover:bg-white hover:text-[#041E42] text-center flex items-center justify-center"
+          >
+            Về chúng tôi
+          </Link>
+
+          {/* Pattern bên phải: 2 hình nằm ngang, cao bằng button */}
+          <div className="flex flex-row items-center gap-1 h-full">
+            <img
+              src={pattern}
+              alt="pattern"
+              className="h-full w-auto opacity-60"
+            />
+            <img
+              src={pattern}
+              alt="pattern"
+              className="h-full w-auto opacity-60 rotate-180"
+            />
+          </div>
+        </div>
+
+        {/* --- Desktop: Button ở giữa --- */}
         <Link
           to="/ve-chung-toi"
-          className="w-[140px] md:w-[200px] py-4 px-4 bg-[#041E42] text-white font-inter font-semibold transition-all border border-[#041E42] hover:bg-white hover:text-[#041E42] text-center flex items-center justify-center"
+          className="hidden md:flex z-10 w-[200px] py-4 px-4 bg-[#041E42] text-white font-inter font-semibold transition-all border border-[#041E42] hover:bg-white hover:text-[#041E42] text-center items-center justify-center"
         >
           Về chúng tôi
         </Link>
+
+        {/* --- Desktop: Pattern phải --- */}
+        <img
+          src={pattern}
+          alt="pattern"
+          className="hidden md:block w-[200px] opacity-40 absolute right-0"
+        />
       </div>
 
       <div
@@ -117,39 +159,37 @@ export default function AboutSection() {
         ))}
       </div>
 
-      <section className="bg-white">
-        <div className="container mx-auto px-4">
-          <p
-            className="text-[#041E42] font-nunito italic text-lg md:text-xl leading-relaxed max-w-5xl mx-auto text-center mb-10"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            JP TECHLIFT – Nơi sự chuẩn mực gặp gỡ tầm nhìn, định hình tương lai
-            của không gian kiến trúc.
-          </p>
+      <div className="container mx-auto px-4">
+        <p
+          className="text-[#041E42] font-nunito italic text-lg md:text-xl leading-relaxed max-w-5xl mx-auto text-center mb-10"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          JP TECHLIFT – Nơi sự chuẩn mực gặp gỡ tầm nhìn, định hình tương lai
+          của không gian kiến trúc.
+        </p>
 
-          <p
-            className="text-left md:text-center font-nunito text-lg md:text-xl max-w-5xl mx-auto text-gray-800 leading-relaxed mb-4"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            Trong bản thể của mọi kiến trúc, thang máy không chỉ là một cấu phần
-            tiện ích, mà còn là linh hồn của sự vận động.
-          </p>
+        <p
+          className="text-left md:text-center font-nunito text-lg md:text-xl max-w-5xl mx-auto text-gray-800 leading-relaxed mb-4"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Trong bản thể của mọi kiến trúc, thang máy không chỉ là một cấu phần
+          tiện ích, mà còn là linh hồn của sự vận động.
+        </p>
 
-          <p
-            className="text-left md:text-center font-nunito text-lg md:text-xl max-w-5xl mx-auto text-gray-800 leading-loose"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            Chúng tôi không chỉ cung cấp sản phẩm, mà kiến tạo những giải pháp
-            hòa quyện giữa tinh hoa công nghệ, chuẩn mực an toàn và sự tinh tế
-            trong từng đường nét. Mỗi dự án là sự kết tinh của tư duy thấu đáo
-            và kỹ năng chế tác bậc thầy, minh chứng cho sự vững bền và giá trị
-            thăng hoa theo thời gian.
-          </p>
-        </div>
-      </section>
+        <p
+          className="text-left md:text-center font-nunito text-lg md:text-xl max-w-5xl mx-auto text-gray-800 leading-loose mb-20"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Chúng tôi không chỉ cung cấp sản phẩm, mà kiến tạo những giải pháp hòa
+          quyện giữa tinh hoa công nghệ, chuẩn mực an toàn và sự tinh tế trong
+          từng đường nét. Mỗi dự án là sự kết tinh của tư duy thấu đáo và kỹ
+          năng chế tác bậc thầy, minh chứng cho sự vững bền và giá trị thăng hoa
+          theo thời gian.
+        </p>
+      </div>
     </section>
   );
 }

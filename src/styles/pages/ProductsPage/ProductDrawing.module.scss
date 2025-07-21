@@ -1,67 +1,6 @@
-/* ===================================
-   🎨 DESIGN TOKENS & VARIABLES
-   =================================== */
-:root {
-  // Colors
-  --color-main: #041e42;
-  --color-red: #d64344;
-  --color-yellow: #cba052;
-  --color-white: #ffffff;
-  --color-gray: #bfbfbf;
+@use "../../base/variables";
 
-  // Typography
-  --font-main: "Nunito Sans", sans-serif;
-  --font-title: "Inter", sans-serif;
-  // Spacing
-  --spacing-xs: 6px;
-  --spacing-sm: 8px;
-  --spacing-md: 12px;
-  --spacing-lg: 16px;
-  --spacing-xl: 24px;
-
-  // Sizes
-  --logo-height: 76px;
-  --icon-size: 24px;
-  --icon-size-sm: 20px;
-  --menu-height: 65px;
-  --border-radius: 10px;
-  --border-radius-sm: 8px;
-  --border-radius-pill: 30px;
-
-  // Shadows
-  --shadow-light: 0 2px 2px 2px rgba(0, 0, 0, 0.25);
-  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
-  --shadow-heavy: 0 2px 10px rgba(0, 0, 0, 0.1);
-
-  // Transitions
-  --transition-fast: 0.2s ease;
-  --transition-medium: 0.3s ease;
-}
-
-.blueprintWrapper {
-  width: 100%;
-  margin-bottom: 2px;
-}
-.title {
-  text-align: center;
-  font-size: 28px;
-  width: 100%;
-  font-weight: 500;
-  font-family: var(--font-title);
-  margin-bottom: 24px;
-  color: var(--color-main); // ✅ CHỈNH Ở ĐÂY
-
-  &::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--color-yellow);
-    margin: 12px auto 0;
-  }
-}
-
-.blueprintSection {
+.product-blueprint {
   margin: 0 auto;
   background-color: #0a1d3b; // nền xanh đậm
   color: #fff;
@@ -80,8 +19,30 @@
       align-items: center;
     }
   }
-  // ✅ Bọc ảnh vào container để căn giữa
-  .imageWrapper {
+  &__wrapper {
+    width: 100%;
+    margin-bottom: 2px;
+  }
+  &__title {
+    text-align: center;
+    font-size: 28px;
+    width: 100%;
+    font-weight: 500;
+    font-family: var(--font-title);
+    margin-bottom: 24px;
+    color: var(--color-main); // ✅ CHỈNH Ở ĐÂY
+
+    &::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: var(--color-yellow);
+      margin: 12px auto 0;
+    }
+  }
+
+  &__image-wrapper {
     display: flex;
     flex: 1;
     justify-content: center;
@@ -90,12 +51,13 @@
     max-width: 560px;
     min-height: 100%; // nếu muốn luôn cao bằng info
   }
-  .image {
+  &__image {
     max-width: 100%;
     height: auto;
     object-fit: contain;
   }
-  .info {
+
+  &__info {
     background-color: #0a1d3b;
     margin: 0 auto;
     color: #fff;
@@ -105,106 +67,82 @@
     padding: 32px;
     border-radius: var(--border-radius-sm);
     font-size: 15px;
-    .description {
-      font-family: var(--font-title);
+  }
+  &__description {
+    font-family: var(--font-title);
+    margin-bottom: 8px;
+    font-size: 19px;
+    font-weight: 600;
+  }
+
+  &__spec-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 16px;
+
+    li {
       margin-bottom: 8px;
-      font-size: 19px;
-      font-weight: 600;
-    }
-    .specList {
-      list-style: none;
-      padding-left: 0;
-      margin-bottom: 16px;
+      padding-left: 20px;
+      position: relative;
 
-      li {
-        margin-bottom: 8px;
-        padding-left: 20px;
-        position: relative;
-
-        &::before {
-          content: "•";
-          position: absolute;
-          left: 0;
-          color: var(--color-white);
-        }
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--color-white);
       }
     }
+  }
 
-    .stops,
-    .note {
-      margin-bottom: 12px;
-      font-size: 15px;
+  &__stops,
+  &__note {
+    margin-bottom: 12px;
+    font-size: 15px;
 
-      strong {
-        font-weight: bold;
-      }
+    strong {
+      font-weight: bold;
+    }
+  }
+
+  &__note {
+    font-size: 14px;
+  }
+
+  &__button-group {
+    margin-top: 42px;
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  &__primary-button,
+  &__secondary-button {
+    width: 100%; // ✅ chiếm toàn bộ chiều ngang trong mobile
+    max-width: 400px; // ✅ giới hạn để nút không quá to
+    padding: 12px 24px;
+    background-color: #fff;
+    font-family: var(--font-main);
+    color: var(--color-main);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: var(--border-radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-medium);
+    text-transform: uppercase;
+    box-shadow: var(--shadow-light);
+
+    &:hover {
+      background-color: #cba052;
+      color: #ffffff;
+      transform: translateY(-2px);
     }
 
-    .note {
-      font-size: 14px;
-    }
-
-    // ✅ Nhóm nút đặt trong .info và canh trái
-    .buttonGroup {
-      margin-top: 32px;
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      align-items: center;
-      flex-direction: column;
-    }
-
-    .primaryButton,
-    .secondaryButton {
-      width: 100%;
-      padding: 12px 24px;
-      font-family: var(--font-main);
-      font-size: 14px;
-      font-weight: 600;
-      border-radius: var(--border-radius-sm);
-      border: none;
-      cursor: pointer;
-      transition: var(--transition-medium);
-      text-transform: uppercase;
-      box-shadow: var(--shadow-light);
-    }
-
-    .primaryButton {
-      background-color: var(--color-white);
-      color: var(--color-main);
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-
-      &:hover {
-        background-color: #cba052;
-        color: #ffffff;
-        transform: translateY(-2px);
-      }
-
-      &:active {
-        transform: translateY(0);
-      }
-    }
-
-    .secondaryButton {
-      background-color: #fff;
-      color: var(--color-main);
-      border: 1px solid #fff;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-
-      &:hover {
-        background-color: #cba052;
-        color: #ffffff;
-        transform: translateY(-2px);
-      }
-
-      &:active {
-        transform: translateY(0);
-      }
+    &:active {
+      transform: translateY(0);
     }
   }
 }

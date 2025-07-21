@@ -5,7 +5,7 @@ import AboutUsReasons from "../components/AboutUsPage/AboutUsReasons";
 import AboutUsNewsBlogs from "../components/AboutUsPage/AboutUsNewsBlogs";
 
 import bannerImg from "../assets/images/Banner-img.jpg"
-import Footer from "../components/Footer/DesktopFooter/DesktopFooter";
+import Footer from "../components/Footer/Footer";
 
 const AboutUsPage = () => {
   return (
