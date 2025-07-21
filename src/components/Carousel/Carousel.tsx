@@ -25,8 +25,6 @@ export default function Carousel({
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
-  const prevSlide = () =>
-    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
   useEffect(() => {
     if (!autoSlide) return;
