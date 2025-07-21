@@ -1,5 +1,5 @@
 import styles from "../../styles/pages/ProductsPage/ProductDrawing.module.scss";
-
+import { useNavigate } from "react-router-dom";
 interface Props {
   blueprint: {
     image: string;
@@ -11,6 +11,7 @@ interface Props {
 }
 
 export default function BlueprintSection({ blueprint }: Props) {
+  const navigate = useNavigate();
   return (
     <div className={styles["product-blueprint__wrapper"]}>
       <h2 className={styles["product-blueprint__title"]}>Bản vẽ kỹ thuật</h2>
@@ -37,10 +38,17 @@ export default function BlueprintSection({ blueprint }: Props) {
               <strong>{blueprint.heightNote}</strong>
             </p>
             <div className={styles["product-blueprint__button-group"]}>
-              <button className={styles["product-blueprint__primary-button"]}>
+              <button className={styles["product-blueprint__primary-button"]} onClick={() => navigate("/lien-he")}>
                 LIÊN HỆ TRỰC TIẾP ĐỂ BIẾT THÊM THÔNG TIN
               </button>
-              <button className={styles["product-blueprint__secondary-button"]}>KHO ẢNH</button>
+              <a
+                href="https://zalo.me/3469899057771273254"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }}
+              >
+                <button className={styles["product-blueprint__secondary-button"]}>KHO ẢNH</button>
+              </a>
             </div>
           </div>
         </div>

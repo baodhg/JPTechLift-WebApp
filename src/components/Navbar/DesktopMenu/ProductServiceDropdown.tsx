@@ -16,9 +16,10 @@ const newsLinks: Record<string, string> = {
 };
 interface DropdownContentProps {
   type: "product" | "about" | "contact" | "news";
+  onClose?: () => void; // hàm đóng dropdown khi click
 }
 
-const ProductServiceDropdown = ({ type }: DropdownContentProps) => {
+const ProductServiceDropdown = ({ type, onClose }: DropdownContentProps) => {
   const content = {
     product: [
       {
@@ -84,7 +85,12 @@ const ProductServiceDropdown = ({ type }: DropdownContentProps) => {
             <ul>
               {col.items.map((item, i) => (
                 <li key={i}>
-                  <Link to={getLink(item, col.title)}>{item}</Link>
+                  <Link
+                    to={getLink(item, col.title)}
+                    onClick={onClose} // gọi hàm đóng dropdown
+                  >
+                    {item}
+                  </Link>
                 </li>
               ))}
             </ul>

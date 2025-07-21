@@ -14,7 +14,7 @@ export default function InstallProcessSection() {
   }, []);
 
   return (
-    <section className="bg-white py-16 px-4 md:px-20 text-[#041E42] font-nunito">
+    <section className="py-16 px-4 md:px-20 text-[#041E42] font-nunito bg-texture-bg bg-texture-pattern bg-[length:8px_8px]">
       {/* Tiêu đề */}
       <h2 className="text-center text-[36px] md:text-[36px] font-bold font-inter mb-10" data-aos="fade-up">
         Thi công lắp đặt thang máy

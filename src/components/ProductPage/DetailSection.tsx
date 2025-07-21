@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "../../styles/pages/ProductsPage/ProductGallery.module.scss";
-
+import { useNavigate } from "react-router-dom";
 interface Props {
   data: {
     title: string;
@@ -34,6 +34,8 @@ export default function DetailSection({ data, images }: Props) {
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
+
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -99,11 +101,11 @@ export default function DetailSection({ data, images }: Props) {
           </div>
         </div>
 
-          <div className={styles["product-gallery__info"]}>
+        <div className={styles["product-gallery__info"]}>
           <h2>{data.title}</h2>
           <p>{data.introductionLine1}</p>
           <p>{data.introductionLine2}</p>
-         <ul className={styles["product-gallery__spec-list"]}>
+          <ul className={styles["product-gallery__spec-list"]}>
             <li className={styles.specItem}>{data.productLine}</li>
             <li className={styles.specItem}>Cấu hình: {data.config}</li>
             <li className={styles.specItem}>Thương hiệu: {data.brand}</li>
@@ -116,10 +118,19 @@ export default function DetailSection({ data, images }: Props) {
         </div>
       </section>
       {/* Bottom Section with Buttons */}
-    <section className={styles["product-gallery__buttons-container"]}>
+      <section className={styles["product-gallery__buttons-container"]}>
         <div className={styles["product-gallery__buttons-wrapper"]}>
-          <button className={styles["product-gallery__button"]}>LIÊN HỆ CHÚNG TÔI NGAY</button>
-          <button className={styles["product-gallery__button"]}>THÔNG TIN & GIÁ CẢ</button>
+          <button className={styles["product-gallery__button"]} onClick={() => navigate("/lien-he")}>
+            LIÊN HỆ CHÚNG TÔI NGAY
+          </button>
+          <a
+            href="https://zalo.me/3469899057771273254"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+            <button className={styles["product-gallery__button"]}>THÔNG TIN & GIÁ CẢ</button>
+          </a>
         </div>
       </section>
     </div>

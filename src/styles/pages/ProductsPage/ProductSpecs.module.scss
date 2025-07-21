@@ -5,7 +5,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 0px 0px;
-
+  background-color: var(--color-gray1);
   &__heading {
     font-family: var(--font-title);
     font-weight: 500;
@@ -14,7 +14,7 @@
     font-size: 28px;
     color: #041e42;
     margin-bottom: 10px;
-      margin-top: 60px;
+    margin-top: 60px;
 
     &::after {
       content: "";
@@ -56,7 +56,6 @@
 
   /* Phần bảng kích thước */
   &__dimension-section {
-    background-color: #ffffff;
     padding: 30px;
     flex: 1;
     width: 100%;
@@ -186,7 +185,6 @@
         color: #041e42;
         padding: 12px 24px;
         border: none;
-        border-radius: 4px;
         font-weight: 600;
         font-size: 14px;
         cursor: pointer;

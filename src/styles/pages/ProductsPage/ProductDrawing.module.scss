@@ -2,6 +2,7 @@
 
 .product-blueprint {
   margin: 0 auto;
+
   background-color: #0a1d3b; // nền xanh đậm
   color: #fff;
 
@@ -26,6 +27,7 @@
   &__title {
     text-align: center;
     font-size: 28px;
+    margin-top: 60px;
     width: 100%;
     font-weight: 500;
     font-family: var(--font-title);
@@ -128,7 +130,6 @@
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.5px;
-    border-radius: var(--border-radius-sm);
     border: none;
     cursor: pointer;
     transition: var(--transition-medium);

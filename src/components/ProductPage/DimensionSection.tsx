@@ -1,4 +1,4 @@
-import { memo, useCallback } from "react";
+import { memo } from "react";
 import styles from "../../styles/pages/ProductsPage/ProductSpecs.module.scss";
 
 interface Dimension {
@@ -26,9 +26,6 @@ const INSTALLATION_FACTORS = [
 const DimensionSection = memo(({ data, className }: Props) => {
  const containerClass = className ? `${styles["product-specs"]} ${className}` : styles["product-specs"];
 
-  const handleDetailsClick = useCallback(() => {
-    console.log("Xem chi tiết về thẩm mỹ cho thang máy");
-  }, []);
 
   if (!data || data.length === 0) {
     return (
@@ -68,15 +65,22 @@ const DimensionSection = memo(({ data, className }: Props) => {
        <section className={styles["product-specs__installation-section"]}>
         <h2 className={styles["product-specs__title"]}>Giá lắp đặt</h2>
         <div className={styles["product-specs__content"]}>
-          <p className={styles["product-specs__subtitle"]}>Trên thực tế, giá thang máy gia đình thay đổi phụ thuộc vào nhiều yếu tố:</p>
+          <p className={styles["product-specs__subtitle"]}>Trên thực tế, giá thang máy thay đổi phụ thuộc vào nhiều yếu tố:</p>
           <ul>
             {INSTALLATION_FACTORS.map((factor, index) => (
               <li key={index}>{factor}</li>
             ))}
           </ul>
-         <button className={styles["product-specs__button"]} onClick={handleDetailsClick} type="button">
+            <a
+            href="https://zalo.me/3469899057771273254"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+         <button className={styles["product-specs__button"]} type="button">
             XEM CHI TIẾT VỀ THẨM MỸ CHO THANG MÁY
           </button>
+          </a>
         </div>
       </section>
     </div>

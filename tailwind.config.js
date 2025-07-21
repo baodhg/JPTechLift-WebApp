@@ -17,6 +17,16 @@ export default {
       colors: {
         "texture-bg": "#f3f2f0",
       },
+      /** 👇 BỔ SUNG TẠI ĐÂY */
+      keyframes: {
+        wiggle: {
+          "0%, 100%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(4px)" },
+        },
+      },
+      animation: {
+        wiggle: "wiggle 1s ease-in-out infinite",
+      },
     },
   },
   plugins: [],

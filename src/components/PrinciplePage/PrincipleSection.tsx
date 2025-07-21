@@ -10,7 +10,7 @@ export default function PrincipleSection() {
   }, []);
 
   return (
-    <section className="w-full px-4 py-12 md:px-12 lg:px-24 bg-white text-center text-[#041E42]">
+    <section className="w-full px-4 py-12 md:px-12 lg:px-24 text-center text-[#041E42] bg-texture-bg bg-texture-pattern bg-[length:8px_8px]">
       {/* --- Phần 1: Giới thiệu --- */}
       <div className="max-w-3xl mx-auto mb-20">
         <h2

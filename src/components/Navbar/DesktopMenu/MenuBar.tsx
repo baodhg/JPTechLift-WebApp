@@ -14,7 +14,7 @@ interface MenuBarProps {
 }
 const MenuBar = ({ scrolled, onSearchOpen, showSearch }: MenuBarProps) => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-
+const closeDropdown = () => setActiveDropdown(null); // hàm đóng dropdown
   return (
     <>
       <div className={`${styles.menuWrapper} ${scrolled ? styles.menuBarScrolled : ""}`}>
@@ -30,7 +30,9 @@ const MenuBar = ({ scrolled, onSearchOpen, showSearch }: MenuBarProps) => {
                   >
                     SẢN PHẨM & DỊCH VỤ
                   </a>
-                  {!showSearch && activeDropdown === "product" && <ProductServiceDropdown type="product" />}
+                   {!showSearch && activeDropdown === "product" && (
+                    <ProductServiceDropdown type="product" onClose={closeDropdown} />
+                  )}
                 </div>
               </li>
               <li>/</li>
@@ -42,7 +44,9 @@ const MenuBar = ({ scrolled, onSearchOpen, showSearch }: MenuBarProps) => {
                   >
                     CÔNG TY CHÚNG TÔI
                   </a>
-                  {!showSearch && activeDropdown === "about" && <ProductServiceDropdown type="about" />}
+                    {!showSearch && activeDropdown === "about" && (
+                    <ProductServiceDropdown type="about" onClose={closeDropdown} />
+                  )}
                 </div>
               </li>
               <li>/</li>
@@ -54,7 +58,9 @@ const MenuBar = ({ scrolled, onSearchOpen, showSearch }: MenuBarProps) => {
                   >
                     LIÊN HỆ
                   </a>
-                  {!showSearch && activeDropdown === "contact" && <ProductServiceDropdown type="contact" />}
+                {!showSearch && activeDropdown === "contact" && (
+                    <ProductServiceDropdown type="contact" onClose={closeDropdown} />
+                  )}
                 </div>
               </li>
               <li>/</li>
@@ -65,7 +71,9 @@ const MenuBar = ({ scrolled, onSearchOpen, showSearch }: MenuBarProps) => {
                 >
                   TIN TỨC
                 </a>
-                {!showSearch && activeDropdown === "news" && <ProductServiceDropdown type="news" />}
+                 {!showSearch && activeDropdown === "news" && (
+                  <ProductServiceDropdown type="news" onClose={closeDropdown} />
+                )}
               </li>
             </ul>
           </div>

@@ -13,9 +13,9 @@ export default function LeaderSection() {
   }, []);
 
   return (
-    <section className="bg-white px-4 pt-10 lg:px-24">
+    <section className="px-4 py-10 lg:px-24 bg-texture-bg bg-texture-pattern bg-[length:8px_8px]">
       {/* Tiêu đề */}
-      <section className="text-[#041E42] w-full bg-white px-6 md:px-20 text-center md:pb-24">
+      <section className="text-[#041E42] w-full px-6 md:px-20 text-center md:pb-10">
       <h2
         className=" md:mt-8 font-inter font-bold text-[36px] uppercase text-center mb-[30px]"
         data-aos="fade-up"
@@ -32,7 +32,7 @@ export default function LeaderSection() {
         <p className="text-[#041E42] text-lg md:text-base">
           Không tài sản nào quý giá hơn con người – với tài năng, tầm nhìn và kinh nghiệm vượt trội mà họ mang lại.
         </p>
-        <p className="text-[#041E42] text-lg md:text-base mt-2">
+        <p className="text-[#041E42] text-lg md:text-base my-6">
           Đội ngũ lãnh đạo dày dạn kinh nghiệm và đầy nhiệt huyết của chúng tôi luôn triển khai những chiến lược hiệu quả để truyền cảm hứng và thúc đẩy 72.000 nhân viên.
         </p>
       </section>
@@ -66,7 +66,7 @@ export default function LeaderSection() {
       {/* Modal popup */}
       {selectedLeader && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-md max-w-md w-[90%] relative shadow-xl animate-fadeIn">
+          <div className="p-6 rounded-md max-w-md w-[90%] relative shadow-xl animate-fadeIn">
             <button
               onClick={() => setSelectedLeader(null)}
               className="absolute top-2 right-3 text-gray-600 hover:text-red-600 text-2xl"

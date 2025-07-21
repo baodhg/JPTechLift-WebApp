@@ -6,22 +6,24 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "lint": "eslint ."
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.0",
     "lucide-react": "^0.525.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-helmet-async": "^2.0.5",
     "react-responsive": "^10.0.1",
-    "react-router-dom": "^7.6.3"
+    "react-router-dom": "^7.6.3",
+    "vite-plugin-robots": "^1.0.5",
+    "vite-plugin-sitemap": "^0.8.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
+    "@types/aos": "^3.0.7",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.5.2",
@@ -38,7 +40,5 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.34.1",
     "vite": "^7.0.0"
-  },
-  "homepage": "https://baodhg.github.io/JPTechLift-WebApp"
-  
+  }
 }

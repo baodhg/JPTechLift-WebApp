@@ -1,6 +1,6 @@
 // src/components/product/Introduction.tsx
 import styles from "../../styles/pages/ProductsPage/ProductIntro.module.scss";
-
+import TitleIntro from "../Navbar/TitleIntro";
 interface Props {
   title: string;
   introduction: string;
@@ -9,15 +9,7 @@ interface Props {
 }
 
 export default function Introduction({ title, introduction, description, imageUrl }: Props) {
-  // Tách tại từ "Máy" (viết hoa đúng chính tả)
-  const splitIndex = title.indexOf("Máy");
-  let first = title;
-  let highlight = "";
 
-  if (splitIndex !== -1) {
-    first = title.slice(0, splitIndex + 3); // "Máy" dài 3 ký tự
-    highlight = title.slice(splitIndex + 3).trim();
-  }
 
   // Kiểm tra có chứa "JP TECHLIFT" hay không
   const descriptionParts = description.split("JP TECHLIFT");
@@ -26,10 +18,7 @@ export default function Introduction({ title, introduction, description, imageUr
     <section className={styles["product-intro"]}>
       <div className={styles["product-intro__container"]}>
         <div className={styles["product-intro__text"]}>
-          <h1 className={styles["product-intro__title"]}>
-            {first} <br />
-            {highlight && <span>{highlight}</span>}
-          </h1>
+           <TitleIntro title={title} className={styles["product-intro__title"]} />
 
           <p className={styles["product-intro__description"]}>
             {descriptionParts.length === 2 ? (

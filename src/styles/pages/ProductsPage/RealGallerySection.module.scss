@@ -3,7 +3,6 @@
 .real-gallery {
   width: 100%;
   padding: 60px 20px;
-  background-color: var(--color-white);
   &__heading {
     font-family: var(--font-title);
     font-weight: 500;
@@ -111,6 +110,14 @@
       transition: all var(--transition-medium);
       text-transform: uppercase;
 
+      a {
+        button {
+          width: 100%;
+          padding: 12px 16px;
+          font-weight: 600;
+          font-size: 14px;
+        }
+      }
       button {
         padding: 12px 16px;
         font-weight: 600;

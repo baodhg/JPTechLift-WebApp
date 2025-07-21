@@ -1,11 +1,8 @@
-import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import chatIcon from "../../assets/images/Message.png";
 import arrowIcon from "../../assets/images/Arrow.png";
 
 const FixedButtons = () => {
-  const navigate = useNavigate();
-
   const handleScrollTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -15,7 +12,7 @@ const FixedButtons = () => {
       {/* Nút liên hệ */}
       <motion.button
         aria-label="Contact"
-        onClick={() => navigate("/lien-he")}
+        onClick={() => window.open("https://zalo.me/3469899057771273254", "_blank")}
         className="w-14 h-14 md:w-16 md:h-16 rounded-full border border-[#041E42] bg-white text-[#041E42] flex items-center justify-center shadow-md"
         animate={{ rotate: [0, -10, 10, -10, 10, 0] }}
         transition={{ repeat: Infinity, repeatDelay: 9, duration: 3 }}

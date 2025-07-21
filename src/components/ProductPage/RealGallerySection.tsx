@@ -1,10 +1,11 @@
 import styles from "../../styles/pages/ProductsPage/RealGallerySection.module.scss";
-
+import { useNavigate } from "react-router-dom";
 interface Props {
   images: string[];
 }
 
 export default function RealGallerySection({ images }: Props) {
+  const navigate = useNavigate();
   return (
     <section id="real-gallery" className={styles["real-gallery"]}>
       <h2 className={styles["real-gallery__heading"]}>Hình ảnh thực tế</h2>
@@ -16,7 +17,7 @@ export default function RealGallerySection({ images }: Props) {
           ))}
         </div>
 
-       <div className={styles["real-gallery__text"]}>
+        <div className={styles["real-gallery__text"]}>
           <h3>
             Trải Nghiệm Thực Tế <br /> Lắp đặt Thang Máy Tại Công Trình
           </h3>
@@ -35,8 +36,15 @@ export default function RealGallerySection({ images }: Props) {
           </p>
 
           <div className={styles["real-gallery__buttons"]}>
-            <button>ẢNH THỰC TẾ</button>
-            <button>XEM THÊM TẠI MỤC TIN TỨC & BLOG</button>
+            <a
+              href="https://zalo.me/3469899057771273254"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none" }}
+            >
+              <button>ẢNH THỰC TẾ</button>
+            </a>
+            <button onClick={() => navigate("/tin-tuc")}>XEM THÊM TẠI MỤC TIN TỨC</button>
           </div>
         </div>
       </div>

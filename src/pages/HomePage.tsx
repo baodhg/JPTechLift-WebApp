@@ -5,12 +5,14 @@ import ProductSection from "../components/HomePage/ProductSection";
 import ServiceSection from "../components/HomePage/ServiceSection";
 import HeroBanner from "../components/HomePage/HeroBanner";
 import Footer from "../components/Footer/Footer";
+import SubBanner from "../components/HomePage/SubBanner";
 
 const HomePage = () => {
   return (
     <div>
       <HeroBanner />
       <AboutSection />
+      <SubBanner />
       <ProductSection />
       <ServiceSection />
       <CommitSection />

@@ -1,8 +1,8 @@
 import styles from "../../styles/pages/ProductsPage/ProductContentTable.module.scss";
-import size from "../../assets/images/productPage_img/home_lift/size_content_table.jpg";
-import install from "../../assets/images/productPage_img/home_lift/install_content_table.jpg";
-import gallery from "../../assets/images/productPage_img/home_lift/gallery_content_table.jpg";
-import blueprint from "../../assets/images/productPage_img/home_lift/blueprint1.png";
+import size from "../../assets/images/productPage_img/home_lift/contentTable_size&price.png";
+import install from "../../assets/images/productPage_img/home_lift/contentTable_realític.png";
+import gallery from "../../assets/images/productPage_img/home_lift/contentTable_installation.png";
+import blueprint from "../../assets/images/productPage_img/home_lift/contentTable_blueprint.png";
 interface Props {
   data: Readonly<{
     title: string;

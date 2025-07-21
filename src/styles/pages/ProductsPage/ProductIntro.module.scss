@@ -33,9 +33,15 @@
     font-weight: 800;
     margin-bottom: 16px;
     text-transform: none;
-    border-bottom: 2px solid var(--color-gray);
-
-    span {
+    &::after {
+      content: "";
+      display: block;
+      width: 50%;
+      height: 3px;
+      background-color: var(--color-yellow);
+      margin: 12px 0 0;
+    }
+    .highlight {
       color: var(--color-yellow);
       font-weight: 800;
     }

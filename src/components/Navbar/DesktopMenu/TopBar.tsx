@@ -7,7 +7,7 @@ import styles from "../../../styles/components/Navbar/DesktopNavbar/DesktopNav.m
 
 const TopBar = () => {
   return (
-    <div className={styles.topBar}>
+    <div className={styles.topBar} >
       {/* Logo */}
       <div className={styles.topBar__logo}>
         <Logo />
