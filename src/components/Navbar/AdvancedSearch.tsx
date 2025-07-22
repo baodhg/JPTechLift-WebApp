@@ -2,11 +2,17 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../../styles/components/Navbar/SearchPanel.module.scss";
 import { categories, popularSearches, searchSuggestions } from "../../constants/searchData";
-
+import { productData } from "../../data/ProductData";
 interface Props {
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
   scrolled?: boolean;
+}
+
+interface SearchItem {
+  title: string;
+  type: string;
+  path: string;
 }
 
 export default function AdvancedSearch({ isOpen, setIsOpen, scrolled }: Props) {
@@ -14,6 +20,14 @@ export default function AdvancedSearch({ isOpen, setIsOpen, scrolled }: Props) {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [history, setHistory] = useState<string[]>([]);
   const navigate = useNavigate();
+
+  const normalize = (text: string) =>
+    text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/\p{Diacritic}/gu, "")
+      .replace(/đ/g, "d")
+      .replace(/Đ/g, "D");
 
   useEffect(() => {
     const stored = localStorage.getItem("searchHistory");
@@ -55,9 +69,33 @@ export default function AdvancedSearch({ isOpen, setIsOpen, scrolled }: Props) {
     setQuery("");
   };
 
-  const filteredSuggestions = searchSuggestions.flatMap((s) =>
-    s.items.filter((item) => item.title.toLowerCase().includes(query.toLowerCase()))
+  const normalizedQuery = normalize(query);
+
+  const titleMatches: SearchItem[] = searchSuggestions.flatMap((s) =>
+    s.items.filter((item) => normalize(item.title).includes(normalizedQuery))
   );
+
+  const keywordMatches: SearchItem[] = Object.entries(productData)
+    .filter(([, p]) => p.seo?.keywords?.some((k) => normalize(k).includes(normalizedQuery)))
+    .map(([id, p]) => ({
+      title: p.intro.title, // tiêu đề sản phẩm
+      type: "Sản phẩm",
+      path: `/products/${id}`, // chuyển đến trang sản phẩm
+    }));
+
+  const mergedMap = new Map<string, SearchItem>();
+  [...titleMatches, ...keywordMatches].forEach((item) => {
+    if (!mergedMap.has(item.path)) {
+      mergedMap.set(item.path, item);
+    }
+  });
+
+  const filteredSuggestions = [...titleMatches];
+  keywordMatches.forEach((item) => {
+    if (!filteredSuggestions.some((s) => s.path === item.path)) {
+      filteredSuggestions.push(item);
+    }
+  });
 
   return (
     <div

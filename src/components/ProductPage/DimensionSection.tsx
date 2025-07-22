@@ -44,7 +44,7 @@ const DimensionSection = memo(({ data, className }: Props) => {
           <table className={styles["product-specs__table"]}>
             <thead>
               <tr>
-                <th>SỐ NGƯỜI</th>
+                <th>KHỐI LƯỢNG</th>
                 <th>KÍCH THƯỚC</th>
                 <th>TẢI TRỌNG</th>
               </tr>

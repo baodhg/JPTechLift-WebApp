@@ -174,7 +174,13 @@ export const productData: Record<string, Product> = {
 
     // ✅ carousel của phần thông tin chi tiết sản phẩm - hình bên trái
     galleryImages: [homelift_carousel1, homelift_carousel2, homelift_carousel3],
-    realGalleryImages: [homelift_realGallery1, homelift_realGallery2, homelift_realGallery3, homelift_realGallery4, homelift_realGallery5],
+    realGalleryImages: [
+      homelift_realGallery1,
+      homelift_realGallery2,
+      homelift_realGallery3,
+      homelift_realGallery4,
+      homelift_realGallery5,
+    ],
     // ✅ Hình ảnh thực tế - Phần này cố định không đổi xuyên suốt 6 trang
     //---
     // ✅ Kích thước thang máy - phần nãy cũng giữ nguyên ngoại trừ bảng chi tiết, dimensions đã làm - phần bên phải giữ nguyên qua 6 trang
@@ -188,50 +194,38 @@ export const productData: Record<string, Product> = {
     installationImage: install,
     installationSteps: [
       {
-        stage: "Giai đoạn 01: Thiết kế và thi công hố thang máy",
+        stage: "Giai đoạn 01: Khảo sát và Thi công hố thang",
         description:
-          "Hố thang máy là một bộ phận quan trọng không thể thiếu trong hệ thống thang máy, cần được thiết kế và xây dựng đúng theo các tiêu chuẩn kỹ thuật nhằm đảm bảo an toàn cho người sử dụng. Thông thường, hố được cấu tạo từ bê tông cốt thép. Kích thước của hố thang máy sẽ thay đổi tùy theo loại thang được lắp đặt và số tầng của công trình.",
-        steps: [], // không có bước nhỏ ở giai đoạn 01
+          "Đội ngũ kỹ sư sẽ khảo sát thực tế công trình để tư vấn giải pháp hố thang tối ưu (bê tông hoặc khung thép). Việc thi công hố thang được thực hiện chính xác theo bản vẽ kỹ thuật đã thống nhất để đảm bảo an toàn và kỹ thuật.",
+        steps: [],
       },
       {
-        stage: "Giai đoạn 02: Lắp đặt thang máy gia đình",
-        description:
-          "Sau khi hoàn thiện thi công hố thang máy, các chuyên gia sẽ tiến hành lắp đặt thang máy theo các bước sau:",
+        stage: "Giai đoạn 02: Lắp đặt cơ khí và cabin",
+        description: "Sau khi hố thang hoàn thiện, chúng tôi tiến hành lắp đặt các thành phần cơ khí chính:",
         steps: [
           {
-            stepTitle: "Bước 1: Lắp đặt cabin và đối trọng",
+            stepTitle: "Bước 1: Lắp đặt Ray dẫn hướng và Đối trọng",
             stepContent:
-              "Cabin và đối trọng là các thành phần chính yếu trong hệ thống thang. Cabin là nơi chứa người và hàng hóa...",
+              "Lắp đặt hệ thống ray dẫn hướng dọc hố thang để cabin và đối trọng di chuyển ổn định, chính xác.",
           },
           {
-            stepTitle: "Bước 2: Lắp đặt hệ thống dẫn động",
-            stepContent: "Hệ thống dẫn động gồm động cơ, dây cáp, thiết bị điều khiển, cáp tải và phanh...",
+            stepTitle: "Bước 2: Lắp đặt Cabin và Cửa tầng",
+            stepContent: "Lắp đặt khung và vách cabin, sau đó lắp đặt hệ thống cửa tầng tại mỗi điểm dừng.",
           },
           {
-            stepTitle: "Bước 3: Lắp đặt hệ thống an toàn",
+            stepTitle: "Bước 3: Lắp đặt Máy kéo và Hệ thống an toàn",
             stepContent:
-              "Hệ thống an toàn đảm bảo thang máy vận hành an toàn, bao gồm Phanh an toàn; Cảm biến cửa; Thiết bị đóng; Mở cửa tự động; Hạn chế cửa; Tính năng sơ tán khẩn cấp; Bộ đệm hố thang; Công tắc báo động khẩn cấp; Điện thoại khẩn cấp hoặc thiết bị liên lạc; Chiếu sáng khẩn cấp; Hệ thống cứu hỏa.",
-          },
-          {
-            stepTitle: "Bước 4: Lắp đặt cửa tầng",
-            stepContent:
-              "Cửa tầng là phần đóng mở để ra vào thang máy. Cửa tầng phải được lắp đặt đúng kích thước và tiêu chuẩn kỹ thuật.",
-          },
-          {
-            stepTitle: "Bước 5: Lắp đặt trang trí",
-            stepContent:
-              "Sau khi lắp đặt xong các phần chính của thang máy, cần lắp đặt các trang trí như tay vịn, sàn cabin, đèn chiếu sáng...",
+              "Lắp đặt máy kéo, cáp tải và các thiết bị an toàn quan trọng như phanh an toàn, bộ giới hạn vận tốc (governor).",
           },
         ],
       },
       {
-        stage: "Giai đoạn 03: Kiểm tra và nghiệm thu thang máy",
+        stage: "Giai đoạn 03: Lắp đặt điện, Vận hành thử và Bàn giao",
         description:
-          "Trước khi thang máy được đưa vào sử dụng, toàn bộ hệ thống cần được kiểm tra kỹ lưỡng nhằm đảm bảo hoạt động an toàn và hiệu quả. Khi quá trình kiểm tra đạt yêu cầu, thang máy sẽ được nghiệm thu chính thức và đưa vào vận hành. Việc thi công theo đúng quy trình và tiêu chuẩn kỹ thuật không chỉ giúp thang máy vận hành ổn định mà còn kéo dài tuổi thọ thiết bị. Đừng ngần ngại, hãy liên hệ ngay với JP TECHLIFT – chúng tôi sẵn sàng đồng hành và mang đến những giải pháp tối ưu nhất dành cho bạn.",
-        steps: [], // không có bước nhỏ
+          "Hoàn thiện hệ thống tủ điện điều khiển, tiến hành chạy thử không tải và có tải để kiểm tra toàn diện. Sau khi hệ thống đạt chuẩn an toàn, thang máy sẽ được kiểm định và bàn giao cho khách hàng.",
+        steps: [],
       },
     ],
-
     // ✅ Bản vẽ chi tiết (thêm mô tả bên cạnh ảnh)
     blueprint: {
       image: blueprint,
@@ -300,16 +294,16 @@ export const productData: Record<string, Product> = {
     // ✅ Thông tin chi tiết sản phẩm
     detailInfo: {
       title: "Thang Thực Phẩm",
-      introductionLine1: "Thang thực phẩm JP TechLift vận hành êm và sạch sẽ.",
-      introductionLine2: "Phù hợp nhà hàng, khách sạn, bệnh viện cần di chuyển thức ăn.",
+      introductionLine1: "Thang tải thực phẩm JP TechLift vận hành êm ái, bền bỉ và sạch sẽ.",
+      introductionLine2: "Vật liệu Inox 304 chống gỉ sét, đáp ứng tiêu chuẩn vệ sinh an toàn thực phẩm.",
       productLine: "Dòng sản phẩm: Thang thực phẩm JP TechLift.",
       config: "Nhập khẩu linh kiện, lắp ráp trong nước",
       brand: "JPTechLift",
       operation: "Cáp kéo",
       load: "50–300kg",
-      speed: "15–25 mét/phút",
-      size: "600x600mm, 800x800mm",
-      pitDepth: "400–600mm",
+      speed: "15–30 mét/phút",
+      size: "Tùy chỉnh từ 600x600mm đến 1000x1000mm",
+      pitDepth: "Không yêu cầu hoặc rất nhỏ (tùy thiết kế)",
     },
 
     // ✅ carousel của phần thông tin chi tiết sản phẩm - hình bên trái
@@ -319,79 +313,58 @@ export const productData: Record<string, Product> = {
     //---
     // ✅ Kích thước thang máy - phần nãy cũng giữ nguyên ngoại trừ bảng chi tiết, dimensions đã làm - phần bên phải giữ nguyên qua 6 trang
     dimensions: [
-      { people: "3–4 người", size: "800 – 830MM", weight: "250 – 300KG" },
-      { people: "5–6 người", size: "1200 – 1000MM", weight: "350 – 450KG" },
-      { people: "6–7 người", size: "1200 – 1597MM", weight: "500KG" },
+      { people: "50 - 100 KG", size: "600x600x800 mm", weight: "Phù hợp quán cà phê, văn phòng" },
+      { people: "100 - 200 KG", size: "800x800x1000 mm", weight: "Phù hợp nhà hàng, trường học" },
+      { people: "200 - 300 KG", size: "1000x1000x1200 mm", weight: "Phù hợp khách sạn, bếp ăn công nghiệp" },
     ],
 
     // ✅ Quy trình lắp đặt
     installationImage: install,
     installationSteps: [
       {
-        stage: "Giai đoạn 01: Thiết kế và thi công hố thang máy",
+        stage: "Giai đoạn 01: Khảo sát và Xây dựng giếng thang",
         description:
-          "Hố thang máy là một bộ phận quan trọng không thể thiếu trong hệ thống thang máy, cần được thiết kế và xây dựng đúng theo các tiêu chuẩn kỹ thuật nhằm đảm bảo an toàn cho người sử dụng. Thông thường, hố được cấu tạo từ bê tông cốt thép. Kích thước của hố thang máy sẽ thay đổi tùy theo loại thang được lắp đặt và số tầng của công trình.",
-        steps: [], // không có bước nhỏ ở giai đoạn 01
+          "Xây dựng giếng thang (nếu cần) theo kích thước đã thống nhất. Với thang tải thực phẩm, giếng thang có thể được làm bằng gạch hoặc khung thép đơn giản, linh hoạt theo vị trí lắp đặt.",
+        steps: [],
       },
       {
-        stage: "Giai đoạn 02: Lắp đặt thang máy gia đình",
+        stage: "Giai đoạn 02: Lắp đặt cơ khí và cabin",
         description:
-          "Sau khi hoàn thiện thi công hố thang máy, các chuyên gia sẽ tiến hành lắp đặt thang máy theo các bước sau:",
+          "Tiến hành lắp đặt ray dẫn hướng, máy tời, khung cabin và các cửa tầng. Toàn bộ quá trình được thực hiện nhanh chóng, ít ảnh hưởng đến hoạt động kinh doanh.",
         steps: [
           {
-            stepTitle: "Bước 1: Lắp đặt cabin và đối trọng",
-            stepContent:
-              "Cabin và đối trọng là các thành phần chính yếu trong hệ thống thang. Cabin là nơi chứa người và hàng hóa...",
+            stepTitle: "Bước 1: Lắp đặt ray và máy tời",
+            stepContent: "Cố định hệ thống ray và máy tời chuyên dụng vào giếng thang.",
           },
           {
-            stepTitle: "Bước 2: Lắp đặt hệ thống dẫn động",
-            stepContent: "Hệ thống dẫn động gồm động cơ, dây cáp, thiết bị điều khiển, cáp tải và phanh...",
-          },
-          {
-            stepTitle: "Bước 3: Lắp đặt hệ thống an toàn",
-            stepContent:
-              "Hệ thống an toàn đảm bảo thang máy vận hành an toàn, bao gồm bộ chống trượt, bộ giới hạn tốc độ...",
-          },
-          {
-            stepTitle: "Bước 4: Lắp đặt cửa tầng",
-            stepContent:
-              "Cửa tầng là phần đóng mở để ra vào thang máy. Cửa tầng phải được lắp đặt đúng kích thước và tiêu chuẩn kỹ thuật.",
-          },
-          {
-            stepTitle: "Bước 5: Lắp đặt trang trí",
-            stepContent:
-              "Sau khi lắp đặt xong các phần chính của thang máy, cần lắp đặt các trang trí như tay vịn, sàn cabin, đèn chiếu sáng...",
+            stepTitle: "Bước 2: Lắp đặt cabin và cửa tầng",
+            stepContent: "Lắp cabin inox và hệ thống cửa mở tay dạng 2 cánh trượt lên-xuống.",
           },
         ],
       },
       {
-        stage: "Giai đoạn 03: Kiểm tra và nghiệm thu thang máy",
+        stage: "Giai đoạn 03: Lắp đặt điện, Kiểm tra và Bàn giao",
         description:
-          "Trước khi thang máy được đưa vào sử dụng, toàn bộ hệ thống cần được kiểm tra kỹ lưỡng nhằm đảm bảo hoạt động an toàn và hiệu quả. Khi quá trình kiểm tra đạt yêu cầu, thang máy sẽ được nghiệm thu chính thức và đưa vào vận hành. Việc thi công theo đúng quy trình và tiêu chuẩn kỹ thuật không chỉ giúp thang máy vận hành ổn định mà còn kéo dài tuổi thọ thiết bị. Đừng ngần ngại, hãy liên hệ ngay với JP TECHLIFT – chúng tôi sẵn sàng đồng hành và mang đến những giải pháp tối ưu nhất dành cho bạn.",
-        steps: [], // không có bước nhỏ
+          "Đấu nối hệ thống điện điều khiển, bảng gọi tầng. Kiểm tra vận hành, độ an toàn của cửa và hành trình di chuyển trước khi chính thức bàn giao.",
+        steps: [],
       },
     ],
 
     // ✅ Bản vẽ chi tiết (thêm mô tả bên cạnh ảnh)
     blueprint: {
-      image: blueprint,
-      description: ["Mặt bên hố thang máy gia đình 4 điểm dừng", "Cấu hình hố thang tiêu chuẩn:"],
+      image: blueprint, // Thay bằng bản vẽ thang thực phẩm
+      description: ["Bản vẽ kỹ thuật tham khảo cho thang tải thực phẩm 100kg.", "Cấu hình tiêu chuẩn cho nhà hàng:"],
       specs: [
-        "Trụ đứng: 120x120x4mm",
-        "Đà đặt máy (4 mặt hố thang): 120x45x4mm",
-        "Đà bắt rail – đà giằng trái phải – đà treo đỡ cửa: đồng bộ 120x45x4mm",
-        "Cửa tầng: W800 x H1900mm",
-        "Chiều cao cabin (H CAR): 1950mm",
-        "Cửa cabin: Không có",
-        "Cửa mở: Tự động, 1 cánh – dạng Auto Door (AD)",
-        "Chiều cao tầng điển hình (OH): 3000mm",
-        "Chiều sâu hố PIT: 1200mm",
-        "Loại hố thang: Thép cắt laser, sơn tĩnh điện, ốp kính hoàn thiện",
+        "Vật liệu cabin & cửa: Inox 304 sọc nhuyễn",
+        "Kích thước cabin (Rộng x Sâu x Cao): 800x800x800 mm",
+        "Loại cửa: Cửa 2 cánh trượt lên-xuống (mở bằng tay)",
+        "Hệ thống điều khiển: Nút bấm gọi tầng đơn giản",
+        "Tính năng an toàn: Công tắc hành trình, khóa cửa",
+        "Số tầng phục vụ: Tùy chỉnh (2-5 tầng)",
       ],
-      stops: "4 tầng (GF – 1F – 2F – 3F)",
-      heightNote: "Chiều cao BH, AH: 1150mm",
+      stops: "3 điểm dừng",
+      heightNote: "Chiều cao cửa thường đặt ở ngang tầm thắt lưng để tiện lấy đồ.",
     },
-
     // ✅ Thẩm mỹ nội thất cabin - phần này kiểu nó nên làm trang riêng hay cho hiện nổi lên(hiện tại chính trang productpage đó nhưng ô nhỏ hơn và có thể bấm thoát ra vẫn ở vị trí lúc bấm vào btn - lướt trang productpage bthg)??
     aestheticsOptions: {
       roofStyles: ["Trần kim loại", "Trần đèn LED", "Trần inox sọc", "Trần hoa văn"],
@@ -439,97 +412,89 @@ export const productData: Record<string, Product> = {
 
     // ✅ Thông tin chi tiết sản phẩm
     detailInfo: {
-      title: "Thang Máy Gia Đình",
-      introductionLine1: "Thang chở hàng JP TechLift được thiết kế tối ưu cho vận chuyển khối lượng lớn.",
-      introductionLine2: "Phù hợp cho nhà kho, xưởng sản xuất và trung tâm phân phối.",
+      title: "Thang Tải Hàng Công Nghiệp",
+      introductionLine1:
+        "Thang tải hàng JP TechLift được thiết kế tối ưu cho vận chuyển hàng hóa khối lượng lớn, kể cả xe nâng.",
+      introductionLine2: "Phù hợp cho nhà kho, xưởng sản xuất, trung tâm phân phối và bệnh viện.",
       productLine: "Dòng sản phẩm: Thang tải hàng JP TechLift.",
-      config: "Nhập khẩu linh kiện, lắp ráp trong nước",
+      config: "Kết cấu thép chịu lực, nhập khẩu máy kéo, lắp ráp trong nước",
       brand: "JPTechLift",
       operation: "Cáp kéo hoặc thủy lực",
       load: "500–5000kg",
-      speed: "15–30 mét/phút",
-      size: "Tùy chỉnh theo dự án",
-      pitDepth: "700–1200mm",
+      speed: "15–45 mét/phút",
+      size: "Tùy chỉnh theo yêu cầu dự án",
+      pitDepth: "Tối thiểu 1000mm (tùy tải trọng)",
     },
 
     // ✅ carousel của phần thông tin chi tiết sản phẩm - hình bên trái
     galleryImages: [fr_carousel1, fr_carousel2, fr_carousel3],
-    realGalleryImages: [freight_realGallery1, freight_realGallery2, freight_realGallery3, freight_realGallery4, freight_realGallery5],
+    realGalleryImages: [
+      freight_realGallery1,
+      freight_realGallery2,
+      freight_realGallery3,
+      freight_realGallery4,
+      freight_realGallery5,
+    ],
     // ✅ Hình ảnh thực tế - Phần này cố định không đổi xuyên suốt 6 trang
     //---
     // ✅ Kích thước thang máy - phần nãy cũng giữ nguyên ngoại trừ bảng chi tiết, dimensions đã làm - phần bên phải giữ nguyên qua 6 trang
     dimensions: [
-      { people: "3–4 người", size: "800 – 830MM", weight: "250 – 300KG" },
-      { people: "5–6 người", size: "1200 – 1000MM", weight: "350 – 450KG" },
-      { people: "6–7 người", size: "1200 – 1597MM", weight: "500KG" },
+      { people: "500 - 1000 KG", size: "1600x1800x2200 mm", weight: "Phù hợp xưởng may, kho hàng nhẹ" },
+      { people: "1500 - 2000 KG", size: "1800x2500x2200 mm", weight: "Phù hợp kho hàng có xe nâng tay" },
+      { people: "> 2500 KG", size: "Tùy chỉnh theo yêu cầu", weight: "Phù hợp nhà máy, kho logistics lớn" },
     ],
 
     // ✅ Quy trình lắp đặt
     installationImage: install,
     installationSteps: [
       {
-        stage: "Giai đoạn 01: Thiết kế và thi công hố thang máy",
+        stage: "Giai đoạn 01: Thiết kế và Thi công hố thang chịu lực",
         description:
-          "Hố thang máy là một bộ phận quan trọng không thể thiếu trong hệ thống thang máy, cần được thiết kế và xây dựng đúng theo các tiêu chuẩn kỹ thuật nhằm đảm bảo an toàn cho người sử dụng. Thông thường, hố được cấu tạo từ bê tông cốt thép. Kích thước của hố thang máy sẽ thay đổi tùy theo loại thang được lắp đặt và số tầng của công trình.",
-        steps: [], // không có bước nhỏ ở giai đoạn 01
+          "Hố thang máy tải hàng yêu cầu kết cấu bê tông cốt thép vững chắc hoặc khung thép chịu lực cao để đáp ứng tải trọng lớn. Việc thi công phải tuân thủ nghiêm ngặt bản vẽ kỹ thuật.",
+        steps: [],
       },
       {
-        stage: "Giai đoạn 02: Lắp đặt thang máy gia đình",
+        stage: "Giai đoạn 02: Lắp đặt hệ thống cơ khí hạng nặng",
         description:
-          "Sau khi hoàn thiện thi công hố thang máy, các chuyên gia sẽ tiến hành lắp đặt thang máy theo các bước sau:",
+          "Quá trình lắp đặt đòi hỏi thiết bị nâng hạ chuyên dụng để đưa các bộ phận có khối lượng lớn vào vị trí.",
         steps: [
           {
-            stepTitle: "Bước 1: Lắp đặt cabin và đối trọng",
+            stepTitle: "Bước 1: Lắp đặt Ray và Khung đối trọng",
             stepContent:
-              "Cabin và đối trọng là các thành phần chính yếu trong hệ thống thang. Cabin là nơi chứa người và hàng hóa...",
+              "Lắp đặt hệ thống ray dẫn hướng loại lớn (T-rail) và khung đối trọng có khả năng chịu tải cao.",
           },
           {
-            stepTitle: "Bước 2: Lắp đặt hệ thống dẫn động",
-            stepContent: "Hệ thống dẫn động gồm động cơ, dây cáp, thiết bị điều khiển, cáp tải và phanh...",
+            stepTitle: "Bước 2: Lắp đặt Khung cabin và Sàn chịu lực",
+            stepContent:
+              "Lắp đặt khung cabin, sàn cabin bằng thép tấm gân chống trượt để đảm bảo an toàn cho cả người và hàng hóa.",
           },
           {
-            stepTitle: "Bước 3: Lắp đặt hệ thống an toàn",
-            stepContent:
-              "Hệ thống an toàn đảm bảo thang máy vận hành an toàn, bao gồm bộ chống trượt, bộ giới hạn tốc độ...",
-          },
-          {
-            stepTitle: "Bước 4: Lắp đặt cửa tầng",
-            stepContent:
-              "Cửa tầng là phần đóng mở để ra vào thang máy. Cửa tầng phải được lắp đặt đúng kích thước và tiêu chuẩn kỹ thuật.",
-          },
-          {
-            stepTitle: "Bước 5: Lắp đặt trang trí",
-            stepContent:
-              "Sau khi lắp đặt xong các phần chính của thang máy, cần lắp đặt các trang trí như tay vịn, sàn cabin, đèn chiếu sáng...",
+            stepTitle: "Bước 3: Lắp đặt Máy kéo và Cáp tải",
+            stepContent: "Lắp đặt máy kéo công suất lớn và hệ thống cáp tải phù hợp với tải trọng của thang.",
           },
         ],
       },
       {
-        stage: "Giai đoạn 03: Kiểm tra và nghiệm thu thang máy",
+        stage: "Giai đoạn 03: Lắp đặt điện, Kiểm định và Bàn giao",
         description:
-          "Trước khi thang máy được đưa vào sử dụng, toàn bộ hệ thống cần được kiểm tra kỹ lưỡng nhằm đảm bảo hoạt động an toàn và hiệu quả. Khi quá trình kiểm tra đạt yêu cầu, thang máy sẽ được nghiệm thu chính thức và đưa vào vận hành. Việc thi công theo đúng quy trình và tiêu chuẩn kỹ thuật không chỉ giúp thang máy vận hành ổn định mà còn kéo dài tuổi thọ thiết bị. Đừng ngần ngại, hãy liên hệ ngay với JP TECHLIFT – chúng tôi sẵn sàng đồng hành và mang đến những giải pháp tối ưu nhất dành cho bạn.",
-        steps: [], // không có bước nhỏ
+          "Hoàn thiện tủ điện điều khiển công nghiệp, kiểm tra các tính năng an toàn như photocell, quá tải. Thang máy sẽ được kiểm định bởi đơn vị độc lập trước khi bàn giao.",
+        steps: [],
       },
     ],
-
-    // ✅ Bản vẽ chi tiết (thêm mô tả bên cạnh ảnh)
     blueprint: {
-      image: blueprint,
-      description: ["Mặt bên hố thang máy gia đình 4 điểm dừng", "Cấu hình hố thang tiêu chuẩn:"],
+      image: blueprint, // Thay bằng bản vẽ thang tải hàng
+      description: ["Bản vẽ kỹ thuật tham khảo cho thang tải hàng 2000kg.", "Cấu hình cho nhà xưởng công nghiệp:"],
       specs: [
-        "Trụ đứng: 120x120x4mm",
-        "Đà đặt máy (4 mặt hố thang): 120x45x4mm",
-        "Đà bắt rail – đà giằng trái phải – đà treo đỡ cửa: đồng bộ 120x45x4mm",
-        "Cửa tầng: W800 x H1900mm",
-        "Chiều cao cabin (H CAR): 1950mm",
-        "Cửa cabin: Không có",
-        "Cửa mở: Tự động, 1 cánh – dạng Auto Door (AD)",
-        "Chiều cao tầng điển hình (OH): 3000mm",
-        "Chiều sâu hố PIT: 1200mm",
-        "Loại hố thang: Thép cắt laser, sơn tĩnh điện, ốp kính hoàn thiện",
+        "Kết cấu hố thang: Bê tông cốt thép hoặc khung thép hình chịu lực",
+        "Kích thước cabin (Rộng x Sâu x Cao): 1800x2500x2200 mm",
+        "Vật liệu cabin: Inox sọc nhuyễn hoặc tôn sơn tĩnh điện",
+        "Vật liệu sàn: Thép tấm gân chống trượt",
+        "Loại cửa: Cửa sắt xếp hoặc cửa tự động mở lùa 2 cánh (SO)",
+        "Kích thước cửa: W1600 x H2100 mm",
+        "Hệ thống an toàn: Photocell dạng thanh, cảm biến quá tải",
       ],
-      stops: "4 tầng (GF – 1F – 2F – 3F)",
-      heightNote: "Chiều cao BH, AH: 1150mm",
+      stops: "3 điểm dừng",
+      heightNote: "Kích thước có thể thay đổi lớn tùy thuộc vào loại hàng hóa và phương tiện vận chuyển (xe nâng).",
     },
 
     // ✅ Thẩm mỹ nội thất cabin - phần này kiểu nó nên làm trang riêng hay cho hiện nổi lên(hiện tại chính trang productpage đó nhưng ô nhỏ hơn và có thể bấm thoát ra vẫn ở vị trí lúc bấm vào btn - lướt trang productpage bthg)??
@@ -586,91 +551,81 @@ export const productData: Record<string, Product> = {
       productLine: "Dòng sản phẩm: Thang máy hành khách JPTechLift.",
       config: "Nhập khẩu linh kiện, lắp ráp trong nước",
       brand: "JPTechLift",
-      operation: "Cáp kéo đối trọng",
-      load: "450–1000kg",
-      speed: "60–90 mét/phút",
-      size: "1100x1400mm, 1600x1600mm",
-      pitDepth: "1200–1500mm",
+      operation: "Cáp kéo, điều khiển VVVF thông minh",
+      load: "450–1600kg",
+      speed: "60–105 mét/phút (1.0 - 1.75 m/s)",
+      size: "Tùy chỉnh theo thiết kế tòa nhà",
+      pitDepth: "Tối thiểu 1400mm",
     },
 
     // ✅ carousel của phần thông tin chi tiết sản phẩm - hình bên trái
     galleryImages: [passenger_carousel1, passenger_carousel2, passenger_carousel3],
-    realGalleryImages: [passenger_realGallery1, passenger_realGallery2, passenger_realGallery3, passenger_realGallery4, passenger_realGallery5],
+    realGalleryImages: [
+      passenger_realGallery1,
+      passenger_realGallery2,
+      passenger_realGallery3,
+      passenger_realGallery4,
+      passenger_realGallery5,
+    ],
     // ✅ Hình ảnh thực tế - Phần này cố định không đổi xuyên suốt 6 trang
     //---
     // ✅ Kích thước thang máy - phần nãy cũng giữ nguyên ngoại trừ bảng chi tiết, dimensions đã làm - phần bên phải giữ nguyên qua 6 trang
     dimensions: [
-      { people: "3–4 người", size: "800 – 830MM", weight: "250 – 300KG" },
-      { people: "5–6 người", size: "1200 – 1000MM", weight: "350 – 450KG" },
-      { people: "6–7 người", size: "1200 – 1597MM", weight: "500KG" },
+      { people: "6 - 8 người", size: "1400x1350 mm", weight: "450 - 630 KG" },
+      { people: "10 - 11 người", size: "1600x1400 mm", weight: "750 - 800 KG" },
+      { people: "13 - 15 người", size: "1800x1500 mm", weight: "1000 KG" },
     ],
 
     // ✅ Quy trình lắp đặt
     installationImage: install,
     installationSteps: [
       {
-        stage: "Giai đoạn 01: Thiết kế và thi công hố thang máy",
+        stage: "Giai đoạn 01: Thiết kế và Thi công hố thang",
         description:
-          "Hố thang máy là một bộ phận quan trọng không thể thiếu trong hệ thống thang máy, cần được thiết kế và xây dựng đúng theo các tiêu chuẩn kỹ thuật nhằm đảm bảo an toàn cho người sử dụng. Thông thường, hố được cấu tạo từ bê tông cốt thép. Kích thước của hố thang máy sẽ thay đổi tùy theo loại thang được lắp đặt và số tầng của công trình.",
-        steps: [], // không có bước nhỏ ở giai đoạn 01
+          "Thi công hố thang bê tông cốt thép theo đúng bản vẽ thiết kế của tòa nhà, đảm bảo dung sai kỹ thuật cho phép để việc lắp đặt thang máy được thuận lợi và an toàn.",
+        steps: [],
       },
       {
-        stage: "Giai đoạn 02: Lắp đặt thang máy gia đình",
+        stage: "Giai đoạn 02: Lắp đặt cơ khí và cabin",
         description:
-          "Sau khi hoàn thiện thi công hố thang máy, các chuyên gia sẽ tiến hành lắp đặt thang máy theo các bước sau:",
+          "Tiến hành lắp đặt các thành phần cơ khí theo tiêu chuẩn của nhà sản xuất, đảm bảo sự chính xác và đồng bộ.",
         steps: [
           {
-            stepTitle: "Bước 1: Lắp đặt cabin và đối trọng",
-            stepContent:
-              "Cabin và đối trọng là các thành phần chính yếu trong hệ thống thang. Cabin là nơi chứa người và hàng hóa...",
+            stepTitle: "Bước 1: Lắp đặt Ray dẫn hướng và Đối trọng",
+            stepContent: "Lắp đặt hệ thống ray dẫn hướng và khung đối trọng, đảm bảo độ thẳng đứng và chắc chắn.",
           },
           {
-            stepTitle: "Bước 2: Lắp đặt hệ thống dẫn động",
-            stepContent: "Hệ thống dẫn động gồm động cơ, dây cáp, thiết bị điều khiển, cáp tải và phanh...",
+            stepTitle: "Bước 2: Lắp đặt Cabin và Cửa tầng",
+            stepContent: "Lắp đặt khung và vách cabin, sau đó lắp đặt hệ thống cửa tầng tự động tại mỗi điểm dừng.",
           },
           {
-            stepTitle: "Bước 3: Lắp đặt hệ thống an toàn",
+            stepTitle: "Bước 3: Lắp đặt Máy kéo và Hệ thống an toàn",
             stepContent:
-              "Hệ thống an toàn đảm bảo thang máy vận hành an toàn, bao gồm bộ chống trượt, bộ giới hạn tốc độ...",
-          },
-          {
-            stepTitle: "Bước 4: Lắp đặt cửa tầng",
-            stepContent:
-              "Cửa tầng là phần đóng mở để ra vào thang máy. Cửa tầng phải được lắp đặt đúng kích thước và tiêu chuẩn kỹ thuật.",
-          },
-          {
-            stepTitle: "Bước 5: Lắp đặt trang trí",
-            stepContent:
-              "Sau khi lắp đặt xong các phần chính của thang máy, cần lắp đặt các trang trí như tay vịn, sàn cabin, đèn chiếu sáng...",
+              "Lắp đặt máy kéo, cáp tải và các thiết bị an toàn theo tiêu chuẩn như phanh an toàn, bộ giới hạn vận tốc (governor), và hệ thống cứu hộ tự động ARD.",
           },
         ],
       },
       {
-        stage: "Giai đoạn 03: Kiểm tra và nghiệm thu thang máy",
+        stage: "Giai đoạn 03: Lắp đặt điện, Kiểm định và Bàn giao",
         description:
-          "Trước khi thang máy được đưa vào sử dụng, toàn bộ hệ thống cần được kiểm tra kỹ lưỡng nhằm đảm bảo hoạt động an toàn và hiệu quả. Khi quá trình kiểm tra đạt yêu cầu, thang máy sẽ được nghiệm thu chính thức và đưa vào vận hành. Việc thi công theo đúng quy trình và tiêu chuẩn kỹ thuật không chỉ giúp thang máy vận hành ổn định mà còn kéo dài tuổi thọ thiết bị. Đừng ngần ngại, hãy liên hệ ngay với JP TECHLIFT – chúng tôi sẵn sàng đồng hành và mang đến những giải pháp tối ưu nhất dành cho bạn.",
-        steps: [], // không có bước nhỏ
+          "Hoàn thiện hệ thống tủ điện điều khiển, lập trình hệ thống (điều khiển nhóm, ưu tiên chiều gọi,...). Thang máy được kiểm định an toàn nghiêm ngặt trước khi bàn giao cho ban quản lý tòa nhà.",
+        steps: [],
       },
     ],
-
-    // ✅ Bản vẽ chi tiết (thêm mô tả bên cạnh ảnh)
     blueprint: {
-      image: blueprint,
-      description: ["Mặt bên hố thang máy gia đình 4 điểm dừng", "Cấu hình hố thang tiêu chuẩn:"],
+      image: blueprint, // Thay bằng bản vẽ thang tải khách
+      description: ["Bản vẽ kỹ thuật tham khảo cho thang tải khách 750kg.", "Cấu hình cho tòa nhà văn phòng:"],
       specs: [
-        "Trụ đứng: 120x120x4mm",
-        "Đà đặt máy (4 mặt hố thang): 120x45x4mm",
-        "Đà bắt rail – đà giằng trái phải – đà treo đỡ cửa: đồng bộ 120x45x4mm",
-        "Cửa tầng: W800 x H1900mm",
-        "Chiều cao cabin (H CAR): 1950mm",
-        "Cửa cabin: Không có",
-        "Cửa mở: Tự động, 1 cánh – dạng Auto Door (AD)",
-        "Chiều cao tầng điển hình (OH): 3000mm",
-        "Chiều sâu hố PIT: 1200mm",
-        "Loại hố thang: Thép cắt laser, sơn tĩnh điện, ốp kính hoàn thiện",
+        "Kích thước hố thang (Thông thủy): W2000 x D1900 mm",
+        "Kích thước cabin: W1600 x D1400 x H2300 mm",
+        "Kích thước cửa: W900 x H2100 mm",
+        "Loại cửa: Cửa tự động mở tim (Center Opening)",
+        "Chiều cao tầng trên cùng (OH): > 4500 mm",
+        "Chiều sâu hố PIT: > 1500 mm",
+        "Hệ thống điều khiển: Simplex hoặc Duplex (điều khiển nhóm)",
       ],
-      stops: "4 tầng (GF – 1F – 2F – 3F)",
-      heightNote: "Chiều cao BH, AH: 1150mm",
+      stops: "10 điểm dừng",
+      heightNote: "Thông số có thể thay đổi tùy thuộc vào chiều cao và thiết kế của tòa nhà.",
     },
 
     // ✅ Thẩm mỹ nội thất cabin - phần này kiểu nó nên làm trang riêng hay cho hiện nổi lên(hiện tại chính trang productpage đó nhưng ô nhỏ hơn và có thể bấm thoát ra vẫn ở vị trí lúc bấm vào btn - lướt trang productpage bthg)??
@@ -726,91 +681,82 @@ export const productData: Record<string, Product> = {
       productLine: "Dòng sản phẩm: Thang máy bệnh viện JPTechLift.",
       config: "Nhập khẩu linh kiện, lắp ráp trong nước",
       brand: "JPTechLift",
-      operation: "Cáp kéo, điều khiển VVVF",
+      operation: "Cáp kéo, điều khiển VVVF cho chuyển động êm ái",
       load: "1000–1600kg",
-      speed: "30–60 mét/phút",
-      size: "1400x2400mm, 1600x2500mm",
-      pitDepth: "1500mm",
+      speed: "30–60 mét/phút", // Tốc độ vừa phải để đảm bảo an toàn
+      size: "Tối thiểu 1400x2400mm để vừa giường bệnh",
+      pitDepth: "Tối thiểu 1500mm",
     },
 
     // ✅ carousel của phần thông tin chi tiết sản phẩm - hình bên trái
     galleryImages: [h_carousel1, h_carousel2, h_carousel3],
-    realGalleryImages: [hospital_realGallery1,hospital_realGallery2, hospital_realGallery3, hospital_realGallery4, hospital_realGallery5],
+    realGalleryImages: [
+      hospital_realGallery1,
+      hospital_realGallery2,
+      hospital_realGallery3,
+      hospital_realGallery4,
+      hospital_realGallery5,
+    ],
     // ✅ Hình ảnh thực tế - Phần này cố định không đổi xuyên suốt 6 trang
     //---
     // ✅ Kích thước thang máy - phần nãy cũng giữ nguyên ngoại trừ bảng chi tiết, dimensions đã làm - phần bên phải giữ nguyên qua 6 trang
     dimensions: [
-      { people: "3–4 người", size: "800 – 830MM", weight: "250 – 300KG" },
-      { people: "5–6 người", size: "1200 – 1000MM", weight: "350 – 450KG" },
-      { people: "6–7 người", size: "1200 – 1597MM", weight: "500KG" },
+      { people: "1000 KG", size: "1400x2400x2300 mm", weight: "1 giường bệnh + 3-4 người đi kèm" },
+      { people: "1350 KG", size: "1500x2500x2300 mm", weight: "1 giường bệnh + thiết bị + 4 người đi kèm" },
+      { people: "1600 KG", size: "1600x2700x2300 mm", weight: "Nhu cầu vận chuyển lớn hơn" },
     ],
-
     // ✅ Quy trình lắp đặt
     installationImage: install,
     installationSteps: [
       {
-        stage: "Giai đoạn 01: Thiết kế và thi công hố thang máy",
+        stage: "Giai đoạn 01: Thiết kế và Thi công hố thang",
         description:
-          "Hố thang máy là một bộ phận quan trọng không thể thiếu trong hệ thống thang máy, cần được thiết kế và xây dựng đúng theo các tiêu chuẩn kỹ thuật nhằm đảm bảo an toàn cho người sử dụng. Thông thường, hố được cấu tạo từ bê tông cốt thép. Kích thước của hố thang máy sẽ thay đổi tùy theo loại thang được lắp đặt và số tầng của công trình.",
-        steps: [], // không có bước nhỏ ở giai đoạn 01
+          "Thi công hố thang bê tông cốt thép theo đúng bản vẽ thiết kế của tòa nhà, đảm bảo dung sai kỹ thuật cho phép để việc lắp đặt thang máy được thuận lợi và an toàn.",
+        steps: [],
       },
       {
-        stage: "Giai đoạn 02: Lắp đặt thang máy gia đình",
+        stage: "Giai đoạn 02: Lắp đặt cơ khí và cabin",
         description:
-          "Sau khi hoàn thiện thi công hố thang máy, các chuyên gia sẽ tiến hành lắp đặt thang máy theo các bước sau:",
+          "Tiến hành lắp đặt các thành phần cơ khí theo tiêu chuẩn của nhà sản xuất, đảm bảo sự chính xác và đồng bộ.",
         steps: [
           {
-            stepTitle: "Bước 1: Lắp đặt cabin và đối trọng",
-            stepContent:
-              "Cabin và đối trọng là các thành phần chính yếu trong hệ thống thang. Cabin là nơi chứa người và hàng hóa...",
+            stepTitle: "Bước 1: Lắp đặt Ray dẫn hướng và Đối trọng",
+            stepContent: "Lắp đặt hệ thống ray dẫn hướng và khung đối trọng, đảm bảo độ thẳng đứng và chắc chắn.",
           },
           {
-            stepTitle: "Bước 2: Lắp đặt hệ thống dẫn động",
-            stepContent: "Hệ thống dẫn động gồm động cơ, dây cáp, thiết bị điều khiển, cáp tải và phanh...",
+            stepTitle: "Bước 2: Lắp đặt Cabin và Cửa tầng",
+            stepContent: "Lắp đặt khung và vách cabin, sau đó lắp đặt hệ thống cửa tầng tự động tại mỗi điểm dừng.",
           },
           {
-            stepTitle: "Bước 3: Lắp đặt hệ thống an toàn",
+            stepTitle: "Bước 3: Lắp đặt Máy kéo và Hệ thống an toàn",
             stepContent:
-              "Hệ thống an toàn đảm bảo thang máy vận hành an toàn, bao gồm bộ chống trượt, bộ giới hạn tốc độ...",
-          },
-          {
-            stepTitle: "Bước 4: Lắp đặt cửa tầng",
-            stepContent:
-              "Cửa tầng là phần đóng mở để ra vào thang máy. Cửa tầng phải được lắp đặt đúng kích thước và tiêu chuẩn kỹ thuật.",
-          },
-          {
-            stepTitle: "Bước 5: Lắp đặt trang trí",
-            stepContent:
-              "Sau khi lắp đặt xong các phần chính của thang máy, cần lắp đặt các trang trí như tay vịn, sàn cabin, đèn chiếu sáng...",
+              "Lắp đặt máy kéo, cáp tải và các thiết bị an toàn theo tiêu chuẩn như phanh an toàn, bộ giới hạn vận tốc (governor), và hệ thống cứu hộ tự động ARD.",
           },
         ],
       },
       {
-        stage: "Giai đoạn 03: Kiểm tra và nghiệm thu thang máy",
+        stage: "Giai đoạn 03: Lắp đặt điện, Kiểm định và Bàn giao",
         description:
-          "Trước khi thang máy được đưa vào sử dụng, toàn bộ hệ thống cần được kiểm tra kỹ lưỡng nhằm đảm bảo hoạt động an toàn và hiệu quả. Khi quá trình kiểm tra đạt yêu cầu, thang máy sẽ được nghiệm thu chính thức và đưa vào vận hành. Việc thi công theo đúng quy trình và tiêu chuẩn kỹ thuật không chỉ giúp thang máy vận hành ổn định mà còn kéo dài tuổi thọ thiết bị. Đừng ngần ngại, hãy liên hệ ngay với JP TECHLIFT – chúng tôi sẵn sàng đồng hành và mang đến những giải pháp tối ưu nhất dành cho bạn.",
-        steps: [], // không có bước nhỏ
+          "Hoàn thiện hệ thống tủ điện điều khiển, lập trình hệ thống (điều khiển nhóm, ưu tiên chiều gọi,...). Thang máy được kiểm định an toàn nghiêm ngặt trước khi bàn giao cho ban quản lý tòa nhà.",
+        steps: [],
       },
     ],
 
     // ✅ Bản vẽ chi tiết (thêm mô tả bên cạnh ảnh)
     blueprint: {
-      image: blueprint,
-      description: ["Mặt bên hố thang máy gia đình 4 điểm dừng", "Cấu hình hố thang tiêu chuẩn:"],
+      image: blueprint, // Thay bằng bản vẽ thang bệnh viện
+      description: ["Bản vẽ kỹ thuật tham khảo cho thang máy bệnh viện 1350kg.", "Cấu hình tiêu chuẩn cho bệnh viện:"],
       specs: [
-        "Trụ đứng: 120x120x4mm",
-        "Đà đặt máy (4 mặt hố thang): 120x45x4mm",
-        "Đà bắt rail – đà giằng trái phải – đà treo đỡ cửa: đồng bộ 120x45x4mm",
-        "Cửa tầng: W800 x H1900mm",
-        "Chiều cao cabin (H CAR): 1950mm",
-        "Cửa cabin: Không có",
-        "Cửa mở: Tự động, 1 cánh – dạng Auto Door (AD)",
-        "Chiều cao tầng điển hình (OH): 3000mm",
-        "Chiều sâu hố PIT: 1200mm",
-        "Loại hố thang: Thép cắt laser, sơn tĩnh điện, ốp kính hoàn thiện",
+        "Kích thước cabin (Rộng x Sâu x Cao): 1500x2500x2300 mm",
+        "Kích thước cửa: W1100 x H2100 mm (đủ rộng cho giường bệnh)",
+        "Loại cửa: Cửa mở tim 2 cánh (Center Opening)",
+        "Vật liệu: Inox sọc nhuyễn toàn bộ cabin và cửa để dễ vệ sinh",
+        "Sàn: Sàn vinyl hoặc đá granite phẳng",
+        "Chức năng ưu tiên: Chế độ dành riêng cho giường bệnh (giữ cửa lâu hơn, bỏ qua các lệnh gọi khác)",
+        "Hệ thống an toàn: Cứu hộ tự động ARD, photocell",
       ],
-      stops: "4 tầng (GF – 1F – 2F – 3F)",
-      heightNote: "Chiều cao BH, AH: 1150mm",
+      stops: "5 điểm dừng",
+      heightNote: "Kích thước cabin phải đảm bảo giường bệnh có thể ra vào dễ dàng.",
     },
 
     // ✅ Thẩm mỹ nội thất cabin - phần này kiểu nó nên làm trang riêng hay cho hiện nổi lên(hiện tại chính trang productpage đó nhưng ô nhỏ hơn và có thể bấm thoát ra vẫn ở vị trí lúc bấm vào btn - lướt trang productpage bthg)??
@@ -838,7 +784,7 @@ export const productData: Record<string, Product> = {
     intro: {
       title: "Thang Cuốn",
       description:
-         "Thang cuốn JP TECHLIFT – giải pháp vận chuyển hành khách hiệu quả, an toàn cho trung tâm thương mại, nhà ga, sân bay với đa dạng độ nghiêng và chiều rộng.",
+        "Thang cuốn JP TECHLIFT – giải pháp vận chuyển hành khách hiệu quả, an toàn cho trung tâm thương mại, nhà ga, sân bay với đa dạng độ nghiêng và chiều rộng.",
       introduction:
         "Thang cuốn JP TECHLIFT được thiết kế để vận chuyển lượng lớn người qua lại một cách liên tục, an toàn. Với nhiều tùy chọn độ nghiêng, chiều rộng bậc và chiều cao, sản phẩm dễ dàng đáp ứng nhu cầu lắp đặt tại trung tâm thương mại, nhà ga, sân bay hoặc khu mua sắm đông đúc.",
       heroImage: escalatorHeroImg,
@@ -861,18 +807,17 @@ export const productData: Record<string, Product> = {
     // ✅ Thông tin chi tiết sản phẩm
     detailInfo: {
       title: "Thang Cuốn",
-      introductionLine1: "Thang cuốn JP TechLift phù hợp cho các khu vực công cộng.",
-      introductionLine2: "Thiết kế hiện đại, vận hành êm và an toàn.",
-      productLine: "Dòng sản phẩm: Thang cuốn JPTechLift.",
-      config: "Nhập khẩu linh kiện, lắp ráp trong nước",
+      introductionLine1: "Thang cuốn JP TechLift phù hợp cho các khu vực công cộng có lưu lượng người qua lại lớn.",
+      introductionLine2: "Thiết kế hiện đại, vận hành êm ái và được trang bị các tính năng an toàn tiên tiến nhất.",
+      productLine: "Dòng sản phẩm: Thang cuốn & Băng chuyền bộ JPTechLift.",
+      config: "Nhập khẩu nguyên chiếc hoặc nhập khẩu linh kiện đồng bộ",
       brand: "JPTechLift",
-      operation: "Động cơ dẫn động xích",
-      load: "Tải trọng hành khách: 4500 người/giờ",
-      speed: "0.5 m/s",
-      size: "Độ nghiêng 30°/35°, chiều rộng bậc 600–1000mm",
-      pitDepth: "Tùy thiết kế",
+      operation: "Động cơ dẫn động xích hiệu suất cao",
+      load: "Công suất vận chuyển: Lên đến 9000 người/giờ",
+      speed: "0.5 m/s (tiêu chuẩn), có thể tùy chỉnh",
+      size: "Độ nghiêng 30°/35°, chiều rộng bậc 600/800/1000mm",
+      pitDepth: "Phụ thuộc vào chiều cao nâng và model",
     },
-
     // ✅ carousel của phần thông tin chi tiết sản phẩm - hình bên trái
     galleryImages: [es_carousel1, es_carousel2, es_carousel3],
     realGalleryImages: [real1, real2, real3, real4, real5],
@@ -880,77 +825,49 @@ export const productData: Record<string, Product> = {
     //---
     // ✅ Kích thước thang máy - phần nãy cũng giữ nguyên ngoại trừ bảng chi tiết, dimensions đã làm - phần bên phải giữ nguyên qua 6 trang
     dimensions: [
-      { people: "3–4 người", size: "800 – 830MM", weight: "250 – 300KG" },
-      { people: "5–6 người", size: "1200 – 1000MM", weight: "350 – 450KG" },
-      { people: "6–7 người", size: "1200 – 1597MM", weight: "500KG" },
+      { people: "Rộng 600 mm", size: "~4500 người/giờ", weight: "Phù hợp nơi có lưu lượng vừa phải" },
+      { people: "Rộng 800 mm", size: "~6700 người/giờ", weight: "Phổ biến cho trung tâm thương mại" },
+      { people: "Rộng 1000 mm", size: "~9000 người/giờ", weight: "Phù hợp sân bay, nhà ga, nơi cực đông người" },
     ],
 
     // ✅ Quy trình lắp đặt
     installationImage: install,
     installationSteps: [
       {
-        stage: "Giai đoạn 01: Thiết kế và thi công hố thang máy",
+        stage: "Giai đoạn 01: Chuẩn bị kết cấu và không gian lắp đặt",
         description:
-          "Hố thang máy là một bộ phận quan trọng không thể thiếu trong hệ thống thang máy, cần được thiết kế và xây dựng đúng theo các tiêu chuẩn kỹ thuật nhằm đảm bảo an toàn cho người sử dụng. Thông thường, hố được cấu tạo từ bê tông cốt thép. Kích thước của hố thang máy sẽ thay đổi tùy theo loại thang được lắp đặt và số tầng của công trình.",
-        steps: [], // không có bước nhỏ ở giai đoạn 01
+          "Bên xây dựng cần chuẩn bị trước các gối đỡ, hố pit theo đúng bản vẽ kỹ thuật do JP TechLift cung cấp để đảm bảo khả năng chịu lực.",
+        steps: [],
       },
       {
-        stage: "Giai đoạn 02: Lắp đặt thang máy gia đình",
+        stage: "Giai đoạn 02: Vận chuyển và cẩu lắp khung giàn (Truss)",
         description:
-          "Sau khi hoàn thiện thi công hố thang máy, các chuyên gia sẽ tiến hành lắp đặt thang máy theo các bước sau:",
-        steps: [
-          {
-            stepTitle: "Bước 1: Lắp đặt cabin và đối trọng",
-            stepContent:
-              "Cabin và đối trọng là các thành phần chính yếu trong hệ thống thang. Cabin là nơi chứa người và hàng hóa...",
-          },
-          {
-            stepTitle: "Bước 2: Lắp đặt hệ thống dẫn động",
-            stepContent: "Hệ thống dẫn động gồm động cơ, dây cáp, thiết bị điều khiển, cáp tải và phanh...",
-          },
-          {
-            stepTitle: "Bước 3: Lắp đặt hệ thống an toàn",
-            stepContent:
-              "Hệ thống an toàn đảm bảo thang máy vận hành an toàn, bao gồm bộ chống trượt, bộ giới hạn tốc độ...",
-          },
-          {
-            stepTitle: "Bước 4: Lắp đặt cửa tầng",
-            stepContent:
-              "Cửa tầng là phần đóng mở để ra vào thang máy. Cửa tầng phải được lắp đặt đúng kích thước và tiêu chuẩn kỹ thuật.",
-          },
-          {
-            stepTitle: "Bước 5: Lắp đặt trang trí",
-            stepContent:
-              "Sau khi lắp đặt xong các phần chính của thang máy, cần lắp đặt các trang trí như tay vịn, sàn cabin, đèn chiếu sáng...",
-          },
-        ],
+          "Thang cuốn được vận chuyển đến công trình dưới dạng các mô-đun khung giàn hoàn chỉnh. Sử dụng cẩu chuyên dụng để đưa khung giàn vào đúng vị trí đã chuẩn bị.",
+        steps: [],
       },
       {
-        stage: "Giai đoạn 03: Kiểm tra và nghiệm thu thang máy",
+        stage: "Giai đoạn 03: Lắp đặt, căn chỉnh và kiểm định",
         description:
-          "Trước khi thang máy được đưa vào sử dụng, toàn bộ hệ thống cần được kiểm tra kỹ lưỡng nhằm đảm bảo hoạt động an toàn và hiệu quả. Khi quá trình kiểm tra đạt yêu cầu, thang máy sẽ được nghiệm thu chính thức và đưa vào vận hành. Việc thi công theo đúng quy trình và tiêu chuẩn kỹ thuật không chỉ giúp thang máy vận hành ổn định mà còn kéo dài tuổi thọ thiết bị. Đừng ngần ngại, hãy liên hệ ngay với JP TECHLIFT – chúng tôi sẵn sàng đồng hành và mang đến những giải pháp tối ưu nhất dành cho bạn.",
-        steps: [], // không có bước nhỏ
+          "Lắp ráp các bộ phận còn lại như tay vịn, tấm ốp. Căn chỉnh hệ thống, chạy thử và kiểm định an toàn toàn diện trước khi đưa vào hoạt động.",
+        steps: [],
       },
     ],
-
-    // ✅ Bản vẽ chi tiết (thêm mô tả bên cạnh ảnh)
+    // Thay mục blueprint bằng mục "Tính năng an toàn"
     blueprint: {
-      image: blueprint,
-      description: ["Mặt bên hố thang máy gia đình 4 điểm dừng", "Cấu hình hố thang tiêu chuẩn:"],
-      specs: [
-        "Trụ đứng: 120x120x4mm",
-        "Đà đặt máy (4 mặt hố thang): 120x45x4mm",
-        "Đà bắt rail – đà giằng trái phải – đà treo đỡ cửa: đồng bộ 120x45x4mm",
-        "Cửa tầng: W800 x H1900mm",
-        "Chiều cao cabin (H CAR): 1950mm",
-        "Cửa cabin: Không có",
-        "Cửa mở: Tự động, 1 cánh – dạng Auto Door (AD)",
-        "Chiều cao tầng điển hình (OH): 3000mm",
-        "Chiều sâu hố PIT: 1200mm",
-        "Loại hố thang: Thép cắt laser, sơn tĩnh điện, ốp kính hoàn thiện",
+      image: "", // Có thể để ảnh một tính năng an toàn nổi bật
+      description: [
+        "An toàn là ưu tiên hàng đầu của thang cuốn JP TechLift. Sản phẩm được trang bị đầy đủ các thiết bị bảo vệ theo tiêu chuẩn châu Âu EN115:",
       ],
-      stops: "4 tầng (GF – 1F – 2F – 3F)",
-      heightNote: "Chiều cao BH, AH: 1150mm",
+      specs: [
+        "Nút dừng khẩn cấp (Emergency Stop Button) ở cả hai đầu thang.",
+        "Thiết bị giám sát tốc độ tay vịn.",
+        "Thiết bị chống kẹt giữa bậc thang và tấm lược (Comb-plate safety device).",
+        "Thiết bị bảo vệ mất bậc thang (Step missing detection).",
+        "Đèn chiếu sáng chân bậc (Step demarcation lighting) màu xanh/vàng.",
+        "Rào chắn chống trèo (Anti-climb barrier).",
+      ],
+      stops: "",
+      heightNote: "",
     },
 
     // ✅ Thẩm mỹ nội thất cabin - phần này kiểu nó nên làm trang riêng hay cho hiện nổi lên(hiện tại chính trang productpage đó nhưng ô nhỏ hơn và có thể bấm thoát ra vẫn ở vị trí lúc bấm vào btn - lướt trang productpage bthg)??
@@ -1003,101 +920,84 @@ export const productData: Record<string, Product> = {
     // ✅ Thông tin chi tiết sản phẩm
     detailInfo: {
       title: "Thang Máy Quan Sát",
-      introductionLine1:
-        "Thang máy quan sát JPTechLift là lựa chọn lý tưởng cho các công trình cần tính thẩm mỹ cao và trải nghiệm người dùng độc đáo.",
+      introductionLine1: "Thang máy quan sát JPTechLift kết hợp hoàn hảo giữa công năng và nghệ thuật kiến trúc.",
       introductionLine2:
-        "Với thiết kế kính toàn phần hoặc bán phần, sản phẩm mang lại tầm nhìn rộng, phù hợp lắp đặt tại trung tâm thương mại, khách sạn, showroom hoặc tòa nhà cao tầng.",
+        "Sử dụng kính cường lực an toàn, khung thép hoặc inox cao cấp, mang lại vẻ đẹp bền vững theo thời gian.",
       productLine: "Dòng sản phẩm: Thang máy quan sát lồng kính JPTechLift.",
-      config: "Cabin kính, khung thép sơn tĩnh điện, nhập khẩu linh kiện",
+      config: "Cabin kính cường lực, khung thép/inox, nhập khẩu linh kiện",
       brand: "JPTechLift",
-      operation: "Cáp kéo đối trọng hoặc thủy lực (tuỳ công trình)",
-      load: "450–1000kg",
-      speed: "30–90 mét/phút",
-      size: "1400x1400mm, 1600x1600mm",
-      pitDepth: "500–1500mm",
+      operation: "Cáp kéo hoặc thủy lực",
+      load: "450–1600kg",
+      speed: "60–105 mét/phút",
+      size: "Tùy chỉnh theo thiết kế (tròn, vuông, bán nguyệt)",
+      pitDepth: "Tối thiểu 1400mm",
     },
 
     // ✅ carousel của phần thông tin chi tiết sản phẩm - hình bên trái
     galleryImages: [p_carousel1, p_carousel2, p_carousel3],
-    realGalleryImages: [panoramic_realGallery1, panoramic_realGallery2, panoramic_realGallery3, panoramic_realGallery4, panoramic_realGallery5],
+    realGalleryImages: [
+      panoramic_realGallery1,
+      panoramic_realGallery2,
+      panoramic_realGallery3,
+      panoramic_realGallery4,
+      panoramic_realGallery5,
+    ],
     // ✅ Hình ảnh thực tế - Phần này cố định không đổi xuyên suốt 6 trang
     //---
     // ✅ Kích thước thang máy - phần nãy cũng giữ nguyên ngoại trừ bảng chi tiết, dimensions đã làm - phần bên phải giữ nguyên qua 6 trang
     dimensions: [
-      { people: "3–4 người", size: "800 – 830MM", weight: "250 – 300KG" },
-      { people: "5–6 người", size: "1200 – 1000MM", weight: "350 – 450KG" },
-      { people: "6–7 người", size: "1200 – 1597MM", weight: "500KG" },
+      { people: "6 - 8 người", size: "450 - 630 KG", weight: "Phù hợp cho biệt thự, khách sạn nhỏ" },
+      { people: "10 - 11 người", size: "750 - 800 KG", weight: "Phù hợp trung tâm thương mại, cao ốc" },
+      { people: "13 - 15 người", size: "1000 KG", weight: "Phù hợp các công trình quy mô lớn" },
     ],
 
     // ✅ Quy trình lắp đặt
     installationImage: install,
     installationSteps: [
       {
-        stage: "Giai đoạn 01: Thiết kế và thi công hố thang máy",
+        stage: "Giai đoạn 01: Thi công hố thang và kết cấu bao che",
         description:
-          "Sau khi hoàn thiện phần hố thang, đội ngũ kỹ sư sẽ tiến hành lắp đặt hệ thống thang máy quan sát theo tiêu chuẩn an toàn cao. Các bước bao gồm lắp khung cabin kính, hệ thống dẫn động, cửa tầng, và trang trí hoàn thiện. Do sử dụng nhiều vật liệu kính, việc thi công cần độ chính xác và kỹ thuật cao nhằm đảm bảo thẩm mỹ và an toàn trong vận hành.",
-        steps: [], // không có bước nhỏ ở giai đoạn 01
+          "Đối với thang quan sát, việc thi công hố thang (bê tông hoặc khung thép) và hệ thống kết cấu bao che bằng kính đòi hỏi độ chính xác cực cao để đảm bảo thẩm mỹ và an toàn.",
+        steps: [],
       },
       {
-        stage: "Giai đoạn 02: Lắp đặt thang máy gia đình",
-        description:
-          "Sau khi hoàn thiện thi công hố thang máy, các chuyên gia sẽ tiến hành lắp đặt thang máy theo các bước sau:",
+        stage: "Giai đoạn 02: Lắp đặt cơ khí và cabin kính",
+        description: "Quá trình lắp đặt cần sự cẩn trọng tối đa để tránh làm trầy xước các tấm kính.",
         steps: [
           {
-            stepTitle: "Bước 1: Lắp đặt cabin và đối trọng",
-            stepContent:
-              "Cabin và đối trọng là các thành phần chính yếu trong hệ thống thang. Cabin là nơi chứa người và hàng hóa...",
+            stepTitle: "Bước 1: Lắp đặt Ray dẫn hướng và Đối trọng",
+            stepContent: "Đối trọng có thể được bố trí phía sau hoặc bên hông để tối đa hóa phần kính quan sát.",
           },
           {
-            stepTitle: "Bước 2: Lắp đặt hệ thống dẫn động",
-            stepContent: "Hệ thống dẫn động gồm động cơ, dây cáp, thiết bị điều khiển, cáp tải và phanh...",
-          },
-          {
-            stepTitle: "Bước 3: Lắp đặt hệ thống an toàn",
+            stepTitle: "Bước 2: Lắp đặt Khung cabin và các tấm kính",
             stepContent:
-              "Hệ thống an toàn đảm bảo thang máy vận hành an toàn, bao gồm bộ chống trượt, bộ giới hạn tốc độ...",
-          },
-          {
-            stepTitle: "Bước 4: Lắp đặt cửa tầng",
-            stepContent:
-              "Cửa tầng là phần đóng mở để ra vào thang máy. Cửa tầng phải được lắp đặt đúng kích thước và tiêu chuẩn kỹ thuật.",
-          },
-          {
-            stepTitle: "Bước 5: Lắp đặt trang trí",
-            stepContent:
-              "Sau khi lắp đặt xong các phần chính của thang máy, cần lắp đặt các trang trí như tay vịn, sàn cabin, đèn chiếu sáng...",
+              "Lắp đặt khung cabin và sau đó lắp các tấm kính cường lực an toàn vào khung, đảm bảo các khe hở đều và kín khít.",
           },
         ],
       },
       {
-        stage: "Giai đoạn 03: Kiểm tra và nghiệm thu thang máy",
+        stage: "Giai đoạn 03: Hoàn thiện, Kiểm định và Bàn giao",
         description:
-          "Trước khi thang máy được đưa vào sử dụng, toàn bộ hệ thống cần được kiểm tra kỹ lưỡng nhằm đảm bảo hoạt động an toàn và hiệu quả. Khi quá trình kiểm tra đạt yêu cầu, thang máy sẽ được nghiệm thu chính thức và đưa vào vận hành. Việc thi công theo đúng quy trình và tiêu chuẩn kỹ thuật không chỉ giúp thang máy vận hành ổn định mà còn kéo dài tuổi thọ thiết bị. Đừng ngần ngại, hãy liên hệ ngay với JP TECHLIFT – chúng tôi sẵn sàng đồng hành và mang đến những giải pháp tối ưu nhất dành cho bạn.",
-        steps: [], // không có bước nhỏ
+          "Lắp đặt hệ thống điện, chiếu sáng trang trí. Vệ sinh toàn bộ bề mặt kính. Tiến hành kiểm định an toàn nghiêm ngặt trước khi bàn giao đưa vào sử dụng.",
+        steps: [],
       },
     ],
-
-    // ✅ Bản vẽ chi tiết (thêm mô tả bên cạnh ảnh)
     blueprint: {
-      image: blueprint,
+      image: blueprint, // Thay bằng bản vẽ thang quan sát
       description: [
-        "Bản vẽ mặt bên hố thang máy quan sát với cabin kính 4 điểm dừng",
-        "Cấu hình điển hình cho thang máy lồng kính khung thép sơn tĩnh điện, cabin bán lộ thiên",
+        "Bản vẽ kỹ thuật tham khảo cho thang máy quan sát hình vuông, 3 mặt kính.",
+        "Cấu hình điển hình cho trung tâm thương mại:",
       ],
       specs: [
-        "Trụ đứng: 120x120x4mm",
-        "Đà đặt máy (4 mặt hố thang): 120x45x4mm",
-        "Đà bắt rail – đà giằng trái phải – đà treo đỡ cửa: đồng bộ 120x45x4mm",
-        "Cửa tầng: W800 x H1900mm",
-        "Chiều cao cabin (H CAR): 1950mm",
-        "Cửa cabin: Không có",
-        "Cửa mở: Tự động, 1 cánh – dạng Auto Door (AD)",
-        "Chiều cao tầng điển hình (OH): 3000mm",
-        "Chiều sâu hố PIT: 1200mm",
-        "Loại hố thang: Thép cắt laser, sơn tĩnh điện, ốp kính hoàn thiện",
+        "Hình dạng cabin: Vuông (hoặc tròn, bán nguyệt)",
+        "Số mặt kính: 3 mặt vách + 1 mặt cửa",
+        "Vật liệu khung cabin: Inox sọc nhuyễn hoặc inox gương vàng",
+        "Vật liệu kính: Kính cường lực an toàn, dày 10mm-12mm",
+        "Loại cửa: Cửa kính mở tự động về 2 phía (Center Opening)",
+        "Hệ thống chiếu sáng: Đèn LED trang trí trên trần và dưới sàn cabin",
       ],
-      stops: "4 tầng (GF – 1F – 2F – 3F)",
-      heightNote: "Chiều cao BH, AH: 1150mm",
+      stops: "5 điểm dừng",
+      heightNote: "Thiết kế thang máy quan sát có tính tùy biến rất cao để phù hợp với kiến trúc tổng thể.",
     },
 
     // ✅ Thẩm mỹ nội thất cabin - phần này kiểu nó nên làm trang riêng hay cho hiện nổi lên(hiện tại chính trang productpage đó nhưng ô nhỏ hơn và có thể bấm thoát ra vẫn ở vị trí lúc bấm vào btn - lướt trang productpage bthg)??
