@@ -5,10 +5,42 @@ import freightHeroImg from "../assets/images/productPage_img/freight_elevator/he
 import dHeroImg from "../assets/images/productPage_img/dumbwaiter/hero5.png";
 import hospitalHeroImg from "../assets/images/productPage_img/hospital _elevator/hero6.png";
 import panaramicHeroImg from "../assets/images/productPage_img/panoramic_elevator/hero7.png";
+// gallery section
+import homelift_realGallery1 from "../assets/images/productPage_img/home_lift/home_realGallery1.jpg";
+import homelift_realGallery2 from "../assets/images/productPage_img/home_lift/home_realGallery2.jpg";
+import homelift_realGallery3 from "../assets/images/productPage_img/home_lift/home_realGallery3.jpg";
+import homelift_realGallery4 from "../assets/images/productPage_img/home_lift/home_realGallery6.png";
+import homelift_realGallery5 from "../assets/images/productPage_img/home_lift/home_realGallery5.png";
+import freight_realGallery1 from "../assets/images/productPage_img/freight_elevator/freight_realGallery1.png";
+import freight_realGallery2 from "../assets/images/productPage_img/freight_elevator/freight_realGallery2.png";
+import freight_realGallery3 from "../assets/images/productPage_img/freight_elevator/freight_realGallery3.png";
+import freight_realGallery4 from "../assets/images/productPage_img/freight_elevator/freight_carousel3.png";
+import freight_realGallery5 from "../assets/images/productPage_img/home_lift/home_realGallery5.png";
+import passenger_realGallery1 from "../assets/images/productPage_img/passenger_elevator/passenger_realGallery1.png";
+import passenger_realGallery2 from "../assets/images/productPage_img/passenger_elevator/passenger_realGallery2.png";
+import passenger_realGallery3 from "../assets/images/productPage_img/passenger_elevator/passenger_realGallery3.png";
+import passenger_realGallery4 from "../assets/images/productPage_img/passenger_elevator/passenger_realGallery4.png";
+import passenger_realGallery5 from "../assets/images/productPage_img/passenger_elevator/passenger_realGallery5.jpg";
+import hospital_realGallery1 from "../assets/images/productPage_img/hospital _elevator/h_realGallery1.png";
+import hospital_realGallery2 from "../assets/images/productPage_img/hospital _elevator/h_realGallery2.png";
+import hospital_realGallery3 from "../assets/images/productPage_img/hospital _elevator/h_realGallery3.png";
+import hospital_realGallery4 from "../assets/images/productPage_img/hospital _elevator/h_realGallery4.png";
+import hospital_realGallery5 from "../assets/images/productPage_img/hospital _elevator/hospital_carousel1.png";
+import panoramic_realGallery1 from "../assets/images/productPage_img/panoramic_elevator/p_realGallery1.png";
+import panoramic_realGallery2 from "../assets/images/productPage_img/panoramic_elevator/p_realGallery2.png";
+import panoramic_realGallery3 from "../assets/images/productPage_img/panoramic_elevator/p_realGallery3.png";
+import panoramic_realGallery4 from "../assets/images/productPage_img/panoramic_elevator/panoramic_carousel1.png";
+import panoramic_realGallery5 from "../assets/images/productPage_img/panoramic_elevator/p_realGallery1.png";
+import d_realGallery1 from "../assets/images/productPage_img/dumbwaiter/d_realGallery1.png";
+import d_realGallery2 from "../assets/images/productPage_img/dumbwaiter/d_realGallery2.png";
+import d_realGallery3 from "../assets/images/productPage_img/dumbwaiter/d_realGallery3.png";
+import d_realGallery4 from "../assets/images/productPage_img/dumbwaiter/d_realGallery4.png";
+import d_realGallery5 from "../assets/images/productPage_img/dumbwaiter/d_realGallery1.png";
 import real1 from "../assets/images/productPage_img/home_lift/real1.png";
 import real2 from "../assets/images/productPage_img/home_lift/real2.png";
 import real3 from "../assets/images/productPage_img/home_lift/real3.png";
 import real4 from "../assets/images/productPage_img/home_lift/real4.png";
+//carousel section
 import homelift_carousel1 from "../assets/images/productPage_img/home_lift/homepage_carousel1.png";
 import homelift_carousel2 from "../assets/images/productPage_img/home_lift/homepage_carousel2.png";
 import homelift_carousel3 from "../assets/images/productPage_img/home_lift/homepage_carousel3.png";
@@ -30,6 +62,7 @@ import h_carousel3 from "../assets/images/productPage_img/hospital _elevator/hos
 import p_carousel1 from "../assets/images/productPage_img/panoramic_elevator/panoramic_carousel1.png";
 import p_carousel2 from "../assets/images/productPage_img/panoramic_elevator/panoramic_carousel2.png";
 import p_carousel3 from "../assets/images/productPage_img/panoramic_elevator/panoramic_carousel3.png";
+
 import real5 from "../assets/images/productPage_img/home_lift/gallery_content_table.jpg";
 import install from "../assets/images/productPage_img/home_lift/install_content_table.jpg";
 import blueprint from "../assets/images/productPage_img/home_lift/blueprint1.png";
@@ -103,9 +136,9 @@ export const productData: Record<string, Product> = {
     intro: {
       title: "Thang Máy Gia Đình",
       description:
-        "JP TECHLIFT cung cấp các dòng thang máy mini, dòng thang máy không hố pit, thang máy không buồng máy, thang kính đúc sẵn giúp quá trình lắp đặt thang máy gia đình nhanh chóng.",
+        "Tại các thành phố lớn như Hà Nội và TP.HCM, nhà phố dạng ống cao từ 3 đến 5 tầng xuất hiện ngày càng nhiều. Tuy nhiên, thiết kế nhà cao tầng lại đặt ra nhiều thách thức trong việc di chuyển, đặc biệt đối với người lớn tuổi, phụ nữ mang thai, người gặp vấn đề về xương khớp hoặc trẻ nhỏ. Việc đi lại bằng cầu thang bộ trong những ngôi nhà này không chỉ bất tiện mà còn tiềm ẩn nhiều rủi ro về sức khỏe và an toàn.",
       introduction:
-        "Thang máy gia đình hay còn gọi là thang máy mini hoặc thang máy cá nhân. Đây là loại thang máy được thiết kế riêng cho các tòa nhà dân cư như biệt thự, nhà phố hoặc căn hộ cao cấp. Không giống như thang máy thương mại, thang máy gia đình thường có kích thước nhỏ gọn, tải trọng nhẹ và thiết kế thẩm mỹ, hài hòa với không gian nội thất gia đình.",
+        "Chính vì vậy, nhu cầu lắp đặt thang máy gia đình cho nhà ống đang ngày càng trở nên cần thiết. Thang máy không chỉ hỗ trợ di chuyển thuận tiện giữa các tầng mà còn nâng tầm tiện nghi, tăng giá trị sử dụng và giúp không gian sống trở nên hiện đại, an toàn hơn cho mọi thành viên trong gia đình.",
       heroImage: homeLiftHeroImg,
     },
 
@@ -141,7 +174,147 @@ export const productData: Record<string, Product> = {
 
     // ✅ carousel của phần thông tin chi tiết sản phẩm - hình bên trái
     galleryImages: [homelift_carousel1, homelift_carousel2, homelift_carousel3],
-    realGalleryImages: [real1, real2, real3, real4, real5],
+    realGalleryImages: [homelift_realGallery1, homelift_realGallery2, homelift_realGallery3, homelift_realGallery4, homelift_realGallery5],
+    // ✅ Hình ảnh thực tế - Phần này cố định không đổi xuyên suốt 6 trang
+    //---
+    // ✅ Kích thước thang máy - phần nãy cũng giữ nguyên ngoại trừ bảng chi tiết, dimensions đã làm - phần bên phải giữ nguyên qua 6 trang
+    dimensions: [
+      { people: "3–4 người", size: "800 – 830MM", weight: "250 – 300KG" },
+      { people: "5–6 người", size: "1200 – 1000MM", weight: "350 – 450KG" },
+      { people: "6–7 người", size: "1200 – 1597MM", weight: "500KG" },
+    ],
+
+    // ✅ Quy trình lắp đặt
+    installationImage: install,
+    installationSteps: [
+      {
+        stage: "Giai đoạn 01: Thiết kế và thi công hố thang máy",
+        description:
+          "Hố thang máy là một bộ phận quan trọng không thể thiếu trong hệ thống thang máy, cần được thiết kế và xây dựng đúng theo các tiêu chuẩn kỹ thuật nhằm đảm bảo an toàn cho người sử dụng. Thông thường, hố được cấu tạo từ bê tông cốt thép. Kích thước của hố thang máy sẽ thay đổi tùy theo loại thang được lắp đặt và số tầng của công trình.",
+        steps: [], // không có bước nhỏ ở giai đoạn 01
+      },
+      {
+        stage: "Giai đoạn 02: Lắp đặt thang máy gia đình",
+        description:
+          "Sau khi hoàn thiện thi công hố thang máy, các chuyên gia sẽ tiến hành lắp đặt thang máy theo các bước sau:",
+        steps: [
+          {
+            stepTitle: "Bước 1: Lắp đặt cabin và đối trọng",
+            stepContent:
+              "Cabin và đối trọng là các thành phần chính yếu trong hệ thống thang. Cabin là nơi chứa người và hàng hóa...",
+          },
+          {
+            stepTitle: "Bước 2: Lắp đặt hệ thống dẫn động",
+            stepContent: "Hệ thống dẫn động gồm động cơ, dây cáp, thiết bị điều khiển, cáp tải và phanh...",
+          },
+          {
+            stepTitle: "Bước 3: Lắp đặt hệ thống an toàn",
+            stepContent:
+              "Hệ thống an toàn đảm bảo thang máy vận hành an toàn, bao gồm Phanh an toàn; Cảm biến cửa; Thiết bị đóng; Mở cửa tự động; Hạn chế cửa; Tính năng sơ tán khẩn cấp; Bộ đệm hố thang; Công tắc báo động khẩn cấp; Điện thoại khẩn cấp hoặc thiết bị liên lạc; Chiếu sáng khẩn cấp; Hệ thống cứu hỏa.",
+          },
+          {
+            stepTitle: "Bước 4: Lắp đặt cửa tầng",
+            stepContent:
+              "Cửa tầng là phần đóng mở để ra vào thang máy. Cửa tầng phải được lắp đặt đúng kích thước và tiêu chuẩn kỹ thuật.",
+          },
+          {
+            stepTitle: "Bước 5: Lắp đặt trang trí",
+            stepContent:
+              "Sau khi lắp đặt xong các phần chính của thang máy, cần lắp đặt các trang trí như tay vịn, sàn cabin, đèn chiếu sáng...",
+          },
+        ],
+      },
+      {
+        stage: "Giai đoạn 03: Kiểm tra và nghiệm thu thang máy",
+        description:
+          "Trước khi thang máy được đưa vào sử dụng, toàn bộ hệ thống cần được kiểm tra kỹ lưỡng nhằm đảm bảo hoạt động an toàn và hiệu quả. Khi quá trình kiểm tra đạt yêu cầu, thang máy sẽ được nghiệm thu chính thức và đưa vào vận hành. Việc thi công theo đúng quy trình và tiêu chuẩn kỹ thuật không chỉ giúp thang máy vận hành ổn định mà còn kéo dài tuổi thọ thiết bị. Đừng ngần ngại, hãy liên hệ ngay với JP TECHLIFT – chúng tôi sẵn sàng đồng hành và mang đến những giải pháp tối ưu nhất dành cho bạn.",
+        steps: [], // không có bước nhỏ
+      },
+    ],
+
+    // ✅ Bản vẽ chi tiết (thêm mô tả bên cạnh ảnh)
+    blueprint: {
+      image: blueprint,
+      description: ["Mặt bên hố thang máy gia đình 4 điểm dừng", "Cấu hình hố thang tiêu chuẩn:"],
+      specs: [
+        "Trụ đứng: 120x120x4mm",
+        "Đà đặt máy (4 mặt hố thang): 120x45x4mm",
+        "Đà bắt rail – đà giằng trái phải – đà treo đỡ cửa: đồng bộ 120x45x4mm",
+        "Cửa tầng: W800 x H1900mm",
+        "Chiều cao cabin (H CAR): 1950mm",
+        "Cửa cabin: Không có",
+        "Cửa mở: Tự động, 1 cánh – dạng Auto Door (AD)",
+        "Chiều cao tầng điển hình (OH): 3000mm",
+        "Chiều sâu hố PIT: 1200mm",
+        "Loại hố thang: Thép cắt laser, sơn tĩnh điện, ốp kính hoàn thiện",
+      ],
+      stops: "4 tầng (GF – 1F – 2F – 3F)",
+      heightNote: "Chiều cao BH, AH: 1150mm",
+    },
+
+    // ✅ Thẩm mỹ nội thất cabin - phần này kiểu nó nên làm trang riêng hay cho hiện nổi lên(hiện tại chính trang productpage đó nhưng ô nhỏ hơn và có thể bấm thoát ra vẫn ở vị trí lúc bấm vào btn - lướt trang productpage bthg)??
+    aestheticsOptions: {
+      roofStyles: ["Trần kim loại", "Trần đèn LED", "Trần inox sọc", "Trần hoa văn"],
+      handrails: ["Tay vịn inox tròn", "Tay gỗ", "Không tay vịn"],
+      materials: ["Inox gương", "Inox sọc nhuyễn", "Gỗ công nghiệp", "Gỗ phủ laminate", "Tranh in UV", "Sơn tĩnh điện"],
+    },
+
+    // imagegallery - chức năng kho ảnh - phần này tớ định nối qua drive cho nhanh - khóa phần này lại để khách muốn thì mới làm
+  },
+  "thang-tai-thuc-pham": {
+    seo: {
+      metaTitle: "Thang thực phẩm JP TechLift nhỏ gọn",
+      metaDescription:
+        "Thang thực phẩm JP TechLift chuyên dụng cho nhà bếp, nhà hàng, khách sạn. Thiết kế nhỏ gọn, vận hành êm, giúp di chuyển thức ăn nhanh chóng và an toàn.",
+      keywords: [
+        "thang thực phẩm",
+        "thang tời thức ăn",
+        "food lift JP TechLift",
+        "thang nâng nhà hàng",
+        "thang chở thức ăn",
+      ],
+    },
+    intro: {
+      title: "Thang Thực Phẩm",
+      description:
+        "JP TECHLIFT cung cấp thang thực phẩm nhỏ gọn, vỏ inox dễ vệ sinh, phù hợp nhà hàng, khách sạn, đáp ứng tiêu chuẩn an toàn vận chuyển thực phẩm.",
+      introduction:
+        "Thang thực phẩm JP TECHLIFT là giải pháp lý tưởng cho việc vận chuyển thức ăn, nguyên liệu, dụng cụ giữa các tầng trong nhà hàng, khách sạn và bếp công nghiệp. Thiết kế nhỏ gọn, vỏ inox sáng bóng giúp dễ dàng vệ sinh và đảm bảo vệ sinh an toàn thực phẩm theo tiêu chuẩn ngành F&B.",
+      heroImage: dHeroImg,
+    },
+
+    // ✅ Content_table
+    contentTable: {
+      title: "Giải pháp vận chuyển thực phẩm chuyên nghiệp",
+
+      // ảnh,... của 4 ô giữ nguyên qua 6 trang khác nhau
+      // Bảng thông tin - Kích thước và giá lắp đặt - Quy trình lắp đặt - Hình ảnh thực tế - Bản vẽ kỹ thuật - 4 ô content giúp thao tác nhanh đến các phần trong product
+      quickLinks: [
+        { label: "Kích thước và giá", targetId: "size-price" },
+        { label: "Quy trình lắp đặt", targetId: "installation" },
+        { label: "Hình ảnh thực tế", targetId: "real-gallery" },
+        { label: "Bản vẽ kỹ thuật", targetId: "blueprint" },
+      ],
+    },
+
+    // ✅ Thông tin chi tiết sản phẩm
+    detailInfo: {
+      title: "Thang Thực Phẩm",
+      introductionLine1: "Thang thực phẩm JP TechLift vận hành êm và sạch sẽ.",
+      introductionLine2: "Phù hợp nhà hàng, khách sạn, bệnh viện cần di chuyển thức ăn.",
+      productLine: "Dòng sản phẩm: Thang thực phẩm JP TechLift.",
+      config: "Nhập khẩu linh kiện, lắp ráp trong nước",
+      brand: "JPTechLift",
+      operation: "Cáp kéo",
+      load: "50–300kg",
+      speed: "15–25 mét/phút",
+      size: "600x600mm, 800x800mm",
+      pitDepth: "400–600mm",
+    },
+
+    // ✅ carousel của phần thông tin chi tiết sản phẩm - hình bên trái
+    galleryImages: [d_carousel1, d_carousel2, d_carousel3],
+    realGalleryImages: [d_realGallery1, d_realGallery2, d_realGallery3, d_realGallery4, d_realGallery5],
     // ✅ Hình ảnh thực tế - Phần này cố định không đổi xuyên suốt 6 trang
     //---
     // ✅ Kích thước thang máy - phần nãy cũng giữ nguyên ngoại trừ bảng chi tiết, dimensions đã làm - phần bên phải giữ nguyên qua 6 trang
@@ -244,9 +417,9 @@ export const productData: Record<string, Product> = {
     intro: {
       title: "Thang Tải Hàng",
       description:
-        "JP TECHLIFT chuyên cung cấp thang chở hàng tải trọng lớn, vận hành ổn định cho kho xưởng và trung tâm logistics.",
+        "JP TECHLIFT cung cấp thang chở hàng tải trọng lớn, vận hành ổn định – giải pháp tối ưu cho kho xưởng, nhà máy và trung tâm logistics hiện đại.",
       introduction:
-        "Thang chở hàng JP TechLift đáp ứng nhu cầu vận chuyển hàng hóa tại kho xưởng và trung tâm thương mại. Tải trọng cao cùng cấu tạo chắc chắn đảm bảo vận hành bền bỉ, an toàn cho doanh nghiệp.",
+        "Thang chở hàng JP TECHLIFT là giải pháp chuyên dụng cho vận chuyển hàng hóa khối lượng lớn tại kho xưởng, nhà máy và trung tâm logistics. Thiết kế chịu lực cao, sàn chống trượt và hệ thống điều khiển thông minh giúp đảm bảo an toàn, bền bỉ và tối ưu hiệu suất vận hành cho doanh nghiệp.",
       heroImage: freightHeroImg,
     },
 
@@ -281,7 +454,7 @@ export const productData: Record<string, Product> = {
 
     // ✅ carousel của phần thông tin chi tiết sản phẩm - hình bên trái
     galleryImages: [fr_carousel1, fr_carousel2, fr_carousel3],
-    realGalleryImages: [real1, real2, real3, real4, real5],
+    realGalleryImages: [freight_realGallery1, freight_realGallery2, freight_realGallery3, freight_realGallery4, freight_realGallery5],
     // ✅ Hình ảnh thực tế - Phần này cố định không đổi xuyên suốt 6 trang
     //---
     // ✅ Kích thước thang máy - phần nãy cũng giữ nguyên ngoại trừ bảng chi tiết, dimensions đã làm - phần bên phải giữ nguyên qua 6 trang
@@ -384,9 +557,10 @@ export const productData: Record<string, Product> = {
     intro: {
       title: "Thang Máy Hành Khách",
       description:
-        "JP TECHLIFT cung cấp giải pháp thang máy hành khách hiện đại, hiệu suất cao, phù hợp nhiều công trình dân dụng và thương mại.",
+        "Tại các đô thị lớn như Hà Nội và TP.HCM, nhu cầu di chuyển nhanh chóng, an toàn giữa các tầng trong các tòa nhà cao tầng, trung tâm thương mại, văn phòng và nhà ở hiện đại ngày càng gia tăng. Trong bối cảnh quỹ đất hạn chế và xu hướng phát triển theo chiều cao, việc lắp đặt thang máy tải khách trở thành giải pháp không thể thiếu, đặc biệt trong những công trình có mật độ sử dụng cao hoặc có người già, trẻ nhỏ, phụ nữ mang thai thường xuyên di chuyển. Việc sử dụng cầu thang bộ không chỉ bất tiện mà còn tiềm ẩn nhiều nguy cơ về an toàn và sức khỏe.",
+
       introduction:
-        "Thang máy hành khách JP TechLift mang đến trải nghiệm di chuyển an toàn, êm ái. Thiết kế đa dạng tải trọng, tích hợp nhiều công nghệ tối ưu cho người dùng.",
+        "Thang máy tải khách được thiết kế để đáp ứng nhu cầu vận chuyển người hiệu quả giữa các tầng, với tốc độ ổn định, vận hành êm ái và đảm bảo tiêu chuẩn an toàn nghiêm ngặt. Không chỉ là phương tiện di chuyển, thang máy còn góp phần nâng cao giá trị kiến trúc, tối ưu hóa công năng và mang lại trải nghiệm tiện nghi, hiện đại cho người sử dụng. Đây là lựa chọn lý tưởng cho các công trình như khách sạn, chung cư, tòa nhà văn phòng, bệnh viện và cả nhà ở cao tầng có nhu cầu sử dụng thường xuyên.",
       heroImage: passengerLiftHeroImg,
     },
 
@@ -421,147 +595,7 @@ export const productData: Record<string, Product> = {
 
     // ✅ carousel của phần thông tin chi tiết sản phẩm - hình bên trái
     galleryImages: [passenger_carousel1, passenger_carousel2, passenger_carousel3],
-    realGalleryImages: [real1, real2, real3, real4, real5],
-    // ✅ Hình ảnh thực tế - Phần này cố định không đổi xuyên suốt 6 trang
-    //---
-    // ✅ Kích thước thang máy - phần nãy cũng giữ nguyên ngoại trừ bảng chi tiết, dimensions đã làm - phần bên phải giữ nguyên qua 6 trang
-    dimensions: [
-      { people: "3–4 người", size: "800 – 830MM", weight: "250 – 300KG" },
-      { people: "5–6 người", size: "1200 – 1000MM", weight: "350 – 450KG" },
-      { people: "6–7 người", size: "1200 – 1597MM", weight: "500KG" },
-    ],
-
-    // ✅ Quy trình lắp đặt
-    installationImage: install,
-    installationSteps: [
-      {
-        stage: "Giai đoạn 01: Thiết kế và thi công hố thang máy",
-        description:
-          "Hố thang máy là một bộ phận quan trọng không thể thiếu trong hệ thống thang máy, cần được thiết kế và xây dựng đúng theo các tiêu chuẩn kỹ thuật nhằm đảm bảo an toàn cho người sử dụng. Thông thường, hố được cấu tạo từ bê tông cốt thép. Kích thước của hố thang máy sẽ thay đổi tùy theo loại thang được lắp đặt và số tầng của công trình.",
-        steps: [], // không có bước nhỏ ở giai đoạn 01
-      },
-      {
-        stage: "Giai đoạn 02: Lắp đặt thang máy gia đình",
-        description:
-          "Sau khi hoàn thiện thi công hố thang máy, các chuyên gia sẽ tiến hành lắp đặt thang máy theo các bước sau:",
-        steps: [
-          {
-            stepTitle: "Bước 1: Lắp đặt cabin và đối trọng",
-            stepContent:
-              "Cabin và đối trọng là các thành phần chính yếu trong hệ thống thang. Cabin là nơi chứa người và hàng hóa...",
-          },
-          {
-            stepTitle: "Bước 2: Lắp đặt hệ thống dẫn động",
-            stepContent: "Hệ thống dẫn động gồm động cơ, dây cáp, thiết bị điều khiển, cáp tải và phanh...",
-          },
-          {
-            stepTitle: "Bước 3: Lắp đặt hệ thống an toàn",
-            stepContent:
-              "Hệ thống an toàn đảm bảo thang máy vận hành an toàn, bao gồm bộ chống trượt, bộ giới hạn tốc độ...",
-          },
-          {
-            stepTitle: "Bước 4: Lắp đặt cửa tầng",
-            stepContent:
-              "Cửa tầng là phần đóng mở để ra vào thang máy. Cửa tầng phải được lắp đặt đúng kích thước và tiêu chuẩn kỹ thuật.",
-          },
-          {
-            stepTitle: "Bước 5: Lắp đặt trang trí",
-            stepContent:
-              "Sau khi lắp đặt xong các phần chính của thang máy, cần lắp đặt các trang trí như tay vịn, sàn cabin, đèn chiếu sáng...",
-          },
-        ],
-      },
-      {
-        stage: "Giai đoạn 03: Kiểm tra và nghiệm thu thang máy",
-        description:
-          "Trước khi thang máy được đưa vào sử dụng, toàn bộ hệ thống cần được kiểm tra kỹ lưỡng nhằm đảm bảo hoạt động an toàn và hiệu quả. Khi quá trình kiểm tra đạt yêu cầu, thang máy sẽ được nghiệm thu chính thức và đưa vào vận hành. Việc thi công theo đúng quy trình và tiêu chuẩn kỹ thuật không chỉ giúp thang máy vận hành ổn định mà còn kéo dài tuổi thọ thiết bị. Đừng ngần ngại, hãy liên hệ ngay với JP TECHLIFT – chúng tôi sẵn sàng đồng hành và mang đến những giải pháp tối ưu nhất dành cho bạn.",
-        steps: [], // không có bước nhỏ
-      },
-    ],
-
-    // ✅ Bản vẽ chi tiết (thêm mô tả bên cạnh ảnh)
-    blueprint: {
-      image: blueprint,
-      description: ["Mặt bên hố thang máy gia đình 4 điểm dừng", "Cấu hình hố thang tiêu chuẩn:"],
-      specs: [
-        "Trụ đứng: 120x120x4mm",
-        "Đà đặt máy (4 mặt hố thang): 120x45x4mm",
-        "Đà bắt rail – đà giằng trái phải – đà treo đỡ cửa: đồng bộ 120x45x4mm",
-        "Cửa tầng: W800 x H1900mm",
-        "Chiều cao cabin (H CAR): 1950mm",
-        "Cửa cabin: Không có",
-        "Cửa mở: Tự động, 1 cánh – dạng Auto Door (AD)",
-        "Chiều cao tầng điển hình (OH): 3000mm",
-        "Chiều sâu hố PIT: 1200mm",
-        "Loại hố thang: Thép cắt laser, sơn tĩnh điện, ốp kính hoàn thiện",
-      ],
-      stops: "4 tầng (GF – 1F – 2F – 3F)",
-      heightNote: "Chiều cao BH, AH: 1150mm",
-    },
-
-    // ✅ Thẩm mỹ nội thất cabin - phần này kiểu nó nên làm trang riêng hay cho hiện nổi lên(hiện tại chính trang productpage đó nhưng ô nhỏ hơn và có thể bấm thoát ra vẫn ở vị trí lúc bấm vào btn - lướt trang productpage bthg)??
-    aestheticsOptions: {
-      roofStyles: ["Trần kim loại", "Trần đèn LED", "Trần inox sọc", "Trần hoa văn"],
-      handrails: ["Tay vịn inox tròn", "Tay gỗ", "Không tay vịn"],
-      materials: ["Inox gương", "Inox sọc nhuyễn", "Gỗ công nghiệp", "Gỗ phủ laminate", "Tranh in UV", "Sơn tĩnh điện"],
-    },
-
-    // imagegallery - chức năng kho ảnh - phần này tớ định nối qua drive cho nhanh - khóa phần này lại để khách muốn thì mới làm
-  },
-  "thang-tai-thuc-pham": {
-    seo: {
-      metaTitle: "Thang thực phẩm JP TechLift nhỏ gọn",
-      metaDescription:
-        "Thang thực phẩm JP TechLift chuyên dụng cho nhà bếp, nhà hàng, khách sạn. Thiết kế nhỏ gọn, vận hành êm, giúp di chuyển thức ăn nhanh chóng và an toàn.",
-      keywords: [
-        "thang thực phẩm",
-        "thang tời thức ăn",
-        "food lift JP TechLift",
-        "thang nâng nhà hàng",
-        "thang chở thức ăn",
-      ],
-    },
-    intro: {
-      title: "Thang Thực Phẩm",
-      description:
-        "JP TECHLIFT cung cấp dòng thang thực phẩm chuyên dụng, thiết kế nhỏ gọn, dễ vệ sinh, đáp ứng tiêu chuẩn an toàn thực phẩm.",
-      introduction:
-        "Thang thực phẩm JP TechLift vận chuyển thực phẩm giữa các tầng nhanh chóng và sạch sẽ. Vỏ inox dễ vệ sinh, đảm bảo tiêu chuẩn an toàn cho nhà hàng, khách sạn.",
-      heroImage: dHeroImg,
-    },
-
-    // ✅ Content_table
-    contentTable: {
-      title: "Giải pháp vận chuyển thực phẩm chuyên nghiệp",
-
-      // ảnh,... của 4 ô giữ nguyên qua 6 trang khác nhau
-      // Bảng thông tin - Kích thước và giá lắp đặt - Quy trình lắp đặt - Hình ảnh thực tế - Bản vẽ kỹ thuật - 4 ô content giúp thao tác nhanh đến các phần trong product
-      quickLinks: [
-        { label: "Kích thước và giá", targetId: "size-price" },
-        { label: "Quy trình lắp đặt", targetId: "installation" },
-        { label: "Hình ảnh thực tế", targetId: "real-gallery" },
-        { label: "Bản vẽ kỹ thuật", targetId: "blueprint" },
-      ],
-    },
-
-    // ✅ Thông tin chi tiết sản phẩm
-    detailInfo: {
-      title: "Thang Thực Phẩm",
-      introductionLine1: "Thang thực phẩm JP TechLift vận hành êm và sạch sẽ.",
-      introductionLine2: "Phù hợp nhà hàng, khách sạn, bệnh viện cần di chuyển thức ăn.",
-      productLine: "Dòng sản phẩm: Thang thực phẩm JP TechLift.",
-      config: "Nhập khẩu linh kiện, lắp ráp trong nước",
-      brand: "JPTechLift",
-      operation: "Cáp kéo",
-      load: "50–300kg",
-      speed: "15–25 mét/phút",
-      size: "600x600mm, 800x800mm",
-      pitDepth: "400–600mm",
-    },
-
-    // ✅ carousel của phần thông tin chi tiết sản phẩm - hình bên trái
-    galleryImages: [d_carousel1, d_carousel2, d_carousel3],
-    realGalleryImages: [real1, real2, real3, real4, real5],
+    realGalleryImages: [passenger_realGallery1, passenger_realGallery2, passenger_realGallery3, passenger_realGallery4, passenger_realGallery5],
     // ✅ Hình ảnh thực tế - Phần này cố định không đổi xuyên suốt 6 trang
     //---
     // ✅ Kích thước thang máy - phần nãy cũng giữ nguyên ngoại trừ bảng chi tiết, dimensions đã làm - phần bên phải giữ nguyên qua 6 trang
@@ -664,9 +698,9 @@ export const productData: Record<string, Product> = {
     intro: {
       title: "Thang Máy Bệnh Viện",
       description:
-        "JP TECHLIFT phát triển thang máy bệnh viện chuyên dụng, phục vụ di chuyển bệnh nhân và thiết bị y tế một cách an toàn, êm ái.",
+        "JP TECHLIFT cung cấp thang máy bệnh viện chuyên dụng, vận hành êm ái, an toàn khi vận chuyển bệnh nhân, cáng cứu thương và thiết bị y tế.",
       introduction:
-        "Thang máy bệnh viện JP TechLift đáp ứng yêu cầu an toàn và vệ sinh. Cabin rộng kèm thanh vịn, điều khiển chuẩn xác, hỗ trợ vận chuyển bệnh nhân nhanh chóng.",
+        "Thang máy bệnh viện JP TECHLIFT được thiết kế chuyên biệt để vận chuyển bệnh nhân, giường bệnh và thiết bị y tế trong môi trường y tế đòi hỏi độ chính xác và an toàn cao. Cabin rộng rãi, trang bị thanh vịn, cảm biến độ mở cửa và điều khiển chính xác giúp di chuyển nhẹ nhàng, hạn chế rung lắc, đáp ứng tiêu chuẩn vệ sinh và chăm sóc sức khỏe.",
       heroImage: hospitalHeroImg,
     },
 
@@ -701,7 +735,7 @@ export const productData: Record<string, Product> = {
 
     // ✅ carousel của phần thông tin chi tiết sản phẩm - hình bên trái
     galleryImages: [h_carousel1, h_carousel2, h_carousel3],
-    realGalleryImages: [real1, real2, real3, real4, real5],
+    realGalleryImages: [hospital_realGallery1,hospital_realGallery2, hospital_realGallery3, hospital_realGallery4, hospital_realGallery5],
     // ✅ Hình ảnh thực tế - Phần này cố định không đổi xuyên suốt 6 trang
     //---
     // ✅ Kích thước thang máy - phần nãy cũng giữ nguyên ngoại trừ bảng chi tiết, dimensions đã làm - phần bên phải giữ nguyên qua 6 trang
@@ -804,9 +838,9 @@ export const productData: Record<string, Product> = {
     intro: {
       title: "Thang Cuốn",
       description:
-        "JP TECHLIFT cung cấp thang cuốn chất lượng cao với nhiều lựa chọn chiều cao và độ rộng, phù hợp trung tâm thương mại, nhà ga, sân bay.",
+         "Thang cuốn JP TECHLIFT – giải pháp vận chuyển hành khách hiệu quả, an toàn cho trung tâm thương mại, nhà ga, sân bay với đa dạng độ nghiêng và chiều rộng.",
       introduction:
-        "Thang cuốn JP TechLift di chuyển lượng người lớn. Nhiều tùy chọn độ nghiêng, chiều rộng bậc, phù hợp cho trung tâm thương mại và nhà ga, đảm bảo an toàn.",
+        "Thang cuốn JP TECHLIFT được thiết kế để vận chuyển lượng lớn người qua lại một cách liên tục, an toàn. Với nhiều tùy chọn độ nghiêng, chiều rộng bậc và chiều cao, sản phẩm dễ dàng đáp ứng nhu cầu lắp đặt tại trung tâm thương mại, nhà ga, sân bay hoặc khu mua sắm đông đúc.",
       heroImage: escalatorHeroImg,
     },
 
@@ -985,7 +1019,7 @@ export const productData: Record<string, Product> = {
 
     // ✅ carousel của phần thông tin chi tiết sản phẩm - hình bên trái
     galleryImages: [p_carousel1, p_carousel2, p_carousel3],
-    realGalleryImages: [real1, real2, real3, real4, real5],
+    realGalleryImages: [panoramic_realGallery1, panoramic_realGallery2, panoramic_realGallery3, panoramic_realGallery4, panoramic_realGallery5],
     // ✅ Hình ảnh thực tế - Phần này cố định không đổi xuyên suốt 6 trang
     //---
     // ✅ Kích thước thang máy - phần nãy cũng giữ nguyên ngoại trừ bảng chi tiết, dimensions đã làm - phần bên phải giữ nguyên qua 6 trang
