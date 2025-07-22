@@ -17,15 +17,25 @@ export default {
       colors: {
         "texture-bg": "#f3f2f0",
       },
-      /** 👇 BỔ SUNG TẠI ĐÂY */
+
       keyframes: {
         wiggle: {
           "0%, 100%": { transform: "translateX(0)" },
           "50%": { transform: "translateX(4px)" },
         },
+        moveLeft: {
+          "0%, 100%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(-6px)" },
+        },
+        moveRight: {
+          "0%, 100%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(6px)" },
+        },
       },
       animation: {
         wiggle: "wiggle 1s ease-in-out infinite",
+        moveLeft: "moveLeft 3s ease-in-out infinite",
+        moveRight: "moveRight 3s ease-in-out infinite",
       },
     },
   },

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import background from "../../assets/images/interior.png";
 import logo from "../../assets/images/logo-noname.png";
 
@@ -30,7 +31,7 @@ const SubBanner: React.FC = () => {
         />
 
         <p
-          className="mt-6 text-white text-lg md:text-xl md:px-6 lg:px-12 mx-auto leading-relaxed drop-shadow-md"
+          className="mt-2 md:mt-4 text-white text-lg md:text-xl md:px-6 lg:px-12 mx-auto leading-relaxed drop-shadow-md"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
@@ -39,14 +40,16 @@ const SubBanner: React.FC = () => {
           <br />
           <br />
           Chúng tôi không chỉ cung cấp sản phẩm, mà kiến tạo giải pháp kết hợp
-          tinh hoa công nghệ, chuẩn mực an toàn và sự tinh tế trong từng chi
-          tiết. Mỗi dự án là minh chứng cho tư duy thấu đáo và giá trị bền vững
-          theo thời gian.
+          tinh hoa công nghệ, chuẩn mực an toàn và tinh tế trong từng chi tiết –
+          nơi mỗi công trình là dấu ấn của tư duy thấu đáo và giá trị vững bền.
         </p>
 
         {/* Nút “TRẢI NGHIỆM NGAY” */}
         <div className="mt-6" data-aos="fade-up" data-aos-duration="1000">
-          <button className="group inline-flex items-center gap-2 border border-white bg-transparent px-6 py-2 text-white font-semibold hover:bg-white hover:text-[#041E42] transition-colors duration-300 whitespace-nowrap">
+          <Link
+            to="/quy-trinh-du-an"
+            className="group inline-flex items-center gap-2 border border-white bg-transparent px-6 py-2 text-white font-semibold hover:bg-white hover:text-[#041E42] transition-colors duration-300 whitespace-nowrap"
+          >
             TRẢI NGHIỆM NGAY
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +65,7 @@ const SubBanner: React.FC = () => {
                 d="M9 5l7 7-7 7"
               />
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
     </div>

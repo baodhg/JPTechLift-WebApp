@@ -54,6 +54,8 @@ const BLOGS_PER_PAGE = 6;
 export default function BlogPage() {
   const [page, setPage] = useState(1);
   const totalPages = Math.ceil(blogs.length / BLOGS_PER_PAGE);
+  const [searchValue, setSearchValue] = useState('');
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value);
 
   useEffect(() => {
     AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
@@ -68,7 +70,22 @@ export default function BlogPage() {
       </h1>
 
       <div className={styles.topBar} data-aos="fade-up" data-aos-delay="100">
-        <div className={styles.resultText}>6 thẻ mỗi trang. Hiển thị kết quả 1 – 6</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <input
+            type="text"
+            placeholder="Tìm kiếm"
+            value={searchValue}
+            onChange={handleSearchChange}
+            style={{
+              padding: '8px 12px',
+              border: '1px solid #ccc',
+              borderRadius: 4,
+              fontSize: 16,
+              marginRight: 8
+            }}
+          />
+          <div className={styles.resultText}>6 thẻ mỗi trang. Hiển thị kết quả 1 – 6</div>
+        </div>
         <div className={styles.filterSort}>
           <select className={styles.select}>
             <option value="">Bộ lọc</option>

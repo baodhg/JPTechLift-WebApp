@@ -90,53 +90,53 @@ export default function ProductSection() {
       />
 
       {/* Products grid */}
-      <div className="mx-auto max-w-[1200px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
-        {products.map((p, i) => (
-          <div
-            key={i}
-            data-aos="fade-up"
-            data-aos-delay={i * 100}
-            className="w-[300px] flex flex-col items-center border-1 border-[#041E42] rounded-2xl shadow-2xl overflow-hidden bg-white"
-          >
-            {/* Image */}
-            <img
-              src={p.image}
-              alt={p.title}
-              className="w-[95%] mt-2 object-cover"
-            />
+        <div className="mx-auto max-w-[1200px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
+          {products.map((p, i) => (
+            <div
+              key={i}
+              data-aos="fade-up"
+              data-aos-delay={i * 100}
+              className="w-[300px] flex flex-col items-center border-1 border-[#041E42] rounded-2xl shadow-2xl overflow-hidden bg-white"
+            >
+              {/* Image */}
+              <img
+                src={p.image}
+                alt={p.title}
+                className="w-[95%] mt-2 object-cover"
+              />
 
-            {/* Content */}
-            <div className="px-2 py-4 flex flex-col text-left gap-2">
-              {/* Logo + Title side‑by‑side */}
-              <div className="flex gap-2">
-                <img src={logo} alt="jp logo" className="h-10 w-auto" />
-                <h3 className="font-inter font-bold text-[23px] text-[#041E42] whitespace-nowrap">
-                  {p.title}
-                </h3>
-              </div>
-              <p className="font-nunito text-[18px] text-[#0D1B2A] leading-relaxed">
-                {p.desc}
-              </p>
+              {/* Content */}
+              <div className="px-2 py-4 flex flex-col text-left gap-2">
+                {/* Logo + Title side‑by‑side */}
+                <div className="flex gap-2">
+                  <img src={logo} alt="jp logo" className="h-10 w-auto" />
+                  <h3 className="font-inter font-bold text-[23px] text-[#041E42] whitespace-nowrap">
+                    {p.title}
+                  </h3>
+                </div>
+                <p className="font-nunito text-[18px] text-[#0D1B2A] leading-relaxed">
+                  {p.desc}
+                </p>
 
-              {/* Buttons */}
-              <div className="w-[90%] grid grid-cols-2 gap-2 mt-2">
-                <Link
-                  to="/lien-he"
-                  className="mr-2 py-3 px-6 bg-[#041E42] text-white font-inter font-semibold rounded-md transition-colors whitespace-nowrap border border-[#041E42] hover:bg-white hover:text-[#041E42] text-center flex items-center justify-center"
-                >
-                  LIÊN HỆ
-                </Link>
-                <Link
-                  to={`/products/${p.slug}`}
-                  className="w-[122%] py-4 bg-[#041E42] text-white font-inter font-semibold rounded-md transition-colors whitespace-nowrap border border-[#041E42] hover:bg-white hover:text-[#041E42] text-center flex items-center justify-center"
-                >
-                  TÌM HIỂU THÊM
-                </Link>
+                {/* Buttons */}
+                <div className="w-[90%] grid grid-cols-2 gap-2 mt-2">
+                  <Link
+                    to="/lien-he"
+                    className="mr-2 py-3 px-6 bg-[#041E42] text-white font-inter font-semibold rounded-md transition-colors whitespace-nowrap border border-[#041E42] hover:bg-white hover:text-[#041E42] text-center flex items-center justify-center"
+                  >
+                    LIÊN HỆ
+                  </Link>
+                  <Link
+                    to={`/products/${p.slug}`}
+                    className="w-[122%] py-4 bg-[#041E42] text-white font-inter font-semibold rounded-md transition-colors whitespace-nowrap border border-[#041E42] hover:bg-white hover:text-[#041E42] text-center flex items-center justify-center"
+                  >
+                    TÌM HIỂU THÊM
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
     </section>
   );
 }

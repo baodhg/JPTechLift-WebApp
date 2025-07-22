@@ -133,7 +133,6 @@ input[type="checkbox"] {
   background: #183153;
   color: #fff;
   border: none;
-  border-radius: 6px;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
@@ -207,7 +206,7 @@ input[type="checkbox"] {
   width: 90%;
   height: 1.5px;
   background: #e0e0e0;
-  margin: 40px auto 40px auto;
+  margin: 12px auto 40px auto;
   border: none;
   display: block;
   align-self: center;
@@ -227,9 +226,13 @@ input[type="checkbox"] {
     flex-direction: column;
     gap: 32px;
     padding: 0 8px;
+    align-items: center;
   }
   .formSection, .infoSection {
     padding: 32px 0 32px 0;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
   }
   .row {
     flex-direction: column;

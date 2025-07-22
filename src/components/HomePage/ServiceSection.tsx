@@ -70,12 +70,12 @@ export default function ServiceSection() {
         {services.map((service, idx) => (
           <div
             key={idx}
-            className="bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 p-6 flex flex-col items-center text-center group"
+            className="bg-white rounded-lg shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 p-6 flex flex-col items-center text-center group"
           >
             <img
               src={service.image}
               alt={service.title}
-              className="w-full max-w-[180px] h-[140px] object-cover rounded-xl mb-5 border border-gray-200 shadow-sm transition-transform duration-300 group-hover:scale-105"
+              className="w-full max-w-280px] h-[160px] object-cover rounded-sm mb-5 border border-gray-200 shadow-sm transition-transform duration-300 group-hover:scale-105"
             />
             <h3 className="font-inter text-[20px] md:text-[22px] font-bold uppercase text-[#041E42] mb-3">
               {service.title}
@@ -84,11 +84,11 @@ export default function ServiceSection() {
               {service.description}
             </p>
 
-            <button className="group mt-5 inline-flex items-center gap-2 border border-[#041E42] px-4 py-2 text-[#041E42] font-semibold rounded-full hover:bg-[#041E42] hover:text-white transition-colors duration-300">
+            <button className="group mt-5 inline-flex items-center gap-2 border border-[#041E42] px-4 py-2 text-[#041E42] font-semibold hover:bg-[#041E42] hover:text-white transition-colors duration-300">
               XEM THÊM
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                className="w-4 h-4 group-hover:translate-x-1 transition-transform animate-[wiggle_1s_ease-in-out_infinite]"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

@@ -149,14 +149,6 @@ export default function ContactJPTechLiftForm() {
             </p>
           </div>
           <div className={styles.infoDivider}></div>
-          <div className={styles.localOffice}>
-            <h4 className={styles.infoHeading}>Tìm văn phòng địa phương</h4>
-            <p className={styles.infoText}>
-              Tìm thông tin liên hệ cho Hoa Kỳ, Bahamas và Canada.<br />
-              <span className={styles.link}>Có liên lạc</span>
-            </p>
-          </div>
-          <div className={styles.infoDivider}></div>
         </div>
       </div>
     </>

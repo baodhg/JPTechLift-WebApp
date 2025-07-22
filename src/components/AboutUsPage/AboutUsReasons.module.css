@@ -29,7 +29,6 @@
 }
 .card {
   background: #fff;
-  border-radius: 8px;
   padding: 2.1rem 1.2rem 2.1rem 1.2rem;
   width: 315px;
   min-width: 260px;
@@ -65,13 +64,9 @@
   letter-spacing: 0.01em;
 }
 @media (max-width: 768px) {
-  .cardsGrid {
-    gap: 20px;
-  }
-  .card { width: 98vw; min-width: 0; max-width: 500px; }
-}
-@media (max-width: 600px) {
+  .cardsGrid { gap: 20px;}
   .heading { font-size: 1.25rem; margin-bottom: 1.6rem;}
-  .card { border-radius: 8px; padding: 1.1rem 0.65rem 1.3rem;}
+  .card {padding: 1.1rem 0.65rem 1.3rem;}
   .stars { font-size: 1.11rem; margin-bottom: 8px;}
 }
+

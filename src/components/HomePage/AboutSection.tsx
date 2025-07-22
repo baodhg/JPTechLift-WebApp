@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import CountUp from "react-countup";
+import { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import WorldMap from "../../assets/images/WorldMap.png";
@@ -7,20 +8,28 @@ import pattern from "../../assets/images/pattern.png";
 
 export default function AboutSection() {
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
+    AOS.init({ duration: 800, once: true });
+  }, []);
+
+  const [animateKey, setAnimateKey] = useState(0);
+  const countUpRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setAnimateKey((prev) => prev + 1); // Mỗi lần scroll vào: +1 để CountUp re-mount
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (countUpRef.current) observer.observe(countUpRef.current);
+    return () => observer.disconnect();
   }, []);
 
   return (
     <section className="relative w-full py-6 px-6 md:px-20 text-center md:pb-10 overflow-hidden bg-texture-bg bg-texture-pattern bg-[length:8px_8px]">
-      {/* Pattern bên trái ở desktop – ngang hàng tiêu đề */}
-      <img
-        src={pattern}
-        alt="pattern"
-        className="ml-20 hidden md:block w-[200px] opacity-40 rotate-180 absolute top-10 left-0"
-      />
       {/* Nội dung section */}
       <h2
         className="hidden md:block md:mt-14 font-inter font-medium text-[36px] uppercase text-center mb-[30px]"
@@ -61,7 +70,7 @@ export default function AboutSection() {
         những kiến giải vượt trội về công năng và thẩm mỹ.
       </p>
       <div
-        className="relative w-full flex flex-col md:flex-row justify-start md:justify-center items-center mb-16"
+        className="relative w-full flex flex-col md:flex-row justify-start md:justify-center items-center mb-20"
         data-aos="fade-up"
         data-aos-delay="500"
       >
@@ -74,21 +83,14 @@ export default function AboutSection() {
           >
             Về chúng tôi
           </Link>
-
-          {/* Pattern bên phải: 2 hình nằm ngang, cao bằng button */}
-          <div className="flex flex-row items-center gap-1 h-full">
-            <img
-              src={pattern}
-              alt="pattern"
-              className="h-full w-auto opacity-60"
-            />
-            <img
-              src={pattern}
-              alt="pattern"
-              className="h-full w-auto opacity-60 rotate-180"
-            />
-          </div>
         </div>
+
+        {/* Pattern bên trái ở desktop – ngang hàng tiêu đề
+        <img
+          src={pattern}
+          alt="pattern"
+          className="ml-20 hidden md:block w-[200px] opacity-40 rotate-180 absolute top-10 left-0"
+        /> */}
 
         {/* --- Desktop: Button ở giữa --- */}
         <Link
@@ -98,42 +100,95 @@ export default function AboutSection() {
           Về chúng tôi
         </Link>
 
-        {/* --- Desktop: Pattern phải --- */}
+        {/* --- Desktop: Pattern phải ---
         <img
           src={pattern}
           alt="pattern"
           className="hidden md:block w-[200px] opacity-40 absolute right-0"
-        />
+        /> */}
       </div>
+
+      {/* --- ƯU THẾ VỀ SỐ LIỆU --- */}
       <div
-        className="text-center mb-16"
-        data-aos="zoom-in"
-        data-aos-delay="200"
+        className="w-full max-w-6xl mx-auto mt-24 my-20"
+        data-aos="fade-up"
+        data-aos-delay="600"
       >
-        <div className="flex justify-center gap-2 mb-4">
-          {Array(5)
-            .fill(0)
-            .map((_, i) => (
-              <svg
-                key={i}
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-10 h-10 text-yellow-400"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.781 1.4 8.171L12 18.896l-7.334 3.866 1.4-8.171L.132 9.21l8.2-1.192z" />
-              </svg>
-            ))}
+        <div className="relative mb-10 flex items-center justify-center">
+          {/* Mũi tên trái – quay đầu vào trong (từ trái vào) */}
+          <img
+            src={pattern}
+            alt="pattern-left"
+            className="w-[60px] md:w-[90px] opacity-60 rotate-90 absolute left-2 md:left-0 mt-2 -translate-y-2"
+          />
+
+          <h3 className="text-[#041E42] text-xl md:text-3xl font-semibold text-center font-noto z-10">
+            Dấu ấn thị trường
+          </h3>
+
+          {/* Mũi tên phải – quay đầu vào trong (từ phải vào) */}
+          <img
+            src={pattern}
+            alt="pattern-right"
+            className="w-[60px] md:w-[90px] opacity-60 rotate-[270deg] absolute right-2 md:right-0 mt-4 -translate-y-2"
+          />
         </div>
 
-        <h3
-          className="text-xl md:text-3xl font-semibold text-[#041E42] font-nunito"
-          data-aos="fade-up"
-          data-aos-delay="100"
+        <div
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
+          ref={countUpRef}
         >
-          Chất lượng tạo nên thương hiệu
-        </h3>
+          <div>
+            <p className="text-[#F45B8C] text-4xl md:text-5xl font-bold mb-4">
+              <CountUp
+                key={`count1-${animateKey}`}
+                start={0.1}
+                end={2.0}
+                duration={2.5}
+                decimals={1}
+                decimal="."
+                prefix="~$"
+                suffix="M"
+              />
+            </p>
+            <p className="uppercase text-[#041E42] text-sm font-medium">
+              Doanh thu thuần
+            </p>
+          </div>
+
+          <div>
+            <p className="text-[#F45B8C] text-4xl md:text-5xl font-bold mb-4">
+              <CountUp
+                key={`count2-${animateKey}`}
+                start={0}
+                end={153}
+                duration={2.5}
+              />
+            </p>
+            <p className="uppercase text-[#041E42] text-sm font-medium">
+              Thang đang được phục vụ
+            </p>
+          </div>
+
+          <div>
+            <p className="text-[#F45B8C] text-4xl md:text-5xl font-bold mb-4">
+              <CountUp
+                key={`count3-${animateKey}`}
+                start={0}
+                end={93.0}
+                duration={2.5}
+                decimals={1}
+                decimal="."
+                suffix="K"
+              />
+            </p>
+            <p className="uppercase text-[#041E42] text-sm font-medium">
+              Người di chuyển mỗi ngày
+            </p>
+          </div>
+        </div>
       </div>
+
       {/* TƯ VẤN */}
       <p
         className="text-[#041E42] text-xl md:text-2xl font-semibold text-left md:text-center font-noto mb-4"
@@ -165,7 +220,7 @@ export default function AboutSection() {
             data-aos-easing="ease-in-out"
           >
             {/* Nút LIÊN HỆ TƯ VẤN */}
-            <button className="group inline-flex items-center gap-2 border border-[#041E42] bg-white px-4 py-2 text-[#041E42] font-semibold hover:bg-[#e5e7eb] hover:text-[#041E42] transition-colors duration-300 whitespace-nowrap">
+            <button onClick={() => window.open("https://zalo.me/3469899057771273254", "_blank")} className="group inline-flex items-center gap-2 border border-[#041E42] bg-white px-4 py-2 text-[#041E42] font-semibold hover:bg-[#e5e7eb] hover:text-[#041E42] transition-colors duration-300 whitespace-nowrap">
               LIÊN HỆ TƯ VẤN
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -184,7 +239,7 @@ export default function AboutSection() {
             </button>
 
             {/* Nút KHÁM PHÁ */}
-            <button className="group inline-flex items-center gap-2 border border-[#041E42] bg-[#041E42] text-white px-6 py-2 font-semibold hover:bg-white hover:text-[#041E42] transition-colors duration-300">
+            <button onClick={() => window.open("https://www.tiktok.com/@jptechlift", "_blank")} className="group inline-flex items-center gap-2 border border-[#041E42] bg-[#041E42] text-white px-6 py-2 font-semibold hover:bg-white hover:text-[#041E42] transition-colors duration-300">
               KHÁM PHÁ GIẢI PHÁP THANG MÁY
               <svg
                 xmlns="http://www.w3.org/2000/svg"
