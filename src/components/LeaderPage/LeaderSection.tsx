@@ -108,11 +108,13 @@ export default function LeaderSection() {
             </button>
 
             {/* Hình ảnh */}
-            <img
-              src={selectedLeader.image}
-              alt={selectedLeader.name}
-              className="w-full h-56 object-cover rounded-lg mb-4 shadow-md border"
-            />
+            <div className="w-full aspect-square mb-4 rounded-lg overflow-hidden border shadow-md">
+              <img
+                src={selectedLeader.image}
+                alt={selectedLeader.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
 
             {/* Nội dung chính */}
             <h2 className="text-2xl font-semibold text-gray-800 mb-1">
