@@ -142,13 +142,13 @@ export default function AboutSection() {
             <p className="text-[#F45B8C] text-4xl md:text-5xl font-bold mb-4">
               <CountUp
                 key={`count1-${animateKey}`}
-                start={0.1}
-                end={2.0}
+                start={0.0}
+                end={200.0}
                 duration={2.5}
                 decimals={1}
                 decimal="."
                 prefix="~$"
-                suffix="M"
+                suffix="K"
               />
             </p>
             <p className="uppercase text-[#041E42] text-sm font-medium">
@@ -174,7 +174,7 @@ export default function AboutSection() {
             <p className="text-[#F45B8C] text-4xl md:text-5xl font-bold mb-4">
               <CountUp
                 key={`count3-${animateKey}`}
-                start={0}
+                start={0.0}
                 end={93.0}
                 duration={2.5}
                 decimals={1}

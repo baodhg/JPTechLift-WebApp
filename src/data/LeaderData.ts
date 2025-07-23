@@ -9,6 +9,7 @@ export interface Leader {
   title: string;
   image: string;
   description?: string;
+  highlights?: string[];
 }
 
 export const leaders: Leader[] = [
