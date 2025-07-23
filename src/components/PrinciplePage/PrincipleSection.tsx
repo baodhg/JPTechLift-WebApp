@@ -48,7 +48,7 @@ export default function PrincipleSection() {
           chúng tôi – và cả thế giới xung quanh – vươn tới những tầm cao mới.
         </p>
         <button
-          className="px-6 py-2 bg-[#041E42] text-white rounded-full text-sm hover:bg-[#041E42] transition"
+          className="px-6 py-2 bg-[#041E42] text-white text-sm hover:bg-[#041E42] transition"
           data-aos="zoom-in"
           data-aos-delay="400"
         >
@@ -93,7 +93,7 @@ export default function PrincipleSection() {
           />
         </div>
         <button
-          className="px-6 py-2 bg-[#041E42] text-white rounded-full text-sm hover:bg-[#041E42] transition"
+          className="px-6 py-2 bg-[#041E42] text-white text-sm hover:bg-[#041E42] transition"
           data-aos="zoom-in"
           data-aos-delay="400"
         >

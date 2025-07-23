@@ -57,7 +57,7 @@ export default function LeaderSection() {
       </section>
 
       {/* Danh sách leader */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 max-w-6xl mx-auto mb-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-12 max-w-xl mx-auto mb-10 px-6">
         {leaders.map((leader, index) => (
           <div
             key={index}

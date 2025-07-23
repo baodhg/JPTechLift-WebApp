@@ -61,38 +61,30 @@ export default function Carousel({
               className="w-full h-full object-cover absolute top-0 left-0"
             />
 
-            {/* Overlay content */}
-              <div className="relative z-10 text-center text-white max-w-8xl px-4 flex flex-col items-center space-y-9">
+            <div className="relative z-10 text-white px-4 flex flex-col items-center text-center max-w-[90%] md:max-w-5xl mx-auto space-y-6">
+  {slide.title && (
+    <h1
+      className="font-grifo text-white text-2xl sm:text-3xl md:text-3xl lg:text-5xl font-semibold leading-tight drop-shadow-[4px_4px_10px_rgba(0,0,0,0.7)]"
+    >
+      {slide.title}
+    </h1>
+  )}
+  {slide.description && (
+    <p className="text-sm sm:text-base md:text-lg lg:text-xl mt-2 mb-2 drop-shadow-md max-w-2xl">
+      {slide.description}
+    </p>
+  )}
+  {slide.ctaText && (
+    <a
+      href={slide.ctaLink || "#"}
+      className="mt-4 px-5 py-2 border-2 border-white text-white bg-transparent 
+      hover:bg-white hover:text-black transition-all duration-300 font-medium text-base md:text-lg"
+    >
+      {slide.ctaText}
+    </a>
+  )}
+</div>
 
-              {slide.title && (
-                <h1
-                  style={{
-                    fontFamily: "grifo_mmedium",
-                    fontSize: "40px",
-                    fontWeight: "500",
-                    lineHeight: "10px",
-                    textAlign: "center",
-                  }}
-                  className="font-grifo text-white text-[36px] md:text-[68px] font-black tracking-wide text-center drop-shadow-[6px_8px_8px_rgba(0,0,0,7)] leading-tight"
-                >
-                  {slide.title}
-                </h1>
-              )}
-              {slide.description && (
-                <p className="text-sm md:text-lg mt-4 mb-4 drop-shadow">
-                  {slide.description}
-                </p>
-              )}
-              {slide.ctaText && (
-                <a
-                  href={slide.ctaLink || "#"}
-                  className="mt-8 px-6 py-2 border-2 border-white text-white bg-transparent 
-           hover:bg-white hover:text-black transition-all duration-300 font-medium text-xl"
-                >
-                  {slide.ctaText}
-                </a>
-              )}
-            </div>
             <div className="absolute inset-0 bg-black/40" />
           </div>
         ))}
