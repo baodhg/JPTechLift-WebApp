@@ -19,7 +19,7 @@ import freight_realGallery5 from "../assets/images/productPage_img/home_lift/hom
 import passenger_realGallery1 from "../assets/images/productPage_img/passenger_elevator/passenger_realGallery1.png";
 import passenger_realGallery2 from "../assets/images/productPage_img/passenger_elevator/passenger_realGallery2.png";
 import passenger_realGallery3 from "../assets/images/productPage_img/passenger_elevator/passenger_realGallery3.png";
-import passenger_realGallery4 from "../assets/images/productPage_img/passenger_elevator/passenger_realGallery4.png";
+import passenger_realGallery4 from "../assets/images/productPage_img/passenger_elevator/passenger_realGallery4.jpg";
 import passenger_realGallery5 from "../assets/images/productPage_img/passenger_elevator/passenger_realGallery5.jpg";
 import hospital_realGallery1 from "../assets/images/productPage_img/hospital _elevator/h_realGallery1.png";
 import hospital_realGallery2 from "../assets/images/productPage_img/hospital _elevator/h_realGallery2.png";
@@ -29,8 +29,8 @@ import hospital_realGallery5 from "../assets/images/productPage_img/hospital _el
 import panoramic_realGallery1 from "../assets/images/productPage_img/panoramic_elevator/p_realGallery1.png";
 import panoramic_realGallery2 from "../assets/images/productPage_img/panoramic_elevator/p_realGallery2.png";
 import panoramic_realGallery3 from "../assets/images/productPage_img/panoramic_elevator/p_realGallery3.png";
-import panoramic_realGallery4 from "../assets/images/productPage_img/panoramic_elevator/panoramic_carousel1.png";
-import panoramic_realGallery5 from "../assets/images/productPage_img/panoramic_elevator/p_realGallery1.png";
+import panoramic_realGallery4 from "../assets/images/productPage_img/panoramic_elevator/p_realGallery4.png";
+import panoramic_realGallery5 from "../assets/images/productPage_img/panoramic_elevator/p_realGallery5.png";
 import d_realGallery1 from "../assets/images/productPage_img/dumbwaiter/d_realGallery1.png";
 import d_realGallery2 from "../assets/images/productPage_img/dumbwaiter/d_realGallery2.png";
 import d_realGallery3 from "../assets/images/productPage_img/dumbwaiter/d_realGallery3.png";
@@ -66,6 +66,9 @@ import p_carousel3 from "../assets/images/productPage_img/panoramic_elevator/pan
 import real5 from "../assets/images/productPage_img/home_lift/gallery_content_table.jpg";
 import install from "../assets/images/productPage_img/home_lift/install_content_table.jpg";
 import blueprint from "../assets/images/productPage_img/home_lift/blueprint1.png";
+import d_blueprint from "../assets/images/productPage_img/dumbwaiter/d_blueprint.png";
+import passenger_blueprint from "../assets/images/productPage_img/passenger_elevator/passenger_blueprint.png";
+import h_blueprint from "../assets/images/productPage_img/hospital _elevator/blueprintOfHospital_Pasenger.png";
 
 export interface Product {
   seo?: {
@@ -352,7 +355,7 @@ export const productData: Record<string, Product> = {
 
     // ✅ Bản vẽ chi tiết (thêm mô tả bên cạnh ảnh)
     blueprint: {
-      image: blueprint, // Thay bằng bản vẽ thang thực phẩm
+      image: d_blueprint, // Thay bằng bản vẽ thang thực phẩm
       description: ["Bản vẽ kỹ thuật tham khảo cho thang tải thực phẩm 100kg.", "Cấu hình tiêu chuẩn cho nhà hàng:"],
       specs: [
         "Vật liệu cabin & cửa: Inox 304 sọc nhuyễn",
@@ -613,7 +616,7 @@ export const productData: Record<string, Product> = {
       },
     ],
     blueprint: {
-      image: blueprint, // Thay bằng bản vẽ thang tải khách
+      image: passenger_blueprint, // Thay bằng bản vẽ thang tải khách
       description: ["Bản vẽ kỹ thuật tham khảo cho thang tải khách 750kg.", "Cấu hình cho tòa nhà văn phòng:"],
       specs: [
         "Kích thước hố thang (Thông thủy): W2000 x D1900 mm",
@@ -744,7 +747,7 @@ export const productData: Record<string, Product> = {
 
     // ✅ Bản vẽ chi tiết (thêm mô tả bên cạnh ảnh)
     blueprint: {
-      image: blueprint, // Thay bằng bản vẽ thang bệnh viện
+      image: h_blueprint, // Thay bằng bản vẽ thang bệnh viện
       description: ["Bản vẽ kỹ thuật tham khảo cho thang máy bệnh viện 1350kg.", "Cấu hình tiêu chuẩn cho bệnh viện:"],
       specs: [
         "Kích thước cabin (Rộng x Sâu x Cao): 1500x2500x2300 mm",
@@ -854,7 +857,7 @@ export const productData: Record<string, Product> = {
     ],
     // Thay mục blueprint bằng mục "Tính năng an toàn"
     blueprint: {
-      image: "", // Có thể để ảnh một tính năng an toàn nổi bật
+      image: blueprint, // Có thể để ảnh một tính năng an toàn nổi bật
       description: [
         "An toàn là ưu tiên hàng đầu của thang cuốn JP TechLift. Sản phẩm được trang bị đầy đủ các thiết bị bảo vệ theo tiêu chuẩn châu Âu EN115:",
       ],

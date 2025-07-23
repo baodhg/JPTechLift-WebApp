@@ -1,4 +1,5 @@
-import { useState } from "react";
+
+import { useState, useRef, useEffect } from "react";
 import facebook from "../../../assets/images/header/Facebook_Icon.png";
 import tiktok from "../../../assets/images/header/TikTok_Icon.png";
 import linkendin from "../../../assets/images/header/Linkedin_Icon.png";
@@ -14,10 +15,24 @@ interface MenuBarProps {
 }
 const MenuBar = ({ scrolled, onSearchOpen, showSearch }: MenuBarProps) => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-const closeDropdown = () => setActiveDropdown(null); // hàm đóng dropdown
+  const menuRef = useRef<HTMLDivElement | null>(null);
+  const closeDropdown = () => setActiveDropdown(null); // hàm đóng dropdown
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (activeDropdown && menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [activeDropdown]);
   return (
     <>
-      <div className={`${styles.menuWrapper} ${scrolled ? styles.menuBarScrolled : ""}`}>
+            <div ref={menuRef} className={`${styles.menuWrapper} ${scrolled ? styles.menuBarScrolled : ""}`}>
         <div className={`${styles.menuBar} ${scrolled ? styles.menuBarScrolled : ""}`}>
           {/* Thanh điều hướng */}
           <div className={styles.menuBar__left}>
@@ -30,7 +45,7 @@ const closeDropdown = () => setActiveDropdown(null); // hàm đóng dropdown
                   >
                     SẢN PHẨM & DỊCH VỤ
                   </a>
-                   {!showSearch && activeDropdown === "product" && (
+                  {!showSearch && activeDropdown === "product" && (
                     <ProductServiceDropdown type="product" onClose={closeDropdown} />
                   )}
                 </div>
@@ -44,7 +59,7 @@ const closeDropdown = () => setActiveDropdown(null); // hàm đóng dropdown
                   >
                     CÔNG TY CHÚNG TÔI
                   </a>
-                    {!showSearch && activeDropdown === "about" && (
+                  {!showSearch && activeDropdown === "about" && (
                     <ProductServiceDropdown type="about" onClose={closeDropdown} />
                   )}
                 </div>
@@ -58,7 +73,7 @@ const closeDropdown = () => setActiveDropdown(null); // hàm đóng dropdown
                   >
                     LIÊN HỆ
                   </a>
-                {!showSearch && activeDropdown === "contact" && (
+                  {!showSearch && activeDropdown === "contact" && (
                     <ProductServiceDropdown type="contact" onClose={closeDropdown} />
                   )}
                 </div>
@@ -71,7 +86,7 @@ const closeDropdown = () => setActiveDropdown(null); // hàm đóng dropdown
                 >
                   TIN TỨC
                 </a>
-                 {!showSearch && activeDropdown === "news" && (
+                {!showSearch && activeDropdown === "news" && (
                   <ProductServiceDropdown type="news" onClose={closeDropdown} />
                 )}
               </li>

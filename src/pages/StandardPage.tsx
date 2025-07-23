@@ -3,7 +3,7 @@ import InstallProcessSection from "../components/StandardPage/InstallProcessSect
 import ProductSection from "../components/HomePage/ProductSection";
 import CommitSection from "../components/HomePage/CommitSection";
 import HeroFooter from "../components/Footer/HeroFooter";
-import bannerImg from "../assets/images/Banner-img.jpg";
+import bannerImg from "../assets/images/Banner-img.png";
 import Footer from "../components/Footer/Footer";
 
 const StandardPage = () => {

@@ -92,17 +92,6 @@ export default function ContactJPTechLiftForm() {
               </div>
             </div>
 
-            <div className={styles.row}>
-              <div className={styles.field}>
-                <label>Thành phố<span className={styles.required}>*</span></label>
-                <input type="text" required />
-              </div>
-              <div className={styles.field}>
-                <label>Zip code<span className={styles.required}>*</span></label>
-                <input type="text" pattern="[0-9]{5,6}" required />
-              </div>
-            </div>
-
             <div className={styles.fieldFull}>
               <label>Tên tòa nhà / Dự án</label>
               <span className={styles.subLabel}>Nếu có, vui lòng nhập địa chỉ tòa nhà nơi thiết bị của bạn được lắp đặt</span>
@@ -111,7 +100,7 @@ export default function ContactJPTechLiftForm() {
 
             <div className={styles.fieldFull}>
               <label>Chúng tôi có thể giúp gì cho bạn?</label>
-              <select required>
+              <select>
                 <option value="">Chọn nội dung</option>
                 <option value="Tư vấn sản phẩm">Tư vấn sản phẩm</option>
                 <option value="Báo giá">Báo giá</option>
@@ -122,7 +111,7 @@ export default function ContactJPTechLiftForm() {
 
             <div className={styles.fieldFull}>
               <label>Ghi chú thêm</label>
-              <textarea required rows={3} className={styles.textarea}></textarea>
+              <textarea rows={3} className={styles.textarea}></textarea>
             </div>
 
             <div className={styles.fieldFull}>

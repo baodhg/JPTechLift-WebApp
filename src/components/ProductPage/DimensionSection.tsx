@@ -24,8 +24,7 @@ const INSTALLATION_FACTORS = [
 ] as const;
 
 const DimensionSection = memo(({ data, className }: Props) => {
- const containerClass = className ? `${styles["product-specs"]} ${className}` : styles["product-specs"];
-
+  const containerClass = className ? `${styles["product-specs"]} ${className}` : styles["product-specs"];
 
   if (!data || data.length === 0) {
     return (
@@ -36,7 +35,7 @@ const DimensionSection = memo(({ data, className }: Props) => {
   }
 
   return (
-     <div className={`${styles["product-specs"]} ${styles["product-specs__grid"]}`}>
+    <div id="size-price" className={`${styles["product-specs"]} ${styles["product-specs__grid"]}`}>
       <h2 className={styles["product-specs__heading"]}>Kích thước và giá lắp đặt</h2>
       <section className={styles["product-specs__dimension-section"]}>
         <h2 className={styles["product-specs__title"]}>Kích thước thang máy</h2>
@@ -62,24 +61,26 @@ const DimensionSection = memo(({ data, className }: Props) => {
         </div>
       </section>
 
-       <section className={styles["product-specs__installation-section"]}>
+      <section className={styles["product-specs__installation-section"]}>
         <h2 className={styles["product-specs__title"]}>Giá lắp đặt</h2>
         <div className={styles["product-specs__content"]}>
-          <p className={styles["product-specs__subtitle"]}>Trên thực tế, giá thang máy thay đổi phụ thuộc vào nhiều yếu tố:</p>
+          <p className={styles["product-specs__subtitle"]}>
+            Trên thực tế, giá thang máy thay đổi phụ thuộc vào nhiều yếu tố:
+          </p>
           <ul>
             {INSTALLATION_FACTORS.map((factor, index) => (
               <li key={index}>{factor}</li>
             ))}
           </ul>
-            <a
+          <a
             href="https://zalo.me/3469899057771273254"
             target="_blank"
             rel="noopener noreferrer"
             style={{ textDecoration: "none" }}
           >
-         <button className={styles["product-specs__button"]} type="button">
-            XEM CHI TIẾT VỀ THẨM MỸ CHO THANG MÁY
-          </button>
+            <button className={styles["product-specs__button"]} type="button">
+              XEM CHI TIẾT VỀ THẨM MỸ CHO THANG MÁY
+            </button>
           </a>
         </div>
       </section>

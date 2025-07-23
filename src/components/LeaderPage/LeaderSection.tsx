@@ -83,7 +83,7 @@ export default function LeaderSection() {
       </div>
 
       {selectedLeader && (
-        <div 
+        <div
           className="flex fixed inset-0 bg-black/40 backdrop-blur-sm items-center justify-center z-50"
           onClick={(e) => {
             if (e.target === e.currentTarget) setSelectedLeader(null);
