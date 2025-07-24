@@ -10,7 +10,7 @@ const SubBanner: React.FC = () => {
       <img
         src={background}
         alt="Background"
-        className="absolute inset-0 w-screen h-full object-cover object-center z-0 opacity-70 scale-105"
+        className="absolute inset-0 w-screen h-full object-cover object-center z-0 opacity-70 brightness-75 scale-105"
         data-aos="fade-zoom-in"
         data-aos-easing="ease-in-out"
         data-aos-duration="1500"
@@ -48,7 +48,7 @@ const SubBanner: React.FC = () => {
         <div className="mt-6" data-aos="fade-up" data-aos-duration="1000">
           <Link
             to="/quy-trinh-du-an"
-            className="group inline-flex items-center gap-2 border border-white bg-transparent px-6 py-2 text-white font-semibold hover:bg-white hover:text-[#041E42] transition-colors duration-300 whitespace-nowrap"
+            className="group inline-flex items-center gap-2 border border-white bg-transparent px-6 py-2 text-white font-semibold hover:bg-[#cca052] hover:text-[#041E42] transition-colors duration-300 whitespace-nowrap"
           >
             TRẢI NGHIỆM NGAY
             <svg

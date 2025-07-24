@@ -19,10 +19,10 @@ export const leaders: Leader[] = [
       "Cố vấn công nghệ tại Anh quốc.",
   },
   {
-    name: "Vũ Ngọc Minh Tuyết",
-    title: "President JP TechLift UK",
+    name: "Minh Tuyết",
+    title: "Co-Founder",
     image: VuNgocMinhTuyet,
     description:
-      "Định hình tương lai ngành thang máy tại Anh bằng cách tích hợp công nghệ hiện đại vào thiết kế và vận hành.",
+      "Quản trị bộ máy và phát triển thương hiệu.",
   },
 ];

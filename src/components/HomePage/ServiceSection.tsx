@@ -13,14 +13,20 @@ interface Service {
   image: string;
 }
 
+interface ServiceMobile {
+  title: string;
+  description: string;
+  image: string;
+}
+
 const services: Service[] = [
   {
-    title: "Tư Vấn Thiết Kế Thang Máy",
+    title: "Tư Vấn - Thiết Kế Thang Máy",
     description: "Thiết kế từ nền móng – tối ưu công năng, thẩm mỹ, chi phí.",
     image: service1,
   },
   {
-    title: "Lắp Đặt Vận Hành Thang Máy",
+    title: "Lắp Đặt - Vận Hành Thang Máy",
     description: "Triển khai chuẩn xác – an toàn, ổn định lâu dài.",
     image: service2,
   },
@@ -30,7 +36,30 @@ const services: Service[] = [
     image: service3,
   },
   {
-    title: "Cải Tạo Sửa Chữa Thang Máy",
+    title: "Cải Tạo - Sửa Chữa Thang Máy",
+    description: "Nâng cấp toàn diện – tăng an toàn, nâng tầm trải nghiệm.",
+    image: service4,
+  },
+];
+
+const MobileServices: ServiceMobile[] = [
+  {
+    title: "Tư Vấn và Thiết Kế",
+    description: "Thiết kế từ nền móng – tối ưu công năng, thẩm mỹ, chi phí.",
+    image: service1,
+  },
+  {
+    title: "Lắp Đặt - Vận Hành",
+    description: "Triển khai chuẩn xác – an toàn, ổn định lâu dài.",
+    image: service2,
+  },
+  {
+    title: "Bảo Trì – Bảo Dưỡng",
+    description: "Phản ứng nhanh 3 giờ – đảm bảo vận hành ổn định.",
+    image: service3,
+  },
+  {
+    title: "Cải Tạo - Sửa Chữa",
     description: "Nâng cấp toàn diện – tăng an toàn, nâng tầm trải nghiệm.",
     image: service4,
   },
@@ -48,7 +77,7 @@ export default function ServiceSection() {
     <section className="overflow-hidden bg-texture-bg bg-texture-pattern bg-[length:8px_8px] py-16 px-4">
       {/* Title */}
       <h1
-        className="text-[#041E42] md:text-black font-inter font-bold md:font-medium text-[30px] md:text-[36px] uppercase text-center mb-5 md:mb-10"
+        className="text-[#041E42] font-inter font-bold text-[30px] md:text-[36px] uppercase text-center mb-5 md:mb-10"
         data-aos="fade-up"
       >
         DỊCH VỤ THANG MÁY
@@ -61,30 +90,30 @@ export default function ServiceSection() {
         data-aos-delay="100"
       />
 
-      {/* Cards grid */}
+      {/* --- PC Layout --- */}
       <div
-        className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-[1280px] mx-auto"
+        className="hidden md:grid lg:grid-cols-4 grid-cols-2 gap-6 max-w-[1280px] mx-auto"
         data-aos="fade-up"
         data-aos-delay="200"
       >
         {services.map((service, idx) => (
           <div
             key={idx}
-            className="bg-white rounded-lg shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 p-6 flex flex-col items-center text-center group"
+            className="bg-white shadow-2xl border border-gray-100 hover:shadow-2xl transition-all duration-300 p-6 flex flex-col items-center text-center group"
           >
             <img
               src={service.image}
               alt={service.title}
-              className="w-full max-w-280px] h-[160px] object-cover rounded-sm mb-5 border border-gray-200 shadow-sm transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-[160px] object-cover object-center rounded-sm mb-5 border border-gray-200 shadow-sm transition-transform duration-300 group-hover:scale-105"
             />
-            <h3 className="font-inter text-[20px] md:text-[22px] font-bold uppercase text-[#041E42] mb-3">
+            <h3 className="font-inter text-[22px] font-bold uppercase text-[#041E42] mb-3 min-h-[52px]">
               {service.title}
             </h3>
-            <p className="font-nunito text-sm md:text-base text-[#444] leading-relaxed">
+            <p className="font-nunito text-base text-[#444] leading-relaxed min-h-[60px]">
               {service.description}
             </p>
 
-            <button className="group mt-5 inline-flex items-center gap-2 border border-[#041E42] px-4 py-2 text-[#041E42] font-semibold hover:bg-[#041E42] hover:text-white transition-colors duration-300">
+            <button className="group mt-5 inline-flex items-center gap-2 border border-[#041E42] px-4 py-2 text-[#041E42] text-[14px] font-semibold hover:bg-[#041E42] hover:text-white transition-colors duration-300">
               XEM THÊM
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -100,6 +129,45 @@ export default function ServiceSection() {
                   d="M9 5l7 7-7 7"
                 />
               </svg>
+            </button>
+          </div>
+        ))}
+      </div>
+
+      {/* --- Mobile 2x2 Layout --- */}
+      <div
+        className="grid grid-cols-2 gap-4 md:hidden max-w-[480px] mx-auto"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        {MobileServices.map((ServiceMobile, idx) => (
+          <div
+            key={idx}
+            className="bg-white rounded-lg shadow-md border border-gray-100 p-2 flex flex-col overflow-hidden group"
+          >
+            <div className="relative w-full h-[120px] rounded-md overflow-hidden mb-3">
+              <img
+                src={ServiceMobile.image}
+                alt={ServiceMobile.title}
+                className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-center justify-center">
+                <span className="text-white text-xs font-semibold opacity-0 group-hover:opacity-100 transition duration-300">
+                  XEM THÊM
+                </span>
+              </div>
+            </div>
+
+            <h3 className="font-inter text-[14px] font-bold uppercase text-[#041E42] mb-1 leading-tight">
+              {ServiceMobile.title}
+            </h3>
+
+            <p className="text-xs text-[#444] leading-snug line-clamp-2 mb-3">
+              {ServiceMobile.description}
+            </p>
+
+            <button className="w-full border border-[#041E42] px-3 py-1.5 text-[12px] text-[#041E42] font-semibold hover:bg-[#041E42] hover:text-white transition-colors duration-300">
+              XEM THÊM
             </button>
           </div>
         ))}

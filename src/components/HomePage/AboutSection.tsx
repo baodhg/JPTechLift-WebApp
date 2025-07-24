@@ -220,7 +220,7 @@ export default function AboutSection() {
             data-aos-easing="ease-in-out"
           >
             {/* Nút LIÊN HỆ TƯ VẤN */}
-            <button onClick={() => window.open("https://zalo.me/3469899057771273254", "_blank")} className="group inline-flex items-center gap-2 border border-[#041E42] bg-white px-4 py-2 text-[#041E42] font-semibold hover:bg-[#e5e7eb] hover:text-[#041E42] transition-colors duration-300 whitespace-nowrap">
+            <button onClick={() => window.open("https://zalo.me/3469899057771273254", "_blank")} className="group inline-flex items-center gap-2 border border-[#041E42] bg-white px-4 py-2 text-[#041E42] font-semibold hover:bg-[#cba052] hover:text-[#041E42] transition-colors duration-300 whitespace-nowrap">
               LIÊN HỆ TƯ VẤN
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -239,7 +239,7 @@ export default function AboutSection() {
             </button>
 
             {/* Nút KHÁM PHÁ */}
-            <button onClick={() => window.open("https://www.tiktok.com/@jptechlift", "_blank")} className="group inline-flex items-center gap-2 border border-[#041E42] bg-[#041E42] text-white px-6 py-2 font-semibold hover:bg-white hover:text-[#041E42] transition-colors duration-300">
+            <button onClick={() => window.open("https://www.tiktok.com/@jptechlift", "_blank")} className="group inline-flex items-center gap-2 border border-[#041E42] bg-[#041E42] text-white px-6 py-2 font-semibold hover:bg-[#cba052] hover:text-[#041E42] transition-colors duration-300">
               KHÁM PHÁ GIẢI PHÁP THANG MÁY
               <svg
                 xmlns="http://www.w3.org/2000/svg"

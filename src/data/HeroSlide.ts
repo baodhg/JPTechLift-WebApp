@@ -12,14 +12,14 @@ export const slides: Slide[] = [
   },
   {
     src: banner2,
-    title: "stylish - smart - simple",
+    title: "Stylish - Smart - Simple",
     description: "Nền tảng để chúng tôi phát huy hết mình..",
     ctaText: "Khám phá thêm",
     ctaLink: "/ve-chung-toi",
   },
     {
     src: banner3,
-    title: "không chỉ lắp đặt – chúng tôi đồng hành",
+    title: "Không chỉ lắp đặt – Chúng tôi đồng hành",
     description: "Thiết kế thanh lịch, vận hành thông minh, phù hợp mọi không gian sống.",
     ctaText: "Liên hệ tư vấn",
     ctaLink: "/lien-he",
