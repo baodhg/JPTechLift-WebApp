@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import chatIcon from "../../assets/images/Message.png";
+import Zalo from "../../assets/images/zalo.png";
+import WhatsApp from "../../assets/images/WhatsApp.png";
 import arrowIcon from "../../assets/images/Arrow.png";
 
 const FixedButtons = () => {
@@ -12,18 +13,38 @@ const FixedButtons = () => {
       {/* Nút liên hệ */}
       <motion.button
         aria-label="Contact"
-        onClick={() => window.open("https://zalo.me/3469899057771273254", "_blank")}
-        className="w-14 h-14 md:w-16 md:h-16 rounded-full border border-[#041E42] bg-white text-[#041E42] flex items-center justify-center shadow-md"
+        onClick={() =>
+          window.open("https://zalo.me/3469899057771273254", "_blank")
+        }
+        className="w-14 h-14 md:w-16 md:h-16 rounded-full border border-[#0467f8] bg-white text-[#041E42] flex items-center justify-center shadow-md"
         animate={{ rotate: [0, -10, 10, -10, 10, 0] }}
         transition={{ repeat: Infinity, repeatDelay: 9, duration: 3 }}
         whileHover={{ scale: 1.1 }}
       >
         <motion.img
-          src={chatIcon}
+          src={Zalo}
           alt="Chat Icon"
-          className="w-10 h-10 md:w-8 md:h-8"
+          className="w-10 h-10 md:w-10 md:h-10"
           animate={{ scale: [1, 1.1, 1] }}
-          transition={{ repeat: Infinity, repeatDelay: 3, duration: 0.5 }}
+          transition={{ repeat: Infinity,  repeatDelay: 3, duration: 0.5}}
+        />
+      </motion.button>
+
+      {/* Nút WhatsApp */}
+      <motion.button
+        aria-label="Contact via WhatsApp"
+        onClick={() => window.open("https://wa.me/84777275384", "_blank")}
+        className="w-14 h-14 md:w-16 md:h-16 rounded-full border border-[#25D366] bg-white text-[#25D366] flex items-center justify-center shadow-md"
+        animate={{ rotate: [0, -10, 10, -10, 10, 0] }}
+        transition={{ repeat: Infinity, repeatDelay: 9, duration: 3 }}
+        whileHover={{ scale: 1.1 }}
+      >
+        <motion.img
+          src={WhatsApp}
+          alt="WhatsApp Icon"
+          className="w-10 h-10 md:w-10 md:h-10"
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ repeat: Infinity,  repeatDelay: 3, duration: 0.5}}
         />
       </motion.button>
 

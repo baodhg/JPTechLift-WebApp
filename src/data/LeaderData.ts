@@ -16,7 +16,7 @@ export const leaders: Leader[] = [
     title: "President JP TechLift UK",
     image: ThomasEaton,
     description:
-      "Cố vấn công nghệ tại Anh quốc.",
+      "Cố vấn công nghệ tại Anh Quốc.",
   },
   {
     name: "Minh Tuyết",
