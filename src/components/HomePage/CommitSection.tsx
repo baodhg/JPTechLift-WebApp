@@ -83,11 +83,11 @@ export default function CommitSection() {
       </div>
 
       {/* Commit grid */}
-      <div className="mx-auto max-w-[1200px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+      <div className="mx-auto max-w-[1200px] grid grid-cols-2 lg:grid-cols-4 gap-8 px-4 sm:px-6 md:px-0 text-center">
         {commitments.map(({ img, title, desc }, idx) => (
           <div
             key={idx}
-            className="flex flex-col items-center gap-4 px-4"
+            className="flex flex-col items-center gap-2 px-4 md:gap-4"
             data-aos="fade-up"
             data-aos-delay={idx * 150} // delay dần dần
           >
