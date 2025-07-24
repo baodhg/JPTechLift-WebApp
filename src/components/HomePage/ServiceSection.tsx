@@ -77,7 +77,7 @@ export default function ServiceSection() {
     <section className="overflow-hidden bg-texture-bg bg-texture-pattern bg-[length:8px_8px] py-16 px-4">
       {/* Title */}
       <h1
-        className="text-[#041E42] font-inter font-bold text-[30px] md:text-[36px] uppercase text-center mb-5 md:mb-10"
+        className="mt-20 font-inter font-semibold md:font-medium md:text-[36px] text-[30px] uppercase text-center mb-5 md:mb-10 text-[#041E42] md:text-black"
         data-aos="fade-up"
       >
         DỊCH VỤ THANG MÁY

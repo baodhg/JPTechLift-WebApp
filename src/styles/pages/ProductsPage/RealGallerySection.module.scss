@@ -43,7 +43,6 @@
 
     img {
       width: 100%;
-      border-radius: 10px;
       object-fit: cover;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
@@ -86,7 +85,7 @@
 
     h3 {
       font-family: var(--font-title);
-      font-size: 32px;
+      font-size: 30px;
       background-color: #cba052;
       color: white;
       padding: 22px 28px;
@@ -102,7 +101,7 @@
     }
 
     .real-gallery__buttons {
-      display: flex;
+      display: flex;    
       flex-direction: column;
       padding: 0 28px;
       margin-top: auto; // ✅ Đẩy xuống đáy textBox
@@ -129,9 +128,9 @@
         color: var(--color-main);
 
         &:hover {
-          background-color: #eee;
+          background-color: #cba052;
+          color: #ffffff;
           transform: translateY(-2px);
-          box-shadow: var(--shadow-medium);
         }
         &:active {
           transform: translateY(0);
@@ -142,7 +141,9 @@
           color: white;
 
           &:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: #cba052;
+            color: #ffffff;
+            transform: translateY(-2px);
           }
         }
       }

@@ -79,7 +79,7 @@ const DimensionSection = memo(({ data, className }: Props) => {
             style={{ textDecoration: "none" }}
           >
             <button className={styles["product-specs__button"]} type="button">
-              XEM CHI TIẾT VỀ THẨM MỸ CHO THANG MÁY
+            THẨM MỸ THANG MÁY
             </button>
           </a>
         </div>

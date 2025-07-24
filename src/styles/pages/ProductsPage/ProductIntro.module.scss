@@ -14,15 +14,11 @@
 
   &__text {
     flex: 1 1 45%;
-    border-right: 2px solid var(--color-gray);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding: 60px 40px;
 
-    @media (max-width: 768px) {
-      border-left: 2px solid var(--color-gray);
-    }
   }
 
   &__title {
@@ -121,6 +117,32 @@
       flex: 1 1 45%;
       padding: 15px;
       order: 2;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .product-intro {
+      &__container {
+        flex-direction: column; // ép toàn bộ stack dọc
+      }
+
+      &__description,
+    &__intro {
+      width: 90%;
+      font-size: 14px;
+      text-align: left;
+    }
+
+      &__text {
+        flex: unset;
+        order: 1; // giữ phần text ở trên
+      }
+
+      &__image-wrapper {
+        flex: unset;
+        order: 2; // đưa ảnh xuống dưới
+        padding-top: 24px; // tạo khoảng cách giữa text và ảnh
+      }    
     }
   }
 }

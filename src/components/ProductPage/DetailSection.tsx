@@ -120,16 +120,18 @@ export default function DetailSection({ data, images }: Props) {
       {/* Bottom Section with Buttons */}
       <section className={styles["product-gallery__buttons-container"]}>
         <div className={styles["product-gallery__buttons-wrapper"]}>
+          <a>
           <button className={styles["product-gallery__button"]} onClick={() => navigate("/lien-he")}>
-            LIÊN HỆ CHÚNG TÔI NGAY
+            LIÊN HỆ NGAY
           </button>
+          </a>
           <a
             href="https://zalo.me/3469899057771273254"
             target="_blank"
             rel="noopener noreferrer"
             style={{ textDecoration: "none" }}
           >
-            <button className={styles["product-gallery__button"]}>THÔNG TIN & GIÁ CẢ</button>
+            <button className={styles["product-gallery__button"]}>GIÁ CẢ</button>
           </a>
         </div>
       </section>

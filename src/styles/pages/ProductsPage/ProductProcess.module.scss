@@ -4,7 +4,6 @@
   width: 100%;
   margin: 0 auto;
 
-
   &__title {
     font-family: var(--font-title);
     font-size: 28px;
@@ -63,19 +62,21 @@
     gap: 32px;
     background-color: #fff;
     padding: 32px;
-    border-radius: 12px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   }
 
   &__stage-title {
-    font-size: 19px;
+    font-size: 18px;
     font-family: var(--font-title);
     font-weight: 500;
     background-color: var(--color-main);
     color: white;
     padding: 10px 16px;
-    border-radius: 6px;
     margin-bottom: 16px;
+
+      @media (max-width: 430px) {
+        font-size: 14px;
+    }
   }
 
   &__description {
@@ -109,13 +110,16 @@
     .product-process__image {
       width: 100%;
       max-width: 500px;
-      border-radius: 10px;
       object-fit: cover;
       box-shadow: var(--shadow-medium);
     }
 
     @media (max-width: 900px) {
       margin-top: 24px;
+    }
+
+    @media (max-width: 430px) {
+      margin: 16px;
     }
   }
 }

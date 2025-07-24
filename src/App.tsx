@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 import StandardPage from "./pages/StandardPage";
 import PrinciplePage from "./pages/PrinciplePage";
 import LeaderPage from "./pages/LeaderPage";
-
+import ScrollToTop from "./components/ScrollToTop";
 import ProductTemplatePage from "./pages/Products/ProductTemplate";
 import ServiceTemplatePage from "./pages/Services/ServiceTemplatePage";
 import NewsPage from "./pages/News/NewsPage";
@@ -17,6 +17,7 @@ import ContactJPTechLiftFormPage from "./pages/ContactPage";
 const App = () => {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
+       <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />               {/* Trang chủ */}

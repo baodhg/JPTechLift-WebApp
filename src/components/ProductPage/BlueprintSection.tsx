@@ -39,7 +39,7 @@ export default function BlueprintSection({ blueprint }: Props) {
             </p>
             <div className={styles["product-blueprint__button-group"]}>
               <button className={styles["product-blueprint__primary-button"]} onClick={() => navigate("/lien-he")}>
-                LIÊN HỆ TRỰC TIẾP ĐỂ BIẾT THÊM THÔNG TIN
+                LIÊN HỆ NGAY
               </button>
               <a
                 href="https://zalo.me/3469899057771273254"

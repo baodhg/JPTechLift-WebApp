@@ -172,6 +172,9 @@
       margin: 4px 0;
       line-height: 1.6;
       opacity: 0.9;
+      @media (max-width: 430px) {
+        font-size: 14px;
+      }
     }
     .product-gallery__spec-list {
       margin-top: 16px;
@@ -188,10 +191,10 @@
    🎯 BUTTONS CONTAINER
    =================================== */
   &__buttons-container {
-    background-color: var(--color-yellow);
+    background-color: var(--color-main);
     width: 100vw; // Force full viewport width
     margin-left: calc(-50vw + 50%); // Center it and break out of container
-    padding: 32px 20px;
+    padding: 32px 40px;
     position: relative;
 
     @media (min-width: 768px) {
@@ -203,7 +206,7 @@
     }
 
     @media (min-width: 1600px) {
-      padding: 32px 200px;
+      padding: 32px 20px;
     }
   }
 
@@ -226,25 +229,34 @@
     }
 
     .product-gallery__button {
+      width: 33vw;
       background-color: var(--color-white);
       color: var(--color-main);
       font-weight: 600;
-      width: 300px;
       padding: 12px 32px;
       border: none;
       cursor: pointer;
       transition: all var(--transition-medium);
       text-align: center;
       font-size: 14px;
+      border: 1px solid var(--color-main);
 
       &:hover {
-        background-color: #f0f0f0;
+        background-color: #cba052;
+        color: #ffffff;
         transform: translateY(-2px);
-        box-shadow: var(--shadow-medium);
       }
 
       &:active {
         transform: translateY(0);
+      }
+
+      @media (max-width: 730px) {
+        width: 83vw;
+      }
+
+      @media (max-width: 430px) {
+        width: 83vw;
       }
     }
   }

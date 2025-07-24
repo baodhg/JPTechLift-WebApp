@@ -161,7 +161,7 @@ export const productData: Record<string, Product> = {
 
     // ✅ Thông tin chi tiết sản phẩm
     detailInfo: {
-      title: "Thang Máy Gia Đình",
+      title: "Thông số kỹ thuật",
       introductionLine1: "Thang máy gia đình JPTechLift là lựa chọn lý tưởng cho cả công trình xây mới và cải tạo. ",
       introductionLine2:
         "Được thiết kế và lắp đặt tại Việt Nam, sản phẩm mang đến sự linh hoạt về tải trọng, phù hợp với đa dạng nhu cầu sử dụng trong gia đình hiện đại.",
@@ -296,7 +296,7 @@ export const productData: Record<string, Product> = {
 
     // ✅ Thông tin chi tiết sản phẩm
     detailInfo: {
-      title: "Thang Thực Phẩm",
+      title: "Thông số kỹ thuật",
       introductionLine1: "Thang tải thực phẩm JP TechLift vận hành êm ái, bền bỉ và sạch sẽ.",
       introductionLine2: "Vật liệu Inox 304 chống gỉ sét, đáp ứng tiêu chuẩn vệ sinh an toàn thực phẩm.",
       productLine: "Dòng sản phẩm: Thang thực phẩm JP TechLift.",
@@ -415,7 +415,7 @@ export const productData: Record<string, Product> = {
 
     // ✅ Thông tin chi tiết sản phẩm
     detailInfo: {
-      title: "Thang Tải Hàng Công Nghiệp",
+      title: "Thông số kỹ thuật",
       introductionLine1:
         "Thang tải hàng JP TechLift được thiết kế tối ưu cho vận chuyển hàng hóa khối lượng lớn, kể cả xe nâng.",
       introductionLine2: "Phù hợp cho nhà kho, xưởng sản xuất, trung tâm phân phối và bệnh viện.",
@@ -548,7 +548,7 @@ export const productData: Record<string, Product> = {
 
     // ✅ Thông tin chi tiết sản phẩm
     detailInfo: {
-      title: "Thang Máy Hành Khách",
+      title: "Thông số kỹ thuật",
       introductionLine1: "Thang máy hành khách JP TechLift đáp ứng tiêu chuẩn an toàn cao.",
       introductionLine2: "Thiết kế sang trọng, vận hành êm ái cho trải nghiệm thoải mái.",
       productLine: "Dòng sản phẩm: Thang máy hành khách JPTechLift.",
@@ -678,7 +678,7 @@ export const productData: Record<string, Product> = {
 
     // ✅ Thông tin chi tiết sản phẩm
     detailInfo: {
-      title: "Thang Máy Bệnh Viện",
+      title: "Thông số kỹ thuật",
       introductionLine1: "Thang máy bệnh viện JP TechLift chuyên dụng cho cáng bệnh.",
       introductionLine2: "Cơ cấu vận hành êm, cabin rộng rãi, đảm bảo vệ sinh.",
       productLine: "Dòng sản phẩm: Thang máy bệnh viện JPTechLift.",
@@ -809,7 +809,7 @@ export const productData: Record<string, Product> = {
 
     // ✅ Thông tin chi tiết sản phẩm
     detailInfo: {
-      title: "Thang Cuốn",
+      title: "Thông số kỹ thuật",
       introductionLine1: "Thang cuốn JP TechLift phù hợp cho các khu vực công cộng có lưu lượng người qua lại lớn.",
       introductionLine2: "Thiết kế hiện đại, vận hành êm ái và được trang bị các tính năng an toàn tiên tiến nhất.",
       productLine: "Dòng sản phẩm: Thang cuốn & Băng chuyền bộ JPTechLift.",
@@ -922,7 +922,7 @@ export const productData: Record<string, Product> = {
 
     // ✅ Thông tin chi tiết sản phẩm
     detailInfo: {
-      title: "Thang Máy Quan Sát",
+      title: "Thông số kỹ thuật",
       introductionLine1: "Thang máy quan sát JPTechLift kết hợp hoàn hảo giữa công năng và nghệ thuật kiến trúc.",
       introductionLine2:
         "Sử dụng kính cường lực an toàn, khung thép hoặc inox cao cấp, mang lại vẻ đẹp bền vững theo thời gian.",

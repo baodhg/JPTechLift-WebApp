@@ -10,7 +10,7 @@
   text-align: center;
 
   &__container {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
   }
 
@@ -47,7 +47,7 @@
     margin-top: 16px;
     &__link {
       font-family: var(--font-main);
-      font-size: 16px;
+      font-size: 14px;
       color: var(--color-main);
       text-decoration: none;
       font-weight: 600;
@@ -100,7 +100,7 @@
     font-family: var(--font-main);
     display: inline-block;
     width: 100%;
-    font-size: 16px;
+    font-size: 14px;
     padding: 10px 0;
     background-color: var(--color-main);
     color: #fff;
@@ -109,8 +109,13 @@
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: var(--color-white);
-      color: var(--color-main);
+      background-color: #cba052;
+      color: #ffffff;
+      transform: translateY(0px);
+    }
+
+    &:active {
+      transform: translateY(0);
     }
   }
 

@@ -1,5 +1,6 @@
 import styles from "../../../styles/components/Footer/DesktopFooter/DesktopFooter.module.scss";
 import Logo from "../../Logo/Logo";
+import { Link } from "react-router-dom";
 import facebook from "../../../assets/images/header/Facebook_2_Icon.png";
 import tiktok from "../../../assets/images/header/TikTok_Icon_2.png";
 import linkendin from "../../../assets/images/header/Linkedin_2_Icon.png";
@@ -7,6 +8,66 @@ import instagram from "../../../assets/images/header/Instagram_Icon.png";
 import youtube from "../../../assets/images/header/Youtube-Icon.png";
 import generalcontact from "../../../assets/images/header/General_Request_Icon.png";
 import contact from "../../../assets/images/header/Contact_Icon.png";
+
+const socialLinks = [
+  {
+    href: "https://www.facebook.com/profile.php?id=61573816036604",
+    icon: facebook,
+    alt: "facebook",
+  },
+  {
+    href: "https://www.instagram.com/jptechlift/",
+    icon: instagram,
+    alt: "instagram",
+  },
+  {
+    href: "https://www.youtube.com/@jptechlift",
+    icon: youtube,
+    alt: "youtube",
+  },
+  {
+    href: "https://www.linkedin.com/in/mayinpixels",
+    icon: linkendin,
+    alt: "linkedin",
+  },
+  {
+    href: "https://www.tiktok.com/@jptechlift",
+    icon: tiktok,
+    alt: "tiktok",
+  },
+];
+
+const footerLinks = [
+  {
+    title: "SẢN PHẨM & DỊCH VỤ",
+    items: [
+      { label: "Sản phẩm JPTechLifts", to: "/products/thang-may-gia-dinh" },
+      { label: "Nâng cấp & sửa chữa", to: "/dich-vu#cai-tao" },
+    ],
+  },
+  {
+    title: "CÔNG TY CHÚNG TÔI",
+    items: [
+      { label: "Về chúng tôi", to: "/ve-chung-toi" },
+      { label: "Lãnh đạo", to: "/ban-lanh-dao" },
+      { label: "Tin tức", to: "/tin-tuc" },
+      { label: "Nguyên tắc công ty", to: "/nguyen-tac" },
+    ],
+  },
+];
+
+const bottomLinks = [
+  {
+    label: "Liên hệ để nhận hỗ trợ",
+    icon: generalcontact,
+    to: "/lien-he",
+  },
+  {
+    label: "Yêu cầu chung",
+    icon: contact,
+    to: "/lien-he",
+  },
+];
 
 export default function Footer() {
   return (
@@ -17,68 +78,27 @@ export default function Footer() {
         <div className={styles.column}>
           <Logo variant="white" className={styles.logo} />
           <div className={styles.socials}>
-            <a
-              href="https://www.facebook.com/profile.php?id=61573816036604"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.iconLink}
-            >
-              <img src={facebook} alt="facebook" />
-            </a>
-            <a
-              href="https://www.instagram.com/jptechlift/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.iconLink}
-            >
-              <img src={instagram} alt="instagram" />
-            </a>
-            <a
-              href="https://www.youtube.com/@jptechlift"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.iconLink}
-            >
-              <img src={youtube} alt="youtube" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/mayinpixels"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.iconLink}
-            >
-              <img src={linkendin} alt="linkendin" />
-            </a>
-            <a
-              href="https://www.tiktok.com/@jptechlift"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.iconLink}
-            >
-              <img src={tiktok} alt="tiktok" />
-            </a>
+            {socialLinks.map((item) => (
+              <a key={item.alt} href={item.href} target="_blank" rel="noopener noreferrer" className={styles.iconLink}>
+                <img src={item.icon} alt={item.alt} />
+              </a>
+            ))}
           </div>
         </div>
 
         {/* SP & Dịch vụ */}
-        <div className={styles.column}>
-          <h4>SẢN PHẨM & DỊCH VỤ</h4>
-          <ul>
-            <li>Sản phẩm JPTechLifts</li>
-            <li>Nâng cấp & sửa chữa</li>
-          </ul>
-        </div>
-
-        {/* Giới thiệu */}
-        <div className={styles.column}>
-          <h4>CÔNG TY CHÚNG TÔI</h4>
-          <ul>
-            <li>Về chúng tôi</li>
-            <li>Lãnh đạo</li>
-            <li>Tin tức</li>
-            <li>Nguyên tắc công ty</li>
-          </ul>
-        </div>
+        {footerLinks.map((col) => (
+          <div className={styles.column} key={col.title}>
+            <h4>{col.title}</h4>
+            <ul>
+              {col.items.map((item) => (
+                <li key={item.to}>
+                  <Link to={item.to}>{item.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
 
         {/* Thông tin liên hệ */}
         <div className={styles.column}>
@@ -106,12 +126,11 @@ export default function Footer() {
       <div className={styles.bottom}>
         <p>© Copyrights 2025. All Rights Reserved.</p>
         <div className={styles.links}>
-          <a href="#">
-            <img src={generalcontact} alt="generalcontact" /> Liên hệ để nhận hỗ trợ
-          </a>
-          <a href="#">
-            <img src={contact} alt="contact" /> Yêu cầu chung
-          </a>
+          {bottomLinks.map((link) => (
+            <Link key={link.label} to={link.to}>
+              <img src={link.icon} alt={link.label} /> {link.label}
+            </Link>
+          ))}
         </div>
       </div>
     </footer>
