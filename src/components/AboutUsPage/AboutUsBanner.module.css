@@ -52,7 +52,7 @@
 
 .vmvBlocks {
   width: 100%;
-  max-width: 540px;
+  max-width: 600px;
   margin: 64px auto 0 auto;
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@
 
 /* Gạch vàng signature từng block */
 .underline {
-  margin: 0 auto 10px auto;
+  margin: 0 auto 20px auto;
   width: 72px;
   height: 5px;
   border-radius: 3px;
@@ -91,7 +91,7 @@
   font-weight: 400;
   line-height: 1.7;
   margin: 0 auto;
-  max-width: 445px;
+  max-width: 550px;
   font-family: 'Inter','Nunito Sans',Arial,sans-serif;
 }
 
@@ -103,7 +103,7 @@
 }
 
 .vmvButton {
-  background: #183153;
+  background: #041e41;
   color: #fff;
   font-size: 1.12rem;
   font-weight: 700;
@@ -115,8 +115,8 @@
   transition: background 0.18s, box-shadow 0.23s;
 }
 .vmvButton:hover {
-  background: #2850a7;
-  box-shadow: 0 8px 19px rgba(24,49,83,.19);
+  background: #cba052;
+  color: #041e41;
 }
 
 @media (max-width: 768px) {

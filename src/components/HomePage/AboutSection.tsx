@@ -75,7 +75,7 @@ export default function AboutSection() {
         data-aos-delay="500"
       >
         {/* --- Mobile: Button + pattern hàng ngang --- */}
-        <div className="flex md:hidden w-full flex-row justify-between items-center h-12">
+        <div className="flex md:hidden w-full flex-row justify-center items-center h-12">
           {/* Nút bên trái */}
           <Link
             to="/ve-chung-toi"

@@ -18,7 +18,6 @@
     flex-direction: column;
     justify-content: flex-start;
     padding: 60px 40px;
-
   }
 
   &__title {
@@ -29,6 +28,11 @@
     font-weight: 800;
     margin-bottom: 16px;
     text-transform: none;
+
+    @media (max-width: 435px) {
+      width: 100%;
+    }
+
     &::after {
       content: "";
       display: block;
@@ -127,11 +131,11 @@
       }
 
       &__description,
-    &__intro {
-      width: 90%;
-      font-size: 14px;
-      text-align: left;
-    }
+      &__intro {
+        width: 90%;
+        font-size: 14px;
+        text-align: left;
+      }
 
       &__text {
         flex: unset;
@@ -142,7 +146,7 @@
         flex: unset;
         order: 2; // đưa ảnh xuống dưới
         padding-top: 24px; // tạo khoảng cách giữa text và ảnh
-      }    
+      }
     }
   }
 }

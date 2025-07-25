@@ -1,4 +1,3 @@
-
 import NavBar from "../Navbar/Navbar";
 
 interface HeaderWithBanner {
@@ -9,24 +8,27 @@ interface HeaderWithBanner {
 export default function HeaderWithBanner({ banner, title }: HeaderWithBanner) {
   return (
     <header className="relative">
-      {/* Banner */}
+      {/* NAVBAR nằm ngoài phần banner bị tối */}
+      <NavBar />
 
-      <div className=" inset-0 bg-black/35 mix-blend-multiply" />
+      {/* Banner container */}
+      <div className="relative">
+        {/* Ảnh nền */}
+        <img src={banner} alt="JP TechLift banner" className="h-[530px] w-full object-cover" />
 
-      {/* NAVIGATION CARD */}
-      <div>
-        <NavBar />
-        <img src={banner} alt="JP TechLift banner" className="h-[530px] w-full object-cover " />
+        {/* Lớp overlay đen chỉ phủ ảnh */}
+        <div className="absolute inset-0 bg-black/40" />
+
+        {/* Tiêu đề hiển thị trên ảnh */}
+        <h1
+          className="font-inter absolute inset-0 z-30 flex items-center justify-center 
+             px-4 text-center text-3xl font-extrabold uppercase tracking-wide text-white 
+             md:text-5xl -mt-12"
+          style={{ textShadow: "2px 2px 8px rgba(0, 0, 0, 0.8)" }}
+        >
+          {title}
+        </h1>
       </div>
-
-      {/* TITLE */}
-      <h1
-        className="font-inter pointer-events-none absolute inset-0 z-30 flex items-center justify-center
-                     px-4 md:mt-16 md:pt-10 text-center text-3xl font-extrabold uppercase tracking-wide text-white
-                     md:text-5xl"
-      >
-        {title}
-      </h1>
     </header>
   );
 }

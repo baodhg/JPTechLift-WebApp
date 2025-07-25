@@ -6,6 +6,7 @@
   margin: 0 auto;
   padding: 0px 0px;
   background-color: var(--color-gray1);
+
   &__heading {
     font-family: var(--font-title);
     font-weight: 500;
@@ -33,10 +34,9 @@
   &__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
     margin: 0 auto;
-    max-width: 1200px;
-    padding: 0 16px;
+    max-width: 1540px;
+    padding: 46px;
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
@@ -59,7 +59,7 @@
     padding: 30px;
     flex: 1;
     width: 100%;
-    max-width: 560px;
+    max-width: 660px;
     margin: 0 auto;
 
     .product-specs__title {

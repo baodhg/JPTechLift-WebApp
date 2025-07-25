@@ -2,6 +2,7 @@
   text-align: center;
   margin: 80px auto 48px auto;
   max-width: 700px;
+  padding: 0 20px;
 }
 
 .title {
@@ -141,7 +142,7 @@ input[type="checkbox"] {
   letter-spacing: 0.01em;
 }
 .submitBtn:hover {
-  background: #2850a7;
+  background: #cca052;
   box-shadow: 0 4px 16px rgba(24,49,83,0.13);
 }
 
@@ -225,7 +226,7 @@ input[type="checkbox"] {
   .container {
     flex-direction: column;
     gap: 32px;
-    padding: 0 8px;
+    padding: 0 20px;
     align-items: center;
   }
   .formSection, .infoSection {

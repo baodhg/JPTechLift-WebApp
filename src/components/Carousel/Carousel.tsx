@@ -36,23 +36,13 @@ export default function Carousel({
 
   return (
     <div className="relative w-full mx-auto overflow-hidden">
-      <div className="relative h-[475px]">
+      <div className="relative h-[530px]">
         {slides.map((slide, index) => (
           <div
             key={index}
             className={`absolute w-full h-full top-0 left-0 flex items-center justify-center transition-all duration-700 ease-in-out 
-              ${
-                transitionEffect === "fade"
-                  ? index === current
-                    ? "opacity-100 z-10"
-                    : "opacity-0 z-0"
-                  : ""
-              }
-              ${
-                transitionEffect === "slide"
-                  ? `transform translate-x-${(index - current) * 100}`
-                  : ""
-              }
+              ${transitionEffect === "fade" ? (index === current ? "opacity-100 z-10" : "opacity-0 z-0") : ""}
+              ${transitionEffect === "slide" ? `transform translate-x-${(index - current) * 100}` : ""}
             `}
           >
             <img
@@ -62,28 +52,26 @@ export default function Carousel({
             />
 
             <div className="relative z-10 text-white px-4 flex flex-col items-center text-center max-w-[90%] md:max-w-5xl mx-auto space-y-6">
-  {slide.title && (
-    <h1
-      className="font-grifo text-white text-2xl sm:text-3xl md:text-3xl lg:text-5xl font-semibold leading-tight drop-shadow-[4px_4px_10px_rgba(0,0,0,0.7)]"
-    >
-      {slide.title}
-    </h1>
-  )}
-  {slide.description && (
-    <p className="text-sm sm:text-base md:text-lg lg:text-xl mt-2 mb-2 drop-shadow-md max-w-2xl">
-      {slide.description}
-    </p>
-  )}
-  {slide.ctaText && (
-    <a
-      href={slide.ctaLink || "#"}
-      className="mt-4 px-5 py-2 border-2 border-white text-white bg-transparent 
+              {slide.title && (
+                <h1 className="font-grifo text-white text-2xl sm:text-3xl md:text-3xl lg:text-5xl font-semibold leading-tight drop-shadow-[4px_4px_10px_rgba(0,0,0,0.7)]">
+                  {slide.title}
+                </h1>
+              )}
+              {slide.description && (
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl mt-2 mb-2 drop-shadow-md max-w-2xl">
+                  {slide.description}
+                </p>
+              )}
+              {slide.ctaText && (
+                <a
+                  href={slide.ctaLink || "#"}
+                  className="mt-4 px-5 py-2 border-2 border-white text-white bg-transparent 
       hover:bg-white hover:text-black transition-all duration-300 font-medium text-base md:text-lg"
-    >
-      {slide.ctaText}
-    </a>
-  )}
-</div>
+                >
+                  {slide.ctaText}
+                </a>
+              )}
+            </div>
 
             <div className="absolute inset-0 bg-black/40" />
           </div>

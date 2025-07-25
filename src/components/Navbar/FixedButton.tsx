@@ -21,13 +21,12 @@ const FixedButtons = () => {
   }, []);
 
   return (
+
     <div className="fixed bottom-6 right-2 flex flex-col-reverse gap-4 z-30">
       {/* Nút Zalo */}
       <motion.button
         aria-label="Contact"
-        onClick={() =>
-          window.open("https://zalo.me/3469899057771273254", "_blank")
-        }
+        onClick={() => window.open("https://zalo.me/3469899057771273254", "_blank")}
         className="w-14 h-14 md:w-16 md:h-16 rounded-full border border-[#0467f8] bg-white text-[#041E42] flex items-center justify-center shadow-md"
         animate={{ rotate: [0, -10, 10, -10, 10, 0] }}
         transition={{ repeat: Infinity, repeatDelay: 9, duration: 3 }}

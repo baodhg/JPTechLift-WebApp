@@ -47,8 +47,7 @@ export default function ContactJPTechLiftForm() {
       </div>
       <div className={styles.container}>
         <div className={styles.formSection}>
-          {errorMessage && <Alert type="error" message={errorMessage} />}
-          {successMessage && <Alert type="success" message={successMessage} />}
+
 
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.row}>
@@ -148,10 +147,12 @@ export default function ContactJPTechLiftForm() {
                 Tôi đồng ý nhận các thông báo và thông tin qua email từ JP TechLift trong tương lai.
               </label>
             </div>
-
+            {errorMessage && <Alert type="error" message={errorMessage} />}
+            {successMessage && <Alert type="success" message={successMessage} />}
             <button type="submit" className={styles.submitBtn}>
-              Submit
+              Gửi
             </button>
+
           </form>
         </div>
 
