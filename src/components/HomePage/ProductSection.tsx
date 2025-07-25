@@ -127,7 +127,7 @@ export default function ProductSection() {
                     LIÊN HỆ
                   </Link>
                   <Link
-                    to={`/products/${p.slug}`}
+                   to={`/san-pham/${p.slug}`}
                     className="w-[122%] py-4 bg-[#041E42] text-white font-inter font-semibold rounded-md transition-colors whitespace-nowrap border border-[#041E42] hover:bg-white hover:text-[#041E42] text-center flex items-center justify-center"
                   >
                     TÌM HIỂU THÊM

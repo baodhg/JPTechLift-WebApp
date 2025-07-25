@@ -22,19 +22,19 @@ const ServicesPage = () => {
     {
       id: 1,
       title: "Lắp Đặt Vận Hành",
-      path: "/dich-vu/caidat",
+    path: "/dich-vu-thang-may/lap-dat-thang-may",
       description: "Dịch vụ lắp đặt và vận hành thang máy chuyên nghiệp, an toàn, hiệu quả.",
     },
     {
       id: 2,
       title: "Tư Vấn Thiết Kế",
-      path: "/dich-vu/huongdan",
+     path: "/dich-vu-thang-may/tu-van-thiet-ke",
       description: "Tư vấn thiết kế thang máy tối ưu, thẩm mỹ và tiết kiệm chi phí.",
     },
     {
       id: 3,
       title: "Bảo Trì Bảo Dưỡng",
-      path: "/dich-vu/baotri",
+     path: "/dich-vu-thang-may/bao-tri-thang-may",
       description: "Bảo trì định kỳ đảm bảo thang máy hoạt động ổn định và an toàn.",
     },
     {

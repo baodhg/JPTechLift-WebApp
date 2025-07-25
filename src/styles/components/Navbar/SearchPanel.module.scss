@@ -121,7 +121,6 @@
 
       li {
         margin-bottom: 6px;
-
         a,
         button {
           background: none;
@@ -136,6 +135,28 @@
           &:hover {
             color: #fff;
           }
+        }
+
+        &.resultItem {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          border-radius: 6px;
+          padding: 4px 8px;
+        }
+
+        &.active {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .icon {
+          width: 20px;
+        }
+
+        .resultPath {
+          margin-left: auto;
+          font-size: 12px;
+          opacity: 0.7;
         }
       }
     }

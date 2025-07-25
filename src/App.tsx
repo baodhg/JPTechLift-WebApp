@@ -1,5 +1,3 @@
-// App.tsx
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./layouts/layout";
 import HomePage from "./pages/HomePage";
 import StandardPage from "./pages/StandardPage";
@@ -17,6 +15,7 @@ import HuongDan from "./pages/Services/HuongDan";
 import LapDatThangMay from "./pages/Services/LapDatThangMay";
 import BaoTriThangMay from "./pages/Services/BaoTriThangMay";
 import CaiTaoSuaChuaThangMay from "./pages/Services/CaiTaoSuaChuaThangMayPage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const App = () => {
   return (
@@ -25,30 +24,43 @@ const App = () => {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} /> {/* Trang chủ */}
-          <Route path="/quy-trinh-du-an" element={<StandardPage />} />{" "}
+          <Route path="/gioi-thieu/quy-trinh-du-an" element={<StandardPage />} />
           {/* Trang tiêu chuẩn */}
-          <Route path="/nguyen-tac" element={<PrinciplePage />} />{" "}
+          <Route path="/gioi-thieu/nguyen-tac" element={<PrinciplePage />} />
           {/* Trang nguyên tắc */}
-          <Route path="/ban-lanh-dao" element={<LeaderPage />} />{" "}
+          <Route path="/gioi-thieu/ban-lanh-dao" element={<LeaderPage />} />
           {/* Trang nguyên tắc */}
-          <Route path="/tin-tuc" element={<NewsPage />} /> {/* Trang tin tức */}
-          <Route path="/ve-chung-toi" element={<AboutUsPage />} />{" "}
+          <Route path="/tin-tuc-thang-may" element={<NewsPage />} /> {/* Trang tin tức */}
+          <Route path="/gioi-thieu" element={<AboutUsPage />} />
           {/* Trang về chúng tôi */}
-          <Route path="/blog" element={<BlogPage />} /> {/* Trang blog */}
+          <Route path="/blog-thang-may" element={<BlogPage />} /> {/* Trang blog */}
           <Route path="/lien-he" element={<ContactJPTechLiftFormPage />} />{" "}
           {/* Trang liên hệ */}
-          <Route path="/dich-vu" element={<ServiceTemplatePage />} />{" "}
+          <Route path="/dich-vu-thang-may" element={<ServiceTemplatePage />} />
+          {/* Trang dịch vụ */}
           <Route
-            path="/dich-vu/lap-dat-thang-may"
-            element={<LapDatThangMay/>}
+            path="/dich-vu-thang-may/lap-dat-thang-may"
+            element={<LapDatThangMay />}
           />
-          <Route path="/dich-vu/tu-van-lap-dat" element={<TuVan/>} />
-          <Route path="/dich-vu/huong-dan" element={<HuongDan />} />
-          <Route path="/dich-vu/bao-tri" element={<BaoTriThangMay />} />
-          <Route path="/dich-vu/cai-tao" element={<CaiTaoSuaChuaThangMay />} />
+          <Route
+            path="/dich-vu-thang-may/tu-van-thiet-ke"
+            element={<TuVan />}
+          />
+          <Route
+            path="/dich-vu-thang-may/huong-dan-van-hanh"
+            element={<HuongDan />}
+          />
+          <Route
+            path="/dich-vu-thang-may/bao-tri-thang-may"
+            element={<BaoTriThangMay />}
+          />
+          <Route
+            path="/dich-vu-thang-may/cai-tao-sua-chua"
+            element={<CaiTaoSuaChuaThangMay />}
+          />
           {/* PRODUCT: chỉ còn 1 route động */}
           <Route
-            path="/products/:productId"
+            path="/san-pham/:productId"
             element={<ProductTemplatePage />}
           />
         </Route>

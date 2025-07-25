@@ -1,33 +1,33 @@
-export const NavigationData = {
-  products: [
-    { label: "THANG MÁY GIA ĐÌNH", path: "/products/thang-may-gia-dinh" },
-    { label: "THANG MÁY DÂN DỤNG", path: "/products/thang-may-hanh-khach" },
-    { label: "THANG MÁY CHỞ HÀNG", path: "/products/thang-tai-hang" },
-    { label: "THANG MÁY QUAN SÁT", path: "/products/thang-may-quan-sat" },
-    { label: "THANG MÁY BỆNH VIỆN", path: "/products/thang-may-benh-vien" },
-    { label: "THANG MÁY THỰC PHẨM", path: "/products/thang-tai-thuc-pham" },
-    { label: "THANG CUỐN", path: "/products/thang-truot-thang-cuon" },
-  ],
-  services: [
-    { label: "TƯ VẤN – THIẾT KẾ", path: "/dich-vu#tu-van-thiet-ke" },
-    { label: "BẢO TRÌ", path: "/dich-vu#bao-tri" },
-    { label: "LẮP ĐẶT – VẬN HÀNH", path: "/dich-vu#lap-dat-van-hanh" },
-    { label: "CẢI TẠO – SỬA CHỮA", path: "/dich-vu#cai-tao" },
-    { label: "VẬT TƯ – PHỤ KIỆN THANG MÁY", path: "/dich-vu#vat-tu-phu-kien" },
-  ],
-  about: [
-    { label: "VỀ CHÚNG TÔI", path: "/ve-chung-toi" },
-    { label: "BAN LÃNH ĐẠO", path: "/ban-lanh-dao" },
-    { label: "NGUYÊN TẮC", path: "/nguyen-tac" },
-    { label: "QUY TRÌNH DỰ ÁN", path: "/quy-trinh-du-an" },
-  ],
-} as const;
+import { productData } from "../data/ProductData";
 
-export const categories = [
-  { id: "all", label: "Tất cả", count: 150 },
-  { id: "products", label: "Sản phẩm", count: NavigationData.products.length },
-  { id: "services", label: "Dịch vụ", count: NavigationData.services.length },
-  { id: "solutions", label: "Giải pháp", count: 40 },
+export interface SearchItem {
+  title: string;
+  path: string;
+  type: "Sản phẩm" | "Dịch vụ" | "Giới thiệu" | "Tin tức" | "Trang khác";
+  keywords?: string[];
+  metaTitle?: string;
+}
+
+export const searchData: SearchItem[] = [
+  ...Object.entries(productData).map(([id, p]) => ({
+    title: p.intro.title,
+    path: `/san-pham/${id}`,
+    type: "Sản phẩm" as const,
+    keywords: p.seo?.keywords,
+    metaTitle: p.seo?.metaTitle,
+  })),
+  { title: "TƯ VẤN - THIẾT KẾ", path: "/dich-vu-thang-may/tu-van-thiet-ke", type: "Dịch vụ" },
+  { title: "LẮP ĐẶT - VẬN HÀNH", path: "/dich-vu-thang-may/lap-dat-thang-may", type: "Dịch vụ" },
+  { title: "BẢO TRÌ", path: "/dich-vu-thang-may/bao-tri-thang-may", type: "Dịch vụ" },
+  { title: "CẢI TẠO - SỬA CHỮA", path: "/dich-vu-thang-may/cai-tao-sua-chua", type: "Dịch vụ" },
+  { title: "VẬT TƯ - PHỤ KIỆN THANG MÁY", path: "/dich-vu-thang-may/vat-tu-phu-kien", type: "Dịch vụ" },
+  { title: "VỀ CHÚNG TÔI", path: "/gioi-thieu", type: "Giới thiệu" },
+  { title: "BAN LÃNH ĐẠO", path: "/gioi-thieu/ban-lanh-dao", type: "Giới thiệu" },
+  { title: "NGUYÊN TẮC", path: "/gioi-thieu/nguyen-tac", type: "Giới thiệu" },
+  { title: "QUY TRÌNH DỰ ÁN", path: "/gioi-thieu/quy-trinh-du-an", type: "Giới thiệu" },
+  { title: "Tin tức", path: "/tin-tuc-thang-may", type: "Tin tức" },
+  { title: "Blog", path: "/blog-thang-may", type: "Tin tức" },
+  { title: "Liên hệ", path: "/lien-he", type: "Trang khác" },
 ];
 
 export const popularSearches = [
@@ -37,24 +37,3 @@ export const popularSearches = [
   "Bảo trì thang máy",
   "Cải tạo thang máy cũ",
 ];
-
-export const searchSuggestions = [
-  {
-    category: "Sản phẩm",
-    items: NavigationData.products.map((p) => ({
-      title: p.label,
-      type: "Sản phẩm",
-      path: p.path,
-    })),
-  },
-  {
-    category: "Dịch vụ",
-    items: NavigationData.services.map((s) => ({
-      title: s.label,
-      type: "Dịch vụ",
-      path: s.path,
-    })),
-  },
-];
-
-export default NavigationData;

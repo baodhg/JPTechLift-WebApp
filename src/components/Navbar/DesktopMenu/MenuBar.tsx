@@ -1,5 +1,6 @@
 
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom"
 import facebook from "../../../assets/images/header/Facebook_Icon.png";
 import tiktok from "../../../assets/images/header/TikTok_Icon.png";
 import linkendin from "../../../assets/images/header/Linkedin_Icon.png";
@@ -66,17 +67,12 @@ const MenuBar = ({ scrolled, onSearchOpen, showSearch }: MenuBarProps) => {
               </li>
               <li>/</li>
               <li className={styles.menuItem}>
-                <div className={styles.dropdownWrapper}>
-                  <a
-                    className="transition duration-200 hover:brightness-200 hover:scale-105"
-                    onClick={() => setActiveDropdown(activeDropdown === "contact" ? null : "contact")}
-                  >
-                    LIÊN HỆ
-                  </a>
-                  {!showSearch && activeDropdown === "contact" && (
-                    <ProductServiceDropdown type="contact" onClose={closeDropdown} />
-                  )}
-                </div>
+              <Link
+                  to="/lien-he"
+                  className="transition duration-200 hover:brightness-200 hover:scale-105"
+                >
+                  LIÊN HỆ
+                </Link>
               </li>
               <li>/</li>
               <li>

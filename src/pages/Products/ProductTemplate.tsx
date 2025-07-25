@@ -14,7 +14,7 @@ import NavBar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import RealGallerySection from "../../components/ProductPage/RealGallerySection";
 import FadeInSection from "../../styles/components/common/FadeInSection";
-
+import NotFound from "../NotFound";
 // Kiểm tra productId hợp lệ
 function isValidProductId(id: string): id is ProductId {
   return id in productData;
@@ -25,43 +25,43 @@ export default function ProductTemplatePage() {
   const [isAestheticsOpen, setAestheticsOpen] = useState(false);
 
   if (!productId || !isValidProductId(productId)) {
-    return <p>Sản phẩm không tồn tại.</p>;
+    return <NotFound />;
   }
 
   const product = productData[productId];
 
   return (
-    <div style={{ backgroundColor: 'var(--color-gray1)'}}>
+    <div style={{ backgroundColor: "var(--color-gray1)" }}>
       <Helmet>
         <title>{product.seo?.metaTitle}</title>
         <meta name="description" content={product.seo?.metaDescription || ""} />
         <meta name="keywords" content={product.seo?.keywords?.join(", ") || ""} />
-        
+
         {/* ✅ Schema.org Breadcrumb cho SEO */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
-            "itemListElement": [
+            itemListElement: [
               {
                 "@type": "ListItem",
                 position: 1,
                 name: "Trang chủ",
-                item: "https://thangmaysaigonjptechlift.com"
+                item: "https://thangmaysaigonjptechlift.com",
               },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: "Sản phẩm",
-                item: "https://thangmaysaigonjptechlift.com/products"
+                item: "https://thangmaysaigonjptechlift.com/san-pham",
               },
               {
                 "@type": "ListItem",
                 position: 3,
                 name: product.intro.title,
-                item: `https://thangmaysaigonjptechlift.com/products/${productId}`
-              }
-            ]
+                item: `https://thangmaysaigonjptechlift.com/san-pham/${productId}`,
+              },
+            ],
           })}
         </script>
       </Helmet>
@@ -71,8 +71,12 @@ export default function ProductTemplatePage() {
       {/* ✅ HTML breadcrumb bị ẩn khỏi người dùng nhưng vẫn giúp Google hiểu */}
       <nav aria-label="breadcrumb" style={{ display: "none" }}>
         <ol>
-          <li><a href="https://jptechlift.vn">Trang chủ</a></li>
-          <li><a href="https://jptechlift.vn/products">Sản phẩm</a></li>
+          <li>
+            <a href="https://jptechlift.vn">Trang chủ</a>
+          </li>
+          <li>
+            <a href="https://jptechlift.vn/san-pham">Sản phẩm</a>
+          </li>
           <li aria-current="page">{product.intro.title}</li>
         </ol>
       </nav>
@@ -88,10 +92,7 @@ export default function ProductTemplatePage() {
 
       {product.contentTable && (
         <FadeInSection>
-          <ContentTableSection
-            data={product.contentTable}
-            imageUrl="/assets/images/home-lift/hero.jpg"
-          />
+          <ContentTableSection data={product.contentTable} imageUrl="/assets/images/home-lift/hero.jpg" />
         </FadeInSection>
       )}
 
@@ -117,10 +118,7 @@ export default function ProductTemplatePage() {
 
       {product.installationSteps && product.installationImage && (
         <FadeInSection>
-          <InstallationSection
-            steps={product.installationSteps}
-            image={product.installationImage}
-          />
+          <InstallationSection steps={product.installationSteps} image={product.installationImage} />
         </FadeInSection>
       )}
 

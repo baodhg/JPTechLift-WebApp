@@ -27,26 +27,26 @@ type MenuLevel = typeof MENU_LEVELS[keyof typeof MENU_LEVELS];
 // Menu data
 const NAVIGATION_DATA = {
   products: [
-    { label: "THANG MÁY GIA ĐÌNH", path: "/products/thang-may-gia-dinh" },
-    { label: "THANG MÁY DÂN DỤNG", path: "/products/thang-may-hanh-khach" },
-    { label: "THANG MÁY CHỞ HÀNG", path: "/products/thang-tai-hang" },
-    { label: "THANG MÁY QUAN SÁT", path: "/products/thang-may-quan-sat" },
-    { label: "THANG MÁY BỆNH VIỆN", path: "/products/thang-may-benh-vien" },
-    { label: "THANG MÁY THỰC PHẨM", path: "/products/thang-tai-thuc-pham" },
-    { label: "THANG CUỐN", path: "/products/thang-truot-thang-cuon" },
+   { label: "THANG MÁY GIA ĐÌNH", path: "/san-pham/thang-may-gia-dinh" },
+    { label: "THANG MÁY DÂN DỤNG", path: "/san-pham/thang-may-hanh-khach" },
+    { label: "THANG MÁY CHỞ HÀNG", path: "/san-pham/thang-tai-hang" },
+    { label: "THANG MÁY QUAN SÁT", path: "/san-pham/thang-may-quan-sat" },
+    { label: "THANG MÁY BỆNH VIỆN", path: "/san-pham/thang-may-benh-vien" },
+    { label: "THANG MÁY THỰC PHẨM", path: "/san-pham/thang-tai-thuc-pham" },
+    { label: "THANG CUỐN", path: "/san-pham/thang-truot-thang-cuon" },
   ],
   services: [
-    { label: "TƯ VẤN – THIẾT KẾ", path: "/dich-vu#tu-van-thiet-ke" },
-    { label: "BẢO TRÌ", path: "/dich-vu#bao-tri" },
-    { label: "LẮP ĐẶT – VẬN HÀNH", path: "/dich-vu#lap-dat-van-hanh" },
-    { label: "CẢI TẠO – SỬA CHỮA", path: "/dich-vu#cai-tao" },
-    { label: "VẬT TƯ – PHỤ KIỆN THANG MÁY", path: "/dich-vu#vat-tu-phu-kien" },
+  { label: "TƯ VẤN – THIẾT KẾ", path: "/dich-vu-thang-may/tu-van-thiet-ke" },
+    { label: "BẢO TRÌ", path: "/dich-vu-thang-may/bao-tri-thang-may" },
+    { label: "LẮP ĐẶT – VẬN HÀNH", path: "/dich-vu-thang-may/lap-dat-thang-may" },
+    { label: "CẢI TẠO – SỬA CHỮA", path: "/dich-vu-thang-may/cai-tao-sua-chua" },
+    { label: "VẬT TƯ – PHỤ KIỆN THANG MÁY", path: "/dich-vu-thang-may/vat-tu-phu-kien" },
   ],
   about: [
-    { label: "VỀ CHÚNG TÔI", path: "/ve-chung-toi" },
-    { label: "BAN LÃNH ĐẠO", path: "/ban-lanh-dao" },
-    { label: "NGUYÊN TẮC", path: "/nguyen-tac" },
-    { label: "QUY TRÌNH DỰ ÁN", path: "/quy-trinh-du-an" },
+   { label: "VỀ CHÚNG TÔI", path: "/gioi-thieu" },
+    { label: "BAN LÃNH ĐẠO", path: "/gioi-thieu/ban-lanh-dao" },
+    { label: "NGUYÊN TẮC", path: "/gioi-thieu/nguyen-tac" },
+    { label: "QUY TRÌNH DỰ ÁN", path: "/gioi-thieu/quy-trinh-du-an" },
   ],
   socials: [
     { 
@@ -279,8 +279,8 @@ const MobileMenu = () => {
                 </Link>
               </li>
               <li className={styles["menu__item"]}>
-                <Link 
-                  to="/blog" 
+             <Link
+                  to="/blog-thang-may"
                   onClick={handleMenuClose}
                   className={styles["menu__link"]}
                 >

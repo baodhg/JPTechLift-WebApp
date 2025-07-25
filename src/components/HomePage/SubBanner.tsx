@@ -47,7 +47,7 @@ const SubBanner: React.FC = () => {
         {/* Nút “TRẢI NGHIỆM NGAY” */}
         <div className="mt-6" data-aos="fade-up" data-aos-duration="1000">
           <Link
-            to="/quy-trinh-du-an"
+             to="/gioi-thieu/quy-trinh-du-an"
             className="group inline-flex items-center gap-2 border border-white bg-transparent px-6 py-2 text-white font-semibold hover:bg-[#cca052] hover:text-[#041E42] transition-colors duration-300 whitespace-nowrap"
           >
             TRẢI NGHIỆM NGAY

@@ -8,14 +8,14 @@ export const slides: Slide[] = [
     title: "Công nghệ – Tầm nhìn không giới hạn",
     description: "Công nghệ không có ranh giới chỉ có sự hoàn thiện không ngừng.",
     ctaText: "Tìm hiểu thêm",
-    ctaLink: "/nguyen-tac",
+     ctaLink: "/gioi-thieu/nguyen-tac",
   },
   {
     src: banner2,
     title: "Stylish - Smart - Simple",
     description: "Nền tảng để chúng tôi phát huy hết mình.",
     ctaText: "Khám phá thêm",
-    ctaLink: "/ve-chung-toi",
+  ctaLink: "/gioi-thieu",
   },
     {
     src: banner3,

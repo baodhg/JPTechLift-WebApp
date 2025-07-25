@@ -7,7 +7,7 @@ import styles from "../../../styles/components/Navbar/DesktopNavbar/DesktopNav.m
 
 const TopBar = () => {
   return (
-    <div className={styles.topBar} >
+    <div className={styles.topBar}>
       {/* Logo */}
       <div className={styles.topBar__logo}>
         <Logo />
@@ -20,7 +20,30 @@ const TopBar = () => {
         </div>
         <div className={styles.topBar__item + " " + styles.topBar__contactIcon}>
           <img src={email} alt="Email" />
-          <span>MAIL</span>
+          <span>
+            {" "}
+            <a
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=contact.jptechlift@gmail.com&su=Yêu cầu tư vấn thang máy&body=${encodeURIComponent(
+                `Xin chào JP TechLift,
+
+Tôi cần được tư vấn về sản phẩm thang máy. Dưới đây là thông tin của tôi:
+
+• Họ tên: 
+• Số điện thoại: 
+• Loại thang máy quan tâm: 
+• Nhu cầu lắp đặt: 
+• Khu vực (tỉnh/thành): 
+
+Rất mong sớm nhận được phản hồi từ quý công ty.
+
+Trân trọng,`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              contact.jptechlift@gmail.com
+            </a>
+          </span>
         </div>
         <div className={styles.topBar__lang}>
           <img src={polygon} alt="scroll down" className={styles.topBar__icon_sc} />

@@ -44,7 +44,7 @@ export default function RealGallerySection({ images }: Props) {
             >
               <button>ẢNH THỰC TẾ</button>
             </a>
-            <button onClick={() => navigate("/tin-tuc")}>XEM THÊM TẠI MỤC TIN TỨC</button>
+           <button onClick={() => navigate("/tin-tuc-thang-may")}>MỤC TIN TỨC</button>
           </div>
         </div>
       </div>

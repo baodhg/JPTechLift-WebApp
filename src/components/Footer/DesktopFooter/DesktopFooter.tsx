@@ -41,17 +41,17 @@ const footerLinks = [
   {
     title: "SẢN PHẨM & DỊCH VỤ",
     items: [
-      { label: "Sản phẩm JPTechLifts", to: "/products/thang-may-gia-dinh" },
-      { label: "Nâng cấp & sửa chữa", to: "/dich-vu#cai-tao" },
+    { label: "Sản phẩm JPTechLifts", to: "/san-pham/thang-may-gia-dinh" },
+      { label: "Nâng cấp & sửa chữa", to: "/dich-vu-thang-may/cai-tao-sua-chua" },
     ],
   },
   {
     title: "CÔNG TY CHÚNG TÔI",
     items: [
-      { label: "Về chúng tôi", to: "/ve-chung-toi" },
-      { label: "Lãnh đạo", to: "/ban-lanh-dao" },
-      { label: "Tin tức", to: "/tin-tuc" },
-      { label: "Nguyên tắc công ty", to: "/nguyen-tac" },
+     { label: "Về chúng tôi", to: "/gioi-thieu" },
+      { label: "Lãnh đạo", to: "/gioi-thieu/ban-lanh-dao" },
+      { label: "Tin tức", to: "/tin-tuc-thang-may" },
+      { label: "Nguyên tắc công ty", to: "/gioi-thieu/nguyen-tac" },
     ],
   },
 ];

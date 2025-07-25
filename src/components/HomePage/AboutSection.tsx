@@ -78,7 +78,7 @@ export default function AboutSection() {
         <div className="flex md:hidden w-full flex-row justify-center items-center h-12">
           {/* Nút bên trái */}
           <Link
-            to="/ve-chung-toi"
+                      to="/gioi-thieu"
             className="w-[140px] h-full py-2 px-4 bg-[#041E42] text-white font-inter font-semibold transition-all border border-[#041E42] hover:bg-white hover:text-[#041E42] text-center flex items-center justify-center"
           >
             Về chúng tôi
@@ -94,7 +94,7 @@ export default function AboutSection() {
 
         {/* --- Desktop: Button ở giữa --- */}
         <Link
-          to="/ve-chung-toi"
+         to="/gioi-thieu"
           className="hidden md:flex z-10 w-[200px] py-4 px-4 bg-[#041E42] text-white font-inter font-semibold transition-all border border-[#041E42] hover:bg-white hover:text-[#041E42] text-center items-center justify-center"
         >
           Về chúng tôi

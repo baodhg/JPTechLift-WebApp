@@ -1,23 +1,25 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../../styles/components/Navbar/SearchPanel.module.scss";
-import { categories, popularSearches, searchSuggestions } from "../../constants/searchData";
-import { productData } from "../../data/ProductData";
+import { searchData, popularSearches, type SearchItem } from "../../constants/searchData";
 interface Props {
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
   scrolled?: boolean;
 }
 
-interface SearchItem {
-  title: string;
-  type: string;
-  path: string;
-}
+const typeIcons: Record<SearchItem["type"], string> = {
+  "Sản phẩm": "📦 ",
+  "Dịch vụ": "🛠 ",
+  "Giới thiệu": "🏢 ",
+  "Tin tức": "📰 ",
+  "Trang khác": "📄 ",
+};
 
 export default function AdvancedSearch({ isOpen, setIsOpen, scrolled }: Props) {
   const [query, setQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [results, setResults] = useState<SearchItem[]>([]);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [history, setHistory] = useState<string[]>([]);
   const navigate = useNavigate();
 
@@ -43,10 +45,55 @@ export default function AdvancedSearch({ isOpen, setIsOpen, scrolled }: Props) {
       if (e.key === "Escape") {
         setIsOpen(false);
       }
+      if (!isOpen) return;
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        setActiveIndex((i) => Math.min(i + 1, results.length - 1));
+      }
+      if (e.key === "ArrowUp") {
+        e.preventDefault();
+        setActiveIndex((i) => Math.max(i - 1, 0));
+      }
+      if (e.key === "Enter" && results[activeIndex]) {
+        e.preventDefault();
+        navigate(results[activeIndex].path);
+        setIsOpen(false);
+      }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [setIsOpen]);
+  }, [isOpen, results, activeIndex, setIsOpen, navigate]);
+
+  useEffect(() => {
+    if (!query.trim()) {
+      setResults([]);
+      return;
+    }
+    const nq = normalize(query);
+    const computed = searchData
+      .map((item) => {
+        const slug = item.path.split("/").pop() ?? "";
+        const score =
+          (normalize(item.title).includes(nq) ? 4 : 0) +
+          (item.keywords?.some((k) => normalize(k).includes(nq)) ? 3 : 0) +
+          (item.metaTitle && normalize(item.metaTitle).includes(nq) ? 2 : 0) +
+          (normalize(slug).includes(nq) ? 1 : 0);
+        return { item, score };
+      })
+      .filter((r) => r.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .map((r) => r.item);
+
+    setResults(computed);
+    setActiveIndex(0);
+
+    // nếu slug khớp chính xác thì chuyển hướng luôn
+    const direct = searchData.find((i) => normalize(i.path.split("/").pop() ?? "").trim() === nq);
+    if (direct) {
+      navigate(direct.path);
+      setIsOpen(false);
+    }
+  }, [query, navigate, setIsOpen]);
 
   if (!isOpen) return null;
 
@@ -55,47 +102,22 @@ export default function AdvancedSearch({ isOpen, setIsOpen, scrolled }: Props) {
     if (!query.trim()) return;
 
     // nếu có kết quả gợi ý thì chuyển hướng
-    if (filteredSuggestions.length > 0) {
-      const firstResult = filteredSuggestions[0];
-      navigate(firstResult.path);
+    if (results[activeIndex]) {
+      navigate(results[activeIndex].path);
     }
 
     // lưu lịch sử
     const newHistory = [query, ...history.filter((h) => h !== query)].slice(0, 5);
     setHistory(newHistory);
     localStorage.setItem("searchHistory", JSON.stringify(newHistory));
-
     setIsOpen(false);
     setQuery("");
   };
 
-  const normalizedQuery = normalize(query);
-
-  const titleMatches: SearchItem[] = searchSuggestions.flatMap((s) =>
-    s.items.filter((item) => normalize(item.title).includes(normalizedQuery))
-  );
-
-  const keywordMatches: SearchItem[] = Object.entries(productData)
-    .filter(([, p]) => p.seo?.keywords?.some((k) => normalize(k).includes(normalizedQuery)))
-    .map(([id, p]) => ({
-      title: p.intro.title, // tiêu đề sản phẩm
-      type: "Sản phẩm",
-      path: `/products/${id}`, // chuyển đến trang sản phẩm
-    }));
-
-  const mergedMap = new Map<string, SearchItem>();
-  [...titleMatches, ...keywordMatches].forEach((item) => {
-    if (!mergedMap.has(item.path)) {
-      mergedMap.set(item.path, item);
-    }
-  });
-
-  const filteredSuggestions = [...titleMatches];
-  keywordMatches.forEach((item) => {
-    if (!filteredSuggestions.some((s) => s.path === item.path)) {
-      filteredSuggestions.push(item);
-    }
-  });
+  const grouped = results.reduce<Record<SearchItem["type"], SearchItem[]>>((acc, r) => {
+    acc[r.type] = acc[r.type] ? [...acc[r.type], r] : [r];
+    return acc;
+  }, {} as Record<SearchItem["type"], SearchItem[]>);
 
   return (
     <div
@@ -112,32 +134,31 @@ export default function AdvancedSearch({ isOpen, setIsOpen, scrolled }: Props) {
           <input autoFocus value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Nhập từ khóa..." />
         </form>
 
-        <div className={styles["searchPanel__categories"]}>
-          {categories.map((c) => (
-            <button
-              key={c.id}
-              onClick={() => setSelectedCategory(c.id)}
-              className={selectedCategory === c.id ? "active" : ""}
-            >
-              {c.label}
-            </button>
-          ))}
-        </div>
-
-        {query && filteredSuggestions.length > 0 && (
+        {query && results.length > 0 && (
           <div className={styles["searchPanel__section"]}>
-            <h5>Gợi ý</h5>
-            <ul>
-              {filteredSuggestions.map((item) => (
-                <li key={item.path}>
-                  <Link to={item.path} onClick={() => setIsOpen(false)}>
-                    {item.title} - {item.type}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {Object.entries(grouped).map(([type, items]) => (
+              <div key={type} className={styles["searchPanel__group"]}>
+                <h5>{type}</h5>
+                <ul>
+                  {items.map((item, index) => (
+                    <li
+                      key={item.path}
+                      className={`${styles.resultItem} ${activeIndex === index ? styles.active : ""}`}
+                    >
+                      <Link to={item.path} onClick={() => setIsOpen(false)}>
+                        <span className={styles.icon}>{typeIcons[item.type]}</span>
+                        {item.title}
+                        <span className={styles.resultPath}>{item.path}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         )}
+
+        {query && results.length === 0 && <div className={styles["searchPanel__section"]}>Không tìm thấy kết quả</div>}
 
         {!query && (
           <>
@@ -151,7 +172,6 @@ export default function AdvancedSearch({ isOpen, setIsOpen, scrolled }: Props) {
                 ))}
               </ul>
             </div>
-
             {history.length > 0 && (
               <div className={styles["searchPanel__section"]}>
                 <h5>Lịch sử tìm kiếm</h5>
