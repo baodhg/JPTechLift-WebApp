@@ -18,8 +18,8 @@ jobs:
         with:
           node-version: 18
 
-      - name: 📦 Install dependencies
-        run: npm install
+      - name: 📦 Install dependencies (ignore peer conflicts)
+        run: npm install --legacy-peer-deps
 
       - name: 🛠️ Build app with Vite
         run: npm run build
